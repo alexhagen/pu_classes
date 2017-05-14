@@ -1,0 +1,1502 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\providecommand\unit{}
+\renewcommand{\unit}[1]{\,\mathrm{#1}}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{pugold}{HTML}{E3AE24}
+\definecolor{puteal}{HTML}{2EAFA4}
+\definecolor{pupurple}{HTML}{B63F97}
+\definecolor{pugrey}{HTML}{D1D3D4}
+\usepackage{listings}
+
+
+\newcommand\realnumberstyle[1]{}
+\makeatletter
+\newcommand{\zebra}[3]{%
+    {\realnumberstyle{#3}}%
+    \begingroup
+    \lst@basicstyle
+    \ifodd\value{lstnumber}%
+        \color{#1}%
+    \else
+        \color{#2}%
+    \fi
+        \rlap{\hspace*{\lst@numbersep }%
+        \color@block{\linewidth}{\ht\strutbox}{\dp\strutbox}%
+        }%
+    \endgroup
+}
+\makeatother
+
+
+\lstset
+{                                                           %
+    language            =   MATLAB,                      % the     language of the code
+    basicstyle          =   \ttfamily\footnotesize,     % the size of the fonts that are used for the code
+    numbers             =left  ,                    % where to put the line-numbers
+    numberstyle         =   \zebra{white}{pugrey},         % the style that is used for the line-numbers
+    stepnumber          =   1,                          % the step between two line-numbers. If it's 1, each line 
+                                                            % will be numbered
+    numbersep           =   5pt,                       % how far the line-numbers are from the code
+    backgroundcolor     =   \color{white},              % choose the background color. You must add \usepackage{color}
+    showspaces          =   false,                      % show spaces adding particular underscores
+    showstringspaces    =   false,                      % underline spaces within strings
+    showtabs            =   false,                      % show tabs within strings adding particular underscores
+    frame=single,
+    rulecolor           =   \color{black},              % if not set, the frame-color may be changed on line-breaks within not-black text 
+    tabsize             =   4,                          % sets default tabsize to 4 spaces
+    captionpos          =   b,                          % sets the caption-position to bottom
+    breaklines          =   true,                       % sets automatic line breaking
+    breakatwhitespace   =   false,                      % sets if automatic breaks should only happen at whitespace
+    title               =   \lstname,                   % show the filename of files included with \lstinputlisting;
+                                                            % also try caption instead of title
+    keywordstyle        =   [1]\color{pugold}
+                                \bfseries,                  % keyword style
+    keywordstyle        =   [2]\color{pugold}
+                        \bfseries,                  % keyword style
+    commentstyle        =   \color{puteal},            % comment style
+    stringstyle         =   \color{pupurple},              % string literal style
+    escapeinside        =   {\%*}{*)},                  % if you want to add LaTeX within your code
+    linewidth = 90ex
+}
+\usepackage{threeparttable}
+\newcommand{\code}[1]{\texttt{#1}}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+AAE 550 Homework Assignment #3
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+November 30, 2016
+\end_layout
+
+\begin_layout Section
+Nelder-Mead Simplex
+\end_layout
+
+\begin_layout Subsection
+Objective Function Formulation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{minimize}\quad f\left(x\right)=\sum_{i=1}^{d}\left[-x_{i}\sin\left(\sqrt{\left|x_{i}\right|}\right)\right]+\alpha d
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\alpha=418.982887$
+\end_inset
+
+ and 
+\begin_inset Formula $-512\leq x_{i}\leq512,$
+\end_inset
+
+ and 
+\begin_inset Formula $i=1,\dots,d$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+First, we must convert the bounds to 
+\begin_inset Formula $g_{j}\left(\vec{x}\right)\leq0$
+\end_inset
+
+, so we get
+\begin_inset Formula 
+\[
+\vec{g}\left(\vec{x}\right)=\begin{cases}
+-512-x_{i} & \leq0\\
+x_{i}-512 & \leq0
+\end{cases}
+\]
+
+\end_inset
+
+Then, we have to include these as an exterior penalty function
+\begin_inset Formula 
+\[
+P\left(\vec{x}\right)=\sum_{j=1}^{m}\left\{ \max\left[0,\,g_{j}\left(\vec{x}\right)\right]\right\} ^{2}
+\]
+
+\end_inset
+
+and create our pseudo objective function
+\begin_inset Formula 
+\[
+\phi\left(\vec{x}\right)=f\left(\vec{x}\right)+r_{p}P\left(\vec{x}\right)
+\]
+
+\end_inset
+
+and so, to combine these, we get
+\begin_inset Formula 
+\[
+\phi\left(\vec{x}\right)=\sum_{i=1}^{2}\left[-x_{i}\sin\left(\sqrt{\left|x_{i}\right|}\right)+r_{p}\left(\max\left[0,\,-512-x_{i}\right]\right)^{2}+r_{p}\left(\max\left[0,\,x_{i}-512\right]\right)^{2}\right]+\alpha2
+\]
+
+\end_inset
+
+and we are asked to choose a large 
+\begin_inset Formula $r_{p}$
+\end_inset
+
+, so we will choose 
+\begin_inset Formula $r_{p}=10$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Solution from 
+\begin_inset Formula $\mathbf{x}^{0}=\left[\begin{array}{cc}
+100 & 400\end{array}\right]^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Nelder-Mead Simplex for this starting point was called using the source
+ code in listing 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "hmwk3_header"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "nmfunc"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "nm_100_400"
+
+\end_inset
+
+ with results in table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:nm-100-400"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/hmwk3_header.m"
+lstparams "caption={Header Parameters for Egg Crate Function},label={hmwk3_header}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/NMfunc.m"
+lstparams "caption={Nelder-Mead Function and Penalties},label={nmfunc}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/hmwk3_prob1_2.m"
+lstparams "caption={Source for calling Nelder Mead Simplex with starting point of 100, 400},label={nm_100_400}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Optimization summary for Nelder-Mead Simplex using starting point 
+\begin_inset Formula $\vec{x}^{0}=\left[\begin{array}{c}
+100\\
+400
+\end{array}\right]$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:nm-100-400"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/prob1_2.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Solution from 
+\begin_inset Formula $\mathbf{x}^{0}=\left[\begin{array}{cc}
+300 & 300\end{array}\right]^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Nelder-Mead Simplex for this starting point was called using the source
+ code in listing 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "lst:nm_300_300"
+
+\end_inset
+
+ with results in table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:nm-300-300"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/hmwk3_prob1_3.m"
+lstparams "caption={Source for calling Nelder Mead Simplex with starting point of 300, 300},label={lst:nm_300_300}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Optimization summary for Nelder-Mead Simplex using starting point 
+\begin_inset Formula $\vec{x}^{0}=\left[\begin{array}{c}
+300\\
+300
+\end{array}\right]$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:nm-300-300"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/prob1_3.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Solution from 
+\begin_inset Formula $\mathbf{x}^{0}=\left[\begin{array}{cc}
+520 & 520\end{array}\right]^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Nelder-Mead Simplex for this starting point was called using the source
+ code in listing 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "lst:nm_520_520"
+
+\end_inset
+
+ with results in table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:nm-520-520"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/hmwk3_prob1_4.m"
+lstparams "caption={Source for calling Nelder Mead Simplex with starting point of 520, 520},label={lst:nm_520_520}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Optimization summary for Nelder-Mead Simplex using starting point 
+\begin_inset Formula $\vec{x}^{0}=\left[\begin{array}{c}
+520\\
+520
+\end{array}\right]$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:nm-520-520"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/prob1_4.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Results and Conclusions
+\end_layout
+
+\begin_layout Standard
+My results do indicate that global optimization is not Nelder-Mead's strong
+ point.
+ While table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:nm-300-300"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:nm-520-520"
+
+\end_inset
+
+ show that a minimum close to the global 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional minimum is found, the table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:nm-100-400"
+
+\end_inset
+
+ shows that for starting points off of the line 
+\begin_inset Formula $y=x$
+\end_inset
+
+ (such as 
+\begin_inset Formula $\vec{x}=\left[\begin{array}{c}
+100\\
+400
+\end{array}\right]$
+\end_inset
+
+), a global minimum is not achieved.
+ On the line 
+\begin_inset Formula $y=x$
+\end_inset
+
+, the Nelder Mead Simplex does a good job of finding a non-smooth optimization,
+ as it goes through multiple 
+\begin_inset Quotes eld
+\end_inset
+
+troughs
+\begin_inset Quotes erd
+\end_inset
+
+ and still arrives at the minimum (which is on that line).
+\end_layout
+
+\begin_layout Section
+Simulated Annealing
+\end_layout
+
+\begin_layout Subsection
+Solution from 
+\begin_inset Formula $\mathbf{x}^{0}=\left[\begin{array}{cc}
+100 & 400\end{array}\right]^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I modified SA_550.m to include the temperature output (simply by putting
+ T in the output vector), and then used the listings 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "lst:safunc"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "lst:sarandnum"
+
+\end_inset
+
+ to call it and write values to a table.
+ The output of the random number generator can be seen in the table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:SA_rand_num"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/SAfunc.m"
+lstparams "caption={Egg Crate function for calling Simulated Annealing},label={lst:safunc}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/hmwk3_prob2_1.m"
+lstparams "caption={Source for calling Simulated Annealing for effect of random numbers},label={lst:sarandnum}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Effect of starting point and random number generator on Simulated Annealing
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:SA_rand_num"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/prob2_1.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Solution from 
+\begin_inset Formula $\mathbf{x}^{0}=\left[\begin{array}{cc}
+100 & 400\end{array}\right]^{T}$
+\end_inset
+
+ at 
+\begin_inset Formula $T_{0}=50$
+\end_inset
+
+, 
+\begin_inset Formula $85$
+\end_inset
+
+, or 
+\begin_inset Formula $15$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I called the source code in listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:satemp"
+
+\end_inset
+
+ to get the results in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:SA_initial_temp"
+
+\end_inset
+
+.
+ Even with different temperatures, the solution does not reach near the
+ global minimum, the best being at 
+\begin_inset Formula $T_{0}=85$
+\end_inset
+
+.
+ Computationally, there is not much expense change in the initial temperatures,
+ with near 23000 function evalutations each.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/hmwk3_prob2_2.m"
+lstparams "caption={Source for calling Simulated Annealing for effect of initial temperature},label={lst:satemp}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Effect of initial temperature on Simulated Annealing
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:SA_initial_temp"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/prob2_2.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Best initial temperature
+\end_layout
+
+\begin_layout Standard
+Using the best initial temperature of 
+\begin_inset Formula $T_{0}=85$
+\end_inset
+
+, I called the source code in listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:sacoolrate"
+
+\end_inset
+
+ to get the results in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:SA_cool_rate"
+
+\end_inset
+
+.
+ The computational expense of the algorithm clearly increases with the high
+ cooling rate (
+\begin_inset Formula $r_{T}=0.15$
+\end_inset
+
+ requires 12001 function evaluations, whereas 
+\begin_inset Formula $r_{T}=0.85$
+\end_inset
+
+ requires 96001, eight times higher).
+ However, the higher cooling rate did give a much better result, finally
+ converging near the 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional minimum.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/hmwk3_prob2_3.m"
+lstparams "caption={Source for calling Simulated Annealing for effect of cooling rate},label={lst:sacoolrate}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Effect of cooling rate on Simulated Annealing
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:SA_cool_rate"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/prob2_3.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Genetic Algorithm
+\end_layout
+
+\begin_layout Subsection
+Solution with 10 bits decoding
+\end_layout
+
+\begin_layout Standard
+The genetic algorithm was called using listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:garandnum"
+
+\end_inset
+
+, which uses the egg crate function as in listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:gafunc"
+
+\end_inset
+
+.
+ These results are shown in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:GA_rand_num"
+
+\end_inset
+
+.
+ The random number generator does make a small difference, especially in
+ the number of evaluations, with some taking longer (up to 5 generations
+ longer) than the others.
+ They do converge to the same value, though.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/GAfunc.m"
+lstparams "caption={Egg Crate function for calling Genetic Algorithm},label={lst:gafunc}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/hmwk3_prob3_1.m"
+lstparams "caption={Source for calling Genetic Algorithm for effect of random numbers},label={lst:garandnum}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Effect of random number generator on Genetic Algorithm
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:GA_rand_num"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/prob3_1.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Solution with 5 bits and 20 bits
+\end_layout
+
+\begin_layout Standard
+Using listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:gabitsize"
+
+\end_inset
+
+ to run several different bit sizes, with the results listed in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:GA_bit_size"
+
+\end_inset
+
+, we can see several differences between the runtime and also the results.
+ With more bits, the quality is clearly better, however the runtime is almost
+ 
+\begin_inset Formula $5\times$
+\end_inset
+
+ higher, whereas the decrease when dropping to 5 bits is over 
+\begin_inset Formula $100\%$
+\end_inset
+
+.
+ The 5 bit solution, though, is not the final answer, although it gets close.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/hmwk3_prob3_2.m"
+lstparams "caption={Source for calling Genetic Algorithm for effect of bit size},label={lst:gabitsize}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Effect of bit size on Genetic Algorithm
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:GA_bit_size"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/prob3_2.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Combinatorial Problem with Genetic Algorithm
+\end_layout
+
+\begin_layout Standard
+As stated, we would like to minimize the combined mass of the trusses while
+ not allowing yielding.
+ This means that the objective function for minimization is
+\begin_inset Formula 
+\begin{align*}
+f\left(x\right)=m & =\rho_{1}A_{1}L_{1}+\rho_{2}A_{2}L_{2}+\rho_{3}A_{3}L_{3}\\
+ & =\rho_{1}w_{1}h_{1}L_{1}+\rho_{2}w_{2}h_{2}L_{2}+\rho_{3}w_{3}h_{3}L_{3}
+\end{align*}
+
+\end_inset
+
+and the constraint is simply 
+\begin_inset Formula 
+\[
+\vec{g}\left(\vec{x}\right)=\begin{cases}
+\sigma_{y,1}-\sigma_{1} & \leq0\\
+\sigma_{y,2}-\sigma_{2} & \leq0\\
+\sigma_{y,3}-\sigma_{3} & \leq0
+\end{cases}
+\]
+
+\end_inset
+
+and the design variables are the area variables 
+\begin_inset Formula $h$
+\end_inset
+
+ and 
+\begin_inset Formula $w$
+\end_inset
+
+ for each truss, and the material choice for each element, which defines
+ 
+\begin_inset Formula $\rho$
+\end_inset
+
+, 
+\begin_inset Formula $E$
+\end_inset
+
+, and 
+\begin_inset Formula $\sigma_{y}$
+\end_inset
+
+ for each element.
+\end_layout
+
+\begin_layout Subsection
+Population size and Mutation Rate
+\end_layout
+
+\begin_layout Standard
+We will use two bits to encode each of the material choices.
+ I will apply a lower bound on each area variable as 
+\begin_inset Formula $0.0001\unit{m}$
+\end_inset
+
+ to 
+\begin_inset Formula $0.1\unit{m}$
+\end_inset
+
+) and encode them with 
+\begin_inset Formula $12$
+\end_inset
+
+ bits (for a resolution of 
+\begin_inset Formula $2.43896\times10^{-5}\unit{m}$
+\end_inset
+
+).
+ Our input vector will be organized as
+\begin_inset Formula 
+\[
+\vec{x}=\left[\begin{array}{c}
+\text{material}_{1}\\
+\text{material}_{2}\\
+\text{material}_{3}\\
+w_{1}\\
+w_{2}\\
+w_{3}\\
+h_{1}\\
+h_{2}\\
+h_{3}
+\end{array}\right]\quad\text{with bit sizes}\quad\textrm{size}\left(\vec{x}\right)=\left[\begin{array}{c}
+2\\
+2\\
+2\\
+12\\
+12\\
+12\\
+12\\
+12\\
+12
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, 
+\begin_inset Formula $\lambda=\textrm{sum}\left(\textrm{size}\left(\vec{x}\right)\right)=66$
+\end_inset
+
+.
+ Thus, our population size will be 
+\begin_inset Formula 
+\[
+N_{pop}=4\cdot\lambda=312
+\]
+
+\end_inset
+
+and our mutation rate will be
+\begin_inset Formula 
+\[
+P_{m}=\frac{\lambda+1}{2N_{pop}\lambda}=0.0016
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Fitness function
+\end_layout
+
+\begin_layout Standard
+Now, we must define a pseudo-objective function using penalty multipliers
+ for the constraints.
+ I will apply the constraints as external penalties.
+ 
+\begin_inset Formula 
+\[
+P\left(\vec{x}\right)=\sum_{j=1}^{m}\max\left[0,\,g_{j}\left(\vec{x}\right)\right]
+\]
+
+\end_inset
+
+and create our pseudo objective function
+\begin_inset Formula 
+\[
+\phi\left(\vec{x}\right)=f\left(\vec{x}\right)+r_{p}P\left(\vec{x}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, the pseudo-objective function for this design will be 
+\begin_inset Formula 
+\[
+\phi\left(\vec{x}\right)=\rho_{1}w_{1}h_{1}L_{1}+\rho_{2}w_{2}h_{2}L_{2}+\rho_{3}w_{3}h_{3}L_{3}+r_{p}\left(\max\left[0,\,\sigma_{y,1}-\sigma_{1}\right]+\max\left[0,\,\sigma_{y,2}-\sigma_{2}\right]+\max\left[0,\,\sigma_{y,3}-\sigma_{3}\right]\right)
+\]
+
+\end_inset
+
+and to start, we will try an 
+\begin_inset Formula $r_{p}=10$
+\end_inset
+
+, so that the constraints will not be violated.
+ Upon experimentation, it was found that a much higher penalty multiplier
+ must be used in order to not violate constraints.
+ An 
+\begin_inset Formula $r_{p}$
+\end_inset
+
+ value of 
+\begin_inset Formula $1\times10^{9}$
+\end_inset
+
+ is the lowest value that doesn't allow for constraint violation, and so
+ it was used.
+ The files used for this are enumerated below.
+ Listing 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "lst:prob4_header"
+
+\end_inset
+
+ is used to define the parameters of the problem in several places, listing
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "lst:convertbits"
+
+\end_inset
+
+ is used to convert the input vector into the variables used in the problem
+ statement in several places, listing 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "lst:material"
+
+\end_inset
+
+ takes the material choice and outputs the material coefficients, Listing
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "lst:pseudoobjfunc"
+
+\end_inset
+
+ calculates the pseudoobjective function using the mass function in listing
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "lst:massfunc"
+
+\end_inset
+
+, Listing 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "lst:constraintfunc"
+
+\end_inset
+
+ calculates constraints, and listing 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "lst:prob4"
+
+\end_inset
+
+ runs all of the analyses for the problem.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/hmwk3_prob4_header.m"
+lstparams "caption={Parameter Definitions for Truss Problem},label={lst:prob4_header}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/convert_bits.m"
+lstparams "caption={Input vector to variable conversion script},label={lst:convertbits}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/material.m"
+lstparams "caption={Material switch case script},label={lst:material}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/massfunc.m"
+lstparams "caption={Function for objective function calculation},label={lst:massfunc}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/constraintsfunc.m"
+lstparams "caption={Function for calculating constraints},label={lst:constraintfunc}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/pseudoobjfunc.m"
+lstparams "caption={Pseudo Objective Function for calculation of truss problem},label={lst:pseudoobjfunc}"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/hmwk3_prob4.m"
+lstparams "caption={Script for running truss problem analysis},label={lst:prob4}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Solution with best design
+\end_layout
+
+\begin_layout Standard
+Three runs were performed and their results tabulated in table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Truss-optimization-results"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Truss optimization results table (masses - 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $f\left(\vec{x}^{*}\right)$
+\end_inset
+
+ are given in 
+\begin_inset Formula $\unit{kg}$
+\end_inset
+
+, constraint loads - 
+\begin_inset Formula $g\left(\vec{x}^{*}\right)$
+\end_inset
+
+ are given in 
+\begin_inset Formula $\unit{Pa}$
+\end_inset
+
+, and the input vector is given in a combination of 
+\begin_inset Formula $\unit{m}$
+\end_inset
+
+ and material choice)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Truss-optimization-results"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/prob4.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conclusions
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Truss-optimization-results"
+
+\end_inset
+
+ shows that truss #3 is always the closest to the active constraint, however
+ the GA does not always solve it as having the largest area.
+ I would move the base of truss 3 to the negative 
+\begin_inset Formula $x$
+\end_inset
+
+ direction and extend it's length, so that it could resist the force 
+\begin_inset Formula $P$
+\end_inset
+
+ at 
+\begin_inset Formula $45^{o}$
+\end_inset
+
+ with more of it's tensile strength, instead of shear strength.
+\end_layout
+
+\end_body
+\end_document

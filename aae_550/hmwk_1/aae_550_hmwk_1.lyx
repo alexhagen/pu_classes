@@ -1,0 +1,2936 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\renewcommand{\unit}[1]{\,\mathrm{#1}}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{pugold}{HTML}{E3AE24}
+\definecolor{puteal}{HTML}{2EAFA4}
+\definecolor{pupurple}{HTML}{B63F97}
+\definecolor{pugrey}{HTML}{D1D3D4}
+\usepackage{listings}
+
+
+\newcommand\realnumberstyle[1]{}
+\makeatletter
+\newcommand{\zebra}[3]{%
+    {\realnumberstyle{#3}}%
+    \begingroup
+    \lst@basicstyle
+    \ifodd\value{lstnumber}%
+        \color{#1}%
+    \else
+        \color{#2}%
+    \fi
+        \rlap{\hspace*{\lst@numbersep }%
+        \color@block{\linewidth}{\ht\strutbox}{\dp\strutbox}%
+        }%
+    \endgroup
+}
+\makeatother
+
+
+\lstset
+{                                                           %
+    language            =   MATLAB,                      % the     language of the code
+    basicstyle          =   \ttfamily\footnotesize,     % the size of the fonts that are used for the code
+    numbers             =left  ,                    % where to put the line-numbers
+    numberstyle         =   \zebra{white}{pugrey},         % the style that is used for the line-numbers
+    stepnumber          =   1,                          % the step between two line-numbers. If it's 1, each line 
+                                                            % will be numbered
+    numbersep           =   5pt,                       % how far the line-numbers are from the code
+    backgroundcolor     =   \color{white},              % choose the background color. You must add \usepackage{color}
+    showspaces          =   false,                      % show spaces adding particular underscores
+    showstringspaces    =   false,                      % underline spaces within strings
+    showtabs            =   false,                      % show tabs within strings adding particular underscores
+    frame=single,
+    rulecolor           =   \color{black},              % if not set, the frame-color may be changed on line-breaks within not-black text 
+    tabsize             =   4,                          % sets default tabsize to 4 spaces
+    captionpos          =   b,                          % sets the caption-position to bottom
+    breaklines          =   true,                       % sets automatic line breaking
+    breakatwhitespace   =   false,                      % sets if automatic breaks should only happen at whitespace
+    title               =   \lstname,                   % show the filename of files included with \lstinputlisting;
+                                                            % also try caption instead of title
+    keywordstyle        =   [1]\color{pugold}
+                                \bfseries,                  % keyword style
+    keywordstyle        =   [2]\color{pugold}
+                        \bfseries,                  % keyword style
+    commentstyle        =   \color{puteal},            % comment style
+    stringstyle         =   \color{pupurple},              % string literal style
+    escapeinside        =   {\%*}{*)},                  % if you want to add LaTeX within your code
+}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+AAE 550 Homework Assignment #1
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+October 17, 2016
+\end_layout
+
+\begin_layout Section
+Engineering Problem in 
+\emph on
+N
+\emph default
+ Variables
+\end_layout
+
+\begin_layout Standard
+For the three-bar truss presented below (not to scale; including angles
+ and lengths), minimizing the total potential energy as a function of the
+ displacement can determine the equilibrium position of the 
+\begin_inset Quotes eld
+\end_inset
+
+free
+\begin_inset Quotes erd
+\end_inset
+
+ node (i.e.
+ the node not attached to a support) under the applied load 
+\begin_inset Formula $P$
+\end_inset
+
+.
+ For this, neglect the self-weight of the truss elements.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/aae_550_hmwk_1_prob_1_truss.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Truss Diagram for Problem 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The potential energy function is:
+\begin_inset Formula 
+\[
+\Pi\left(\vec{u}\right)=\frac{1}{2}\vec{u}^{T}\mathbb{K}\vec{u}-\vec{p}^{T}\vec{u}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, 
+\begin_inset Formula $\vec{u}$
+\end_inset
+
+ is the displacement vector; this will be the design variables vector -
+ 
+\begin_inset Formula $u_{i}$
+\end_inset
+
+ is the displacement in the horizontal (x-axis) direction and 
+\begin_inset Formula $u_{2}$
+\end_inset
+
+ is the displacement in the vertical (y-axis) direction.
+ 
+\begin_inset Formula $\mathbb{K}$
+\end_inset
+
+ is the stiffness matrix, and 
+\begin_inset Formula $\vec{p}$
+\end_inset
+
+ is the applied load vector.
+ The global stiffness matrix is the sum of the stiffness matrices for the
+ individual elements.
+ The following expression describe the element stiffness matrices in terms
+ of the x- and y- coordinates.
+\begin_inset Formula 
+\[
+\mathbb{K}_{1}=\left\{ \begin{array}{c}
+\cos\left(-36.87^{o}\right)\\
+\sin\left(-36.87^{o}\right)
+\end{array}\right\} \frac{EA_{1}}{L_{1}}\left\{ \begin{array}{cc}
+\cos\left(-36.87^{o}\right) & \sin\left(-36.87^{o}\right)\end{array}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathbb{K}_{2}=\left\{ \begin{array}{c}
+0\\
+\sin\left(-90^{o}\right)
+\end{array}\right\} \frac{EA_{2}}{L_{2}}\left\{ \begin{array}{cc}
+0 & \sin\left(-90^{o}\right)\end{array}\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathbb{K}_{3}=\left\{ \begin{array}{c}
+\cos\left(-123.69^{o}\right)\\
+\sin\left(-123.69^{o}\right)
+\end{array}\right\} \frac{EA_{3}}{L_{3}}\left\{ \begin{array}{cc}
+\cos\left(-123.69^{o}\right) & \sin\left(-123.69^{o}\right)\end{array}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E$
+\end_inset
+
+ is Young's modulus; use a value of 
+\begin_inset Formula $16\times10^{6}\unit{psi}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+is the cross-sectional area of a truss member on the left; this element
+ has a solid circular cross-section with a diameter of 
+\begin_inset Formula $1.75\unit{in}$
+\end_inset
+
+.
+ Similarly, 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+ is the cross-sectional area of the member in the center; this element has
+ a solid circular cross-section with a diameter of 
+\begin_inset Formula $1.05\unit{in}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $A_{3}$
+\end_inset
+
+ is the cross-sectional area of the member on the right; this element has
+ a solid circular cross-section wtih a diameter of 
+\begin_inset Formula $1.20\unit{in}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $L_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $L_{3}$
+\end_inset
+
+are the lengths of the three elements; use the dimensions on the sketch
+ above to compute these values.
+ With the element stiffness matrices computed, the stiffness matrix for
+ the truss is 
+\begin_inset Formula $\mathbb{K}=\mathbb{K}_{1}+\mathbb{K}_{2}+\mathbb{K}_{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Minimizing 
+\begin_inset Formula $\Pi\left(\vec{u}\right)$
+\end_inset
+
+ will provide the displacements 
+\begin_inset Formula $\vec{u}$
+\end_inset
+
+ under the applied load vector, 
+\begin_inset Formula $\vec{p}$
+\end_inset
+
+.
+ Here, the load vector is 
+\begin_inset Formula 
+\[
+\vec{p}=\left\{ \begin{array}{c}
+P\cos\left(-45^{o}\right)\\
+P\sin\left(-45^{o}\right)
+\end{array}\right\} 
+\]
+
+\end_inset
+
+When you submit your work, include a copy of your Matlab function files
+ and scripts used to call fminunc.
+ These should be included, even if your have simply modified the provided
+ examples.
+ For the Excel problems, you can cut and paste your spreadsheet at the 
+\begin_inset Formula $\vec{x}^{0}$
+\end_inset
+
+ values, the answer report and the sensititivity report as objects for tables
+ in your submittal.
+ You can use the example submittal from HW 0 as a template for this assignment,
+ too.
+\end_layout
+
+\begin_layout Subsection
+Develop analytic expressions for the gradient vector components and the
+ Hessian matrix components.
+ You may do this either in matrix form, or you may wish to expand 
+\begin_inset Formula $\Pi\left(\vec{u}\right)$
+\end_inset
+
+ into a polynomial and then find derivatives of the polynomial.
+ Provide the Matlab script file that includes the gradient and hessian.
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula 
+\begin{align*}
+\Pi\left(\vec{u}\right) & =\frac{1}{2}\vec{u}^{T}\mathbb{K}\vec{u}-\vec{p}^{T}\vec{u}\\
+ & =\frac{1}{2}\left[\begin{array}{cc}
+u_{1} & u_{2}\end{array}\right]\mathbb{K}\left[\begin{array}{c}
+u_{1}\\
+u_{2}
+\end{array}\right]-\left[\begin{array}{cc}
+p_{1} & p_{2}\end{array}\right]\left[\begin{array}{c}
+u_{1}\\
+u_{2}
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbb{K}$
+\end_inset
+
+ is defined earlier as 
+\begin_inset Formula $\mathbb{K}=\mathbb{K}_{1}+\mathbb{K}_{2}+\mathbb{K}_{3}$
+\end_inset
+
+.
+ We can then find the values of 
+\begin_inset Formula $\mathbb{K}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{K}=\left[\begin{array}{cc}
+\\
+\\
+\end{array}\right]+\left[\begin{array}{cc}
+\\
+\\
+\end{array}\right]+\left[\begin{array}{cc}
+\\
+\\
+\end{array}\right]=1\times10^{5}\left[\begin{array}{cc}
+7.2561 & 5.2131\\
+5.2131 & 6.5148
+\end{array}\right]
+\]
+
+\end_inset
+
+and the two values for 
+\begin_inset Formula $\vec{p}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\vec{p}=\left[\begin{array}{c}
+15000\cos\left(-45\right)\\
+15000\sin\left(-45\right)
+\end{array}\right]=1\times10^{4}\left[\begin{array}{c}
+0.7880\\
+-1.2764
+\end{array}\right]
+\]
+
+\end_inset
+
+and thus we can start to simplify the expression
+\begin_inset Formula 
+\begin{align*}
+\Pi\left(\vec{u}\right) & =\frac{1}{2}\left[\begin{array}{cc}
+\left(u_{1}K_{11}+u_{1}K_{12}\right) & \left(u_{2}K_{21}+u_{2}K_{22}\right)\end{array}\right]\left[\begin{array}{c}
+u_{1}\\
+u_{2}
+\end{array}\right]-\left[\begin{array}{cc}
+p_{1} & p_{2}\end{array}\right]\left[\begin{array}{c}
+u_{1}\\
+u_{2}
+\end{array}\right]\\
+ & =\frac{1}{2}\left(u_{1}^{2}K_{11}+u_{2}u_{1}K_{12}+u_{1}u_{2}K_{21}+u_{2}^{2}K_{22}\right)-\left(p_{1}u_{1}+p_{2}u_{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we can actually calculate the gradient components
+\begin_inset Formula 
+\[
+\nabla\Pi=\left[\begin{array}{c}
+\frac{\partial\Pi}{\partial u_{1}}\\
+\frac{\partial\Pi}{\partial u_{2}}
+\end{array}\right]=\left[\begin{array}{c}
+u_{1}K_{11}+\frac{u_{2}}{2}\left(K_{12}+K_{21}\right)-p_{1}\\
+\frac{u_{1}}{2}\left(K_{12}+K_{21}\right)+u_{2}K_{22}-p_{2}
+\end{array}\right]
+\]
+
+\end_inset
+
+and the Hessian components
+\begin_inset Formula 
+\[
+\mathbb{H}\Pi=\left[\begin{array}{cc}
+\frac{\partial^{2}\Pi}{\partial u_{1}^{2}} & \frac{\partial^{2}\Pi}{\partial u_{1}\partial u_{2}}\\
+\frac{\partial^{2}\Pi}{\partial u_{2}\partial u_{1}} & \frac{\partial^{2}\Pi}{\partial u_{2}^{2}}
+\end{array}\right]=\left[\begin{array}{cc}
+K_{11} & \frac{K_{12}+K_{21}}{2}\\
+\frac{K_{12}+K_{21}}{2} & K_{22}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And these are defined in the listing below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/Pi.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Use 
+\begin_inset Quotes eld
+\end_inset
+
+fminunc
+\begin_inset Quotes erd
+\end_inset
+
+ in Matlab's Optimization Toolbox to solve this problem for the equilibrium
+ position of the free node.
+ Pay attention to the 
+\begin_inset Quotes eld
+\end_inset
+
+exitflag
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+message
+\begin_inset Quotes erd
+\end_inset
+
+ information to determine if the algorithm has converged.
+ The default algorithm uses the BFGS update.
+\end_layout
+
+\begin_layout Standard
+The results for fminunc with BFGS are listed in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Results-Table-for"
+
+\end_inset
+
+, and comments about the results as well as code for running them are listed
+ under the problem prompts.
+\end_layout
+
+\begin_layout Subsubsection
+First solve the problem using finite difference gradients.
+ Use fminunc with options = optimset('LargeScale', 'off', 'GradObj', 'off',
+ 'Display', 'iter').
+ Record 
+\begin_inset Formula $\vec{x}^{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{x}^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\nabla f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, the number of iterations needed, the number of function evaluations needed,
+ and the values of exitflag.
+ These will be included in the table discussed in part 6.
+\end_layout
+
+\begin_layout Standard
+Using the lines shown below, the optimal position was calculated and the
+ results tabulated in Row 1 of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Results-Table-for"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/minimize_Pi_num_grad.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Solve the problem using analytic gradients.
+ Here, use fminunc with options = optimset('LargeScale', 'off', 'GradObj',
+ 'on', 'Display', 'iter').
+ Record 
+\begin_inset Formula $\vec{x}^{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{x}^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\nabla f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, the number of iterations needed, the number of function evaluations needed,
+ and the values of exitflag.
+\end_layout
+
+\begin_layout Standard
+For this, the optimal position was calculated with an analytical gradient
+ using the below code, and tabulated in Row 2 of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Results-Table-for"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/minimize_Pi_analytic_grad.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Matlab offers two other first-order models, the DFP update and steepest
+ descent.
+ Explore these to solve the problem for the equilibrium position of the
+ free node.
+ Pay attention to the 
+\begin_inset Quotes eld
+\end_inset
+
+exitflag
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+message
+\begin_inset Quotes erd
+\end_inset
+
+ information to determine if the algorithm has converged.
+\end_layout
+
+\begin_layout Subsubsection
+Solve the problem using analytic gradient with the DFP update.
+ Here, use fminunc with options = optimset('LargeScale', 'off', 'GradObj',
+ 'on', 'Display', 'iter', 'HessUpdate', 'dfp').
+ As before, record 
+\begin_inset Formula $\vec{x}^{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{x}^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\nabla f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, the number of iterations needed, the number of function evaluations needed,
+ and the values of exitflag.
+\end_layout
+
+\begin_layout Standard
+The analytic gradient with DFP update was calculated for an optimal solution,
+ with the results recorded in Row 3 of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Results-Table-for"
+
+\end_inset
+
+, and the code used to run this listed below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/minimize_Pi_analytic_grad_dfp.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Solve the problem using analytic gradient with the steepest descent update.
+ Here, use fminunc with options = optimset('LargeScale', 'off', 'GradObj',
+ 'on', 'Display', 'iter', 'HessUpdate', 'steepdesc').
+ Again, record 
+\begin_inset Formula $\vec{x}^{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{x}^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\nabla f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, the number of iterations needed, the number of function evaluations needed,
+ and the values of exitflag.
+\end_layout
+
+\begin_layout Standard
+Calculation of the optimal solution was done with the steepest descent,
+ and the results again tabulated in Row 4 of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Results-Table-for"
+
+\end_inset
+
+, with the code again listed below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/minimize_Pi_analytic_grad_steep_desc.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Use Matlab's fminunc with options = optimset('LargeScale', 'on', 'GradObj',
+ 'on', 'Hessian', 'on') to use a modified Newton's Method with user supplied
+ gradient and Hessian values.
+ You will need to modify your function to now return both first and second
+ partial derivatives of the objective function.
+ Record 
+\begin_inset Formula $\vec{x}^{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{x}^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\nabla f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, the number of iterations needed, and the number of function evaluations
+ needed.
+ Pay attention to the 
+\begin_inset Quotes eld
+\end_inset
+
+exitflag
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+message
+\begin_inset Quotes erd
+\end_inset
+
+ information to determine if the algorithm has converged.
+\end_layout
+
+\begin_layout Standard
+The calculation with the analytical hessian and gradient was calculated
+ with the code listed below, and the results listed in Row 5 of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Results-Table-for"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/minimize_Pi_analytic_grad_hess.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Excel Solver add-in can also be used to solve this problem.
+ Excel only uses numerical gradients, although you can choose to use forward
+ or central differencing schemes to do this.
+ Solve the problem using most of the default options in Solver.
+ This will use the quasi-Newton method to find search directions and a forward
+ differencing scheme to compute gradients.
+ If you are using Excel 2010 select GRG Nonlinear.
+ In the Solver window, specify to minimize the cell value containing the
+ objective function by changing the cells containing the design variable
+ values.
+ Click the “options” button and select “Show Iteration Results”.
+ You will have to count the number of iterations, because Solver does not
+ record this information.
+ When solver reaches a solution, also create an answer report and a sensitivity
+ report.
+ The sensitivity report includes a column for the “reduced gradient” values,
+ which for an unconstrained problem are simply the elements of 
+\begin_inset Formula $\nabla f\left(\vec{x}^{*}\right)$
+\end_inset
+
+.
+ Record 
+\begin_inset Formula $\vec{x}^{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{x}^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\nabla f\left(\vec{x}^{*}\right)$
+\end_inset
+
+, and the number of iterations needed.
+ Solver does not report the number of function evaluations.
+\end_layout
+
+\begin_layout Standard
+The solver was created and used with the following equation and solved using
+ automatic scaling, constraint precision of 0.000001, and the GRG Nonlinear
+ method.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+C2=12763.5529*B3-7879.8298*B2+B3*(521312.621*B2+651482.3626*B3)\\
++B2*(725611.1277*B2+521312.621*B3)
+\end{multline*}
+
+\end_inset
+
+Results are reported in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Results-Table-for"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Make a table that compares the various approaches.
+ It should have a format something like the table shown below.
+ Here, use a reasonable number of significant digits.
+ In some cases, if you want to see a difference between methods, you may
+ need more digits than Matlab’s default “format short”.
+ Following the table, include a short paragraph that answers the following:
+ What conclusions can you make about these unconstrained minimization approaches
+ for this problem? Is there a significant difference in cost and / or accuracy
+ when using numerical derivatives and when using analytic derivatives? How
+ or why might the form of this problem be better suited to one of the above
+ solution techniques?
+\end_layout
+
+\begin_layout Standard
+The table requested is shown in Table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Results-Table-for"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Results Table for different minimizations of Truss Problem
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Results-Table-for"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="8">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="5cm">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="0.75cm">
+<column alignment="center" valignment="middle" width="0.75cm">
+<column alignment="center" valignment="middle" width="0.75cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Method / Program
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\vec{x}^{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\vec{x}^{*}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f\left(\vec{x}^{*}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\nabla f\left(\vec{x}^{*}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N_{iter}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N_{f}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+exit flag
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BFGS / Matlab fminunc, numerical gradient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{c}
+0.0293\\
+-0.0333
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-327.835$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{c}
+0.0189\\
+0.0001
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+39
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BFGS / Matlab fminunc, user-defined gradient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}[t]{c}
+0.0289\\
+-0.0342
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-326.7543$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}[t]{c}
+-4722.1\\
+5563.5
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DFP / Matlab fminunc, user-defined gradient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}[t]{c}
+0.0283\\
+-0.0349
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-323.4988$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}[t]{c}
+-5548.7\\
+4764.5
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+32
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Steepest Descent / Matlab fminunc, user-defined gradient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}[t]{c}
+0.0286\\
+-0.0344
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-325.6678$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}[t]{c}
+-5086.9\\
+5244.7
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+41
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modified Newton's method / Matlab fminunc, user-defined gradient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}[t]{c}
+0.0285\\
+-0.0340
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-326.3445$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}[t]{c}
+-4929.5\\
+5473.5
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quasi-Newton method / Excel Solver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{c}
+0.0293\\
+-0.0333
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-327.835$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N/A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N/A
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+State the optimality conditions for an unconstrained minimization problem
+ and show why the displacement of the free node is usually found by solving
+ 
+\begin_inset Formula $\mathbb{K}\vec{u}=\vec{p}$
+\end_inset
+
+ for 
+\begin_inset Formula $\vec{u}$
+\end_inset
+
+.
+ Using this strategy, what is the optimal displacement of the free node
+ and the resulting potential energy? Show that this value is indeed optimal.
+ How does this answer compare to the answers found previously?
+\end_layout
+
+\begin_layout Standard
+The first and second order necessary conditions for optimality are:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\nabla f\left(\vec{x}\right)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\nabla^{2}f\left(\vec{x}\right)\text{ is positive semi-definite}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solving for the displacement of the free node and the resulting potential
+ energy was done with the code below, giving the results of
+\begin_inset Formula 
+\[
+\vec{x}^{*}=\left[\begin{array}{c}
+0.0587\\
+-0.0665
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f\left(\vec{x}^{*}\right)=4.5475\times10^{-13}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\nabla f\left(\vec{x}^{*}\right)=1.0\times10^{-11}\left[\begin{array}{c}
+0.0909\\
+0.1819
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\nabla^{2}f\left(\vec{x}^{*}\right)=1.0\times10^{5}\left[\begin{array}{cc}
+7.2561 & 5.2131\\
+5.2131 & 6.5148
+\end{array}\right]
+\]
+
+\end_inset
+
+which meets all of the optimality conditions (
+\begin_inset Formula $\nabla f\approx0$
+\end_inset
+
+, 
+\begin_inset Formula $\nabla^{2}f\text{ is positive definite}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+The value gives much lower potential energy, and while the location is close
+ to within the 
+\begin_inset Formula $\nicefrac{1}{100}\unit{in}$
+\end_inset
+
+, they are a ways off.
+ Perhaps the newton solvers were caught in a local minimum which was not
+ the global minimum.
+ The exitflag given by all of the fminunc solvers were either 5, which states
+ that the predicted decrease in the objective function was less than the
+ functiontolerance tolerance, or that the change in x was smaller than the
+ steptolerance, meaning that the solver was unable to approach so closely
+ the true optimal solution because of tolerances set by default.
+\end_layout
+
+\begin_layout Section
+Engineering Application of SUMT Approach
+\end_layout
+
+\begin_layout Standard
+NOTE: This problem is based upon problem 2.24 from Arora, Introduction to
+ Optimum Design, third edition.
+ You do not need the textbook to solve this problem, but I wanted to attribute
+ its source.
+\end_layout
+
+\begin_layout Standard
+This problem presents an engineering problem in a textual format that you
+ must convert into an optimization problem statement.
+ For those of you without a structures background, I have listed the important
+ governing equations below.
+ For those of you with a structures background, you will recognize many
+ of these equations.
+ 
+\end_layout
+
+\begin_layout Standard
+Design a hollow circular beam-column, as illustrated below, for the two
+ conditions:
+\end_layout
+
+\begin_layout Enumerate
+When 
+\begin_inset Formula $P=75\unit{kN}$
+\end_inset
+
+, the axial stress 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ must not exceed an allowable value 
+\begin_inset Formula $\sigma_{a}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+When 
+\begin_inset Formula $P=0$
+\end_inset
+
+, the deflection 
+\begin_inset Formula $\delta$
+\end_inset
+
+ due to the self-weight should satisfy 
+\begin_inset Formula $\delta\leq0.002L$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/aae_550_hmwk_1_prob_2_truss.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Truss Diagram for Problem 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The manufacturing process limits the radius and thickness of the beam and
+ the ratio of the radius and thickness of the beam as follows: 
+\begin_inset Formula 
+\[
+3.0\unit{cm}\leq R\leq30.0\unit{cm}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+0.20\unit{cm}\leq t\leq2.0\unit{cm}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{R}{t}\leq15
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The beam column shall be fabricated with the following material properties:
+ Density, 
+\begin_inset Formula $\rho=7800\unit{\frac{kg}{m^{3}}}$
+\end_inset
+
+ ; Allowable axial stress, 
+\begin_inset Formula $\sigma_{a}=250\unit{MPa}$
+\end_inset
+
+; Modulus of Elasticity, 
+\begin_inset Formula $E=210\unit{GPa}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Use the following expressions:
+\end_layout
+
+\begin_layout Standard
+Axial stress 
+\begin_inset Formula $\sigma=\frac{P}{A}$
+\end_inset
+
+ where 
+\begin_inset Formula $A=\pi t\left(2R-t\right)$
+\end_inset
+
+, the cross-sectional area of the beam column.
+\end_layout
+
+\begin_layout Standard
+Deflection due to the self-weight 
+\begin_inset Formula $\delta=\frac{5wL^{4}}{384EI}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $w=\frac{mg}{L}$
+\end_inset
+
+, the self-weight force per unit length
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m=\rho AL$
+\end_inset
+
+, mass of the beam
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I=\pi R^{3}t$
+\end_inset
+
+, moment of inertia
+\end_layout
+
+\begin_layout Standard
+Use 
+\begin_inset Formula $g=9.80\unit{\frac{m}{s^{2}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Formulate and explicitly state the optimization design problem.
+\end_layout
+
+\begin_layout Standard
+We want to minimize the thickness while following both the manufacturing
+ and safety (deflection under no load and stress under load) constraints.
+ The minimization and constraints will be developed in the below subsections.
+\end_layout
+
+\begin_layout Subsubsection
+Write an objective function, 
+\begin_inset Formula $f\left(\vec{x}\right)$
+\end_inset
+
+, in terms of 
+\begin_inset Formula $R$
+\end_inset
+
+ and 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ This objective function should minimize the mass of the beam.
+ If bounds should be included, include these in your problem formulation,
+ too.
+ When writing the objective function, keep in mind that minimizing 
+\begin_inset Formula $Cf\left(\vec{x}\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $C$
+\end_inset
+
+ is a constant, is the same as minimizing 
+\begin_inset Formula $f\left(\vec{x}\right)$
+\end_inset
+
+.
+ Also, recall that variable scaling is sometimes required to improve conditionin
+g.
+ You might want to use these concepts to your advantage.
+\end_layout
+
+\begin_layout Standard
+To minimize the mass of the beam, we have to minimize the radius and the
+ thickness.
+ Giving
+\begin_inset Formula 
+\[
+m=\rho AL
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is density (a constant), 
+\begin_inset Formula $L$
+\end_inset
+
+ is length of the beam (a constant), and 
+\begin_inset Formula $A$
+\end_inset
+
+ is the cross sectional area of the tube, given by
+\begin_inset Formula 
+\[
+A=\pi t\left(2R-t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By putting these two together, we can define a function, 
+\begin_inset Formula $f\left(\vec{x}\right)$
+\end_inset
+
+ which we will need to minimize to minimize the mass of the beam, given
+ by
+\begin_inset Formula 
+\[
+f\left(\vec{x}\right)=f\left(\left[\begin{array}{c}
+R\\
+t
+\end{array}\right]\right)=\rho\pi t\left(2R-t\right)L
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Write the inequality constraint functions, 
+\begin_inset Formula $g_{j}\left(\vec{x}\right)$
+\end_inset
+
+, in terms of 
+\begin_inset Formula $R$
+\end_inset
+
+ and 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ The text above describes the various inequality constraints required.
+ Start by writing 
+\begin_inset Formula $\delta\geq\Delta$
+\end_inset
+
+ (for example), and then convert this to an appropriate form for 
+\begin_inset Formula $g_{j}\left(\vec{x}\right)\leq0$
+\end_inset
+
+.
+ If you find that your appropriate form of 
+\begin_inset Formula $g_{j}\left(\vec{x}\right)$
+\end_inset
+
+ has design variables in the denominator, make a note of this.
+ You may need to change this when you implement the SUMT approaches.
+ There are no equality constraints in this problem.
+\end_layout
+
+\begin_layout Standard
+There are multiple contraints in this problem, the first of which is the
+ stress constraint
+\begin_inset Formula 
+\[
+\sigma<\sigma_{a}
+\]
+
+\end_inset
+
+where the stress is defined by 
+\begin_inset Formula 
+\[
+\sigma=\frac{P}{A}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $P$
+\end_inset
+
+ is the load (a constant), and 
+\begin_inset Formula $A$
+\end_inset
+
+ is the cross sectional area, as given above.
+ We will define this constraint as the first constraint
+\begin_inset Formula 
+\begin{align*}
+\sigma & <\sigma_{a}\\
+\frac{P}{\pi t\left(2R-t\right)} & <\sigma_{a}\\
+\frac{P}{\pi t\left(2R-t\right)}-\sigma_{a} & <0\\
+g_{1}\left(\vec{x}\right) & <0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second constraint deals with the deflection under no load
+\begin_inset Formula 
+\[
+\delta<\Delta
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is defined by
+\begin_inset Formula 
+\[
+\delta=\frac{5wL^{4}}{384EI}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $L$
+\end_inset
+
+ is the length (a constant), 
+\begin_inset Formula $E$
+\end_inset
+
+ is the modulus of elasticity (a constant), 
+\begin_inset Formula $w$
+\end_inset
+
+ is the self weight, defined below, and 
+\begin_inset Formula $I$
+\end_inset
+
+ is the moment of intertia, defined below.
+\begin_inset Formula 
+\[
+w=\frac{mg}{L}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $g$
+\end_inset
+
+ is the gravitational constant, 
+\begin_inset Formula $L$
+\end_inset
+
+ is the length (a constant), and 
+\begin_inset Formula $m$
+\end_inset
+
+ is the mass of the element, given by
+\begin_inset Formula 
+\[
+m=\rho AL=\rho\pi t\left(2R-t\right)L
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The moment of interia is given by
+\begin_inset Formula 
+\[
+I=\pi R^{3}t
+\]
+
+\end_inset
+
+ Thus, the deflection constraint is given by
+\begin_inset Formula 
+\begin{align*}
+\delta & <\Delta\\
+\frac{5wL^{4}}{384EI} & <\Delta\\
+\frac{5\frac{mg}{L}L^{4}}{384E\pi R^{3}t} & <\Delta\\
+\frac{5\rho\pi t\left(2R-t\right)gL^{4}}{384E\pi R^{3}t} & <\Delta\\
+\frac{5\rho gL^{4}\left(2R-t\right)}{384ER^{3}} & <\Delta\\
+\frac{5\rho gL^{4}\left(2R-t\right)}{384ER^{3}}-\Delta & <0\\
+g_{2}\left(\vec{x}\right) & <0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Write any side constraints or bounds on the design variables.
+ Some appear explicitly in the problem description, and there are obvious
+ bounds for others.
+ Convert these into additional 
+\begin_inset Formula $g_{j}\left(\vec{x}\right)\leq0$
+\end_inset
+
+ for use in the SUMT approach.
+ Provide the Matlab script file.
+\end_layout
+
+\begin_layout Standard
+The manufacturing constraints give some bounds for the design variables,
+ with
+\begin_inset Formula 
+\[
+3.0\unit{cm}\leq R\leq30.0\unit{cm}
+\]
+
+\end_inset
+
+which can be split into two bounding constraints
+\begin_inset Formula 
+\begin{align*}
+3.0\unit{cm} & \leq R\\
+3.0\unit{cm}-R & \leq0\\
+g_{3}\left(\vec{x}\right) & \leq0
+\end{align*}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+R & \leq30.0\unit{cm}\\
+R-30.0\unit{cm} & \leq0\\
+g_{4}\left(\vec{x}\right) & \leq0
+\end{align*}
+
+\end_inset
+
+This same can be done for the thickness
+\begin_inset Formula 
+\[
+0.20\unit{cm}\leq t\leq2.0\unit{cm}
+\]
+
+\end_inset
+
+which can be split into two constraints again
+\begin_inset Formula 
+\begin{align*}
+0.20\unit{cm} & \leq t\\
+0.20\unit{cm}-t & \leq0\\
+g_{5}\left(\vec{x}\right) & \leq0
+\end{align*}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+t & \leq2.0\unit{cm}\\
+t-2.0\unit{cm} & \leq0\\
+g_{6}\left(\vec{x}\right) & \leq0
+\end{align*}
+
+\end_inset
+
+The last explicitly defined bound is
+\begin_inset Formula 
+\begin{align*}
+\frac{R}{t} & \leq15\\
+\frac{R}{t}-15 & \leq0\\
+g_{7}\left(\vec{x}\right) & \leq0
+\end{align*}
+
+\end_inset
+
+And finally, the thickness cannot be bigger than the radius, which gives
+\begin_inset Formula 
+\begin{align*}
+t & \leq R\\
+t-R & \leq0\\
+g_{8}\left(\vec{x}\right) & \leq0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Use the fminunc function from Matlab with the following penalty methods
+ to solve this problem via the SUMT approach.
+ It is acceptable to use the default BFGS update and numerical gradients.
+ If you use something other than these options, clearly state that in your
+ submittal.
+ 
+\begin_inset Newline newline
+\end_inset
+
+For each, you will need to choose the value of 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ you wish to use for convergence of the objective function between successive
+ minimizations.
+ Be sure to mention this value in your responses to this question.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Record the total number of unconstrained minimizations, the total number
+ of iterations (each individual unconstrained minimization will require
+ some number of its own iterations), the final design solution, 
+\begin_inset Formula $\vec{x}^{*}$
+\end_inset
+
+ (where 
+\begin_inset Formula $\vec{x}=\left\{ \begin{array}{cc}
+R & t\end{array}\right\} ^{T}$
+\end_inset
+
+), the values of 
+\begin_inset Formula $f\left(\vec{x}^{*}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{j}\left(\vec{x}^{*}\right)$
+\end_inset
+
+, and the exitflag value provided by fminunc.
+ Prepare a table.
+\begin_inset Newline newline
+\end_inset
+
+At the 
+\begin_inset Formula $\vec{x}^{*}$
+\end_inset
+
+ that you find, be sure that the constraints, if slightly violated, are
+ acceptable.
+ For instance, you may need to directly compare 
+\begin_inset Formula $\sigma\left(\vec{x}^{*}\right)$
+\end_inset
+
+ to 
+\begin_inset Formula $\sigma_{a}$
+\end_inset
+
+ or 
+\begin_inset Formula $\delta\left(\vec{x}^{*}\right)$
+\end_inset
+
+ to maximum allowed deflection.
+\begin_inset Newline newline
+\end_inset
+
+To obtain good results, you may need to try different choices of 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+; this is because the penalty functions can have poor condition if 
+\begin_inset Formula $\vec{x}_{0}$
+\end_inset
+
+ is infeasible.
+ The exitflag value returned by fminunc may help you determine if you have
+ a good result.
+ You may also need to experiment with the initial value of 
+\begin_inset Formula $r$
+\end_inset
+
+ (or 
+\begin_inset Formula $r′$
+\end_inset
+
+).
+ Also, be aware that the design variables likely have different magnitudes,
+ if you use consistent units.
+ This can have an effect on your solution.
+ Pay attention to constraints with design variables in the denominator;
+ if it is numerically possible for the design variable to have a zero value
+ (even if this is an infeasible design – recall, the SUMT methods often
+ need to evaluate infeasible 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ during the search), this will cause problems for some of the SUMT approaches.
+ The interior penalty method must have a feasible 
+\begin_inset Formula $\vec{x}_{0}$
+\end_inset
+
+.
+ You may also need to consider using constraint scaling terms, 
+\begin_inset Formula $c_{j}$
+\end_inset
+
+, in your pseudo-objective formulation.
+\begin_inset Newline newline
+\end_inset
+
+Even with the improved conditioning and scaling, the available optimization
+ routines may not be able to solve a problem using one or more of the penalty
+ methods.
+ If this is the case, be sure to explain what you have tried to make the
+ method work and what you have deduced as the reason why the problem cannot
+ be solved using the available optimization routine.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Along with the table for each of the following methods, include the *.m file
+ used to create your pseudoobjective function.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Use the exterior penalty method.
+ Comment on values used for 
+\begin_inset Formula $c_{j}$
+\end_inset
+
+, if any.
+\end_layout
+
+\begin_layout Standard
+The scaling was performed with the below vector.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c_{j}=\left[\begin{array}{cccccccc}
+1\times10^{-7} & 1\times10^{-3} & 10 & 10 & 100 & 100 & 0.01 & 10\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This was then run using the files listed below, and the results tabulated
+ in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:epm"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sumt_phi.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sumt_epm.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Minimization Table and Resulting Scaled Constraint Values for Exterior Penalty
+ Method
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:epm"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/epm.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\vec{c}g\left(\vec{x}^{*}\right)=\left[\begin{array}{cccccccc}
+-4.4251 & -2.8725\times10^{7} & -4.1101\times10^{5} & -2.7 & -2.6\times10^{-5} & -1.8 & 1.0112\times10^{-6} & -0.28\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Use the interior penalty method.
+ Comment on values used for 
+\begin_inset Formula $c_{j}$
+\end_inset
+
+, if any.
+\end_layout
+
+\begin_layout Standard
+The scaling was performed with the below vector.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c_{j}=\left[\begin{array}{cccccccc}
+1\times10^{-7} & 1\times10^{-3} & 10 & 10 & 100 & 100 & 0.01 & 10\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This was then run using the files listed below, and the results tabulated
+ in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:ipm"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sumt_phi_ipm.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sumt_ipm.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Minimization Table and Resulting Scaled Constraint Values for Interior Penalty
+ Method
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:ipm"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/ipm.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\vec{c}g\left(\vec{x}^{*}\right)=\left[\begin{array}{cccccccc}
+-4.48645 & -3.1283\times10^{7} & -0.0014 & -2.6986 & -0.0036 & -1.7964 & -0.0020 & -0.2810\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Use the extended-linear penalty method.
+ Comment on values used for 
+\begin_inset Formula $c_{j}$
+\end_inset
+
+, if any.
+\end_layout
+
+\begin_layout Standard
+The scaling was performed with the below vector.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c_{j}=\left[\begin{array}{cccccccc}
+1\times10^{-7} & 1\times10^{-3} & 10 & 10 & 100 & 100 & 0.01 & 10\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This was then run using the files listed below, and the results tabulated
+ in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:elpm"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sumt_phi_elpm.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sumt_phi_elpm.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Minimization Table and Resulting Scaled Constraint Values for Extended Linear
+ Penalty Method
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:elpm"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/elpm.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\vec{c}g\left(\vec{x}^{*}\right)=\left[\begin{array}{cccccccc}
+-4.4601 & -2.8925\times10^{7} & -1.7949\times10^{-4} & -2.6998 & -2.8002\times10^{-4} & -1.7997 & -1.2010\times10^{-4} & -0.2802\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Use the Augmented Lagrange Multiplier Method for inequality-constrained
+ problems.
+ Comment on values used for 
+\begin_inset Formula $c_{j}$
+\end_inset
+
+, if any.
+ In the script for the pseudo-objective function, you will need to properly
+ update the Lagrange multipliers and use Fletcher’s substitution.
+\end_layout
+
+\begin_layout Standard
+The scaling was performed with the below vector.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c_{j}=\left[\begin{array}{cccccccc}
+1\times10^{-7} & 1\times10^{-3} & 10 & 10 & 100 & 100 & 0.01 & 10\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This was then run using the files listed below, and the results tabulated
+ in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:alm"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sumt_phi_alm.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sumt_alm.m"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Minimization Table and Resulting Scaled Constraint Values for Augmented
+ Lagrange Multiplier Method
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:alm"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand include
+filename "src/alm.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\vec{c}g\left(\vec{x}^{*}\right)=\left[\begin{array}{cccccccc}
+-24.0406 & -1.0648\times10^{7} & -0.8384 & -1.8616 & -0.9512 & -0.8488 & -0.0511 & -1.0233\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Compare the total number of unconstrained minimizations and iterations needed
+ for each method (i.e.
+ which method used the most; which, the fewest?).
+ Also, compare the solutions (i.e.
+ are they all the same? Did one method find a lighter mass, feasible design?).
+ Which of the methods was easiest for you to implement and use? Can you
+ make any conclusions about the different penalty methods for this problem?
+\end_layout
+
+\begin_layout Standard
+The interior penalty method used the least amount of iterations, with only
+ 3 before converging.
+ This was also the easiest to use for me, as the other two closest (the
+ exterior penalty method and the extended linear penalty method) took significan
+t amount of modification of the penalty multiplier for them to converge.
+ The augmented Lagrange Multiplier Method found a different final solution,
+ with a much heavier mass (
+\begin_inset Formula $\sim300\unit{kg}$
+\end_inset
+
+ vs.
+ 
+\begin_inset Formula $14\unit{kg}$
+\end_inset
+
+).
+ It also took very many function evaluations.
+ The exterior penalty method and the augmented lagrange method also both
+ started off with infeasible cases before finding a case which took 
+\begin_inset Formula $N>200$
+\end_inset
+
+ iterations to minimize, before then converging to a solution.
+ These seem to be senstitive to the starting conditions in those cases.
+\end_layout
+
+\end_body
+\end_document

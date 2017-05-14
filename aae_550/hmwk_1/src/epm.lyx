@@ -1,0 +1,1012 @@
+#LyX 1.6.10 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="8">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top"  topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top"  topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $r_{p}$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top"  topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $R$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top"  topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $t$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top"  topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $f\left(\vec{x}^{*}\right)$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top"  topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $\phi\left(\vec{x}^{*}\right)$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top"  topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $N$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top"  topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+exitflag
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $1
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-3.31319\times 10^{+07}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $3.22597\times 10^{+07}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-3.89416\times 10^{+20}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-3.78472\times 10^{+20}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $45
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-3
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $1
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $5
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-3.31319\times 10^{+07}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $3.22597\times 10^{+07}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-3.89416\times 10^{+20}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-3.34695\times 10^{+20}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $3
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-3
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $2
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $25
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-3.31319\times 10^{+07}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $3.22597\times 10^{+07}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-3.89416\times 10^{+20}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-1.1581\times 10^{+20}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $3
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-3
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $3
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $125
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $492.848
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-53.3306
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-6.78919\times 10^{+09}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-2.01182\times 10^{+08}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $45
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $1
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $4
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $625
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.308077
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-0.00412018
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-313.123
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-74.9414
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $42
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $1
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $5
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $3125
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.307651
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-7.21084\times 10^{-10}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-5.43611\times 10^{-05}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $143.292
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $201
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $6
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $15625
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.307651
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-7.21084\times 10^{-10}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $-5.43611\times 10^{-05}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $716.461
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $63
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $5
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $7
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $78125
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.0299364
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.00199578
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $14.1525
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $14.198
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $123
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $2
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $8
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $390625
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.0299927
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.00199925
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $14.2039
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $14.2083
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $57
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $2
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $9
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $1.95313\times 10^{+06}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.0299928
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.00200002
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $14.2092
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $14.2194
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $36
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $2
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $10
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $9.76563\times 10^{+06}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.0299933
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.00199977
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $14.2077
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $14.2573
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $27
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $2
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $11
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $4.88281\times 10^{+07}
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.0300041
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $0.00200026
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $14.2164
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $14.2164
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $84
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula $2
+$
+\end_inset
+\end_layout
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+\end_inset
+\end_layout
+\end_body
+\end_document
