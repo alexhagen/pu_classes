@@ -1,0 +1,1280 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass tufte-handout
+\begin_preamble
+\providecommand{\unit}[1]{\ensuremath{\;\mathrm{#1}}}
+\usepackage{gensymb}
+\newcommand{\Angstrom}{\textup{\AA}}
+\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+\usepackage{tikz}
+\end_preamble
+\options nobib
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 563 Homework 5 - Selected Exercises on Quantum Mechanics and Plasma
+ Physics
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+February 22nd, 2017
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1) a) for single-stage thermoelectric devices that have been arranged to
+ be thermally in parallel and electrically in series, the efficiency 
+\begin_inset Formula $\eta_{t}$
+\end_inset
+
+ for multistage thermoelectric generator is the same as for a single-stage
+ device.
+ Show that for thermoelectric generators that are conected in series thermally
+ the efficiency 
+\begin_inset Formula $\eta_{t}=1-\prod_{i=1}^{N}\left(1-\eta_{t(i)}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The following proof is paraphrased from 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "pp. 139-140"
+key "Angrist1982"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+We have the first law on every 
+\begin_inset Formula $N$
+\end_inset
+
+ stages
+\begin_inset Formula 
+\[
+q_{N}-q_{N-1}=P_{O\left(N\right)}
+\]
+
+\end_inset
+
+and with the thermal efficiency for each generator defined as
+\begin_inset Formula 
+\[
+\eta_{t\left(N\right)}\equiv\frac{P_{O\left(N\right)}}{q_{N}}
+\]
+
+\end_inset
+
+We can combine these equations to receive
+\begin_inset Formula 
+\[
+q_{N}\left(1-\eta_{t\left(N\right)}\right)=q_{N-1}
+\]
+
+\end_inset
+
+Propagating this back along the chain, we can get
+\begin_inset Formula 
+\[
+q_{N-1}\left(1-\eta_{t\left(N-1\right)}\right)=q_{N-2}
+\]
+
+\end_inset
+
+By adding in the first term, and subtracting that from the entire equation,
+ we get
+\begin_inset Formula 
+\[
+q_{0}=q_{N}\left(1-\eta_{t\left(N\right)}\right)\left(1-\eta_{t\left(N-1\right)}\right)\;\cdots\;\left(1-\eta_{t\left(1\right)}\right)
+\]
+
+\end_inset
+
+and, applying the overall efficiency as defined by
+\begin_inset Formula 
+\[
+q_{0}=q_{N}\left(1-\eta_{t}\right)
+\]
+
+\end_inset
+
+Upon substitution, we get
+\begin_inset Formula 
+\[
+q_{N}\left(1-\eta_{t}\right)=q_{N}\left(1-\eta_{t\left(N\right)}\right)\left(1-\eta_{t\left(N-1\right)}\right)\;\cdots\;\left(1-\eta_{t\left(1\right)}\right)
+\]
+
+\end_inset
+
+which, when solved for 
+\begin_inset Formula $\eta_{t}$
+\end_inset
+
+, is
+\begin_inset Formula 
+\[
+\eta_{t}=\eta_{t\left(1\right)}+\eta_{t\left(2\right)}+\cdots+\eta_{t\left(N\right)}-\eta_{t\left(1\right)}\eta_{t(2)}\;\cdots\;\eta_{t\left(N\right)}=1-\prod_{i=1}^{N}\left(1-\eta_{t\left(i\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b) Derive Eq.
+ (4-123) that maximizes the figure of merit.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The following derivation is paraphrased from 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "pp. 154-158"
+key "Angrist1982"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+To first maximize the figure of merit, we must show the definition, which
+ is 
+\begin_inset Formula 
+\[
+Z=\frac{\alpha^{2}}{\lambda p}
+\]
+
+\end_inset
+
+This expression, when assumptions are applied to it, namely that the material
+ is extrinsic and 
+\begin_inset Formula $n$
+\end_inset
+
+ type.
+ The energy surfaces in valence and conduction band are spheres, and the
+ material is nondegenerate, or has many less charge carriers than the maximu.
+ This gives us 
+\begin_inset Formula 
+\[
+Z=\frac{\left(\nicefrac{Z}{e}\right)^{2}2N_{c}e\mu\left(\delta+\xi_{gf}\right)^{2}\exp\left(-\xi_{gf}\right)}{\lambda_{l}+\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-\xi_{gf}\right)}
+\]
+
+\end_inset
+
+and we can maximize to 
+\begin_inset Formula $\xi_{gf}$
+\end_inset
+
+ by taking the derivative and setting equal to zero.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\frac{\partial Z}{\partial\xi_{gf}}=\left(\left(\frac{Z}{e}\right)^{2}2N_{c}e\mu\right)\left[\frac{\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-2\xi_{gf}\right)\left(\delta+\xi_{gf}\right)^{2}}{\left(\lambda_{l}+\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-\xi_{gf}\right)\right)^{2}}\right.\\
+\left.+\frac{2\left(\delta+\xi_{gf}\right)\exp\left(-\xi_{gf}\right)-\left(\delta+\xi_{gf}\right)^{2}\exp\left(-\xi_{gf}\right)}{\lambda_{l}+\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-\xi_{gf}\right)}\right]
+\end{multline*}
+
+\end_inset
+
+which, when set equal to 
+\begin_inset Formula $0$
+\end_inset
+
+, means that
+\begin_inset Formula 
+\begin{align*}
+\frac{\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-2\xi_{gf}\right)\left(\delta+\xi_{gf}\right)^{2}}{\left(\lambda_{l}+\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-\xi_{gf}\right)\right)^{2}} & =\frac{\left(\delta+\xi_{gf}\right)^{2}\exp\left(-\xi_{gf}\right)-2\left(\delta+\xi_{gf}\right)\exp\left(-\xi_{gf}\right)}{\lambda_{l}+\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-\xi_{gf}\right)}\\
+\frac{\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-2\xi_{gf}\right)\left(\delta+\xi_{gf}\right)^{2}}{\lambda_{l}+\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-\xi_{gf}\right)} & =\left(\delta+\xi_{gf}\right)^{2}\exp\left(-\xi_{gf}\right)-2\left(\delta+\xi_{gf}\right)\exp\left(-\xi_{gf}\right)\\
+\frac{\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-2\xi_{gf}\right)}{\lambda_{l}+\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-\xi_{gf}\right)} & =\exp\left(-\xi_{gf}\right)-\frac{2\exp\left(-\xi_{gf}\right)}{\left(\delta+\xi_{gf}\right)}\\
+\frac{\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-\xi_{gf}\right)^{2}}{\lambda_{l}+\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-\xi_{gf}\right)} & =\exp\left(-\xi_{gf}\right)\left[1-\frac{2}{\left(\delta+\xi_{gf}\right)}\right]\\
+\frac{\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-\xi_{gf}\right)}{\lambda_{l}+\delta^{'}\left(\nicefrac{k}{e}\right)^{2}2N_{c}e\mu T\exp\left(-\xi_{gf}\right)} & =\left[1-\frac{2}{\left(\delta+\xi_{gf}\right)}\right]
+\end{align*}
+
+\end_inset
+
+which can be shown to maximize the figure of merit by introducing the quantity
+ 
+\begin_inset Formula $A'$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+A'=0.8955\left(\frac{T}{300}\right)^{\nicefrac{5}{2}}\left(\frac{m^{*}}{m}\right)^{\nicefrac{3}{2}}\left(\frac{\mu}{10^{-5}\lambda_{l}}\right)
+\]
+
+\end_inset
+
+and gives
+\begin_inset Formula 
+\[
+\left(\delta-2+\xi_{gf}\right)\exp\left(\xi_{gf}\right)=2\delta A^{'}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c) Show that when contact resistance must be taken into account for short
+ elements in thermoelectric generators or coolers the correct resistivity
+ 
+\begin_inset Formula $\rho^{'}$
+\end_inset
+
+ should be 
+\begin_inset Formula $\rho^{'}=\rho+2\left(\nicefrac{r}{l}\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is the electric resistivity of the original wire and 
+\begin_inset Formula $\nicefrac{r}{l}$
+\end_inset
+
+ is the contact resitivity.
+ The contact resistance is given as 
+\begin_inset Formula $R_{c}=\frac{r_{n}}{A_{n}}+\frac{r_{p}}{A_{p}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The resistance is given as 
+\begin_inset Formula 
+\[
+R=\rho\frac{l}{A}
+\]
+
+\end_inset
+
+and when put in series with the contact resistance, we get
+\begin_inset Formula 
+\[
+R_{total}=\rho_{n}\frac{l_{n}}{A_{n}}+\rho_{p}\frac{l_{p}}{A_{p}}+\frac{r_{n}}{A_{n}}+\frac{r_{p}}{A_{p}}
+\]
+
+\end_inset
+
+and grouping terms, we get
+\begin_inset Formula 
+\[
+R_{total}=\frac{1}{A_{n}}\left(\rho_{n}l_{n}+r_{n}\right)+\frac{1}{A_{p}}\left(\rho_{p}l_{p}+r_{p}\right)
+\]
+
+\end_inset
+
+dividing by 
+\begin_inset Formula $\frac{l}{A}$
+\end_inset
+
+ to get 
+\begin_inset Formula $\rho^{'}$
+\end_inset
+
+ from 
+\begin_inset Formula $R_{total}$
+\end_inset
+
+, we get
+\begin_inset Formula 
+\[
+\rho^{'}=\frac{\left[\frac{1}{A_{n}}\left(\rho_{n}l_{n}+r_{n}\right)+\frac{1}{A_{p}}\left(\rho_{p}l_{p}+r_{p}\right)\right]\left(l_{n}+l_{p}\right)}{A_{n}+A_{p}}
+\]
+
+\end_inset
+
+which simplifies to 
+\begin_inset Formula 
+\[
+\rho^{'}=\rho+2\left(\nicefrac{r}{l}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2.
+ (4.8) i) How many couples are required to produce the desired output?
+\end_layout
+
+\begin_layout Standard
+The desired output is 
+\begin_inset Formula $10\unit{W}$
+\end_inset
+
+, and we can only vary between 
+\begin_inset Formula $100\unit{\celsius}$
+\end_inset
+
+ and 
+\begin_inset Formula $0\unit{\celsius}$
+\end_inset
+
+, we can get a power output of
+\begin_inset Formula 
+\begin{align*}
+P & =\left(\frac{\alpha\Delta T}{R\left(m_{opt}^{'}+1\right)}\right)^{2}R_{0}\\
+ & =\left(\frac{\left(425\times10^{-6}\unit{\nicefrac{V}{\celsius}}\right)\left(75\unit{\celsius}\right)}{\left(2.76\times10^{-3}\right)\left(1.42+1\right)}\right)\left(3.92\times10^{-3}\right)\\
+ & =8.93\times10^{-2}\unit{W}
+\end{align*}
+
+\end_inset
+
+which means 112 couples would be required.
+\end_layout
+
+\begin_layout Standard
+We can do an alternative assessment using the maximum efficency with
+\begin_inset Formula 
+\begin{align*}
+\eta_{t\left(max\right)} & =\frac{\left(m_{opt}^{'}-1\right)\left(\nicefrac{\Delta T}{T_{H}}\right)}{m_{opt}^{'}+\nicefrac{T_{C}}{T_{H}}}\\
+ & =\frac{\left(1.42-1\right)\left(\nicefrac{75}{373.15}\right)}{1.42+\nicefrac{298.15}{373.15}}\\
+ & =3.80\unit{\%}
+\end{align*}
+
+\end_inset
+
+and with that efficiency 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+ii) What is the heat input under the assumption of maximum efficiency?
+\end_layout
+
+\begin_layout Standard
+The maximum efficiency at these temperatures is shown above, at 
+\begin_inset Formula $3.80\unit{\%}$
+\end_inset
+
+, which shows that a heat input should be 
+\begin_inset Formula $263.16\unit{W}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+iii) Under the assumption of maximum power output?
+\end_layout
+
+\begin_layout Standard
+The maximum power output should be
+\begin_inset Formula 
+\begin{align*}
+P_{mp} & =I_{mp}^{2}R_{0}=\left(\frac{\alpha\Delta T}{2R}\right)^{2}R_{0}\\
+ & =\left(\frac{\left(425\times10^{-6}\unit{\nicefrac{V}{\celsius}}\right)\left(75\unit{\celsius}\right)}{2\left(2.76\times10^{-3}\right)}\right)\left(3.92\times10^{-3}\right)\\
+ & =0.13\unit{W}
+\end{align*}
+
+\end_inset
+
+per couple.
+ This efficiency should be
+\begin_inset Formula 
+\begin{align*}
+\eta_{t\left(mp\right)} & =\frac{\nicefrac{\Delta T}{T_{H}}}{\nicefrac{4}{\left(Z*T_{H}\right)}+2-\frac{1}{2}\left(\nicefrac{\Delta T}{T_{H}}\right)}\\
+ & =3.02\unit{\%}
+\end{align*}
+
+\end_inset
+
+which gives a power input of 
+\begin_inset Formula $330.5\unit{W}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+iv) If the fuel used in the generator (
+\begin_inset Formula $\ce{CH_{4}}$
+\end_inset
+
+, with a heat of combustion of 
+\begin_inset Formula $194$
+\end_inset
+
+ kcal per mole) is burned and transfers heat to the thermoelectric elements
+ with an overall efficiency of 
+\begin_inset Formula $50$
+\end_inset
+
+ percent, find the rate of fuel consumption per hour.
+\end_layout
+
+\begin_layout Standard
+Our heat rate is 
+\begin_inset Formula 
+\[
+\frac{811696}{2}\unit{\frac{J}{mol}}
+\]
+
+\end_inset
+
+and, using our maximum power output efficiency of 
+\begin_inset Formula $3.02\unit{\%}$
+\end_inset
+
+, our fuel rate must be
+\begin_inset Formula 
+\begin{align*}
+?\frac{mol}{s} & =\frac{811696}{2}\unit{\frac{Jth}{mol}}\times\frac{3.04\unit{Jel}}{100\unit{Jth}}\times\frac{10\unit{Jel}}{\unit{s}}\\
+ & =1.234\times10^{5}\unit{\frac{mol}{s}}
+\end{align*}
+
+\end_inset
+
+of fuel.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3.
+ (4.25) a) The minimum number of thermoelectric couples required to meet
+ the design requirements.
+\end_layout
+
+\begin_layout Standard
+Choosing the n-type to be 
+\begin_inset Formula $\ce{PbTe}$
+\end_inset
+
+, 
+\begin_inset Formula $\ce{SnTe}$
+\end_inset
+
+ alloy and the p-type to be 
+\begin_inset Formula $\ce{AgSbTe_{3}}$
+\end_inset
+
+ alloy, we have the values in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "mar:Values-for-nprob3"
+
+\end_inset
+
+.
+\begin_inset Float margintable
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Values for n and p type chosen for Problem 3 
+\begin_inset CommandInset label
+LatexCommand label
+name "mar:Values-for-nprob3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{PbTe}$
+\end_inset
+
+, 
+\begin_inset Formula $\ce{SnTe}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{AgSbTe_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-150
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+230
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Z$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ We then calculate 
+\begin_inset Formula 
+\[
+\lambda_{n}=\frac{\alpha_{n}^{2}}{\rho_{n}Z_{n}}=0.15
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda_{p}=\frac{\alpha_{p}^{2}}{\rho_{p}Z_{p}}=0.0066
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+Z^{*}=\frac{\alpha^{2}}{\left(\sqrt{\rho_{n}\lambda_{n}}+\sqrt{\rho_{p}\lambda_{p}}\right)^{2}}=0.0016\unit{\frac{1}{K}}
+\]
+
+\end_inset
+
+and optimal parameter 
+\begin_inset Formula 
+\[
+m_{opt}^{'}=\sqrt{1+Z^{*}T_{avg}}=1.4588
+\]
+
+\end_inset
+
+We can also calculate the resistance
+\begin_inset Formula 
+\[
+R=\frac{\rho_{n}}{\gamma_{n}}+\frac{\rho_{p}}{\gamma_{p}}=0.053\unit{\Omega}
+\]
+
+\end_inset
+
+with values 
+\begin_inset Formula $\gamma_{n}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma_{p}=2.81$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This leads to the maximum efficiency
+\begin_inset Formula 
+\[
+\eta_{max}=\frac{\left(m_{opt}^{'}-1\right)\left(\nicefrac{\Delta T}{T_{H}}\right)}{m_{opt}^{'}+\nicefrac{T_{c}}{T_{H}}}=17\unit{\%}
+\]
+
+\end_inset
+
+and by calculating the power output with this assumption, we get
+\begin_inset Formula 
+\[
+P=\left(\frac{\alpha\Delta T}{R\left(m_{opt}^{'}+1\right)}^{2}\right)R_{0}=0.344\unit{W}
+\]
+
+\end_inset
+
+, which means a requirement of 
+\begin_inset Formula $55$
+\end_inset
+
+ couples to meet the power requirement.
+ The heat input required then is
+\begin_inset Formula 
+\[
+q_{H}=\frac{20\unit{W}}{\eta_{t}}=115.6\unit{W}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b) The size of the radiator required to dump the waste heat assuming an
+ emissivity of 
+\begin_inset Formula $0.9$
+\end_inset
+
+, no convection, and surroundings that are at 
+\begin_inset Formula $20\unit{\celsius}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The area required is
+\begin_inset Formula 
+\[
+A=N_{couples}\left(A_{n}+A_{p}\right)=55\left(3.81+13.61\right)=2850\unit{cm^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4.
+ (4.29) a) The load voltage.
+\end_layout
+
+\begin_layout Standard
+Chosing the p type to be 
+\begin_inset Formula $\ce{AgSbTe_{3}}$
+\end_inset
+
+ with 
+\begin_inset Formula $Z=1.9\times10^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\rho=4.2$
+\end_inset
+
+, and 
+\begin_inset Formula $\alpha=240$
+\end_inset
+
+, we must calculate the n-type properties for this material
+\begin_inset Formula 
+\begin{align*}
+\alpha_{n} & =\frac{k}{e}\left[\frac{\varepsilon_{g}-\varepsilon_{f}}{kT}+\frac{5}{2}-s\right]\\
+ & =\frac{k}{e}\left[0.4+2.5-0.5\right]\\
+ & =2.067\times10^{-4}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\rho_{n} & =\frac{1}{ne\mu}\\
+ & =\frac{1}{\left(10^{18}\right)\left(1.602\times10^{-19}\right)\left(2\times10^{3}\right)}\\
+ & =0.00312\unit{\Omega}
+\end{align*}
+
+\end_inset
+
+And we need to calculate 
+\begin_inset Formula $\lambda_{p}$
+\end_inset
+
+ knowing 
+\begin_inset Formula $\lambda_{n}$
+\end_inset
+
+ and the other p type properties 
+\begin_inset Formula 
+\[
+\lambda_{p}=\frac{\alpha_{p}^{2}}{\rho_{p}Z_{p}}=0.0072
+\]
+
+\end_inset
+
+Finally, we can calulate the figure of merit
+\begin_inset Formula 
+\[
+Z^{*}=\frac{\alpha^{2}}{\left(\sqrt{\rho_{n}\lambda_{n}}+\sqrt{\rho_{p}\lambda_{p}}\right)^{2}}=0.0015\unit{\frac{1}{K}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m_{opt}^{'}=\sqrt{1+Z^{*}T_{avg}}=1.4588
+\]
+
+\end_inset
+
+and maximum efficiency
+\begin_inset Formula 
+\begin{align*}
+\eta_{t\left(mp\right)} & =\frac{\nicefrac{\Delta T}{T_{H}}}{\nicefrac{4}{\left(Z^{*}T_{H}\right)}+2-\frac{1}{2}\left(\nicefrac{\Delta T}{T_{H}}\right)}\\
+ & =4.2\unit{\%}
+\end{align*}
+
+\end_inset
+
+With the required 
+\begin_inset Formula $I=3\unit{A}$
+\end_inset
+
+ to satisfy Kirchoff's laws given 
+\begin_inset Formula $R=6.67\unit{\Omega}$
+\end_inset
+
+ and 
+\begin_inset Formula $P=60\unit{W}$
+\end_inset
+
+, we can calculate the required voltage
+\begin_inset Formula 
+\[
+V=IR=20\unit{V}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b) The least number of couples to deliver the power.
+\end_layout
+
+\begin_layout Standard
+Then, knowing we get 
+\begin_inset Formula 
+\begin{align*}
+P & =I^{2}R_{0}\\
+ & =\left(3\unit{A}\right)^{2}\left(\frac{\rho_{n}}{\gamma_{n}}+\frac{\rho_{p}}{\gamma_{p}}\right)m^{'}\\
+ & =0.131\unit{W}
+\end{align*}
+
+\end_inset
+
+from each unit, we need at least 457 units.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c) The least collector area required, assuming that the collector is perfect
+ and that the incident radiation in the neighborhood of Mercury is 
+\begin_inset Formula $0.89\unit{\nicefrac{W}{cm^{2}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Finally, we need 
+\begin_inset Formula 
+\[
+\frac{60\unit{W}}{}\times\frac{\unit{cm^{2}}}{0.89\unit{W}}\times\frac{1\unit{W_{el}}}{4.2\unit{W_{in}}}=1375\unit{cm^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5.
+ (4.32) Estimate the number of watts the farmer can reasonably expect to
+ produce from the supply of sunflower seed oil.
+\end_layout
+
+\begin_layout Standard
+Choosing the maximum power application and the n-type and p-type materials
+ given in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "mar:Values-for-nprob5"
+
+\end_inset
+
+ 
+\begin_inset Float margintable
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Values for n and p type chosen for Problem 5 
+\begin_inset CommandInset label
+LatexCommand label
+name "mar:Values-for-nprob5"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{Bi_{2}Te_{3}}$
+\end_inset
+
+, 
+\begin_inset Formula $\ce{Bi_{2}Se_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{AgSbTe_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-160
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+230
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Z$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, we can again calculate 
+\begin_inset Formula 
+\[
+\lambda_{n}=\frac{\alpha_{n}^{2}}{\rho_{n}Z_{n}}=0.0094
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda_{p}=\frac{\alpha_{p}^{2}}{\rho_{p}Z_{p}}=0.0069
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Z^{*}=\frac{\alpha^{2}}{\left(\sqrt{\rho_{n}\lambda_{n}}+\sqrt{\rho_{p}\lambda_{p}}\right)^{2}}=0.0018\unit{\frac{1}{K}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m_{opt}^{'}=\sqrt{1+Z^{*}T_{avg}}=1.429
+\]
+
+\end_inset
+
+and find our maximum efficiency
+\begin_inset Formula 
+\[
+\eta_{max}=\frac{\left(m_{opt}^{'}-1\right)\left(\nicefrac{\Delta T}{T_{H}}\right)}{m_{opt}^{'}+\nicefrac{T_{c}}{T_{H}}}=13.1\unit{\%}
+\]
+
+\end_inset
+
+Then, using that efficiency, we can calculate the thermal energy generated
+\begin_inset Formula 
+\begin{multline*}
+?\unit{kW\cdot hr}=\frac{5000\unit{gal}}{}\times\frac{3785.4\unit{cm^{3}}}{\unit{gal}}\times\frac{0.0009\unit{kg}}{\unit{cm^{3}}}\\
+\times\frac{36.7\unit{mJ}}{\unit{kg}}\times\frac{\unit{kW\cdot hr}}{3.61\unit{MJ}}=1.763\times10^{5}\unit{kW\cdot hr}
+\end{multline*}
+
+\end_inset
+
+and then determine the electrical energy generated
+\begin_inset Formula 
+\[
+1.763\times10^{5}\unit{kW\cdot hr_{th}}\times\frac{13.1\unit{kW\cdot hr_{el}}}{100\unit{kW\cdot hr_{th}}}=2.27\times10^{4}\unit{kW\cdot hr}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../../bibs/nucl_563"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

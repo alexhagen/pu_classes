@@ -1,0 +1,557 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass tufte-handout
+\begin_preamble
+\providecommand{\unit}[1]{\ensuremath{\;\mathrm{#1}}}
+
+\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+\end_preamble
+\options nobib
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 2
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 563 Project 3 - Literature Review
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+February 7th, 2017
+\end_layout
+
+\begin_layout Standard
+A salient feature of modern life is the use of myriad connected devices.
+ These devices, often considered the 
+\begin_inset Quotes eld
+\end_inset
+
+Internet-of-Things
+\begin_inset Quotes erd
+\end_inset
+
+, are power hungry, mobile, and sensor laden.
+ While historically, power has been supplied using batteries, the ever-decreasin
+g size of these devices and their connected sensors desire alternative energy
+ delivery methods.
+ These methods can be classified as energy harvesting, or as wireless power
+ transfer - the focus of this project.
+ Energy harvesting and wireless power transfer have many challenges for
+ overcoming batteries, as Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "mar:Power-densities-for"
+
+\end_inset
+
+ shows.
+ 
+\begin_inset Float margintable
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Energy densities for different energy harvesting methods - all taken from
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SravanthiChalasani2008"
+
+\end_inset
+
+ except for the battery power density, calculated from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Angrist1982"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "mar:Power-densities-for"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Harvesting Method
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Power Density
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Batteries (Ni/Zn)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $840\unit{\nicefrac{mW}{cm^{3}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Solar Cells
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $15\unit{\nicefrac{mW}{cm^{3}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Piezoelectric
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $330\unit{\nicefrac{\mu W}{cm^{3}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Electrostatic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $116\unit{\nicefrac{\mu W}{cm^{3}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Thermoelectric
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $40\unit{\nicefrac{\mu W}{cm^{3}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+There is a several order of magnitude difference in the power density of
+ 
+\begin_inset Quotes eld
+\end_inset
+
+harvesting
+\begin_inset Quotes erd
+\end_inset
+
+ sources and batteries.
+ However, the ability to reduce the total volume or total mass of a system
+ still makes energy harvesting interesting 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SravanthiChalasani2008"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wireless Power Transfer (hereafter WPT) is a close relative of energy harvesting
+ in that the receiver technology is the same, but the energy to be harvested
+ is actively supplied to the system.
+ The idea for WPT has been around for decades, with early variants starting
+ with the advent of antenna based wireless communication systems 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Polydoroff1941"
+
+\end_inset
+
+.
+ However, publication did not occur in earnest until the early 2000s.
+ There are many variants of WPT, just as there are many variants of energy
+ harvesting.
+ Of interesting to this analysis are the topics of piezoelectric energy
+ transfer, inductance coupling wireless power transfer, beaming - whether
+ microwave or visible light, and induced thermal energy transfer.
+ Plasma charge coupling was targeted previously to the literature search,
+ but its requirement for 
+\begin_inset Formula $30\unit{\nicefrac{kV}{cm}}$
+\end_inset
+
+ is not suitable for typical applications 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jha2004"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Piezoelectricity, discovered by the Curie brothers in 1880 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Curie1880"
+
+\end_inset
+
+, is the property of some, asymmetric crystals to generate electricity when
+ force is applied to them, and conversely to generate force when electricity
+ is applied to them.
+ The second application found many early applications in sonar and other
+ sound related fields, including submarine detection in World War I 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Langevin1916"
+
+\end_inset
+
+.
+ In the intervening years between 1920 and 2000, many improvements to piezoelect
+ric materials were made, particularly to Lead-Zirconate Titanate (hereafter
+ PZT).
+ However, starting in the early 2000s, the idea of using PZT to actively
+ harvest power was explored.
+ In fact, high efficiencies were attained 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+up to 
+\begin_inset Formula $35\unit{\%}$
+\end_inset
+
+ in 2004
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sodano2004"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ for energy harvesting.
+ This property then evolved in the subsequent years to an active power transfer
+ method, with a specifically interesting method being miniscule 
+\begin_inset Quotes eld
+\end_inset
+
+dust
+\begin_inset Quotes erd
+\end_inset
+
+ to receive ultrasonic vibration and convert it into electric power to communica
+te signals from inside a human body 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Seo2013"
+
+\end_inset
+
+.
+ Piezoelectric power transfer has several benefits, as shown through this
+ literature review, namely that it is highly efficient, the energy transfer
+ method can be tailored to different media, and the response can be easily
+ modeled using the constitutive equations of PZT material, and acoustic
+ transport through the intervening media 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Paufler1992,Sun2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The competitors to piezoelectric energy transfer are power beaming and inductanc
+e coupling energy transfer.
+ Inductance coupling energy transfer is the logical extension of the concept
+ of signal transmission via antenna 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Polydoroff1941"
+
+\end_inset
+
+.
+ With sufficient inductance coupling, the response of the receiving antenna
+ can be high enough to provide actual usable current.
+ This method is commonly used now in commercial devices to provide standoff
+ charging.
+ There are many methods of achieving this, whether matching magnetic resonance
+ or through matching inductance of the transmitter and receiver 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zhang2013,Wu2011,Zhou2013"
+
+\end_inset
+
+.
+ These systems have the benefit of direct electricity transmission, but
+ have the detriment of intervening media sensitivity, directionality, and
+ transmission 
+\begin_inset Formula $\propto\frac{1}{r^{4}}$
+\end_inset
+
+.
+ Currently, they are used for close field charging of personal electronic
+ devices, but the possibilities for extension are in commercial consideration,
+ such as 
+\begin_inset Quotes eld
+\end_inset
+
+Witricity
+\begin_inset Quotes erd
+\end_inset
+
+ for charging in coffee shops and other public access locations 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ho2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Power beaming is a technology field used for longer range power transfer.
+ Again, the system uses a directional beam of energy - delivered by either
+ microwave or milimeter wave, or even laser pulses - to be sent to the receiver
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kitson2015,Koert1992"
+
+\end_inset
+
+.
+ The systems again have the disadvantage of directionality and intervening
+ media sensitivity.
+ These systems, though, are able to transfer over very large distances,
+ with attenuation of the wave only 
+\begin_inset Formula $\propto\exp\left(-\mu r\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is an attenuation constant, which can be very low in air.
+ They can calso provide large amounts of energy, which has made them of
+ interest for space programs 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Friedman2002,McSpadden2002,Koert1992"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The technologies discussed in the above paragraphs, along with thermal energy
+ transfer, will be reviewed in a combinatorial space: through 4 continuous
+ variables and with differing intervening media (a discrete variable).
+ Then, a region of this combinatorial space will be evaluated for a standoff
+ vibration sensor, and an extension to the state of the art sensors will
+ be proposed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../../bibs/nucl_563"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

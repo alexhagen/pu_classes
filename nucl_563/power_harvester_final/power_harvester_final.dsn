@@ -1,0 +1,213 @@
+(pcb /home/ahagen/scholarship/nucl_563/power_harvester_final/power_harvester_final.dsn
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "4.0.2+dfsg1-stable")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  176530 -96520  151130 -96520  151130 -109220  176530 -109220
+            176530 -96520  176530 -96520)
+    )
+    (via "Via[0-1]_600:400_um")
+    (rule
+      (width 250)
+      (clearance 200.1)
+      (clearance 200.1 (type default_smd))
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component Capacitors_SMD:C_0402
+      (place CIN1 162560 -97790 back 180 (PN 10pF))
+      (place CPZT1 156210 -107950 back 180 (PN 10nF))
+      (place LMATCH1 162560 -107950 back 0 (PN 10nH))
+    )
+    (component Capacitors_SMD:c_elec_4x4.5
+      (place COUT1 156210 -99060 back 180 (PN 47uF))
+    )
+    (component "Connect:USB_Micro-B"
+      (place LOAD1 153670 -102870 front 270 (PN USB_B))
+    )
+    (component power_harvester:PZT
+      (place PIEZO1 170180 -102870 back 180 (PN PIEZO))
+    )
+    (component "TO_SOT_Packages_SMD:TO-263-3Lead"
+      (place U1 161290 -102870 front 0 (PN VREG))
+    )
+  )
+  (library
+    (image Capacitors_SMD:C_0402
+      (outline (path signal 50  -1150 600  1150 600))
+      (outline (path signal 50  -1150 -600  1150 -600))
+      (outline (path signal 50  -1150 600  -1150 -600))
+      (outline (path signal 50  1150 600  1150 -600))
+      (outline (path signal 150  250 475  -250 475))
+      (outline (path signal 150  -250 -475  250 -475))
+      (pin Rect[T]Pad_600x500_um 1 -550 0)
+      (pin Rect[T]Pad_600x500_um 2 550 0)
+    )
+    (image Capacitors_SMD:c_elec_4x4.5
+      (outline (path signal 50  -3350 -2650  3350 -2650))
+      (outline (path signal 50  3350 2650  -3350 2650))
+      (outline (path signal 50  -3350 2650  -3350 -2650))
+      (outline (path signal 50  3350 -2650  3350 2650))
+      (outline (path signal 150  1651 0  889 0))
+      (outline (path signal 150  1270 381  1270 -381))
+      (outline (path signal 150  1524 -2286  -2286 -2286))
+      (outline (path signal 150  2286 1524  2286 -1524))
+      (outline (path signal 150  1524 -2286  2286 -1524))
+      (outline (path signal 150  1524 2286  -2286 2286))
+      (outline (path signal 150  1524 2286  2286 1524))
+      (outline (path signal 150  -2032 -127  -2032 127))
+      (outline (path signal 150  -1905 635  -1905 -635))
+      (outline (path signal 150  -1778 -889  -1778 889))
+      (outline (path signal 150  -1651 -1143  -1651 1143))
+      (outline (path signal 150  -1524 1270  -1524 -1270))
+      (outline (path signal 150  -1397 -1397  -1397 1397))
+      (outline (path signal 150  -1270 1524  -1270 -1524))
+      (outline (path signal 150  -1143 1651  -1143 -1651))
+      (outline (path signal 150  -2286 2286  -2286 -2286))
+      (outline (path signal 150  2032 0  1932.55 -627.923  1643.92 -1194.38  1194.38 -1643.92
+            627.923 -1932.55  0 -2032  -627.923 -1932.55  -1194.38 -1643.92
+            -1643.92 -1194.38  -1932.55 -627.923  -2032 0  -1932.55 627.923
+            -1643.92 1194.38  -1194.38 1643.92  -627.923 1932.55  0 2032
+            627.923 1932.55  1194.38 1643.92  1643.92 1194.38  1932.55 627.923))
+      (pin Rect[T]Pad_2600.96x1600.2_um 1 1800.86 0)
+      (pin Rect[T]Pad_2600.96x1600.2_um 2 -1800.86 0)
+    )
+    (image "Connect:USB_Micro-B"
+      (outline (path signal 50  -4600 2800  4600 2800))
+      (outline (path signal 50  4600 2800  4600 -4050))
+      (outline (path signal 50  4600 -4050  -4600 -4050))
+      (outline (path signal 50  -4600 -4050  -4600 2800))
+      (outline (path signal 150  -4350.9 -3817.46  4349.1 -3817.46))
+      (outline (path signal 150  -4350.9 2587.54  4349.1 2587.54))
+      (outline (path signal 150  4349.1 2587.54  4349.1 -3817.46))
+      (outline (path signal 150  4349.1 -2587.46  -4350.9 -2587.46))
+      (outline (path signal 150  -4350.9 -3817.46  -4350.9 2587.54))
+      (pin Rect[T]Pad_1350x400_um (rotate 90) 1 -1300.9 1562.54)
+      (pin Rect[T]Pad_1350x400_um (rotate 90) 2 -650.9 1562.54)
+      (pin Rect[T]Pad_1350x400_um (rotate 90) 3 -0.9 1562.54)
+      (pin Rect[T]Pad_1350x400_um (rotate 90) 4 649.1 1562.54)
+      (pin Rect[T]Pad_1350x400_um (rotate 90) 5 1299.1 1562.54)
+      (pin Oval[A]Pad_950x1250_um (rotate 90) 6 -2500.9 1562.54)
+      (pin Oval[A]Pad_950x1250_um (rotate 90) 6@1 2499.1 1562.54)
+      (pin Oval[A]Pad_1550x1000_um (rotate 90) 6@2 -3500.9 -1137.46)
+      (pin Oval[A]Pad_1550x1000_um (rotate 90) 6@3 3499.1 -1137.46)
+    )
+    (image power_harvester:PZT
+      (outline (path signal 150  3810 0  3623.53 -1177.36  3082.36 -2239.46  2239.46 -3082.36
+            1177.36 -3623.53  0 -3810  -1177.36 -3623.53  -2239.46 -3082.36
+            -3082.36 -2239.46  -3623.53 -1177.36  -3810 0  -3623.53 1177.36
+            -3082.36 2239.46  -2239.46 3082.36  -1177.36 3623.53  0 3810
+            1177.36 3623.53  2239.46 3082.36  3082.36 2239.46  3623.53 1177.36))
+      (pin Round[A]Pad_1524_um 1 0 3810)
+      (pin Round[A]Pad_1524_um 2 0 -1270)
+    )
+    (image "TO_SOT_Packages_SMD:TO-263-3Lead"
+      (outline (path signal 50  14100 -5650  -2550 -5650))
+      (outline (path signal 50  14100 5650  14100 -5650))
+      (outline (path signal 50  14100 5650  -2550 5650))
+      (outline (path signal 50  -2550 5650  -2550 -5650))
+      (outline (path signal 150  2500 -5000  2500 -3750))
+      (outline (path signal 150  2500 -5000  4000 -5000))
+      (outline (path signal 150  2500 5000  4000 5000))
+      (outline (path signal 150  2500 5000  2500 3750))
+      (pin Rect[T]Pad_4600x1390_um 2 0 0)
+      (pin Rect[T]Pad_9400x10800_um 4 9150 0)
+      (pin Rect[T]Pad_4600x1390_um 3 0 -2540)
+      (pin Rect[T]Pad_4600x1390_um 1 0 2540)
+    )
+    (padstack Round[A]Pad_1524_um
+      (shape (circle F.Cu 1524))
+      (shape (circle B.Cu 1524))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_1550x1000_um
+      (shape (path F.Cu 1000  -275 0  275 0))
+      (shape (path B.Cu 1000  -275 0  275 0))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_950x1250_um
+      (shape (path F.Cu 950  0 -150  0 150))
+      (shape (path B.Cu 950  0 -150  0 150))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_2600.96x1600.2_um
+      (shape (rect F.Cu -1300.48 -800.1 1300.48 800.1))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_4600x1390_um
+      (shape (rect F.Cu -2300 -695 2300 695))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_600x500_um
+      (shape (rect F.Cu -300 -250 300 250))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_9400x10800_um
+      (shape (rect F.Cu -4700 -5400 4700 5400))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_1350x400_um
+      (shape (rect F.Cu -675 -200 675 200))
+      (attach off)
+    )
+    (padstack "Via[0-1]_600:400_um"
+      (shape (circle F.Cu 600))
+      (shape (circle B.Cu 600))
+      (attach off)
+    )
+  )
+  (network
+    (net "Net-(CIN1-Pad1)"
+      (pins CIN1-1 LMATCH1-2 U1-3)
+    )
+    (net GND
+      (pins CIN1-2 COUT1-2 CPZT1-1 LOAD1-4 PIEZO1-2 U1-1)
+    )
+    (net "Net-(COUT1-Pad1)"
+      (pins COUT1-1 LOAD1-1 U1-2)
+    )
+    (net "Net-(CPZT1-Pad2)"
+      (pins CPZT1-2 LMATCH1-1 PIEZO1-1)
+    )
+    (net "Net-(LOAD1-Pad2)"
+      (pins LOAD1-2)
+    )
+    (net "Net-(LOAD1-Pad3)"
+      (pins LOAD1-3)
+    )
+    (net "Net-(LOAD1-Pad5)"
+      (pins LOAD1-5)
+    )
+    (class kicad_default "" GND "Net-(CIN1-Pad1)" "Net-(COUT1-Pad1)" "Net-(CPZT1-Pad2)"
+      "Net-(LOAD1-Pad2)" "Net-(LOAD1-Pad3)" "Net-(LOAD1-Pad5)"
+      (circuit
+        (use_via Via[0-1]_600:400_um)
+      )
+      (rule
+        (width 250)
+        (clearance 200.1)
+      )
+    )
+  )
+  (wiring
+  )
+)

@@ -1,0 +1,4202 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass tufte-book
+\begin_preamble
+\providecommand{\unit}[1]{\ensuremath{\;\mathrm{#1}}}
+
+\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+
+\newcommand*{\thanklesssubtitle}{Project \#5 - Final Report}
+
+\newcommand*{\thanklesscourse}{NUCL 563}
+
+
+\title[Piezoelectric Energy Conversion for Sensors]{%
+    \setlength{\parindent}{0pt}%
+    Piezoelectric Energy \par% 
+    Conversion for Powering \par%
+    of Sensors
+    }
+
+\renewcommand{\maketitlepage}{%
+  \cleardoublepage
+  {%
+  \sffamily
+  \begin{fullwidth}%
+  \fontsize{18}{20}\selectfont\par\noindent\textcolor{darkgray}{\allcaps \thanklessauthor}%
+  \vspace{11.5pc}%
+  \fontsize{36}{40}\selectfont\par\noindent\textcolor{darkgray}{\textsc{\thanklesstitle}}%
+  \vfill%
+  \fontsize{18}{20}\selectfont\par\noindent\textcolor{darkgray}{\thanklesssubtitle}%
+  \vspace{1.0pc}%
+  \fontsize{18}{20}\selectfont\par\noindent\textcolor{darkgray}{\thanklesscourse}%
+  \vspace{1.0pc}%
+  \fontsize{18}{20}\selectfont\par\noindent\textcolor{darkgray}{\today}%
+  \vspace{1.0pc}%
+  \fontsize{14}{16}\selectfont\par\noindent\thanklesspublisher%
+  \end{fullwidth}%
+  }%
+  \thispagestyle{empty}%
+  \clearpage
+}
+
+\usepackage{units}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{nicefrac}
+\usepackage{gensymb}
+\usepackage{svg}
+\usepackage{xcolor}
+\definecolor{grey60}{HTML}{746C66}
+\definecolor{grey40}{HTML}{A7A9AC}
+\usepackage{amsmath, amssymb}
+\usepackage{stackrel}
+\providecommand{\unit}[1]{\mathrm{#1}}
+\end_preamble
+\options nobib, openany
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 2
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Chapter
+Abstract
+\end_layout
+
+\begin_layout Standard
+Sensors for many different measurements have been developed and deployed
+ almost universally in the recent decades.
+ These sensors can increase quality of life, monitor industrial processes,
+ indicate health problems, or guard against engineering faults.
+ Along with these sensors comes a high requirement for power delivery, and
+ battery technology has grown to keep up with the power requirements.
+ However, when considering systems where sensors must be small and lightweight,
+ or are impossible to service
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+servicing of batteries includes replacement and charging
+\end_layout
+
+\end_inset
+
+, battery technology fails.
+ In this void, power delivery and power harvesting have been developed.
+ Power delivery is the use of a transmitter to send power from a relatively
+ large base station attached to mains power to a small remote boards, which
+ then converts the power into useful products.
+ This type of system is the object of research for this project.
+ Power harvesting uses ambient power to convert on a small remote board
+ and then uses that power for useful actions.
+\end_layout
+
+\begin_layout Standard
+Specifically, this project seeks to replicate the energy harvester developed
+ by Botteron 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Botteron2016"
+
+\end_inset
+
+ with some small twists.
+ The energy harvester proposed by Botteron is a canteliever type piezoelectric
+ energy harvester coupled with a solar cell, both powering a temperature
+ measurement device and ultra-wideband information transmitter.
+ The project proposed here will remove the solar component of the energy
+ harvester, and will convert the canteliever type piezoelectric energy harvester
+ to a unimorph non-cantiliever type.
+ Then, a base station will be used to deliver power into the area surrounding
+ the sensor, which will harvest the energy and power the thermistor and
+ UWB transmitter.
+ Goals for decreased area, and 
+\begin_inset Formula $34\times$
+\end_inset
+
+ increase power are described.
+\end_layout
+
+\begin_layout Standard
+This project also seeks to compare this methodology to that of other wireless
+ power transmission, specifically WPT (or electromagnetic wireless power
+ transmission), microwave beaming, thermal energy transfer, and plasma channel
+ coupling.
+\end_layout
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Section
+Project Statement
+\end_layout
+
+\begin_layout Standard
+Sensors of all sorts have become omnipresent in our current culture, from
+ smart thermostats to heart rate fitness monitors.
+ With this omnipresence comes the need for more flexible, less invasive,
+ and wireless operations of sensors.
+ One main barrier to the flexibility and wireless operations of sensors
+ is the need for power delivery.
+ 
+\end_layout
+
+\begin_layout Standard
+A group of researchers has generated a miniature cell conductivity sensor
+ using a piezoelectric grain for ultrasonic wireless power delivery
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Seo2013"
+
+\end_inset
+
+.
+ These sensors in particular use the power delivered through the piezoelectric
+ grain to both measure conductivity and to operate a CMOS component that
+ will operate as a full-bridge rectifier.
+ Communication is then done via 
+\begin_inset Quotes eld
+\end_inset
+
+backscatter
+\begin_inset Quotes erd
+\end_inset
+
+, or passive, radiofrequency communication.
+\end_layout
+
+\begin_layout Standard
+The concept of piezoelectric power delivery is interesting and novel, and
+ for the application proposed by Seo, more efficient than alternatives.
+ I propose a further investigation into the application space of this type
+ of power delivery.
+\end_layout
+
+\begin_layout Standard
+In order to properly investiage the application space, first the parameters
+ required for efficient and worthwhile application must be explored.
+ This involves comparing piezoelectric delivery to its competitors in terms
+ of:
+\end_layout
+
+\begin_layout Itemize
+distance to receiver
+\end_layout
+
+\begin_layout Itemize
+size of receiver
+\end_layout
+
+\begin_layout Itemize
+efficiency of delivery
+\end_layout
+
+\begin_layout Itemize
+power needed by receiver
+\end_layout
+
+\begin_layout Itemize
+intervening material
+\end_layout
+
+\begin_layout Itemize
+delivery frequency
+\end_layout
+
+\begin_layout Standard
+Then, depending on the results of the investigated application space, particular
+ applications should be identified.
+ Of interest to me are the application of piezoelectric power delivery in
+ vibration sensing, flow visualization, or temperature recording applications.
+\end_layout
+
+\begin_layout Standard
+The specific goal of a design is to match and improve the design by Botteron
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Botteron2016"
+
+\end_inset
+
+ by converting the design from a passive energy harvester, to an actively
+ provided acoustic energy harvester.
+ The temperature measurement proposed by Botteron will first be replicated,
+ however the solar component will be removed, the piezoelectric component
+ will be converted to high frequency and non-cantilievered.
+ Then, an attempt to decrease the area of the harvester, and to increase
+ the power to allow for 
+\begin_inset Formula $1\unit{Hz}$
+\end_inset
+
+ data transmission will be targeted.
+ Finally, an attempt to attach a second piezoelectric to the system to measure
+ vibration and report this back will be undertaken.
+ Specific values for power needed, area, and other parameters are provided
+ in the bulleted list below.
+\end_layout
+
+\begin_layout Section
+Goals and Objectives
+\end_layout
+
+\begin_layout Standard
+As requested, I have identified several static goals, and the first set
+ of dynamic objectives for the project:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Goals:
+\end_layout
+
+\begin_layout Itemize
+To identify all currently developed sources of wireless power delivery.
+\end_layout
+
+\begin_layout Itemize
+To identify largest 5 engineering requirements for wireless power delivery
+ choice.
+\end_layout
+
+\begin_layout Itemize
+To compare acoustic power delivery to PZT in the 5 above parameter space.
+\end_layout
+
+\begin_layout Itemize
+To choose parameter space where acoutic power delivery is best suited.
+\end_layout
+
+\begin_layout Itemize
+To generate an application within this parameter space.
+\end_layout
+
+\begin_layout Itemize
+To propose a design or schematic for acoustic power delivery to pzt in the
+ above application.
+\end_layout
+
+\begin_layout Standard
+Thus, the first 
+\series bold
+objectives
+\series default
+, and their partially met answers are:
+\end_layout
+
+\begin_layout Itemize
+Identify other developed sources of wireless power delivery.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Evanescent coupling (inductive coupling)
+\end_layout
+
+\begin_layout Itemize
+Power beaming
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+proposed in 
+\begin_inset Quotes eld
+\end_inset
+
+space elevator
+\begin_inset Quotes erd
+\end_inset
+
+ application
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thermal energy transfer
+\end_layout
+
+\begin_layout Itemize
+Plasma channel coupling
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Develop working understanding of physical principles behind the above wireless
+ power delivery schemes
+\end_layout
+
+\begin_layout Itemize
+Identify the largest 5 requirements for wireless power delivery
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+distance
+\end_layout
+
+\begin_layout Itemize
+targeting
+\end_layout
+
+\begin_layout Itemize
+intervening media
+\end_layout
+
+\begin_layout Itemize
+receiver size
+\end_layout
+
+\begin_layout Itemize
+power provided
+\end_layout
+
+\begin_layout Itemize
+transmitter size
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Develop an active piezoelectric power system to take measurements and transmit
+ them via ultra wideband radio, as in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Botteron2016"
+
+\end_inset
+
+.
+
+\series default
+ A starting design for the sensor configuration can be seen in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sensor-Design-(reproduced"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename receiver_design.svg
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sensor Design (reproduced and edited from Botteron 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Botteron2016"
+
+\end_inset
+
+ without permission)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sensor-Design-(reproduced"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Match or increase requirement for 
+\begin_inset Formula $12.6\,\mu\mathrm{W}$
+\end_inset
+
+ for one readout every 
+\begin_inset Formula $34\unit{s}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Decrease size because of removed requirement of solar cell and cantileiver
+ type piezeoelectric harvester (less than 
+\begin_inset Formula $85\times25\unit{mm^{2}}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Determine if same structure can be used to take readout of separate piezoelectri
+c vibration sensor
+\series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The concern is that current will be required to convert charge generated
+ in the piezoelectric vibration sensor before it can be read in an analog
+ to digital converter (ADC)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+With these goals and objectives, a Quality Function Deployment Chart has
+ been developed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example Quality Function Deployment Chart for a Vibration Sensor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="13">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Technical Requirements
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Ranking
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Efficiency
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Range
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Targeting
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Intervening Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transmitter Size
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+On Board Power
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Receiver Weight
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Evanescent Coupling
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Power Beaming
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Thermal Energy Transfer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Plasma Channel Coupling
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Acoustic Power Transfer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Target Values
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $>15\unit{\%}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $50\unit{cm}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $>\frac{\pi}{2}\unit{sr}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fluid, Glass, Plastic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $<85\times25\unit{mm^{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\geq12.6\,\mu\mathrm{W}$
+\end_inset
+
+ (target of 
+\begin_inset Formula $0.4\unit{mW}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $<1\unit{kg}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Assumptions and Constraints
+\end_layout
+
+\begin_layout Standard
+The assumptions and constraints required to make a design of an active piezoelec
+trically powered sensor system are multiple.
+ The most important, however, is the assumption of the medium in which the
+ sensor must receive power.
+ The acoustic impedance of media are vastly different, with air having a
+ low value compared to liquids, and solids.
+ To decrease the degrees of freedom in the design project, the media targeted
+ will be air and water.
+ I will also constrain my piezoelectric material choice to bulk polycrystaline
+ lead zirconate titanate (PZT) to ensure simplicity and only optimize the
+ circuit, shape, and size of the piezoelectric.
+ I will use the UWB antenna developed by Botteron, but I will allow myself
+ to use inductance to tune the system.
+ Finally, I will assume some directionality of the transmitter, as demonstrated
+ in the QFD chart, assuming that the transmitter will be pointed at the
+ reciever to within one quadrant.
+\end_layout
+
+\begin_layout Chapter
+Literature Review
+\end_layout
+
+\begin_layout Standard
+A salient feature of modern life is the use of myriad connected devices.
+ These devices, often considered the 
+\begin_inset Quotes eld
+\end_inset
+
+Internet-of-Things
+\begin_inset Quotes erd
+\end_inset
+
+, are power hungry, mobile, and sensor laden.
+ While historically, power has been supplied using batteries, the ever-decreasin
+g size of these devices and their connected sensors desire alternative energy
+ delivery methods.
+ These methods can be classified as energy harvesting, or as wireless power
+ transfer - the focus of this project.
+ Energy harvesting and wireless power transfer have many challenges for
+ overcoming batteries, as Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "mar:Power-densities-for"
+
+\end_inset
+
+ shows.
+ 
+\begin_inset Float margintable
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Energy densities for different energy harvesting methods - all taken from
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SravanthiChalasani2008"
+
+\end_inset
+
+ except for the battery power density, calculated from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Angrist1982"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "mar:Power-densities-for"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Harvesting Method
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Power Density
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Batteries (Ni/Zn)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $840\unit{\nicefrac{mW}{cm^{3}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Solar Cells
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $15\unit{\nicefrac{mW}{cm^{3}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Piezoelectric
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $330\unit{\nicefrac{\mu W}{cm^{3}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Electrostatic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $116\unit{\nicefrac{\mu W}{cm^{3}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Thermoelectric
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $40\unit{\nicefrac{\mu W}{cm^{3}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+There is a several order of magnitude difference in the power density of
+ 
+\begin_inset Quotes eld
+\end_inset
+
+harvesting
+\begin_inset Quotes erd
+\end_inset
+
+ sources and batteries.
+ However, the ability to reduce the total volume or total mass of a system
+ still makes energy harvesting interesting 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SravanthiChalasani2008"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wireless Power Transfer (hereafter WPT) is a close relative of energy harvesting
+ in that the receiver technology is the same, but the energy to be harvested
+ is actively supplied to the system.
+ The idea for WPT has been around for decades, with early variants starting
+ with the advent of antenna based wireless communication systems 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Polydoroff1941"
+
+\end_inset
+
+.
+ However, publication did not occur in earnest until the early 2000s.
+ There are many variants of WPT, just as there are many variants of energy
+ harvesting.
+ Of interesting to this analysis are the topics of piezoelectric energy
+ transfer, inductance coupling wireless power transfer, beaming - whether
+ microwave or visible light, and induced thermal energy transfer.
+ Plasma charge coupling was targeted previously to the literature search,
+ but its requirement for 
+\begin_inset Formula $30\unit{\nicefrac{kV}{cm}}$
+\end_inset
+
+ is not suitable for typical applications 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jha2004"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Piezoelectricity, discovered by the Curie brothers in 1880 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Curie1880"
+
+\end_inset
+
+, is the property of some, asymmetric crystals to generate electricity when
+ force is applied to them, and conversely to generate force when electricity
+ is applied to them.
+ The second application found many early applications in sonar and other
+ sound related fields, including submarine detection in World War I 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Langevin1916"
+
+\end_inset
+
+.
+ In the intervening years between 1920 and 2000, many improvements to piezoelect
+ric materials were made, particularly to Lead-Zirconate Titanate (hereafter
+ PZT).
+ However, starting in the early 2000s, the idea of using PZT to actively
+ harvest power was explored.
+ In fact, high efficiencies were attained 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+up to 
+\begin_inset Formula $35\unit{\%}$
+\end_inset
+
+ in 2004
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sodano2004"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ for energy harvesting.
+ This property then evolved in the subsequent years to an active power transfer
+ method, with a specifically interesting method being miniscule 
+\begin_inset Quotes eld
+\end_inset
+
+dust
+\begin_inset Quotes erd
+\end_inset
+
+ to receive ultrasonic vibration and convert it into electric power to communica
+te signals from inside a human body 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Seo2013"
+
+\end_inset
+
+.
+ Piezoelectric power transfer has several benefits, as shown through this
+ literature review, namely that it is highly efficient, the energy transfer
+ method can be tailored to different media, and the response can be easily
+ modeled using the constitutive equations of PZT material, and acoustic
+ transport through the intervening media 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Paufler1992,Sun2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In recent years piezoelectric power harvesting has focused mainly on the
+ applications and attached harvesting circuits involved.
+ As described by Priya and coauthors, many of the piezeoelectric concerns
+ with regard to shape, size, and material of the piezoceramic have been
+ solved 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Priya2009"
+
+\end_inset
+
+.
+ However, the attachment of these harvesters into circuits used to power
+ sensors or others is non-trivial.
+ Wang developed correlations for the dimensionless resonant harvested power
+ versus dimensionless resistance of a circuit 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wang2016"
+
+\end_inset
+
+ in a single degree of freedom system.
+ Even Priya provided the efficiency of these circuits when placed in unimorph
+ or bimorph configuration and connected in parallel or series 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Priya2009"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Other recent work has focused on applications of piezoelectric harvesting.
+ Brach applies harvesters in canteliever configuration to 
+\begin_inset Quotes eld
+\end_inset
+
+multi-modal
+\begin_inset Quotes erd
+\end_inset
+
+ structures, demonstrating the applications in non-resonant systems 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Brach2016"
+
+\end_inset
+
+.
+ Her contribution is the inclusion of an inductor to tune the piezoelectric
+ resonance to the resonance of the structure, thus increasing the response
+ with a wider range of frequencies available.
+ Tao and coauthors continued development of a piezoelectric wind turbine,
+ showing the macromechanical applications of piezoelectrics, with a power
+ of up to 
+\begin_inset Formula $150\unit{W}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tao2017"
+
+\end_inset
+
+.
+ Of particular interest to this project is the recent publication by Botteron.
+ He creates a wireless sensor node with an ultra-wideband transmitter and
+ a printed antenna.
+ The cantilever type piezoelectric harvester is used in conjunction with
+ a solar cell to provide enough energy for the 
+\series bold
+
+\begin_inset Formula $12.6\,\mu\mathrm{W}$
+\end_inset
+
+
+\series default
+ transmission requirement 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Botteron2016"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The competitors to piezoelectric energy transfer are power beaming and inductanc
+e coupling energy transfer.
+ Inductance coupling energy transfer is the logical extension of the concept
+ of signal transmission via antenna 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Polydoroff1941"
+
+\end_inset
+
+.
+ With sufficient inductance coupling, the response of the receiving antenna
+ can be high enough to provide actual usable current.
+ This method is commonly used now in commercial devices to provide standoff
+ charging.
+ There are many methods of achieving this, whether matching magnetic resonance
+ or through matching inductance of the transmitter and receiver 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zhang2013,Wu2011,Zhou2013"
+
+\end_inset
+
+.
+ These systems have the benefit of direct electricity transmission, but
+ have the detriment of intervening media sensitivity, directionality, and
+ transmission 
+\begin_inset Formula $\propto\frac{1}{r^{4}}$
+\end_inset
+
+.
+ Currently, they are used for close field charging of personal electronic
+ devices, but the possibilities for extension are in commercial consideration,
+ such as 
+\begin_inset Quotes eld
+\end_inset
+
+Witricity
+\begin_inset Quotes erd
+\end_inset
+
+ for charging in coffee shops and other public access locations 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ho2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Power beaming is a technology field used for longer range power transfer.
+ Again, the system uses a directional beam of energy - delivered by either
+ microwave or milimeter wave, or even laser pulses - to be sent to the receiver
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kitson2015,Koert1992"
+
+\end_inset
+
+.
+ The systems again have the disadvantage of directionality and intervening
+ media sensitivity.
+ These systems, though, are able to transfer over very large distances,
+ with attenuation of the wave only 
+\begin_inset Formula $\propto\exp\left(-\mu r\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is an attenuation constant, which can be very low in air.
+ They can calso provide large amounts of energy, which has made them of
+ interest for space programs 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Friedman2002,McSpadden2002,Koert1992"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The technologies discussed in the above paragraphs, along with thermal energy
+ transfer, will be reviewed in a combinatorial space: through 4 continuous
+ variables and with differing intervening media (a discrete variable).
+ Then, a region of this combinatorial space will be evaluated for a standoff
+ temperature and vibration sensor, and an extension to the state of the
+ art sensors will be proposed.
+\end_layout
+
+\begin_layout Chapter
+Results
+\end_layout
+
+\begin_layout Section*
+The Design
+\end_layout
+
+\begin_layout Standard
+Any acoustic system is a resonant system.
+ When coupling the acoustic media of power transfer (air or water) with
+ the piezoelectric transducer and a circuit, the system becomes triply resonant.
+ The matching of the three resonances (acoustically, piezoelectrically,
+ and electrically) becomes the prime factor for operation of a power harvester.
+ The process of matching these resonances was carried out iteratively, with
+ the iteration steps being:
+\end_layout
+
+\begin_layout Enumerate
+Choice of PZT material and shape 
+\end_layout
+
+\begin_layout Enumerate
+Choice of frequency range for design
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Calculation of PZT size from frequency range 
+\end_layout
+
+\begin_layout Enumerate
+Verification of PZT resonances using finite element multiphysics modeling
+ 
+\end_layout
+
+\begin_layout Enumerate
+Verification of PZT resonances using integrated circuit modeling
+\end_layout
+
+\begin_layout Enumerate
+Design of resonant circuit for 
+\series bold
+real
+\series default
+ resonances from modeling software
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Design of 
+\begin_inset Formula $LC$
+\end_inset
+
+ circuit to match frequency of resonance 
+\end_layout
+
+\begin_layout Enumerate
+Design of 
+\begin_inset Formula $RC$
+\end_inset
+
+ circuit to match frequency of resonance 
+\end_layout
+
+\begin_layout Enumerate
+Comparison and choice between 
+\begin_inset Formula $LC$
+\end_inset
+
+ and 
+\begin_inset Formula $RC$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Simulation of power output in SPICE 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+This listing of steps informs the process for chaging any of the parameters.
+ Apparently, a full scale optimization would constitute iteration through
+ a matrix of PZT materials, PZT shapes, PZT sizes, PZT resonant frequencies
+ from modeling, LC scaling and RC scaling.
+ This also does not take into account the power conversion integrated circuit.
+ This full scale optimization of a 
+\begin_inset Formula $6$
+\end_inset
+
+-dimensional combinatorial matrix is beyond the scope of this analysis.
+ In order to reduce the degrees of freedom, assumptions have been made:
+\end_layout
+
+\begin_layout Itemize
+A single PZT material and shape can provide sufficiently high results
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Real
+\series default
+ resonances only occur in the PZT when the FEM simulation and circuit simulation
+ match
+\end_layout
+
+\begin_layout Standard
+These assumptions significantly reduce the parameter space that must be
+ analyzed and make this optimization much more tractable.
+\end_layout
+
+\begin_layout Subsection*
+PZT Choice
+\end_layout
+
+\begin_layout Standard
+PZT-5A (also called Navy PZT II) in a disk shape was chosen because of the
+ common availability of the material and the information concerning the
+ material.
+ Channel Industries, Stem Inc., and American Piezo all supply the material
+ in a variety of milled sizes and shapes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ChannelIndustries2000"
+
+\end_inset
+
+.
+ Illich also provides calculated constants for the PZT-5A material in his
+ LTSpice model of piezoelectric ceramics 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Discussion of LTSpice modeling of piezoelectric ceramics is dicussed later
+ in Results chapter
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+With a material chosen, a frequency region must also be chosen.
+ Low frequency (
+\begin_inset Formula $<20\unit{Hz}$
+\end_inset
+
+) was disqualified because of its low propogation through media and its
+ low conversion efficiency in piezoelectric ceramics.
+ Audible frequencies (
+\begin_inset Formula $20\unit{Hz}$
+\end_inset
+
+ to 
+\begin_inset Formula $20\unit{kHz}$
+\end_inset
+
+) were disqualified because the applicability of such a system would only
+ be in unmanned areas due to safety concerns.
+ High frequencies (
+\begin_inset Formula $>10\unit{GHz}$
+\end_inset
+
+) were also disqualified due to expense and relatively low power of amplifiers
+ in that range.
+ So, a range from 
+\begin_inset Formula $20\unit{kHz}$
+\end_inset
+
+ to 
+\begin_inset Formula $10\unit{GHz}$
+\end_inset
+
+ was opened.
+ To begin, a piezoelectric was designed for a frequency of 
+\begin_inset Formula $500\unit{kHz}$
+\end_inset
+
+, a frequency which allows for the use of linear amplifiers that have been
+ developed for distress radios.
+\end_layout
+
+\begin_layout Standard
+Design of the piezoelectric from a given shape, material, and frequency
+ is then (ostensibly) deterministic.
+ Calculation of the diameter is performed from the given correlation to
+ resonant frequency in planar mode (
+\begin_inset Formula $d>5t$
+\end_inset
+
+)
+\begin_inset Formula 
+\[
+f_{res}=\frac{N_{r}}{d}\therefore d=\frac{N_{r}}{f_{res}}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $f_{res}$
+\end_inset
+
+ is the resonant frequency in 
+\begin_inset Formula $\unit{Hz}$
+\end_inset
+
+, 
+\begin_inset Formula $N_{r}$
+\end_inset
+
+ is the radial piezoelectric coefficient given in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ChannelIndustries2000"
+
+\end_inset
+
+, 
+\begin_inset Formula $d$
+\end_inset
+
+ is the diameter, and 
+\begin_inset Formula $t$
+\end_inset
+
+ is the thickness.
+ An example of a disk transducer with its induced force occuring in the
+ 
+\begin_inset Formula $\vec{3}$
+\end_inset
+
+ direction is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Coordinate system for disk pzt"
+
+\end_inset
+
+.
+ The calculation results in a diameter of 
+\begin_inset Formula $2.9\unit{mm}$
+\end_inset
+
+ and a thickness 
+\begin_inset Formula $\leq0.58\unit{mm}$
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pzt_diagram.svg
+	lyxscale 50
+	width 2in
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Coordinate system for disk pzt
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Coordinate system for disk pzt"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Two simulations were performed to check this analytical solution.
+ The first simulation used COMSOL multiphysics simulation platform and combined
+ the structural mechanics (stress-strain) equations and the piezoelectric
+ constitutive equations in the frequency domain for solution of the voltage
+ and current density of the given sized transducer.
+ A diagram of the mesh and boundary conditions are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Mesh and boundary setup for finite element simulation of PZT-5A disk"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pzt_comsol_mesh.svg
+	width 4.3in
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mesh and boundary setup for finite element simulation of PZT-5A disk
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Mesh and boundary setup for finite element simulation of PZT-5A disk"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+ Boundary condtions are:
+\end_layout
+
+\begin_layout Itemize
+Bottom boundary:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Electrically grounded
+\end_layout
+
+\begin_layout Itemize
+Mechanically free
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Left boundary:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Electrically and mechanically axial symmetry (rotation around this axis
+ in 
+\begin_inset Formula $2\pi$
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Right boundary:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Electrically floating
+\end_layout
+
+\begin_layout Itemize
+Mechanically fixed - assumption that the boundary is rigid
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Top boundary:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Electrically floating
+\end_layout
+
+\begin_layout Itemize
+Mechanically applied acceleration 
+\begin_inset Formula $\vec{a}$
+\end_inset
+
+ at frequency 
+\begin_inset Formula $f$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Calculation of the acceleration is perfromed using a fourier transform and
+ assumptions about the sound pressure level.
+ A sound pressure level of 
+\begin_inset Formula $40\unit{dB}$
+\end_inset
+
+, which is equivalent to a normal conversation, corresponds to a particle
+ velocity amplitude of 
+\begin_inset Formula $1.0\times10^{-6}\unit{\nicefrac{m}{s}}$
+\end_inset
+
+.
+ In the transient domain, this can be written as 
+\begin_inset Formula 
+\[
+\vec{v}=A\sin\left(2\pi ft\right)
+\]
+
+\end_inset
+
+performing a derivative on this give us
+\begin_inset Formula 
+\begin{align*}
+\vec{a} & =\frac{d}{dt}\vec{v}=\frac{d}{dt}\left[A\sin\left(2\pi ft\right)\right]\\
+\vec{a} & =2\pi fA\cos\left(2\pi ft\right)
+\end{align*}
+
+\end_inset
+
+and performing a fourier transform to place this into frequency space, we
+ can get the acceleration at the boundary in frequency space as
+\begin_inset Formula 
+\[
+\vec{a}_{\mathscr{F}}=\mathscr{F}\left(\vec{a}\right)=\frac{2\pi fA+2\pi fA}{2i}
+\]
+
+\end_inset
+
+and thus, the boundary condition for COMSOL can be seen to be 
+\begin_inset Formula $\vec{a}_{\mathscr{F}}=2\pi f\vec{v}_{\mathscr{F}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A second simulation was created for the sake of PZT frequency analysis.
+ This simulation used Linear Technology's version of the SPICE simulation
+ package, a University of California Berkeley product for simulation of
+ circuits.
+ Illich provides a subcircuit which uses an analogy between current and
+ sound particle velocity and lossy transmission lines to simulate piezoelectric
+ material and acoustic media 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Illich2011"
+
+\end_inset
+
+.
+ A frequency sweep calcualtion was performed with the applicaton of 
+\begin_inset Formula $1.0\unit{\mu A}\models1.0\times10^{-6}\unit{\nicefrac{m}{s}}$
+\end_inset
+
+ to the piezoelectric face.
+\end_layout
+
+\begin_layout Standard
+The results of these simulations were quite suprising.
+ The voltage, current, and power are shown in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Across capacitor voltage versus frequency"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Current density generated in piezoelectric harvester versus frequency"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Power generated in PZT with frequency"
+
+\end_inset
+
+, respectively.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "intvolt.pgf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Across capacitor voltage versus frequency
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Across capacitor voltage versus frequency"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "intcurr.pgf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Current density generated in piezoelectric harvester versus frequency
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Current density generated in piezoelectric harvester versus frequency"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "intpow.pgf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Power generated in PZT with frequency
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Power generated in PZT with frequency"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+ While SPICE indicates a resonance in power at 
+\begin_inset Formula $\sim500\unit{kHz}$
+\end_inset
+
+ as expected, COMSOL indicates a resonance for 
+\series bold
+admittance
+\series default
+ of power at that frequency.
+ Thus, it can be concluded that this resonance would not occur in a real
+ PZT.
+ The largest resonance in both models occurs at 
+\begin_inset Formula $1.62\unit{MHz}$
+\end_inset
+
+, a harmonic of the 
+\begin_inset Formula $500\unit{kHz}$
+\end_inset
+
+ frequency desired.
+ Because of the maximum power output occuring at this frequency, the rest
+ of the analysis can be done using 
+\begin_inset Formula $1.62\unit{MHz}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Resonant Circuit Design
+\end_layout
+
+\begin_layout Standard
+In order to properly admit the power generated in the PZT into a voltage
+ regulator so that it can be supplied to real electronics, an oscilating
+ circuit must be designed to match the frequency of the output from the
+ PZT.
+ An RLC circuit is then desired, as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagram of series RLC circuit"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename rlc.svg
+	lyxscale 10
+	width 2in
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagram of series RLC circuit
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagram of series RLC circuit"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+ Two simplifications can be made to this circuit, the first removing the
+ resistor (creating an LC circuit), the second removing the inductor (creating
+ an RC circuit).
+ The resonance for an LC circuit is given as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{res}=\frac{1}{2\pi\sqrt{LC}}
+\]
+
+\end_inset
+
+and the resonance for an RC circuit is given as 
+\begin_inset Formula 
+\[
+f_{res}=\frac{1}{2\pi RC}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apparently, there are infinitely independent solutions of 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ or 
+\begin_inset Formula $R$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ given 
+\begin_inset Formula $f_{res}$
+\end_inset
+
+.
+ However, the smaller the product of the 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ is, the wider the 
+\begin_inset Formula $Q$
+\end_inset
+
+ value (or peak amplitude divided by peak width).
+ Thus, a small 
+\begin_inset Formula $C$
+\end_inset
+
+ value is desired for both circuits.
+ A capactior value of 
+\begin_inset Formula $10\unit{nF}$
+\end_inset
+
+ was chosen for both circuits.
+ However, the PZT has capacitance inherent in the material.
+ The PZT has an internal capacitance of 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=\frac{\pi}{4}k_{33}\varepsilon_{0}\frac{d^{2}}{t}=0.1\mathrm{nF}
+\]
+
+\end_inset
+
+Thus, we have to ballast the PZT with a parallel capacitor of 
+\begin_inset Formula $10\unit{nF}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+SPICE modeling gives results for the sweeping of 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $R$
+\end_inset
+
+ while keeping 
+\begin_inset Formula $f_{res}$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ constant.
+ The results are given in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Voltage at power out terminal versus time versus matching resistance"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Current at power out terminal versus time versus matching resistance"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Voltage at power out terminal versus time versus matching inductance"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Current at power out terminal versus time versus matching inductance"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "volt3d_res.pgf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Voltage at power out terminal versus time versus matching resistance
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Voltage at power out terminal versus time versus matching resistance"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "curr3d_res.pgf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Current at power out terminal versus time versus matching resistance
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Current at power out terminal versus time versus matching resistance"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "volt3d_ind.pgf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Voltage at power out terminal versus time versus matching inductance
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Voltage at power out terminal versus time versus matching inductance"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "curr3d_ind.pgf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Current at power out terminal versus time versus matching inductance
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Current at power out terminal versus time versus matching inductance"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+The resistance sweep shows that the 
+\begin_inset Formula $R$
+\end_inset
+
+ corresponding to 
+\begin_inset Formula $f_{res}$
+\end_inset
+
+ is actually filtering out half of the output signal (creating a lowpass
+ filter).
+ Thus, the lowest resistance value possible is desired.
+ This means an LC circuit is desired.
+ The inductance sweep shows that a voltage and current peak is maximized
+ at the 
+\begin_inset Formula $L$
+\end_inset
+
+ value calculated by 
+\begin_inset Formula $f_{res}=\frac{1}{2\pi\sqrt{LC}}$
+\end_inset
+
+, and is equivalent to 
+\begin_inset Formula $10\unit{nH}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Regulator Choice
+\end_layout
+
+\begin_layout Standard
+With the resonant circuit matched to an optimized PZT geometry, now a voltage
+ regulator must be chosen for conversion from a 
+\begin_inset Formula $\sin$
+\end_inset
+
+ wave input of power to DC output power.
+ Microprocessors can run on anything from 
+\begin_inset Formula $1.8\unit{V}$
+\end_inset
+
+ to 
+\begin_inset Formula $12\unit{V}$
+\end_inset
+
+, depending on the model, but they require protection and stability in the
+ voltage.
+ Botteron suggests a purpose designed regulator, called TI's BQ25504 which
+ is described as an 
+\begin_inset Quotes eld
+\end_inset
+
+Ultra Low-Power Boost Converter With Battery Management for Energy Harvester
+ Applications
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TexasInstruments2015"
+
+\end_inset
+
+.
+ An example system design using this boost converter is shown in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:System design before iteration"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename receiver_design.svg
+	width 4.3in
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+System design with inspiration from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Botteron2016"
+
+\end_inset
+
+ before iteration
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:System design before iteration"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+ In order to realize this model, a schematic circuit was designed using
+ the BQ25504 and suggested fixturing 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TexasInstruments2015"
+
+\end_inset
+
+.
+ This circuit is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Circuit diagram for circuit iteration using transformer and LT3108"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename power_harvester_with_transformer.svg
+	width 4.3in
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuit diagram for circuit iteration using transformer and LT3108
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Circuit diagram for circuit iteration using transformer and LT3108"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+ Tests using spice simulation and the circuit with the BQ25504 resulted
+ in incredibly low performance.
+ Maximum voltage was 
+\begin_inset Formula $\leq\unit{\mu V}$
+\end_inset
+
+, and maximum current was 
+\begin_inset Formula $\leq\unit{nA}$
+\end_inset
+
+.
+ This did not reach the stated goal of 
+\begin_inset Formula $37\unit{\mu W}$
+\end_inset
+
+, and thus other designs were required.
+\end_layout
+
+\begin_layout Standard
+TI describes the BQ25504 as a 
+\series bold
+boost
+\series default
+ converter, which actually converted current to voltage to provide an output
+ voltage higher than input voltages, with input voltages down to 
+\begin_inset Formula $0.2\unit{V}$
+\end_inset
+
+.
+ After inspection, it was seen that the PZT actually supplies high voltage
+ and low current, with some voltages oscilating from 
+\begin_inset Formula $10s$
+\end_inset
+
+ of amperes positive and negative.
+ Thus, a step-down converter was actually needed.
+ A voltage regulator that fit this requirement was chosen from Linear Technologi
+es.
+ The LT1587 is built for supplying high current regulated voltage with low
+ dropout and at high frequency 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LinearTechnologies"
+
+\end_inset
+
+.
+ This is perfect for the piezoelectric application.
+ The design for this system is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Circuit diagram for circuit iteration using LRC oscilating circuit and LT1587-3.3"
+
+\end_inset
+
+, using either an LC or an RC circuit as indicated by the dashed lines through
+ the inductor and resistor.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename power_harvester_with_lt1585_lrc.svg
+	width 4.3in
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuit diagram for circuit iteration using LRC oscilating circuit and LT1587-3.3
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Circuit diagram for circuit iteration using LRC oscilating circuit and LT1587-3.3"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To analyze the circuit described in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Voltage at power out terminal versus time versus frequency"
+
+\end_inset
+
+, first a small frequency sweep was performed to ensure that the system
+ oscillated at the design frequency.
+ The sweep was performed in the region around 
+\begin_inset Formula $500\unit{kHz}$
+\end_inset
+
+ to 
+\begin_inset Formula $2\unit{MHz}$
+\end_inset
+
+, and the voltage and current results are shown in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Voltage at power out terminal versus time versus frequency"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Current at power out terminal versus time versus frequency"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "volt3d.pgf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Voltage at power out terminal versus time versus frequency
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Voltage at power out terminal versus time versus frequency"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "curr3d.pgf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Current at power out terminal versus time versus frequency
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Current at power out terminal versus time versus frequency"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+ It can be seen that the maximum current and voltage output does occur at
+ around 
+\begin_inset Formula $1.6\unit{MHz}$
+\end_inset
+
+.
+ With this verification, the performance of the circuit could then be evaluated.
+\end_layout
+
+\begin_layout Standard
+A transient analysis of the circuit was then constructed.
+ The transient analysis was performed with an LC and an RC circuit, but
+ as shown previously in the analysis, it is obvious that the RC circuit
+ will perform 
+\begin_inset Formula $\nicefrac{1}{2}$
+\end_inset
+
+ as well due to the filtering effect.
+ The analysis was performed for 
+\begin_inset Formula $4\unit{\mu s}$
+\end_inset
+
+, during which time steady state was reached.
+ Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Voltage at power out terminal versus time"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Current at power out terminal versus time"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Power at power out terminal versus time"
+
+\end_inset
+
+ show the response of the circuit over that time period from initial conditions
+ of 
+\begin_inset Formula $V_{out}=0\unit{V}$
+\end_inset
+
+ and 
+\begin_inset Formula $I_{out}=0\unit{A}$
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "volt.pgf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Voltage at power out terminal versus time
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Voltage at power out terminal versus time"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "curr.pgf"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Current at power out terminal versus time
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Current at power out terminal versus time"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "power.pgf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Power at power out terminal versus time
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Power at power out terminal versus time"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+ The results are quite encouraging, with the power output coming to 
+\begin_inset Formula $125\unit{\mu W}$
+\end_inset
+
+ steady state, delivered at 
+\begin_inset Formula $3.6\unit{V}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+Discussion
+\end_layout
+
+\begin_layout Standard
+The final iteration of the design proposed includes only the design part
+ of the stated goals.
+ The comparison to other technologies ended up being beyond the scope of
+ this writeup.
+ The goals stated for the energy harvester are reproduced below
+\end_layout
+
+\begin_layout Itemize
+Develop an active piezoelectric power system to take measurements and transmit
+ them via ultra wideband radio, as in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Botteron2016"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Match or increase requirement for 
+\begin_inset Formula $12.6\,\mu\mathrm{W}$
+\end_inset
+
+ for one readout every 
+\begin_inset Formula $34\unit{s}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Decrease size because of removed requirement of solar cell and cantileiver
+ type piezeoelectric harvester (less than 
+\begin_inset Formula $85\times25\unit{mm^{2}}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Determine if same structure can be used to take readout of separate piezoelectri
+c vibration sensor
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+The three goals stated were met and exceeded by the design.
+ The power output from the goal to the final design was increased tenfold,
+ from 
+\begin_inset Formula $12.6\unit{\mu W}$
+\end_inset
+
+ to 
+\begin_inset Formula $125\unit{\mu W}$
+\end_inset
+
+, while the size of the circuit was decreased.
+ The final size of the circuit is 
+\begin_inset Formula $25\unit{mm}\times12\unit{mm}$
+\end_inset
+
+ as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pcb-design"
+
+\end_inset
+
+, but the piezoelectric itself has a surface area of only 
+\begin_inset Formula $6.6\unit{mm^{2}}$
+\end_inset
+
+.
+\begin_inset Float marginfigure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="1">
+<features tabularvalignment="middle">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename power_harvester_final/pcb_front.svg
+	lyxscale 2
+	scale 125
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PCB Front
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename power_harvester_final/pcb_back.svg
+	lyxscale 2
+	scale 125
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PCB Back
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PCB Design exported after generating netlist and schematic
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pcb-design"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Most of the size comes in the electrical connection and the voltage regulator.
+ The design requires only a 
+\begin_inset Formula $40\unit{dB}$
+\end_inset
+
+ input sound, at 
+\begin_inset Formula $1.6\unit{MHz}$
+\end_inset
+
+, which could is inaudible and could be present in most spaces without undue
+ health hazards to occupants.
+ The rise time of the circuit is 
+\begin_inset Formula $\ll4\unit{\mu s}$
+\end_inset
+
+, and the output voltage is 
+\begin_inset Formula $3.6\unit{V}$
+\end_inset
+
+, which makes it a drop in replacement for a single cell LiPo battery.
+\end_layout
+
+\begin_layout Section*
+The Future
+\end_layout
+
+\begin_layout Standard
+There are many recommendations for extension on the current design.
+ The first recommendation would be to use electronic design software to
+ create a printed circuit board for one of these transducers and test the
+ performance of a real system.
+ This would inform to other structural resonances and electrical characteristics
+ (such as line resistance or impedance) that may be important.
+ Also, full optimization of the PZT material used (perhaps polyvinylidene
+ difluoride) could provide better results due to higher voltages.
+ Along with different PZT materials could be different frequency regimes.
+ For WiFi amplifiers, instead of radio, frequencies in the 
+\begin_inset Formula $\unit{GHz}$
+\end_inset
+
+ range could be easily amplified and supplied into a system.
+ If the system were designed at these higher freqencies, it may be more
+ about to generate higher power, but requires full design from the PZT size
+ and shape.
+ Finally, the integrated circuit step down converter should be optimized,
+ as the efficiency of conversion from high voltage into current was not
+ a focus when choosing the voltage regulator, and may not be optimal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/home/ahagen/bibs/nucl_563"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

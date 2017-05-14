@@ -1,0 +1,1911 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass tufte-handout
+\begin_preamble
+\providecommand{\unit}[1]{\ensuremath{\;\mathrm{#1}}}
+\usepackage{gensymb}
+\newcommand{\Angstrom}{\textup{\AA}}
+\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+\usepackage{tikz}
+\end_preamble
+\options nobib
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 563 Homework 8 - Selected Problems on Fusion and Piezoelectrics
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+April 13th, 2017
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+the
+\backslash
+columnwidth
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+the
+\backslash
+marginparwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1) Derive the power leaving a fusion reactor in the form of chraged particles
+ as 
+\begin_inset Formula 
+\[
+P_{ch}=P_{f}\left(\frac{1}{Q}+\Psi_{R}\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $P_{F}$
+\end_inset
+
+ is the thermal fusion power (
+\begin_inset Formula $\unit{W}$
+\end_inset
+
+), 
+\begin_inset Formula $Q$
+\end_inset
+
+ is the power gain ratio, 
+\begin_inset Formula $\nicefrac{P_{F}}{P_{I}}$
+\end_inset
+
+, and 
+\begin_inset Formula $\Psi_{R}$
+\end_inset
+
+ is the radiation power parameter.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a) Evaluate 
+\begin_inset Formula $\Psi_{R}$
+\end_inset
+
+ for DT reactor and for a catalyzed DD reactor.
+\end_layout
+
+\begin_layout Standard
+Following Dolan, we must solve 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 82"
+key "Dolan1982"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Psi_{R}=\frac{f_{c}W_{f}-W_{rad}}{W_{f}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With DT, we have:
+\begin_inset Formula 
+\[
+D+T\rightarrow^{4}He\left(3.54\unit{MeV}\right)+n\left(14.05\unit{MeV}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus, 
+\begin_inset Formula $W_{f}=3.54\unit{MeV}+14.05\unit{MeV}=17.59\unit{MeV}$
+\end_inset
+
+, 
+\begin_inset Formula $f_{c}=\frac{3.54\unit{MeV}}{17.59\unit{MeV}}=0.201$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+With catalyzed DD, we have
+\begin_inset Formula 
+\begin{align*}
+D+D & \rightarrow^{3}He\left(0.82\unit{MeV}\right)+n\left(2.45\unit{MeV}\right)\\
+D+D & \rightarrow^{3}H\left(1.01\unit{MeV}\right)+p\left(3.02\unit{MeV}\right)\\
+D+^{3}He & \rightarrow^{4}He\left(3.66\unit{MeV}\right)+p\left(14.60\unit{MeV}\right)\\
+D+T & \rightarrow^{4}He\left(3.54\unit{MeV}\right)+n\left(14.05\unit{MeV}\right)
+\end{align*}
+
+\end_inset
+
+Thus, 
+\begin_inset Formula $W_{f}=43.19\unit{MeV}$
+\end_inset
+
+, and 
+\begin_inset Formula $f_{c}=\frac{26.69\unit{MeV}}{43.19\unit{MeV}}=0.618$
+\end_inset
+
+.
+ This is echoed in the book by Dolan: 
+\begin_inset Quotes eld
+\end_inset
+
+For a DT reactor 
+\begin_inset Formula $\Psi_{R}\leq0.2$
+\end_inset
+
+, and for a catalyzed DD reactor, 
+\begin_inset Formula $\Psi_{R}\leq0.62$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 770"
+key "Dolan1982"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Calculation of 
+\begin_inset Formula $W_{rad}$
+\end_inset
+
+, defined as 
+\begin_inset Quotes eld
+\end_inset
+
+energy leaving plasma as radiation
+\begin_inset Quotes erd
+\end_inset
+
+ is more intensive.
+ We can calculate the power lost by radiation, and assuming a continuous
+ system, we have
+\begin_inset Formula 
+\[
+W_{rad}=P_{rad}=\sum_{k}n_{e}n_{k}Q_{k}+K_{c}P_{c}
+\]
+
+\end_inset
+
+Not knowing any other parameters of the reactor, it is impossible to calculate
+ the impurity density, cyclotron parameters, or magnetic induction.
+ Thus, we can only give a maximum value for the radiation parameter, assuming
+ no losses to radiation, 
+\begin_inset Formula 
+\[
+W_{rad}=0
+\]
+
+\end_inset
+
+So, for DT, 
+\begin_inset Formula 
+\[
+\Psi_{R}\leq0.201
+\]
+
+\end_inset
+
+and for catalyzed DD, 
+\begin_inset Formula 
+\[
+\Psi_{R}\leq0.619
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b) If 
+\begin_inset Formula $Q\sim10$
+\end_inset
+
+, estimate charged particle power in reference to the total fusion power
+ in DT and the catalized DD reactors, respectively.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+If 
+\begin_inset Formula $Q\sim10$
+\end_inset
+
+, the charged particle power may be up to 
+\begin_inset Formula $30\unit{\%}$
+\end_inset
+
+ of the fusion power in a DT reactor and up to 
+\begin_inset Formula $70\unit{\%}$
+\end_inset
+
+ in a cataliyzed DD reactor.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 770"
+key "Dolan1982"
+
+\end_inset
+
+ - Calculate using 
+\begin_inset Formula $P_{ch}$
+\end_inset
+
+.
+ So we have 
+\begin_inset Formula $\Psi_{R}$
+\end_inset
+
+, 
+\begin_inset Formula $Q$
+\end_inset
+
+, so
+\begin_inset Formula 
+\[
+\frac{P_{ch}}{P_{f}}=\frac{1}{Q}+\Psi_{R}
+\]
+
+\end_inset
+
+and using the above values, we have, for DT,
+\begin_inset Formula 
+\[
+\frac{P_{ch}}{P_{f}}\leq0.301
+\]
+
+\end_inset
+
+and for catalyzed DD, 
+\begin_inset Formula 
+\[
+\frac{P_{ch}}{P_{f}}\leq0.719
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c) Discuss the engineering considerations of the charged particle power
+ flows for a mirror machine and for a toroidal reactor.
+\end_layout
+
+\begin_layout Description
+Mirror
+\begin_inset space ~
+\end_inset
+
+machine In a mirror machine, the baseball or yin-yang shape work best for
+ 
+\begin_inset Quotes eld
+\end_inset
+
+squeezing
+\begin_inset Quotes erd
+\end_inset
+
+ the plasma, however plasma must be continously replenished to continue
+ confinement to generate power.
+ Extraction is 
+\begin_inset Quotes eld
+\end_inset
+
+simple
+\begin_inset Quotes erd
+\end_inset
+
+ with fan-type expanders to create a periodic-focused collector.
+ The size of this is enormous though.
+\end_layout
+
+\begin_layout Description
+Toroidal
+\begin_inset space ~
+\end_inset
+
+reactor In a torroidal machine, we have to make as symmetric of a magnetic
+ field as possible, which requires a large number of coils.
+ Currently ITER is struggling with 
+\begin_inset Formula $18$
+\end_inset
+
+ coils, and the immense power needed.
+ The particle flows will also cause first wall problems, because of the
+ very high neutron flux.
+ Extraction of the charged particle power is more difficult in the toroidal
+ reactor, and are done by divertor ports at the bottom of each elongated
+ cross section, and then diverted to collectors.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2) An idealized fan expander for a mirror reactor is illustrated below.
+ The objective of the expander is to convert te rotations energy (
+\begin_inset Formula $W_{\perp}$
+\end_inset
+
+) to the parallel energy (
+\begin_inset Formula $W_{\parallel}$
+\end_inset
+
+) relative to the 
+\begin_inset Formula $\vec{B}$
+\end_inset
+
+ lines.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a) Derive the expander radius (
+\begin_inset Formula $r_{2}$
+\end_inset
+
+) and the exit beam height (
+\begin_inset Formula $h_{2}$
+\end_inset
+
+) as following: 
+\begin_inset Formula 
+\[
+r_{2}=\frac{R_{E}A_{1}}{h_{2}\theta}
+\]
+
+\end_inset
+
+, where the field ratio 
+\begin_inset Formula $R_{E}\equiv\frac{B_{1}}{B_{2}}$
+\end_inset
+
+, and 
+\begin_inset Formula 
+\[
+h_{2}=\left[\frac{2\varepsilon_{0}\left\langle W_{i}\right\rangle }{n_{2}q^{2}}\right]^{\nicefrac{1}{2}}=\left[\frac{a\sqrt{\xi}}{P_{2}\left(1-\xi\right)}\left\langle W_{i}\right\rangle ^{\nicefrac{5}{2}}\right]^{\nicefrac{1}{2}}
+\]
+
+\end_inset
+
+, where 
+\begin_inset Formula $a=\frac{4\varepsilon_{0}A_{1}\theta}{q^{2}}\left(\frac{1}{2M}\right)^{\nicefrac{1}{2}}$
+\end_inset
+
+ (
+\begin_inset Formula $A_{1}$
+\end_inset
+
+ = escape area, 
+\begin_inset Formula $n_{2}$
+\end_inset
+
+ = beam density, 
+\begin_inset Formula $\xi=\nicefrac{W_{\parallel2}}{W_{i}}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula 
+\[
+\xi\equiv\frac{W_{\parallel2}}{W_{i}}=1-\frac{W_{\perp2}}{W_{i}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+W_{\parallel}+W_{\perp}=W_{i}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+R_{E}\equiv\frac{B_{1}}{B_{2}}=\frac{A_{2}}{A_{1}}=\frac{\alpha}{1-\xi}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\alpha\equiv\frac{W_{\perp1}}{W_{i}}
+\]
+
+\end_inset
+
+For mirror, 
+\begin_inset Formula $\alpha\sim1$
+\end_inset
+
+.
+ 
+\begin_inset Formula $T_{e}\sim(\nicefrac{1}{5}$
+\end_inset
+
+ to 
+\begin_inset Formula $\nicefrac{1}{10}$
+\end_inset
+
+)
+\begin_inset Formula $T_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For tokomak, 
+\begin_inset Formula $T_{e}\sim T_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then, 
+\begin_inset Formula 
+\[
+r_{2}=\frac{R_{E}A_{1}}{h_{2}\theta}
+\]
+
+\end_inset
+
+use 
+\begin_inset Formula $\theta\sim\frac{3\pi}{2}$
+\end_inset
+
+ in some designs.
+ Combining, we have 
+\begin_inset Formula 
+\[
+h_{1}=\left[\frac{a\sqrt{\xi}}{P_{2}\left(1-\xi\right)}\left\langle W_{i}\right\rangle ^{\nicefrac{5}{2}}\right]^{\nicefrac{1}{2}}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\[
+a\equiv\frac{4\epsilon_{0}A_{1}\theta}{q^{2}}\left(\frac{1}{2M}\right)^{\nicefrac{1}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b) Consider a typical mirror reactor where 
+\begin_inset Formula $\left\langle W_{i}\right\rangle =600\unit{keV}$
+\end_inset
+
+, 
+\begin_inset Formula $\theta=\frac{3\pi}{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $\xi=0.99$
+\end_inset
+
+.
+ Based on these equations with 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $h_{2}$
+\end_inset
+
+, plot 
+\begin_inset Formula $h_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ as a function of the beam power for values of the escape area 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+ from 
+\begin_inset Formula $1$
+\end_inset
+
+ to 
+\begin_inset Formula $5\unit{m^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:graph1"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "expander_size.pgf"
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exit Height and Exit Radius with differing beam power and escape area
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:graph1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c) Repeat the plot for the beam energy 
+\begin_inset Formula $W_{i}$
+\end_inset
+
+ by fixing 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+ being 
+\begin_inset Formula $2\unit{m^{2}}$
+\end_inset
+
+ but with 
+\begin_inset Formula $p_{2}=100\unit{MW}$
+\end_inset
+
+ and 
+\begin_inset Formula $500\unit{MW}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:graph2"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "expander_size_with_ions.pgf"
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exit Height and Exit Radius with differing ion energy and beam power
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:graph2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3) A divertor is a device which bends the outer magnetic field lines from
+ the plasma and leads them to a separate external chamber, thus collecting
+ charged particles for direct conversion or impurity control.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a) For tokomak divertors, illustrate and explain 1) torroidal, 2) poloidal,
+ and 3) bundle divertors for their functioning.
+\end_layout
+
+\begin_layout Description
+Torroidal Toroidal divertors would destroy the axial-symmetry of tokamaks,
+ and they are also too large to be used in tokamaks.
+\end_layout
+
+\begin_layout Description
+Poloidal Poloidal are more commonly used in tokamak divertors, which create
+ a separatrix (the surface between different magnetic field topologies)
+ that scrape off plasma into some amount of outer divertor targets.
+ If the plasma can be cooled enough, the problem of sputtering on the wall
+ is significantly reduced.
+\end_layout
+
+\begin_layout Description
+Bundle Bundle divertors 
+\begin_inset Quotes eld
+\end_inset
+
+scrape off
+\begin_inset Quotes erd
+\end_inset
+
+ the combination of torroidal and poloidal magnetic flux.
+ This is done by having a completely surrounding separatrix with current
+ loops surround them.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename divertors.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Divertor Geometries 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dolan1982"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b) A divertor target region is to be kept at 
+\begin_inset Formula $p=0.2\unit{Pa}$
+\end_inset
+
+, and its walls are at 
+\begin_inset Formula $700\unit{K}$
+\end_inset
+
+.
+ Two thirds of the transported energy is carried by ions, and the average
+ energy per ion is to be 
+\begin_inset Formula $60\unit{eV}$
+\end_inset
+
+.
+ The divertor target area is 
+\begin_inset Formula $130\unit{m^{2}}$
+\end_inset
+
+, and 
+\begin_inset Formula $300\unit{MW}$
+\end_inset
+
+ of heat flow into the divertor.
+ Estimate the required vacuum pumping speed and cryopanel area.
+\end_layout
+
+\begin_layout Standard
+We have the required ion flow rate calculated by 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Following example problem 25B2
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dolan1982"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\dot{N}_{i}=\frac{P_{i}}{\left\langle W_{i}\right\rangle }
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $P_{i}=\frac{2}{3}\left(300\times10^{6}\unit{W}\right)=2.00\times10^{8}\unit{\nicefrac{J}{s}}$
+\end_inset
+
+, and 
+\begin_inset Formula $\left\langle W_{i}\right\rangle =\left(60\unit{\nicefrac{eV}{ion}}\right)\left(1.6\times10^{-19}\unit{\nicefrac{J}{eV}}\right)=9.6\times10^{-18}\unit{\nicefrac{J}{ion}}$
+\end_inset
+
+, thus
+\begin_inset Formula 
+\[
+\dot{N}_{i}=\frac{2.00\times10^{8}\unit{\nicefrac{J}{s}}}{9.6\times10^{-18}\unit{\nicefrac{J}{ion}}}=2.08\times10^{25}\unit{\nicefrac{ions}{s}}
+\]
+
+\end_inset
+
+And then, we can calculate the charge using the ion flow rate, and the plasma
+ temperature with
+\begin_inset Formula 
+\[
+Q=\dot{N}kT
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $T=700\unit{K}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Q=\left(2.08\times10^{25}\unit{\nicefrac{ions}{s}}\right)\left(8.6\times10^{-5}\unit{\nicefrac{eV}{ion\cdot K}}\right)\left(700\unit{K}\right)=1.25\times10^{24}\unit{\nicefrac{eV}{s}}=2.0\times10^{5}\unit{\nicefrac{J}{s}}
+\]
+
+\end_inset
+
+and continuing on, we can calculate the pumping rate required
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{t}=\frac{Q}{p}=\frac{2.0\times10^{5}\unit{\nicefrac{J}{s}}}{0.2\unit{Pa}}=1\times10^{6}\unit{\nicefrac{m^{3}}{s}}
+\]
+
+\end_inset
+
+and finally, using the following to calculate the cryopanel area 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 585"
+key "Dolan1982"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+S_{t}=89A\left(\frac{T}{300}\right)^{\nicefrac{1}{2}}\left[\unit{\frac{m^{3}}{s}}\right]
+\]
+
+\end_inset
+
+we can, by rearrangement, use
+\begin_inset Formula 
+\[
+A=\frac{S_{t}}{89\sqrt{\frac{T}{300}}}=\frac{\left(1\times10^{6}\right)}{89\sqrt{\frac{700}{300}}}=7392\unit{m^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4) For each of the materials listed in Table 9-3, calculate the generator
+ voltage for an applied stress of 
+\begin_inset Formula $7500\unit{psi}$
+\end_inset
+
+ on an element 
+\begin_inset Formula $0.05\unit{in.}$
+\end_inset
+
+ thick, 
+\begin_inset Formula $0.5\unit{in.}$
+\end_inset
+
+ in diameter.
+ Calculate the open circuit load voltage for these materials, with a load
+ capacity of 
+\begin_inset Formula $3000\unit{pF}$
+\end_inset
+
+ and a generator capacity of 
+\begin_inset Formula $500\unit{pF}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Constant
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Ceramic 
+\begin_inset Quotes eld
+\end_inset
+
+B
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+PZT-4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+PZT-5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k_{33}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.48$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.70$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.71$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d_{33}$
+\end_inset
+
+ (
+\begin_inset Formula $\unit{\nicefrac{C}{N}}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $149\times10^{-12}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $285\times10^{-12}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $374\times10^{-12}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g_{33}$
+\end_inset
+
+ (
+\begin_inset Formula $\unit{\nicefrac{V\cdot m}{N}}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $14.0\times10^{-3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $24.9\times10^{-3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $24.8\times10^{-3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y_{33}$
+\end_inset
+
+ (
+\begin_inset Formula $\unit{\nicefrac{N}{m^{2}}}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $11.1\times10^{10}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6.6\times10^{10}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5.3\times10^{10}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathscr{K}_{33}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1200$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1300$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1700$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $V$
+\end_inset
+
+ (
+\begin_inset Formula $\unit{V}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $919.40$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1635.23$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1628.66$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $V_{0}$
+\end_inset
+
+ (
+\begin_inset Formula $\unit{V}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $131.34$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $233.60$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $232.66$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $W_{in}$
+\end_inset
+
+ (
+\begin_inset Formula $\unit{J}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.94\times10^{-3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.27\times10^{-3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4.07\times10^{-3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{in}$
+\end_inset
+
+ (
+\begin_inset Formula $\unit{W}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.71\times10^{-2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6.24\times10^{-2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $7.77\times10^{-2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $W_{out}$
+\end_inset
+
+ (
+\begin_inset Formula $\unit{J}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $9.57\times10^{-4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.50\times10^{-4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6.03\times10^{-4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{out}$
+\end_inset
+
+ (
+\begin_inset Formula $\unit{W}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.83\times10^{-2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6.69\times10^{-2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $21.5\times10^{-2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Properties and calculation results for Piezoelectric Ceramics 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Properties-and-calculation"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Angrist1982"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Given the stress, 
+\begin_inset Formula $s=7500\unit{psi}$
+\end_inset
+
+, thickness, 
+\begin_inset Formula $l=0.05\unit{in.}$
+\end_inset
+
+, and 
+\begin_inset Formula $g_{33}$
+\end_inset
+
+ from the table, we can calculate the voltage
+\begin_inset Formula 
+\[
+V=g_{33}ls
+\]
+
+\end_inset
+
+Following the calcualtion of that voltage, and given load capacity, 
+\begin_inset Formula $\mathscr{C}_{0}=3000\unit{pF}$
+\end_inset
+
+, and generator capacity, 
+\begin_inset Formula $\mathscr{C}=500\unit{pF}$
+\end_inset
+
+, we can calculate the open circuit loads with
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{0}=\frac{V\mathscr{C}}{\mathscr{C}_{0}+\mathscr{C}}
+\]
+
+\end_inset
+
+The results are given in the table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Properties-and-calculation"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5) For each generator analyzed in Problem 9-17, calculate the power output
+ and current if the generators can be loaded at a rate of 
+\begin_inset Formula $120\unit{\nicefrac{cycles}{s}}$
+\end_inset
+
+.
+ What is the power input to these generators?
+\end_layout
+
+\begin_layout Standard
+Calculating the area of the generator by its diameter with 
+\begin_inset Formula $A=\pi\left(0.25\unit{in.}\right)^{2}=1.27\times10^{-4}\unit{m^{2}}$
+\end_inset
+
+, we can determine the force with
+\begin_inset Formula 
+\[
+F=sA
+\]
+
+\end_inset
+
+which can be used to calculate the input energy with
+\begin_inset Formula 
+\[
+W_{in}=\frac{1}{2}\frac{F^{2}l}{YA}
+\]
+
+\end_inset
+
+which provides the input energy in Joules.
+ Then, knowing the charging rate, 
+\begin_inset Formula $f=\frac{120\unit{\nicefrac{cycles}{s}}}{2\pi}$
+\end_inset
+
+, the power input can be calcualted with 
+\begin_inset Formula 
+\[
+P_{in}=W_{in}\cdot f
+\]
+
+\end_inset
+
+Finally, we can calculate the charge in the capacitor for each charge with
+\begin_inset Formula 
+\[
+Q=d_{33}F
+\]
+
+\end_inset
+
+and thus find the output energy with 
+\begin_inset Formula 
+\[
+W_{out}=\frac{1}{2}\frac{Q^{2}}{\mathscr{C}}
+\]
+
+\end_inset
+
+and again convert to power with
+\begin_inset Formula 
+\[
+P_{out}=W_{out}\cdot f
+\]
+
+\end_inset
+
+The results of this calculation are again in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Properties-and-calculation"
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This is slightly off of the book answer of 
+\begin_inset Formula $0.078\unit{W}$
+\end_inset
+
+ for output power of a PZT-4 generator, and also differs from a calculation
+ using 
+\begin_inset Formula $W_{out}=k_{33}^{2}W_{in}$
+\end_inset
+
+, so there is some discrepancy in the calculation.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../../bibs/nucl_563"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

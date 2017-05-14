@@ -1,0 +1,13 @@
+* Current Limiter Device.
+* I = Current limit.
+* V = Optional forward voltage drop.
+* R = Optional series resistance (note: R=0 may leed to divergence).
+* Use as: X<n> <node> <node> ilim I=<num> R=<num> V=<num>
+* pasquale.cocchini@ieee.org - Feb 2 2016.
+
+.subckt ilim a b I=1 R=1 V=0
+Df a b IfLimDiode
+Db b a IfLimDiode
+.model IfLimDiode D(ron={R},ilimit={I},vfwd={V})
+.ends ilim
+

@@ -1,0 +1,298 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass tufte-handout
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 563 Homework 1 - Summary of Angrist Chapter 1
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+January 19th, 2017
+\end_layout
+
+\begin_layout Standard
+Angrist starts his introduction with opinion about the future of our energy
+ policy.
+ Although dated, he opines that we need better energy education and consensus
+ on the goals of our energy policy.
+ He then describes our current energy reality (or 1980's energy reality),
+ with specific realities that he cautions against.
+ He then segues into discussion of our two current methods of power generation:
+ the use of fossil fuel steam cycles, and the use of potential energy of
+ water and conversion from that potential energy into kinetic energy and
+ finally into electrical energy.
+\end_layout
+
+\begin_layout Standard
+From there, a discussion of direct energy conversion's history follows.
+ He leads us through Davy's coal oxidation research, to Seebeck, Peltier,
+ Lenz, and Lord Kelvins research into the Seebeck and Peltier effects.
+ He also describes work on plasmas by Crookes and Langmuir.
+ He also discusses thermionic and thermoelectric effects and the pioneers
+ thereof by Becquerel, Bell, and Edison.
+ 
+\end_layout
+
+\begin_layout Standard
+Then, Angrist discusses our current large sources of energy and the scale
+ of their usage.
+ He dutifully describes the difference between 
+\emph on
+energy capital
+\emph default
+ and 
+\emph on
+energy income
+\emph default
+, an important distinction, especially when coupled with the fact that 
+\begin_inset Formula $94\%$
+\end_inset
+
+ of the 1980 world's energy needs were met with energy capital.
+ He highlights the main sources:
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Fossil
+\begin_inset space ~
+\end_inset
+
+fuels Angrist particularly points out our increasing dependence on OPEC
+ based imports of these sources, and the political implications of that
+ fact.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Nuclear
+\begin_inset space ~
+\end_inset
+
+fuels Angrist's book, written before Three Mile Island incident, and even
+ its latest edition written before Chernobyl, is very optimistic of the
+ use of fission power.
+ The nuclear climate has been tempered significantly since his description.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Hydropower The first of the power types that uses energy income is hydroelectric
+ power, which he describes as 
+\begin_inset Quotes eld
+\end_inset
+
+[having] no major research and development problems to be solved
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Solar
+\begin_inset space ~
+\end_inset
+
+energy The second of the power types to use energy income, Angrist's description
+ highlights some problems with solar power: for example that only 
+\begin_inset Formula $0.1\,\mathrm{\nicefrac{W}{cm^{2}}}$
+\end_inset
+
+ of power from the sun falls on the earth.
+ He does not describe the sustainability concerns related to solar cells,
+ but does list that photochemistry is a frontier area.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Other
+\begin_inset space ~
+\end_inset
+
+primary
+\begin_inset space ~
+\end_inset
+
+sources Angrist uses this type of power as a catch all, including technologies
+ such as heat pumps and tidal power.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Controlled
+\begin_inset space ~
+\end_inset
+
+fusion Finally, Angrist describes the 
+\begin_inset Quotes eld
+\end_inset
+
+last great hope
+\begin_inset Quotes erd
+\end_inset
+
+ for energy as fusion.
+ He even assumes that Fusion will take 
+\begin_inset Formula $50\,\mathrm{years}$
+\end_inset
+
+ or more to develop into Utility Integration phase, back in 1980.
+ He does describe the reason for the interest in fusion, though, as the
+ energy availability is up to 
+\begin_inset Formula $20\times10^{9}\,\mathrm{years}$
+\end_inset
+
+ of the earth's energy needs just from the deuterium in the ocean.
+\end_layout
+
+\begin_layout Standard
+Finally, Angrist makes a case for the use of direct energy conversion.
+ He goes through the increasing energy needs, highlighting the fact that
+ we will not be able to meet our energy needs for 2000 at our current price
+ per kilowatt hour.
+ He then describes the benefits of direct energy conversion for terrestrial
+ and space applications.
+ One of his more esoteric arguments is that 
+\begin_inset Quotes eld
+\end_inset
+
+when a process can occur directly rather than by passing through several
+ intermediate steps, it seems reasonable to assume that it may take place
+ more efficiently.
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Angrist1982"
+
+\end_inset
+
+ His other arguments are more well posed.
+ Particularly, he points out the localization of energy needs makes small,
+ modular type generation more elegant as a solution.
+ He also comes back to the overarching concepts: that direct energy conversion
+ usually generates energy from energy income to the earth, a more sustainable
+ solution, or that it converts waste heat or products from other energy
+ sources, thus augmenting the existing energy economy.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbox0=
+\backslash
+vbox{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../../bibs/nucl_563"
+options "plain"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

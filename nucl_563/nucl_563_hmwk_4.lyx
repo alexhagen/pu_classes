@@ -1,0 +1,1028 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass tufte-handout
+\begin_preamble
+\providecommand{\unit}[1]{\ensuremath{\;\mathrm{#1}}}
+\usepackage{gensymb}
+\newcommand{\Angstrom}{\textup{\AA}}
+\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+\usepackage{tikz}
+\end_preamble
+\options nobib
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 563 Homework 4 - Selected Exercises on Quantum Mechanics and Plasma
+ Physics
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+February 14th, 2017
+\end_layout
+
+\begin_layout Section*
+A.
+ Quantum Mechanics
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Angrist 3-2.
+ Veify that Eq.
+ 3-16
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Eq 3-16 from 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 76"
+key "Angrist1982"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T=\exp\left(\nicefrac{-2\pi i\varepsilon t}{h}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ is a solution of Eq.
+ 3-14
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Eq 3-14 from 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 76"
+key "Angrist1982"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{dT}{dt}=-\frac{2\pi i}{h}\varepsilon T
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Starting with 
+\begin_inset Formula 
+\[
+\frac{dT}{dt}=-\frac{2\pi i}{h}\varepsilon T
+\]
+
+\end_inset
+
+we can first separate the variables, giving
+\begin_inset Formula 
+\[
+\frac{dT}{T}=-\frac{2\pi}{h}\varepsilon dt
+\]
+
+\end_inset
+
+then, integrating, we have
+\begin_inset Formula 
+\begin{align*}
+\int\frac{1}{T}dT & =-\frac{2\pi}{h}\int\varepsilon dt\\
+\ln\left(T\right) & =-\frac{2\pi i\varepsilon t}{h}
+\end{align*}
+
+\end_inset
+
+which, when inverting the natural log, we get
+\begin_inset Formula 
+\begin{align*}
+\exp\left(\ln\left[T\right]\right) & =\exp\left(-\frac{2\pi i\varepsilon t}{h}\right)\\
+T & =\exp\left(-\frac{2\pi i\varepsilon t}{h}\right)
+\end{align*}
+
+\end_inset
+
+which is identical to equation 3-16.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Angrist 3-4.
+ With 
+\begin_inset Formula $T$
+\end_inset
+
+ measured in degrees Kelvin and 
+\begin_inset Formula $k$
+\end_inset
+
+ the Boltzmann constant, the translational kinetic energy of a ga molecule
+ is 
+\begin_inset Formula $\frac{3}{2}kT$
+\end_inset
+
+.
+ What is the corresponding de Broglie Wavelength of a hydrogen atom at 
+\begin_inset Formula $30\unit{\celsius}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+We first determine the kinetic energy of the hydrogen atom using Boltzmann's
+ relation
+\begin_inset Formula 
+\begin{align*}
+\left\langle E\right\rangle  & =\frac{3}{2}kT\\
+ & =\frac{3}{2}\left(8.61733\times10^{-5}\unit{\frac{eV}{K}}\right)\left(273.15+30\unit{K}\right)\\
+ & =0.0391\unit{eV}
+\end{align*}
+
+\end_inset
+
+and, then we can determine the wavelength using Planck's constant relation
+ for the DeBroglie Wavelength 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 73"
+key "Angrist1982"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda=\frac{h}{p^{'}}
+\]
+
+\end_inset
+
+where
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The energy 
+\begin_inset Formula $\left\langle E\right\rangle =0.0391\unit{eV}$
+\end_inset
+
+ is significantly less than the rest mass of the hydrogen atom, so we can
+ assume non-relativistic.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+p' & =\sqrt{2mE}\\
+ & =\sqrt{2\left(938.27\times10^{6}\unit{\frac{eV}{c^{2}}}\right)\left(0.0391\unit{eV}\right)}\\
+ & =8565.78\unit{\frac{eV}{c}}
+\end{align*}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+\lambda & =\frac{h}{p^{'}}\\
+ & =\frac{\left(4.135668\times10^{-15}\unit{\frac{\cancel{eV}}{\cancel{s}}}\right)}{\frac{\left(8565.78\unit{\frac{\cancel{eV}}{\cancel{c}}}\right)}{\left(2.998\times10^{10}\unit{\frac{\cancel{c}}{\nicefrac{cm}{\cancel{s}}}}\right)}}\\
+ & =1.447\times10^{-8}\unit{cm}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Problem 3.
+ Solve the Schrodinger equation for the following potential
+\begin_inset Formula 
+\[
+V\left(x\right)=\begin{cases}
+\infty & x<0\\
+-V_{0} & 0\leq x\leq a\\
+0 & x>a
+\end{cases}
+\]
+
+\end_inset
+
+Here 
+\begin_inset Formula $V_{0}$
+\end_inset
+
+ is positive and solutions are needed for energies 
+\begin_inset Formula $E>0$
+\end_inset
+
+.
+ Evaluate all undetermined coefficients in terms of a single common coefficient,
+ but do not attempt to normalize the wave function.
+ Assume particles are incident from 
+\begin_inset Formula $x=-\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We start with the Schrodinger equation {CITE KRANE}
+\begin_inset Formula 
+\[
+-\frac{\hbar^{2}}{2m}\frac{d^{2}\psi}{dx^{2}}+V\left(x\right)\psi\left(x\right)=E\psi\left(x\right)
+\]
+
+\end_inset
+
+and we have to apply this in three different regions.
+ Region I has an infinite barrier, Region II has a finite potential, and
+ Region III has no potential (e.g.
+ a free particle).
+ An illustration is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "mar:Illustration-of-theschordingerpotential"
+
+\end_inset
+
+.
+\begin_inset Float marginfigure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "schrodinger_half_infinite_well.pgf"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Illustration of the half-infitite schrodinger well potential
+\begin_inset CommandInset label
+LatexCommand label
+name "mar:Illustration-of-theschordingerpotential"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In region I, there is no probability of the particle occuring there, and
+ thus
+\begin_inset Formula 
+\[
+\psi=\begin{cases}
+0 & x<0\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In region II, there is a step potential, and the schrodinger equation is
+ 
+\begin_inset Formula 
+\begin{align*}
+\frac{d^{2}\psi_{2}}{dx^{2}} & =-\frac{2m\left(E+V_{0}\right)}{\hbar^{2}}\psi_{2}
+\end{align*}
+
+\end_inset
+
+Because we search for energies 
+\begin_inset Formula $E>0$
+\end_inset
+
+, and the potential is a negative 
+\begin_inset Formula $V_{0}$
+\end_inset
+
+, where 
+\begin_inset Formula $V_{0}$
+\end_inset
+
+ is positive, we must have 
+\begin_inset Formula $E>-V_{0}$
+\end_inset
+
+, which gives the case that the energy is greater than the potential, and
+ thus that the particle must be oscillatory.
+ The solution to the differential equation is
+\begin_inset Formula 
+\[
+\psi_{2}=Ae^{ik_{2}x}+Be^{-ik_{2}x}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula $k_{2}=\sqrt{\frac{2m\left(E+V_{0}\right)}{\hbar^{2}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In region III, the potential is 
+\begin_inset Formula $0$
+\end_inset
+
+, and so the schrodinger equation is similar to region I, but the 
+\begin_inset Formula $V_{0}$
+\end_inset
+
+ term cancels out, giving
+\begin_inset Formula 
+\[
+\frac{d^{2}\psi_{3}}{dx^{2}}=-\frac{2mE}{\hbar^{2}}\psi_{3}
+\]
+
+\end_inset
+
+which is the free particle system.
+ The solution to this differential equation is 
+\begin_inset Formula 
+\[
+\psi_{3}=Ce^{ik_{3}x}+De^{-ik_{3}x}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $k_{3}^{2}=\frac{2mE}{\hbar^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We have
+\begin_inset Formula 
+\[
+\psi=\begin{cases}
+0 & x<0\\
+Ae^{ik_{2}x}+Be^{-ik_{2}x} & 0<x<a\\
+Ce^{ik_{3}x}+De^{ik_{3}x} & x>a
+\end{cases}
+\]
+
+\end_inset
+
+and we must have continuity.
+ The first continuity relation is that 
+\begin_inset Formula $\psi_{2}$
+\end_inset
+
+ must be zero at 
+\begin_inset Formula $x=0$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+0 & =Ae^{ik_{2}0}+Be^{-ik_{2}0}\\
+0 & =A+B\\
+A & =-B
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second continuity relation is that 
+\begin_inset Formula $\psi_{2}$
+\end_inset
+
+ must be equal to 
+\begin_inset Formula $\psi_{3}$
+\end_inset
+
+ at 
+\begin_inset Formula $x=a$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Ae^{ik_{2}a}+Be^{-ik_{2}a}=Ce^{ik_{3}a}+De^{-ik_{3}a}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can also apply the boundary condition that the probability must be finite
+ everywhere, so 
+\begin_inset Formula 
+\[
+\psi_{3}\left(\infty\right)\neq\pm\infty
+\]
+
+\end_inset
+
+which negates the possibility of 
+\begin_inset Formula $C$
+\end_inset
+
+ being finite.
+ So,
+\begin_inset Formula 
+\[
+C=0
+\]
+
+\end_inset
+
+Finally, the derivatives must be contiuous across a finite barrier (i.e.
+ at 
+\begin_inset Formula $x=a$
+\end_inset
+
+, but not at 
+\begin_inset Formula $x=0$
+\end_inset
+
+).
+ Thus, we have
+\begin_inset Formula 
+\begin{align*}
+\frac{d\psi_{2}}{dx} & =\frac{d\psi_{3}}{dx}\\
+ik_{2}Ae^{ik_{2}a}-ik_{2}Be^{-ik_{2}a} & =-ik_{3}De^{ik_{3}a}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can substitute 
+\begin_inset Formula $B=-A$
+\end_inset
+
+ into the two equations and get
+\begin_inset Formula 
+\[
+Ae^{ik_{2}a}-Ae^{-ik_{2}a}=De^{-ik_{3}a}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+ik_{2}Ae^{ik_{2}a}+ik_{2}Ae^{-ik_{2}a}=-ik_{3}De^{-ik_{3}a}
+\]
+
+\end_inset
+
+Solving for 
+\begin_inset Formula $D$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+D=-\frac{k_{2}}{k_{3}}A\frac{\left(e^{ik_{2}a}+e^{-ik_{2}a}\right)}{e^{-ik_{3}a}}
+\]
+
+\end_inset
+
+and putting this in, we have
+\begin_inset Formula 
+\begin{align*}
+\psi_{3} & =-\frac{k_{2}}{k_{3}}A\frac{\left(e^{ik_{2}a}+e^{-ik_{2}a}\right)}{e^{-ik_{3}a}}e^{-ik_{3}x}\\
+ & =-A\frac{k_{2}}{k_{3}}\left(e^{ik_{2}a}+e^{-ik_{2}a}\right)e^{-ik_{3}\left(x-a\right)}
+\end{align*}
+
+\end_inset
+
+and finally
+\begin_inset Formula 
+\[
+\psi=\begin{cases}
+0 & x<0\\
+A\left(e^{ik_{2}x}-e^{-ik_{2}x}\right) & 0<x<a\\
+A\frac{k_{2}}{k_{3}}\left(e^{ik_{2}a}-e^{-ik_{2}a}\right)e^{-ik_{3}\left(x-a\right)} & x>a
+\end{cases}
+\]
+
+\end_inset
+
+and simplified with trigonometric identities, we get
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+note that the factor of two from 
+\begin_inset Formula $\sin\left(\xi\right)=\frac{e^{i\xi}-e^{-i\xi}}{2}$
+\end_inset
+
+ is now contained in the amplitude 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\psi=\begin{cases}
+0 & x<0\\
+A\sin\left(k_{2}x\right) & 0<x<a\\
+A\frac{k_{2}}{k_{3}}\sin\left(k_{2}a\right)e^{-ik_{3}\left(x-a\right)} & x>a
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+B.
+ Plasma phenomenon
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Problem 4.
+ Compute 
+\begin_inset Formula $\lambda_{d}$
+\end_inset
+
+ (Debye radius) and 
+\begin_inset Formula $N_{D}$
+\end_inset
+
+ for the following cases:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(a) a glow discharge, 
+\begin_inset Formula $N_{e}=10^{16}\unit{m^{-3}}$
+\end_inset
+
+, 
+\begin_inset Formula $k_{b}T_{e}=2\unit{eV}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\lambda_{d} & =\sqrt{\frac{kT}{4\pi ne^{2}}}\\
+ & =\sqrt{\frac{\left(2\unit{eV}\right)}{4\pi\left(10^{16}\unit{m^{-3}}\right)\left(1.6\times10^{-19}\unit{C}\right)^{2}}}\\
+ & =1.05\times10^{-2}\unit{cm}
+\end{align*}
+
+\end_inset
+
+Assuming 
+\begin_inset Formula $N_{D}$
+\end_inset
+
+ is the number of electrons in the 
+\begin_inset Formula $n\lambda_{D}^{3}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+N_{d} & =\frac{4}{3}\pi r^{3}N_{e}\\
+ & =\frac{4}{3}\pi\left(1.05\times10^{-2}\unit{cm}\right)^{3}\left(10^{10}\unit{cm^{-3}}\right)\\
+ & =15,435\unit{electrons}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(b) the Earth's ionosphere, 
+\begin_inset Formula $N_{e}=10^{12}\unit{m^{-3}}$
+\end_inset
+
+, 
+\begin_inset Formula $k_{b}T_{e}=0.1\unit{eV}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\lambda_{d} & =\sqrt{\frac{kT}{4\pi ne^{2}}}\\
+ & =\sqrt{\frac{\left(0.1\unit{eV}\right)}{4\pi\left(10^{12}\unit{m^{-3}}\right)\left(1.6\times10^{-19}\unit{C}\right)^{2}}}\\
+ & =0.235\unit{cm}
+\end{align*}
+
+\end_inset
+
+Assuming 
+\begin_inset Formula $N_{D}$
+\end_inset
+
+ is the number of electrons in the 
+\begin_inset Formula $n\lambda_{D}^{3}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+N_{d} & =\frac{4}{3}\pi r^{3}N_{e}\\
+ & =\frac{4}{3}\pi\left(0.235\unit{cm}\right)^{3}\left(10^{6}\unit{cm^{-3}}\right)\\
+ & =1,7303\unit{electrons}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(c) a fusion machine, 
+\begin_inset Formula $N_{e}=10^{23}\unit{m^{-3}}$
+\end_inset
+
+, 
+\begin_inset Formula $k_{b}T_{e}=9\unit{eV}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\lambda_{d} & =\sqrt{\frac{kT}{4\pi ne^{2}}}\\
+ & =\sqrt{\frac{\left(9\unit{eV}\right)}{4\pi\left(10^{23}\unit{m^{-3}}\right)\left(1.6\times10^{-19}\unit{C}\right)^{2}}}\\
+ & =7.05\times10^{-6}\unit{cm}
+\end{align*}
+
+\end_inset
+
+Assuming 
+\begin_inset Formula $N_{D}$
+\end_inset
+
+ is the number of electrons in the 
+\begin_inset Formula $n\lambda_{D}^{3}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+N_{d} & =\frac{4}{3}\pi r^{3}N_{e}\\
+ & =\frac{4}{3}\pi\left(7.05\times10^{-6}\unit{cm}\right)^{3}\left(10^{17}\unit{cm^{-3}}\right)\\
+ & =47\unit{electrons}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Problem 5.
+ Calculate the average velocity of nitrogen molecules at room temperature
+ assuming three degrees of freedom.
+\end_layout
+
+\begin_layout Standard
+We can determine the translational kinetic energy of the 
+\begin_inset Formula $\ce{N_{2}}$
+\end_inset
+
+ molecule at room temperature as
+\begin_inset Formula 
+\begin{align*}
+\left\langle E\right\rangle  & =\frac{3}{2}kT\\
+ & =\frac{3}{2}\left(8.61733\times10^{-5}\unit{\frac{eV}{K}}\right)\left(273.15+25\unit{K}\right)\\
+ & =0.0385\unit{eV}
+\end{align*}
+
+\end_inset
+
+and, from there, we can determine the velocity, knowing that 
+\begin_inset Formula 
+\[
+\left\langle E\right\rangle =\frac{1}{2}m\left\langle u\right\rangle ^{2}
+\]
+
+\end_inset
+
+ for non relativistic particles and with the rest mass of nitrogen gas as
+ 
+\begin_inset Formula $26\unit{\frac{GeV}{c^{2}}}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\left\langle u\right\rangle  & =\sqrt{\frac{2\left\langle E\right\rangle }{m}}\\
+ & =\sqrt{\frac{2\left(0.0385\unit{eV}\right)}{26\times10^{9}\unit{\frac{eV}{c^{2}}}}}\\
+ & =1.72\times10^{-6}\unit{c}
+\end{align*}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+\left\langle u\right\rangle  & =1.72\times10^{-6}\cancel{\unit{c}}\times\frac{2.998\times10^{10}\unit{\frac{cm}{s}}}{1\cancel{\unit{c}}}\\
+ & =5.1565\times10^{4}\unit{\frac{cm}{s}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Problem 6.
+ Angrist problems 3-15 and 3-16
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(3-15) Find the electrical resistivity for the material described in problem
+ 3-8(b)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The material in 3-8(b) is 
+\begin_inset Formula $\ce{InSb}$
+\end_inset
+
+ at 
+\begin_inset Formula $400\unit{K}$
+\end_inset
+
+ with 
+\begin_inset Formula $10^{17}\unit{cm^{-3}}$
+\end_inset
+
+ charge carrier density, with 
+\begin_inset Formula $m_{n}=m_{p}$
+\end_inset
+
+ and mobility of the electrons 
+\begin_inset Formula $40,000\unit{\frac{cm^{2}}{Vs}}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The resitivity is given as the reciprocal of the conductivity, or 
+\begin_inset Formula 
+\[
+\rho\equiv\frac{1}{\sigma}
+\]
+
+\end_inset
+
+where the conductivity is
+\begin_inset Formula 
+\[
+\sigma=ne\mu
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the charge carrier density, 
+\begin_inset Formula $e$
+\end_inset
+
+ is the electron charge, and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is the mobility of the electrons.
+\begin_inset Formula 
+\begin{align*}
+\rho & =\frac{1}{ne\mu}\\
+ & =\frac{1}{\left(10^{17}\unit{\frac{1}{cm^{3}}}\right)\left(1.6\times10^{-19}\unit{C}\right)\left(40,000\unit{\frac{cm^{2}}{Vs}}\right)}\\
+ & =0.001563\unit{\Omega\cdot cm}
+\end{align*}
+
+\end_inset
+
+Doubling this to account for the hole mobility as well, we get
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This matches exactly the value given by Angrist.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\rho=3.1\times10^{-3}\unit{\Omega\cdot cm}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(3-16) Find the electrical conductivity for the material given in Problem
+ 3-12 if it has a hole mobility of 
+\begin_inset Formula $60\unit{\frac{cm^{2}}{Vs}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The conductivity is given as 
+\begin_inset Formula 
+\[
+\sigma=ne\mu
+\]
+
+\end_inset
+
+ and with the charge carrier density as given earlier, the hole mobility
+ from the problem, and the electron charge, we get
+\begin_inset Formula 
+\begin{align*}
+\sigma & =\left(1.5\times10^{18}\right)\left(1.6\times10^{-19}\unit{C}\right)\left(60\unit{\frac{cm^{2}}{Vs}}\right)\\
+ & =14.4\unit{\frac{1}{\Omega\cdot cm}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../../bibs/nucl_563"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

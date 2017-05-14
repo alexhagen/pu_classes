@@ -1,0 +1,827 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass tufte-handout
+\begin_preamble
+\renewcommand{\unit}[1]{\ensuremath{\;\mathrm{#1}}}
+\usepackage{gensymb}
+\newcommand{\Angstrom}{\textup{\AA}}
+\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 563 Homework 3 - Selected Questions From Angrist, Ch 3.
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+February 2nd, 2017
+\end_layout
+
+\begin_layout Standard
+Selected Problems from Angrist, Ch 3.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Angrist1982"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3-5 With 
+\begin_inset Formula $T$
+\end_inset
+
+ measured in degrees Kelvin and 
+\begin_inset Formula $k$
+\end_inset
+
+ the Boltzmann constant, the translational kinetic energy of a gas molecule
+ is 
+\begin_inset Formula $\frac{3}{2}kT$
+\end_inset
+
+.
+ What is the corresponding de Broglie wavelength of a hydrogen atom at 
+\begin_inset Formula $30\unit{\celsius}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+First, we find the kinetic energy in units of 
+\begin_inset Formula $\unit{MeV}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\varepsilon & =\frac{3}{2}kT\\
+ & =\frac{3}{2}\left(8.61733\times10^{-11}\unit{\nicefrac{MeV}{K}}\right)\left(303.15\unit{K}\right)\\
+ & =3.92\times10^{-8}\unit{MeV}\\
+ & =3.92\times10^{-2}\unit{eV}
+\end{align*}
+
+\end_inset
+
+Then, we can use the wave particle duality to determine the wavelength.
+ The wave particle duality from de Broglie shows that the wavelength is
+ inversely proportional to the momentum of the particle,
+\begin_inset Formula 
+\[
+\lambda=\frac{h}{p}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $h$
+\end_inset
+
+ is Planck's constant.
+ To find the momentum of a hydrogen atom with kinetic energy 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, where the momentum is found by
+\begin_inset Formula 
+\[
+p=\sqrt{2\varepsilon m}
+\]
+
+\end_inset
+
+and the mass of a hydrogen atom is 
+\begin_inset Formula $938.89\unit{\nicefrac{MeV}{c^{2}}}$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+p & =\sqrt{2\left(3.92\times10^{-8}\unit{MeV}\right)\left(938.89\unit{\nicefrac{MeV}{c^{2}}}\right)}\\
+ & =2.71\unit{\nicefrac{MeV}{c}}
+\end{align*}
+
+\end_inset
+
+With that momentum, we can determine the wavelength
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\lambda & =\frac{4.14\times10^{-21}\unit{MeV\cdot s}}{2.71\unit{\nicefrac{MeV}{c}}}\\
+ & =1.53\times10^{-21}\cancel{\unit{c\cdot s}}\times\frac{3.00\times10^{8}\unit{\frac{m}{\cancel{s}}}}{1\cancel{\unit{c}}}\\
+ & =4.59\times10^{-13}\unit{m}\\
+ & =4.59\times10^{-3}\unit{\Angstrom}\footnotemark
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotetext{This seems a bit small, considering the classical radius of
+ a hydrogen atom is $0.5
+\backslash
+unit{
+\backslash
+Angstrom}$.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3-8 The number of charge carriers at 
+\begin_inset Formula $400\unit{K}$
+\end_inset
+
+ in an intrinsic specimen of indium antimonide (
+\begin_inset Formula $\ce{InSb}$
+\end_inset
+
+) is found to be 
+\begin_inset Formula $10^{17}\unit{cm^{-3}}$
+\end_inset
+
+.
+ The mobility of the electron is 
+\begin_inset Formula $40,000\unit{cm^{2}}$
+\end_inset
+
+ per volt-sec, while the holes have a mobility of 
+\begin_inset Formula $400\unit{cm^{2}}$
+\end_inset
+
+ per volt-sec.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(a) Find the forbidden energy gap.
+\end_layout
+
+\begin_layout Standard
+The energy gap, as shown in Angrist's diagram in Fig.
+ 3-10 on page 90, is the difference between 
+\begin_inset Formula $\varepsilon_{g}$
+\end_inset
+
+ and 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, which is set to zero.
+ Thus, the forbidden gap width is 
+\begin_inset Formula $\varepsilon_{g}$
+\end_inset
+
+.
+ We also know that for an intrinsic semiconductor, 
+\begin_inset Formula $\varepsilon_{f}=\frac{\varepsilon_{g}}{2}$
+\end_inset
+
+.
+ Then, we can determine the number of electrons in the conduction band,
+ and set that equal to the 
+\begin_inset Quotes eld
+\end_inset
+
+number of charge carriers
+\begin_inset Quotes erd
+\end_inset
+
+ given in the problem statement.
+\begin_inset Formula 
+\begin{align*}
+n & =\frac{2N_{c}}{\exp\left[\frac{\left(\varepsilon_{g}-\frac{\varepsilon_{g}}{2}\right)}{kT}\right]+1}\unit{cm^{3}}\\
+ & =\frac{2\mathscr{A}T^{\nicefrac{3}{2}}}{\exp\left[\frac{\left(\varepsilon_{g}-\frac{\varepsilon_{g}}{2}\right)}{kT}\right]+1}\unit{cm^{-3}}\\
+10^{17}\cancel{\unit{cm^{-3}}} & =\frac{2\mathscr{A}T^{\nicefrac{3}{2}}}{\exp\left[\frac{\left(\varepsilon_{g}-\frac{\varepsilon_{g}}{2}\right)}{kT}\right]+1}\cancel{\unit{cm^{-3}}}\\
+\exp\left[\frac{\left(\varepsilon_{g}-\frac{\varepsilon_{g}}{2}\right)}{kT}\right] & =\frac{2\mathscr{A}T^{\nicefrac{3}{2}}}{10^{17}}-1\\
+\frac{\varepsilon_{g}}{2} & =kT\cdot\ln\left[\frac{2\mathscr{A}T^{\nicefrac{3}{2}}}{10^{17}}-1\right]\\
+\varepsilon_{g} & =kT\cdot\ln\left[\frac{2\mathscr{A}T^{\nicefrac{3}{2}}}{10^{17}}-1\right]\\
+ & =\left(8.61733\times10^{-11}\unit{\nicefrac{MeV}{K}}\right)\left(400.00\unit{K}\right)\\
+ & \cdot\ln\left[\frac{2\left(2.35\times10^{15}\unit{cm^{-3}K^{-\nicefrac{3}{2}}}\right)\left(400.00\unit{K}\right)^{\nicefrac{3}{2}}}{10^{17}}-1\right]\\
+ & =2.04\times10^{-7}\unit{MeV}\\
+ & =0.204\unit{eV}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(b) Calculate the Fermi level energy, assuming 
+\begin_inset Formula $m_{n}=m_{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The Fermi level is then
+\begin_inset Formula 
+\[
+\varepsilon_{f}=\frac{\varepsilon_{g}}{2}=\frac{0.204\unit{eV}}{2}=0.102\unit{eV}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(c) If the effective mass of the holes is ten times the effective mass of
+ the electrons, find the Fermi level under these conditions.
+ [Assume that the energy gap remains at the same value you found in part
+ (a)].
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula $\varepsilon_{g}=0.204\unit{eV}$
+\end_inset
+
+, we can apply the ratio 
+\begin_inset Formula 
+\[
+\frac{N_{c}}{N_{v}}=10.00
+\]
+
+\end_inset
+
+and, by setting 
+\begin_inset Formula 
+\[
+n=p=2N_{c}\left[\frac{1}{\exp\left[\frac{\varepsilon_{g}-\varepsilon_{f}}{kT}\right]+1}\right]=2N_{v}\left[1-\frac{1}{\exp\left[\frac{-\varepsilon_{f}}{kT}\right]+1}\right]
+\]
+
+\end_inset
+
+and applying the ratio given above
+\begin_inset Formula 
+\[
+n=p=\cancel{2N_{c}}\left[\frac{1}{\exp\left[\frac{\varepsilon_{g}-\varepsilon_{f}}{kT}\right]+1}\right]=\cancel{2}\left(10.00\right)\cancel{N_{c}}\left[1-\frac{1}{\exp\left[\frac{-\varepsilon_{f}}{kT}\right]+1}\right]
+\]
+
+\end_inset
+
+and therefore, we get the equality
+\begin_inset Formula 
+\begin{align*}
+\frac{\frac{1}{10}}{\exp\left[\frac{\varepsilon_{g}-\varepsilon_{f}}{kT}\right]+1} & =1-\frac{1}{\exp\left[\frac{-\varepsilon_{f}}{kT}\right]+1}\\
+1 & =\frac{\frac{1}{10}}{\exp\left[\frac{\varepsilon_{g}-\varepsilon_{f}}{kT}\right]+1}+\frac{1}{\exp\left[\frac{-\varepsilon_{f}}{kT}\right]+1}\\
+\exp\left[\frac{\varepsilon_{g}-\varepsilon_{f}}{kT}\right]+1 & =\frac{1}{10}+\frac{\exp\left[\frac{\varepsilon_{g}-\varepsilon_{f}}{kT}\right]+1}{\exp\left[\frac{-\varepsilon_{f}}{kT}\right]+1}\\
+\frac{1}{10} & =\left(1-\frac{1}{\exp\left[\frac{-\varepsilon_{f}}{kT}\right]+1}\right)\left(\exp\left[\frac{\varepsilon_{g}-\varepsilon_{f}}{kT}\right]+1\right)\\
+\varepsilon_{g} & =\varepsilon_{f}+kT\ln\left[\frac{1}{10\left(1-\frac{1}{\exp\left[\frac{-\varepsilon_{f}}{kT}\right]+1}\right)}-1\right]
+\end{align*}
+
+\end_inset
+
+Solution of this for 
+\begin_inset Formula $\varepsilon_{g}$
+\end_inset
+
+ gives
+\begin_inset Formula 
+\[
+\varepsilon_{g}=0.031\unit{eV}
+\]
+
+\end_inset
+
+showing that it is much depressed when there is a higher effective mass
+ for holes.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3-12 A certain semiconductor has 
+\begin_inset Formula $1.5\times10^{18}$
+\end_inset
+
+ acceptors per 
+\begin_inset Formula $\unit{cm^{3}}$
+\end_inset
+
+.
+ The energy level of the acceptors is 
+\begin_inset Formula $0.3\unit{eV}$
+\end_inset
+
+ above the valence band.
+ Assume that the number of electrons in the conduction band is negligible.
+ Calculate the Fermi level and hole concentration at the temperature of
+ liquid nitrogen, 
+\begin_inset Formula $77\unit{K}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Assuming that the number of electrons in the conduction band is negligible,
+ we can use the approximation
+\begin_inset Formula 
+\[
+\varepsilon_{f}\approx kT\ln\left[\frac{N_{v}}{N_{a}}-\frac{1}{2}+\frac{1}{2}\sqrt{\left(1-\frac{2N_{v}}{N_{a}}\right)^{2}+\left(\frac{8N_{v}}{N_{a}}\right)\exp\left[\frac{\varepsilon_{a}}{kT}\right]}\right]
+\]
+
+\end_inset
+
+and we can calculate 
+\begin_inset Formula $N_{v}$
+\end_inset
+
+ with
+\begin_inset Formula 
+\begin{align*}
+N_{v} & =\mathscr{A}T^{\nicefrac{3}{2}}\\
+ & =\left(2.35\times10^{15}\unit{cm^{-3}K^{-\nicefrac{3}{2}}}\right)\left(77\right)^{\nicefrac{3}{2}}\\
+ & =1.59\times10^{18}\unit{cm^{-3}}
+\end{align*}
+
+\end_inset
+
+We can now solve the previous approximation, using 
+\begin_inset Formula 
+\[
+kT=\left(8.61733\times10^{-5}\unit{\nicefrac{eV}{K}}\right)\left(77\unit{K}\right)=6.6\times10^{-3}\unit{eV}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+r=\frac{N_{v}}{N_{a}}=\frac{1.59\times10^{18}\unit{cm^{-3}}}{1.5\times10^{18}\unit{cm^{-3}}}=1.06
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{multline*}
+\varepsilon_{f}\approx\left(6.6\times10^{-3}\unit{eV}\right)\cdot\ln\left[\left(1.06\right)-\frac{1}{2}+\frac{1}{2}\sqrt{\left(1-2\left(1.06\right)\right)^{2}}\right.\\
+\left.\overline{+8\left(1.06\right)\exp\left[\frac{0.3\unit{eV}}{6.6\times10^{-3}\unit{eV}}\right]}\right]=0.15\unit{eV}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3-13 An 
+\begin_inset Formula $n$
+\end_inset
+
+-type semiconductor has a donor concentration of 
+\begin_inset Formula $5\times10^{16}\unit{cm^{-3}}$
+\end_inset
+
+ at an energy level of 
+\begin_inset Formula $1.4\unit{eV}$
+\end_inset
+
+.
+ When the Fermi level is 
+\begin_inset Formula $4kT$
+\end_inset
+
+ below the donor energy level, find the number of conduction electrons.
+\end_layout
+
+\begin_layout Standard
+The number of conduction electrons is given by
+\begin_inset Formula 
+\[
+\frac{2N_{c}}{\exp\left[\frac{\varepsilon_{g}-\varepsilon_{f}}{kT}\right]+1}
+\]
+
+\end_inset
+
+and, given that 
+\begin_inset Formula $\varepsilon_{f}=\varepsilon_{g}-4kT$
+\end_inset
+
+, we can rewrite this
+\begin_inset Formula 
+\[
+\frac{2N_{c}}{\exp\left[4\right]+1}
+\]
+
+\end_inset
+
+which gives the ratio 
+\begin_inset Formula 
+\[
+0.036N_{c}
+\]
+
+\end_inset
+
+The number of conduction electrons is then the complement of this, because
+ we are using an 
+\begin_inset Formula $n$
+\end_inset
+
+-type semionductor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n_{ce^{-}}=\left(1-0.036\right)\left(5\times10^{16}\unit{cm^{-3}}\right)=4.82\times10^{16}\unit{cm^{-3}}\footnotemark
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotetext{
+\end_layout
+
+\end_inset
+
+Note that this differs from the given answer in the book, 
+\begin_inset Formula $4.91\times10^{16}\unit{cm^{-3}}$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3-20 Given an intrinsic semiconductor where the value of the term 
+\begin_inset Formula $\left(2\mathscr{A}T^{\nicefrac{3}{2}}\right)^{2}$
+\end_inset
+
+ in Eq.
+ 3-44
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Equation 3-44 from Angrist, p.
+ 99
+\begin_inset Formula 
+\begin{multline*}
+pn=n_{i}^{2}\approx\left(2\mathscr{A}T^{\nicefrac{3}{2}}\right)^{2}\exp\left[\nicefrac{-\varepsilon_{g}}{kT}\right]
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ is 
+\begin_inset Formula $10^{40}$
+\end_inset
+
+ at 
+\begin_inset Formula $300\unit{K}$
+\end_inset
+
+ and the material has an energy gap 
+\begin_inset Formula $1.0\unit{eV}$
+\end_inset
+
+ wide, calcualte the locations of the fermi level in electron volts for
+ 
+\begin_inset Formula $T=300\unit{K}$
+\end_inset
+
+ and 
+\begin_inset Formula $600\unit{K}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Using equation 3-44, we have
+\begin_inset Formula 
+\begin{align*}
+p & =\sqrt{\left(2\mathscr{A}T^{\nicefrac{3}{2}}\right)^{2}\exp\left[\nicefrac{-\varepsilon_{g}}{kT}\right]}\\
+ & =\sqrt{\left(10^{40}\right)\exp\left[-\frac{1.0\unit{eV}}{\left(8.61733\times10^{-5}\unit{\nicefrac{eV}{K}}\right)\left(300\unit{K}\right)}\right]}\\
+ & =3.98\times10^{11}\unit{cm^{-3}}
+\end{align*}
+
+\end_inset
+
+and then, using the definition
+\begin_inset Formula 
+\[
+p=2N_{v}\left[1-\frac{1}{\exp\left[-\frac{\varepsilon_{f}}{kT}\right]+1}\right]
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+N_{v}=\mathscr{A}T^{\nicefrac{3}{2}}=\frac{\sqrt{10^{40}}}{2}=5\times10^{19}\unit{cm^{-3}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+1-\frac{p}{2N_{v}} & =\frac{1}{\exp\left[-\frac{\varepsilon_{f}}{kT}\right]+1}\\
+\exp\left[-\frac{\varepsilon_{f}}{kT}\right] & =\frac{1}{1-\frac{p}{2N_{v}}}-1\\
+\varepsilon_{f} & =-kT\cdot\ln\left[\frac{1}{1-\frac{p}{2N_{v}}}-1\right]\\
+ & =-\left(8.61733\times10^{-5}\unit{\nicefrac{eV}{K}}\right)\left(300\unit{K}\right)\ln\left[\frac{1}{1-\frac{3.98\times10^{11}\unit{cm^{-3}}}{5\times10^{19}\unit{cm^{3}}}}-1\right]\\
+ & =0.482\unit{eV}
+\end{align*}
+
+\end_inset
+
+which is slightly below half (showing that this is 
+\begin_inset Formula $p$
+\end_inset
+
+-type) and at 
+\begin_inset Formula $600\unit{K}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\left(2\mathscr{A}T^{\nicefrac{3}{2}}\right)^{2}=10^{40}\times\frac{\left(600\unit{K}\right)^{\nicefrac{3}{2}}}{\left(300\unit{K}\right)^{\nicefrac{3}{2}}}=2.83\times10^{40}
+\]
+
+\end_inset
+
+and so 
+\begin_inset Formula 
+\begin{align*}
+p & =\sqrt{\left(2.83\times10^{40}\right)\exp\left[-\frac{1.0\unit{eV}}{\left(8.61733\times10^{-5}\unit{\nicefrac{eV}{K}}\right)\left(600\unit{K}\right)}\right]}\\
+ & =1.06\times10^{16}\unit{cm^{-3}}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+N_{v}=\frac{\sqrt{2.83\times10^{40}}}{2}=8.41\times10^{19}\unit{cm^{-3}}
+\]
+
+\end_inset
+
+and following our process as before
+\begin_inset Formula 
+\begin{align*}
+\varepsilon_{f} & =-\left(8.61733\times10^{-5}\unit{\nicefrac{eV}{K}}\right)\left(600\unit{K}\right)\ln\left[\frac{1}{1-\frac{1.06\times10^{16}\unit{cm^{-3}}}{8.41\times10^{19}\unit{cm^{3}}}}-1\right]\\
+ & =0.464\unit{eV}
+\end{align*}
+
+\end_inset
+
+which is even more 
+\begin_inset Formula $p$
+\end_inset
+
+-typed.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3-24 If the semiconductor described in Problem 3-23 has 
+\begin_inset Formula $10^{18}$
+\end_inset
+
+ acceptors per 
+\begin_inset Formula $cm^{3}$
+\end_inset
+
+, find the hole concentration.
+ Estimate the temperature of the semiconductor in 
+\begin_inset Formula $\unit{K}$
+\end_inset
+
+.
+ Assume that the material is not intrinsic.
+\end_layout
+
+\begin_layout Standard
+From 3-23, we know that 
+\begin_inset Formula $\varepsilon_{a}=\nicefrac{3}{4}\varepsilon_{f}$
+\end_inset
+
+ and 
+\begin_inset Formula $\varepsilon_{f}=4kT$
+\end_inset
+
+.
+ We desire to know
+\begin_inset Formula 
+\[
+p=2N_{v}\left[1-\frac{1}{\exp\left[-\nicefrac{\varepsilon_{f}}{kT}\right]+1}\right]
+\]
+
+\end_inset
+
+and we know that 
+\begin_inset Formula 
+\[
+\varepsilon_{f}=4kT
+\]
+
+\end_inset
+
+and we can determine the temperature from
+\begin_inset Formula 
+\begin{align*}
+\varepsilon_{f} & \approx kT\ln\left[\frac{2\mathscr{A}T^{\nicefrac{3}{2}}}{N_{a}}\right]\\
+4\cancel{kT} & \approx\cancel{kT}\ln\left[\frac{2\mathscr{A}T^{\nicefrac{3}{2}}}{N_{a}}\right]\\
+e^{4} & \approx\frac{2\mathscr{A}T^{\nicefrac{3}{2}}}{N_{a}}\\
+T & \approx\left(\frac{N_{a}e^{4}}{2\mathscr{A}}\right)^{\nicefrac{2}{3}}\\
+ & \approx\left(\frac{\left(10^{18}\unit{cm^{-3}}\right)e^{4}}{2\left(2.35\times10^{15}\unit{cm^{-3}K^{-\nicefrac{3}{2}}}\right)}\right)^{\nicefrac{2}{3}}\\
+ & \approx512.92\unit{K}
+\end{align*}
+
+\end_inset
+
+by applying 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+p & \approx\frac{2\mathscr{A}T^{\nicefrac{3}{2}}N_{a}}{2\mathscr{A}T^{\nicefrac{3}{2}}+N_{a}\exp\left[\frac{\varepsilon_{a}}{kT}\right]}\\
+ & \approx\frac{2\left(2.35\times10^{15}\unit{cm^{-3}K^{-\nicefrac{3}{2}}}\right)\left(512.92\unit{K}\right)^{\nicefrac{3}{2}}\left(10^{18}\unit{cm^{-3}}\right)}{2\left(2.35\times10^{15}\unit{cm^{-3}K^{-\nicefrac{3}{2}}}\right)\left(512.92\unit{K}\right)^{\nicefrac{3}{2}}+\left(10^{18}\unit{cm^{-3}}\right)e^{3}}\\
+ & \approx7.31\times10^{17}\unit{cm^{-3}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbox0=
+\backslash
+vbox{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../../bibs/nucl_563"
+options "plain"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

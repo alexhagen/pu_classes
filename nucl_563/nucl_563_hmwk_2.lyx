@@ -1,0 +1,1854 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass tufte-handout
+\begin_preamble
+\renewcommand{\unit}[1]{\ensuremath{\;\mathrm{#1}}}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 563 Homework 2 - Selected Questions From Angrist, Ch 2.
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+January 26th, 2017
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2-1 One problem with using solar energy to supply electricity is its intermitten
+t nature.
+ It has been proposed that solar energy be used to generate electricity
+ in a solar-thermal plant during the day and that this power then be used
+ to decompose water into hydrogen and oxygen.
+ The hydrogen is then burned with the oxygen over the 24-hour period to
+ provided heat to run a conventional power plant.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The electrolysis process will require electrical energy of around 
+\begin_inset Formula $70\unit{\nicefrac{kcal}{g\cdot mol}}$
+\end_inset
+
+.
+ The solar energy plant will convert about 
+\begin_inset Formula $30\unit{\%}$
+\end_inset
+
+ of the collected solar energy into electrical energy for the electrolysis
+ process.
+ The combustion of hydrogen will yield about 
+\begin_inset Formula $33.52\unit{\nicefrac{kWh}{kg}}$
+\end_inset
+
+ and the main power plant will convert about 
+\begin_inset Formula $35\unit{\%}$
+\end_inset
+
+ of this energy into electrical energy for consumer use.
+ About 
+\begin_inset Formula $0.3\unit{kWh}$
+\end_inset
+
+ will be collected on each square meter of solar collector surface each
+ hour during the 
+\begin_inset Formula $10$
+\end_inset
+
+ daylight hours of each day.
+ Calculate the following quantities of interest for a system that delivers
+ 
+\begin_inset Formula $1000\unit{MW}$
+\end_inset
+
+ on a continuous basis:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(a) Daily hydrogren consumption rate, 
+\begin_inset Formula $\unit{kg}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For continuous delivery of 
+\begin_inset Formula $1000\unit{MWe}$
+\end_inset
+
+, we can calculate the require thermal energy using the efficiency of the
+ main power plant
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+Here we use 
+\begin_inset Formula $2$
+\end_inset
+
+ significant figures, assuming that the requirement of 
+\begin_inset Formula $1000\unit{MWe}$
+\end_inset
+
+ is exact (i.e.
+ has more than 
+\begin_inset Formula $1$
+\end_inset
+
+ significant figures), but that the efficiency is only accurate to two significa
+nt figures.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+?\unit{MWth}=\frac{1000\cancel{\unit{MWe}}}{1}\times\frac{100\unit{MWth}}{35\cancel{\unit{MWe}}}=2900\unit{MWth}
+\]
+
+\end_inset
+
+And, with that required thermal energy, we can determine the amount of hydrogen
+ that must be burned:
+\begin_inset Formula 
+\begin{align*}
+?\unit{\frac{kg\;H_{2}}{day}} & =\frac{2900\times10^{6}\cancel{\unit{Wth}}}{1}\times\frac{1\unit{kg\;^{1}H}}{33.52\times10^{3}\cancel{\unit{Wth\cdot hr}}}\times\frac{24\cancel{\unit{hr}}}{1\unit{day}}\\
+ & =2.1\times10^{6}\unit{\frac{kg\;H_{2}}{day}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(b) Daily solar energy collection requirements, 
+\begin_inset Formula $\unit{kWh}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In order to get the required amount of hydrogen, we must take into account
+ the electrolysis process.
+ 
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+Assuming that 
+\begin_inset Formula $70\unit{\nicefrac{kcal}{g\cdot mol}}$
+\end_inset
+
+ indicates that it requires 
+\begin_inset Formula $70\unit{kcal}$
+\end_inset
+
+ to convert 
+\begin_inset Formula $1\unit{g}$
+\end_inset
+
+ of water into 
+\begin_inset Formula $1\unit{mol}$
+\end_inset
+
+ of hydrogen gas.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+?\unit{kWh}=\frac{2.1\times10^{6}\cancel{\unit{kg\;H_{2}}}}{1\unit{day}}\times\frac{70\cancel{\unit{kcal}}}{1\unit{g\;H_{2}O\cdot\cancel{mol\;H_{2}}}}\times\frac{1\unit{W\,hr}}{1.162\cancel{\unit{kcal}}}\\
+\times\frac{1000\cancel{\unit{mol\;H_{2}}}}{1\cancel{\unit{kg\;H_{2}}}}=1.2\times10^{8}\unit{\nicefrac{kWh}{day}}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(c) Solar collector area, 
+\begin_inset Formula $m^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The solar collector area required to get that much energy per day is
+\begin_inset Formula 
+\[
+?\unit{m^{2}}=\frac{1.2\times10^{8}\cancel{\unit{kWh}}}{1\cancel{\unit{day}}}\times\frac{1\cancel{\unit{day}}}{10\cancel{\unit{hr}}}\times\frac{1\unit{m^{2}\cdot\cancel{hr}}}{0.3\cancel{\unit{kWh}}}=4.0\times10^{7}\unit{m^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(d) Daily mass of water electrolyzed, 
+\begin_inset Formula $kg$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The amount of water electrolyzed is enormous, assuming the 
+\begin_inset Formula $1\unit{g}$
+\end_inset
+
+ of water creates 
+\begin_inset Formula $1\unit{mol}$
+\end_inset
+
+ hydrogen gas, we can calculate:
+\begin_inset Formula 
+\begin{multline*}
+?\unit{kg\,H_{2}O}=\frac{2.1\times10^{6}\cancel{\unit{kg\;H_{2}}}}{1\unit{day}}\times\frac{1000\cancel{\unit{mol\,H_{2}}}}{1\cancel{\unit{kg\;H_{2}}}}\times\frac{1\unit{g\;H_{2}O}}{1\cancel{\unit{mol\;H_{2}}}}\\
+=2.1\times10^{6}\unit{kg\;H_{2}O}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+What social, political, and broad economic questions do you see arising
+ with this plant?
+\end_layout
+
+\begin_layout Standard
+The social, political, and broad economic quesitons are manifold.
+ I have listed several below:
+\end_layout
+
+\begin_layout Itemize
+Economically, is the land use of that much land area worth energy creation
+ at the current cost of energy?
+\end_layout
+
+\begin_layout Itemize
+Politically, which state has to install this enormous land use facility
+ and maintain it?
+\end_layout
+
+\begin_layout Itemize
+Socially, is a hike in either land prices or energy worth it to the people
+ of whatever nation or state that creates this facility?
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2-2 Suppose the hydrogen-burning conventional power plant described in Problem
+ 2-1 is replaced with a fuel cell power plant.
+ Each mole of hydrogen will produce 
+\begin_inset Formula $34.7\unit{kcal}$
+\end_inset
+
+ of electricity.
+ Find out how that change affects each of the answers you found in Problem
+ 2-1.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(a) Daily hydrogren consumption rate, 
+\begin_inset Formula $\unit{kg}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For continuous delivery of 
+\begin_inset Formula $1000\unit{MWe}$
+\end_inset
+
+, we can determine the hydrogen that must be converted in the fuel cell:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+?\unit{\frac{kg\;H_{2}}{day}}=\frac{1000\times10^{6}\cancel{\unit{W}}}{1}\times\frac{1\unit{\cancel{mol\;H_{2}}}}{34.7\cancel{\unit{kcal}}}\times\frac{1.162\cancel{\unit{kcal}}}{1\cancel{\unit{Wh}}}\times\frac{1\unit{kg\;H_{2}}}{1000\cancel{\unit{mol\;H_{2}}}}\\
+\times\frac{24\cancel{\unit{hr}}}{1\unit{day}}=8.0\times10^{5}\unit{\frac{kg\;H_{2}}{day}}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(b) Daily solar energy collection requirements, 
+\begin_inset Formula $\unit{kWh}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+?\unit{kWh}=\frac{8.0\times10^{5}\cancel{\unit{kg\;H_{2}}}}{1\unit{day}}\times\frac{70\cancel{\unit{kcal}}}{1\unit{g\;H_{2}O\cdot\cancel{mol\;H_{2}}}}\times\frac{1\unit{W\,hr}}{1.162\cancel{\unit{kcal}}}\\
+\times\frac{1000\cancel{\unit{mol\;H_{2}}}}{1\cancel{\unit{kg\;H_{2}}}}=4.8\times10^{7}\unit{\nicefrac{kWh}{day}}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(c) Solar collector area, 
+\begin_inset Formula $m^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The solar collector area required to get that much energy per day is
+\begin_inset Formula 
+\[
+?\unit{m^{2}}=\frac{4.8\times10^{7}\cancel{\unit{kWh}}}{1\cancel{\unit{day}}}\times\frac{1\cancel{\unit{day}}}{10\cancel{\unit{hr}}}\times\frac{1\unit{m^{2}\cdot\cancel{hr}}}{0.3\cancel{\unit{kWh}}}=1.6\times10^{7}\unit{m^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(d) Daily mass of water electrolyzed, 
+\begin_inset Formula $kg$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The amount of water electrolyzed is enormous, assuming the 
+\begin_inset Formula $1\unit{g}$
+\end_inset
+
+ of water creates 
+\begin_inset Formula $1\unit{mol}$
+\end_inset
+
+ hydrogen gas, we can calculate:
+\begin_inset Formula 
+\begin{multline*}
+?\unit{kg\,H_{2}O}=\frac{8.0\times10^{5}\cancel{\unit{kg\;H_{2}}}}{1\unit{day}}\times\frac{1000\cancel{\unit{mol\,H_{2}}}}{1\cancel{\unit{kg\;H_{2}}}}\times\frac{1\unit{g\;H_{2}O}}{1\cancel{\unit{mol\;H_{2}}}}\\
+=8.0\times10^{5}\unit{kg\;H_{2}O}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While the water and land use of the fuel cell fired plant decreased by an
+ order of magnitude compared to the plant using a thermal cycle, the same
+ questions would still arise concerning water and land use.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2-3 A utility is considering building a pumped-storage plant to increase
+ its overall system load factor and delay the construction of an additional
+ base-load plant.
+ Suppose the utility has options on a suitable geographic location on which
+ an upper reservoir could be placed 
+\begin_inset Formula $170\unit{m}$
+\end_inset
+
+ above a river.
+ The utility would like to get 
+\begin_inset Formula $100\unit{MW}$
+\end_inset
+
+ of peaking power from the plant, which is assumed to have a generating
+ efficiency of 
+\begin_inset Formula $85\unit{\%}.$
+\end_inset
+
+ The pumped-storage plant is expected to deliver its power for 3 hours each
+ day.
+ Assume that the pumping efficiency is 
+\begin_inset Formula $65\unit{\%}$
+\end_inset
+
+-that is, 
+\begin_inset Formula $65\unit{\%}$
+\end_inset
+
+ of the electrical energy input to the pump goes into actually rasiing the
+ water uphill.
+ Assume that the recreational uses of the upper reservoir require that the
+ water level not change by more than 
+\begin_inset Formula $1\unit{m}$
+\end_inset
+
+ over the day.
+ Find the following:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(a) The energy that must be supplied by the rest of the system in order
+ to get the 
+\begin_inset Formula $100\unit{MW}$
+\end_inset
+
+ for 
+\begin_inset Formula $3\unit{hr}$
+\end_inset
+
+ per day during peak load time.
+\end_layout
+
+\begin_layout Standard
+Using the value of 3 cheap kilowatt hours to generate 2 kilowatt-hors to
+ be sold at peak from the text 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Angrist1982"
+
+\end_inset
+
+, we find that
+\begin_inset Formula 
+\begin{multline*}
+?\unit{kWh\;cheap}=\frac{100\cancel{\unit{MW\;peak}}}{1}\times\frac{3\cancel{\unit{hr}}}{1\unit{day}}\times\frac{1000\cancel{\unit{kW}}}{1\cancel{\unit{MW}}}\\
+\times\frac{3\unit{kWh\;cheap}}{2\cancel{\unit{kWh\;peak}}}=4.5\times10^{5}\unit{\frac{kWh\;cheap}{day}}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(b) The area that must be allotted to the upper reservoir.
+\end_layout
+
+\begin_layout Standard
+In order to not have the water change by more than a meter, there must be
+ a volume that allows for the full amount to drain and not decrease by more
+ than 
+\begin_inset Formula $1\unit{m}$
+\end_inset
+
+.
+ The amount of energy that would need to be drained during the peak hours
+ is
+\begin_inset Formula 
+\[
+?\unit{kWh}=\frac{100\unit{MW}}{1}\times\frac{3\unit{hr}}{1}\times\frac{100\unit{kWh\;top}}{85\unit{kWh\;bottom}}=3.5\times10^{5}\unit{kWh}
+\]
+
+\end_inset
+
+This corresponds to a calculateable mass of water
+\begin_inset Formula 
+\begin{multline*}
+?\unit{m^{3}\;H_{2}O}=\frac{3.5\times10^{5}\cancel{\unit{kWh}}}{1}\times\frac{3.6\times10^{6}\cancel{\unit{J}}}{1\cancel{\unit{kWh}}}\times\underbrace{\frac{1\cancel{\unit{kg}}}{\left(9.81\times170\right)\cancel{\unit{J}}}}_{\substack{\text{gravitational}\\
+\text{potential}\\
+\text{energy per mass}
+}
+}\\
+\times\underbrace{\frac{1\unit{m^{3}}}{1000\cancel{\unit{kg}}}}_{\substack{\text{density of}\\
+\text{water}
+}
+}=7.5\times10^{5}\unit{m^{3}}
+\end{multline*}
+
+\end_inset
+
+This amount of water must be drained from the reservoir and still not changed
+ the depth by more than 
+\begin_inset Formula $1\unit{m}$
+\end_inset
+
+.
+ To ensure this, we can define two different expressions
+\begin_inset Formula 
+\[
+\Delta V=7.5\times10^{5}\unit{m^{3}}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\[
+\Delta h\leq1\unit{m}
+\]
+
+\end_inset
+
+and, defining our volume
+\begin_inset Formula 
+\[
+V=A\cdot h
+\]
+
+\end_inset
+
+and then our derivative
+\begin_inset Formula 
+\[
+\frac{dV}{dh}=A
+\]
+
+\end_inset
+
+so that
+\begin_inset Formula 
+\[
+A=\frac{7.5\times10^{5}\unit{m^{3}}}{1\unit{m}}=7.5\times10^{5}\unit{m^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2-6 One widely used design equation for electric automobiles is given below,
+ where the range 
+\begin_inset Formula $R$
+\end_inset
+
+, in miles, may be calculated to be 
+\begin_inset Formula 
+\[
+R=\frac{d}{4.42\times10^{-2}+2.21\times10^{-4}v+\left(\frac{3.95\times10^{-2}}{W}+1.86\times10^{-5}\right)v^{2}}
+\]
+
+\end_inset
+
+The travel time between recharges, 
+\begin_inset Formula $T$
+\end_inset
+
+, is
+\begin_inset Formula 
+\[
+T=8.6\times10^{-2}d\;\left(\text{hours}\right)
+\]
+
+\end_inset
+
+The energy expended between recharges is
+\begin_inset Formula 
+\[
+E=5.22WT\;\left(\text{watt-hours}\right)
+\]
+
+\end_inset
+
+Make a parametric study of how the weight and energy density of a given
+ battery system influences the range, travel time between recharges, and
+ energy expended between recharges for a wide range of proposed battery
+ systems for electric autos.
+\end_layout
+
+\begin_layout Standard
+Angrist only describes two different vehicle weights, and assuming the average
+ speed of travel is 
+\begin_inset Formula $30\unit{mph}$
+\end_inset
+
+, we can calulate all the requested parameters, shown in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Different-Battery-Systems"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Different Battery Systems for Automobiles
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Different-Battery-Systems"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="14" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1.75cm">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none" width="1cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vehicle Weight
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none" width="2cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Energy Density
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Range
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Travel Time
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Energy Expended between Recharges
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\unit{lb}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\unit{\nicefrac{Wh}{kg}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\unit{\nicefrac{Wh}{lb}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\unit{mi}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\unit{hr}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\times10^{5}\unit{Wh}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pb/acid
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $57$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $126$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1473$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $11$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1644$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ni/Fe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $85$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $187$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2196$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $16$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.7$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2451$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ni/Zn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $105$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $232$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2713$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $20$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3028$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4.2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Na/S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $150$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $331$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3875$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $28$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4326$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5.9$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zn/
+\begin_inset Formula $\mathrm{Cl_{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $135$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $298$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3488$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $26$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.7$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3893$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5.3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{Li}$
+\end_inset
+
+-
+\begin_inset Formula $\mathrm{Al}$
+\end_inset
+
+/
+\begin_inset Formula $\mathrm{FeS_{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $165$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $364$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4263$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $31$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4000
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4758$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbox0=
+\backslash
+vbox{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../../bibs/nucl_563"
+options "plain"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

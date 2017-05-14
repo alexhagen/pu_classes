@@ -1,0 +1,2366 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass tufte-handout
+\begin_preamble
+\providecommand{\unit}[1]{\ensuremath{\;\mathrm{#1}}}
+\usepackage{gensymb}
+\newcommand{\Angstrom}{\textup{\AA}}
+\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+\usepackage{tikz}
+\end_preamble
+\options nobib
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 563 Homework 6 - Selected Exercises on Solar Cells
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+March 9th, 2017
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3.4) With 
+\begin_inset Formula $T$
+\end_inset
+
+ measured in degrees Kelvin and 
+\begin_inset Formula $k$
+\end_inset
+
+ the Boltzmann constant, the translational kinetic energy of a gas molecule
+ is 
+\begin_inset Formula $\frac{3}{2}kT$
+\end_inset
+
+.
+ What is the corresponding de Broglie wavelength of a hydrogen atom at 
+\begin_inset Formula $30\unit{\celsius}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+E & =\frac{3}{2}kT\\
+ & =\frac{3}{2}\left(8.61733\times10^{-11}\unit{\nicefrac{MeV}{K}}\right)\left(303.15\unit{K}\right)\\
+ & =3.92\times10^{-8}\unit{MeV}
+\end{align*}
+
+\end_inset
+
+and calculating the momentum, using a proton mass of 
+\begin_inset Formula $938.27\unit{\nicefrac{MeV}{c^{2}}}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+p & =\sqrt{2mE}\\
+ & =\sqrt{2\left(938.27\unit{\nicefrac{MeV}{c^{2}}}\right)\left(3.92\times10^{-8}\unit{MeV}\right)}\\
+ & =8.5767\times10^{-3}\unit{\nicefrac{MeV}{c}}
+\end{align*}
+
+\end_inset
+
+and converting to wavelength
+\begin_inset Formula 
+\begin{align*}
+\lambda & =\frac{h}{p}\\
+ & =\frac{4.13566\times10^{-21}\unit{MeV\cdot s}}{8.5767\times10^{-3}\unit{\nicefrac{MeV}{c}}}\\
+ & =1.4456\times10^{-10}\unit{m}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5.9) Find the short circuit current density.
+\end_layout
+
+\begin_layout Standard
+Given the following values:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s=100\unit{\frac{cm}{s}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+L=10^{-3}\unit{cm}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\alpha=10^{3}\unit{\frac{1}{cm}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+l=10^{-3}\unit{cm}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\varepsilon_{g}=1.5\unit{eV}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\phi=5\times10^{17}\unit{\frac{photons}{cm^{2}\cdot s}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using equation 5-30 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 192"
+key "Angrist1982"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+J_{s}=\eta_{co}\left(1-r\right)\left[1-\exp\left(-\alpha l\right)\right]en_{ph}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+using values from Table 5-2 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 193"
+key "Angrist1982"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\eta_{co}=0.61
+\]
+
+\end_inset
+
+and calculating 
+\begin_inset Formula $r$
+\end_inset
+
+ from 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ from Moss' relation
+\begin_inset Formula 
+\begin{align*}
+\varepsilon_{g}\cdot\gamma^{4} & =173\\
+\gamma & =\sqrt[4]{\frac{173}{\varepsilon_{g}}}\\
+\gamma & =3.28
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+r & =\frac{\left(\gamma-1\right)^{2}}{\left(\gamma+1\right)^{2}}\\
+ & =0.28
+\end{align*}
+
+\end_inset
+
+and finally, calculating
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+J_{s} & =\eta_{co}\left(1-r\right)\left[1-\exp\left(-\alpha l\right)\right]en_{ph}\\
+ & =\left(0.61\right)\left(1-0.28\right)\left[1-\exp\left(-\left(10^{3}\unit{\frac{1}{cm}}\right)\left(10^{-3}\unit{cm}\right)\right)\right]\left(1.6017\times10^{-19}\unit{C}\right)\left(5\times10^{17}\unit{\frac{photons}{cm^{2}s}}\right)\\
+ & =0.022\unit{\frac{A}{cm^{2}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5.11) Find the saturation current density due to holes.
+\end_layout
+
+\begin_layout Standard
+Given 
+\begin_inset Formula $n=10^{13}\unit{cm^{-3}}$
+\end_inset
+
+, electrons in the ntype region of 
+\begin_inset Formula $n_{n}=10^{17}\unit{\frac{1}{cm^{3}}}$
+\end_inset
+
+, temperature 
+\begin_inset Formula $280\unit{K}$
+\end_inset
+
+, diffusion coefficient 
+\begin_inset Formula $D=81\unit{\frac{cm^{2}}{s}}$
+\end_inset
+
+ and hole lifetime of 
+\begin_inset Formula $\tau=10^{-4}\unit{s}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Calculating the hole generation current density with equation 5-37 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 194"
+key "Angrist1982"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+J_{o\left(p\right)}=\frac{p_{n}eD_{p}}{L_{p}}
+\]
+
+\end_inset
+
+and calculating the diffusion length with 
+\begin_inset Formula 
+\begin{align*}
+L_{p} & =\sqrt{D_{p}\tau_{p}}\\
+ & =\sqrt{\left(81\unit{\frac{cm^{2}}{s}}\right)\left(10^{-4}\unit{s}\right)}\\
+ & =0.09\unit{cm}
+\end{align*}
+
+\end_inset
+
+and finding 
+\begin_inset Formula $p_{n}$
+\end_inset
+
+ from
+\begin_inset Formula 
+\begin{align*}
+p_{n}n_{n} & =n_{i}^{2}\\
+p_{n} & =\frac{n_{i}^{2}}{n_{n}}\\
+ & =1\times10^{9}\unit{\frac{1}{cm^{3}}}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+J_{o\left(p\right)} & =\frac{p_{n}eD_{p}}{L_{p}}\\
+ & =\frac{\left(10^{9}\unit{\frac{1}{cm^{3}}}\right)\left(1.602\times10^{-19}\unit{C}\right)\left(81\unit{\frac{cm^{2}}{s}}\right)}{\left(0.09\unit{cm}\right)}\\
+ & =1.44\times10^{-7}\unit{\frac{A}{cm^{2}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5.15) a) The equilibrium hole density in the 
+\begin_inset Formula $n$
+\end_inset
+
+-type region.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{n}=\frac{2\cdot2.23\times10^{31}\cdot300^{3}\cdot\exp\left(\frac{-0.72}{300\cdot8.617\times10^{-5}}\right)}{n_{n}}=1.11\times10^{11}\unit{\frac{1}{cm^{3}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b) the saturation current density.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+J_{0} & =\frac{p_{n}eD_{p}}{\sqrt{D_{p}\tau_{p}^{*}}}\\
+ & =\frac{\left(1.11\times10^{11}\unit{\frac{1}{cm^{3}}}\right)\left(1.602\times10^{-19}\unit{C}\right)\left(44\unit{\frac{cm^{2}}{s}}\right)}{\sqrt{\left(44\unit{\frac{cm^{2}}{s}}\right)\left(1\times10^{-6}\unit{s}\right)}}\\
+ & =1.1795\times10^{-4}\unit{\nicefrac{A}{cm^{2}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c) the short circuit current density.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+J_{s} & =\frac{e\left(4\times10^{17}\right)}{4}\left[1-\exp\left(-10^{5}\cdot10^{-3}\right)\right]\\
+ & =1.6\times10^{-2}\unit{\nicefrac{A}{cm^{2}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d) the maximum power density generated by the cell under the conditions
+ given in parent (c).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\exp\left(\frac{eV_{mp}}{kT}\right)\left[1+\frac{eV_{mp}}{kT}\right] & =1+\frac{J_{s}}{J_{0}}\\
+\exp\left(38.68\cdot V_{mp}\right)\left[1+38.68\cdot V_{mp}\right] & =1+\frac{1.61\times10^{-2}}{1.17\times10^{-4}}\\
+V_{mp} & =0.0889\unit{V}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+J_{mp} & =\frac{38.68V_{mp}\left[J_{s}+J_{0}\right]}{\left(38.68\cdot V_{mp}+1\right)}\\
+ & =0.0126\unit{\frac{A}{cm^{2}}}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+P_{mp} & =J_{mp}V_{mp}\\
+ & =0.011\unit{\nicefrac{W}{cm^{2}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5.21) What is the area required?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+P_{max} & =V_{mp}J_{mp}\\
+ & =0.0039\unit{\nicefrac{W}{cm^{2}}}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+A & =\frac{800\unit{W}}{0.0039\unit{\nicefrac{W}{cm^{2}}}}\\
+ & =2.046\times10^{5}\unit{cm^{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5.22) What is the area required?
+\end_layout
+
+\begin_layout Standard
+Given 
+\begin_inset Formula $J_{s}=0.035\unit{\frac{mA}{cm^{2}}}$
+\end_inset
+
+, 
+\begin_inset Formula $T=55\unit{\celsius}$
+\end_inset
+
+, 
+\begin_inset Formula $V_{o}=0.58\unit{V}$
+\end_inset
+
+, 
+\begin_inset Formula $\eta=0.13$
+\end_inset
+
+, needs 
+\begin_inset Formula $800\unit{W}$
+\end_inset
+
+ at 
+\begin_inset Formula $28\unit{V}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Finding the 
+\begin_inset Formula $J_{o}$
+\end_inset
+
+ from 
+\begin_inset Formula $V_{o}$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\begin{align*}
+V_{o} & =\frac{kT}{e}\ln\left(\frac{J_{s}}{J_{o}}+1\right)\\
+\frac{eV_{o}}{kT} & =\ln\left(\frac{J_{s}}{J_{o}}+1\right)\\
+\frac{J_{s}}{\exp\left(\frac{eV_{o}}{kT}\right)-1} & =J_{o}\\
+J_{o} & =\frac{0.000035\unit{\frac{A}{cm^{2}}}}{\exp\left(\frac{\left(1\unit{e^{-}}\right)\left(0.58\unit{V}\right)}{\left(8.6\times10^{-5}\unit{\frac{eV}{K}}\right)\left(328.15\unit{K}\right)}\right)-1}\\
+ & =1.13\times10^{-13}\unit{\frac{A}{cm^{2}}}
+\end{align*}
+
+\end_inset
+
+and then, finding the maximuim power
+\begin_inset Formula 
+\begin{align*}
+P & =\left(J_{s}-J_{o}\left[\exp\left(\frac{eV}{kT}\right)-1\right]\right)V\\
+ & =\left(0.000035\unit{\frac{A}{cm^{2}}}-1.13\times10^{-13}\unit{\frac{A}{cm^{2}}}\left[\exp\left(\frac{\left(1\unit{e^{-}}\right)\left(28\unit{V}\right)}{\left(8.6\times10^{-5}\unit{\frac{eV}{K}}\right)\left(328.15\unit{K}\right)}\right)-1\right]\right)\left(28\unit{V}\right)\\
+ & =9.8\times10^{-4}\unit{\frac{W}{cm^{2}}}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+A=8.2\times10^{5}\unit{cm^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5.24)
+\end_layout
+
+\begin_layout Standard
+Given 
+\begin_inset Formula $A=4\unit{cm^{2}}$
+\end_inset
+
+, 
+\begin_inset Formula $m=1$
+\end_inset
+
+, 
+\begin_inset Formula $w=0$
+\end_inset
+
+, 
+\begin_inset Formula $T=27\unit{\celsius}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a) The saturation current density.
+\end_layout
+
+\begin_layout Standard
+Finding 
+\begin_inset Formula $J_{s}$
+\end_inset
+
+ from table 5-3 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 198"
+key "Angrist1982"
+
+\end_inset
+
+ 
+\begin_inset Formula $4.45\times10^{-2}\unit{\frac{A}{cm^{2}}}$
+\end_inset
+
+ and also taking 
+\begin_inset Formula $J_{o}=5.9\times10^{-12}\unit{\frac{A}{cm^{2}}}$
+\end_inset
+
+ from theoretical calcuations for 
+\begin_inset Formula $\ce{Si}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b) the cell efficiency as a function of load resistance.
+\end_layout
+
+\begin_layout Standard
+using table 5-1 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "p. 180"
+key "Angrist1982"
+
+\end_inset
+
+, we find 
+\begin_inset Formula $\Phi=0.106\unit{\frac{W}{cm^{2}}}$
+\end_inset
+
+, 
+\begin_inset Formula $\varepsilon_{av}=1.32\unit{eV}$
+\end_inset
+
+, 
+\begin_inset Formula $N_{ph}=5.0\times10^{17}\unit{\frac{photons}{cm^{2}\cdot s}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Seeing that the material is 
+\begin_inset Formula $\ce{Si}$
+\end_inset
+
+, we can take values from table 5-3, 
+\begin_inset Formula $\varepsilon_{g}=1.12\unit{eV}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Knowing that 
+\begin_inset Formula 
+\[
+V_{mp}=J_{mp}R_{load}A
+\]
+
+\end_inset
+
+from kirchoff's laws, and 
+\begin_inset Formula 
+\[
+J_{mp}=\frac{\frac{eV_{mp}}{kT}\left[J_{s}+J_{0}\right]}{\left(\frac{eV_{mp}}{kT}+1\right)}
+\]
+
+\end_inset
+
+we get 
+\begin_inset Formula 
+\begin{align*}
+J_{mp} & =\frac{\frac{eJ_{mp}R_{load}A}{kT}\left[J_{s}+J_{0}\right]}{\left(\frac{eJ_{mp}R_{load}A}{kT}+1\right)}\\
+1 & =\frac{\frac{eR_{load}A}{kT}\left[J_{s}+J_{0}\right]}{\left(\frac{eR_{load}A}{kT}+\frac{1}{J_{mp}}\right)}\\
+\frac{eR_{load}A}{kT}+\frac{1}{J_{mp}} & =\frac{eR_{load}A}{kT}\left[J_{s}+J_{0}\right]\\
+\frac{1}{J_{mp}} & =\frac{eR_{load}A}{kT}\left[J_{s}+J_{0}\right]-\frac{eR_{load}A}{kT}\\
+J_{mp} & =\frac{kT}{eR_{load}A\left(J_{s}+J_{0}-1\right)}
+\end{align*}
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\[
+V_{mp}=\frac{kT}{eA\left(J_{s}+J_{0}-1\right)}
+\]
+
+\end_inset
+
+we can plug this in and get
+\begin_inset Formula 
+\begin{align*}
+\eta_{max} & =\frac{\left[\frac{e\frac{kT}{eR_{load}A\left(J_{s}+J_{0}-1\right)}}{kT}\right]\frac{kT}{eR_{load}A\left(J_{s}+J_{0}-1\right)}J_{s}}{\left[1+\frac{e\frac{kT}{eR_{load}A\left(J_{s}+J_{0}-1\right)}}{kT}\right]N_{ph}\varepsilon_{av}}\\
+ & =\frac{\left[\frac{1}{R_{load}A\left(J_{s}+J_{0}-1\right)}\right]\frac{kT}{eR_{load}A\left(J_{s}+J_{0}-1\right)}J_{s}}{\left[1+\frac{1}{R_{load}A\left(J_{s}+J_{0}-1\right)}\right]N_{ph}\varepsilon_{av}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c) the theoretical maximum efficiency for this cell under the stated conditions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\eta_{max} & \approx\frac{\left[\frac{1}{R_{load}A\left(J_{s}+J_{0}-1\right)}\right]\frac{kT}{eR_{load}A\left(J_{s}+J_{0}-1\right)}J_{s}}{\left[1+\frac{1}{R_{load}A\left(J_{s}+J_{0}-1\right)}\right]N_{ph}\varepsilon_{av}}
+\end{align*}
+
+\end_inset
+
+Approximating 
+\begin_inset Formula $N_{ph}$
+\end_inset
+
+ from Figure 5-2, 
+\begin_inset Formula $N_{ph}=2.2\times10^{17}\unit{\frac{photons}{cm^{2}s}}$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+\eta_{max} & =\frac{\left[\frac{1}{R_{load}A\left(J_{s}+J_{0}-1\right)}\right]\frac{kT}{eR_{load}A\left(J_{s}+J_{0}-1\right)}J_{s}}{\left[1+\frac{1}{R_{load}A\left(J_{s}+J_{0}-1\right)}\right]N_{ph}\varepsilon_{av}}\\
+ & \approx15\%
+\end{align*}
+
+\end_inset
+
+at 
+\begin_inset Formula 
+\[
+R_{load}\approx5.7\unit{\Omega}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5.25) Compute the roof area required to carry the entire load for each locations.
+ How does this area compare with what one might find on such a residence.
+\end_layout
+
+\begin_layout Standard
+Given the locations in table 5-6, the data from the Summary Household Site
+ consumption and expenditures from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "U.S.EnergyInformationAdministration2009"
+
+\end_inset
+
+ give us the calculated areas: 
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Entire Load and Roof Area required for various locations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="15" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Station
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entire Load
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{mp}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Roof Area Required
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\$_{ch}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\$_{sp}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+After Capital Recovery
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\unit{\frac{kWh}{yr}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\unit{\frac{kWh}{m^{2}\cdot yr}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\unit{m^{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\unit{\$}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\unit{\$}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\unit{\$}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Albuquerque, NM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21394
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+255.62
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+83.69
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1981
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+41850.18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+4610.55
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bismarck, ND
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+32941
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+189.95
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+173.42
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1981
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+64438.01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+7099.01
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Boston, MA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+31534
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+163.69
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+192.64
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2595
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+61685.69
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+6795.79
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Charleston, SC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22420
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+178.08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+125.90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2038
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+43857.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+4831.66
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fort Worth, TX
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22420
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+196.16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+114.29
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2038
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+43857.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+4831.66
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Madison, WI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+32941
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+167.13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+197.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1981
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+64438.01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+7099.01
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Miami, FL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22420
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+189.67
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+118.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2038
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+43857.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+4831.66
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nashville, TN
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22420
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+172.24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+130.17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2038
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+43857.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+4831.66
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Omaha, NB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+32941
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+183.35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+179.66
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1981
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+64438.01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+7099.01
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Phoenix, AZ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21394
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+245.91
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+87.00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1568
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+41850.18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+4610.55
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Santa Maria, CA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21394
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+223.32
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+95.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1568
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+41850.18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+4610.55
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seattle, WA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21394
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+137.34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+155.77
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1568
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+41850.18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+4610.55
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Washington, DC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+31534
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+154.42
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+204.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2595
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+61685.69
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+6795.79
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5.28) How would the cost of providing energy via the solar array described
+ in Table 5-6 compare with the cost of conventional heating and cooling?
+ What else must be assume to make such a calculation feasible?
+\end_layout
+
+\begin_layout Standard
+Assuming a capital recovery factor of 
+\begin_inset Formula 
+\[
+\frac{i\left(1+i\right)^{n}}{\left(1+i\right)^{n}-1}
+\]
+
+\end_inset
+
+ with 
+\begin_inset Formula $n=25$
+\end_inset
+
+ and 
+\begin_inset Formula $i=10\unit{\%}$
+\end_inset
+
+ (25 year recovery with 10% interest), we can compare the load to conventional
+ heating.
+ The conventional heating costs are used from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "U.S.EnergyInformationAdministration2009"
+
+\end_inset
+
+.
+ Then, assuming 
+\begin_inset Formula $\$3.75\unit{\frac{1}{W}}$
+\end_inset
+
+, and 
+\begin_inset Formula $5\unit{hr}$
+\end_inset
+
+ of sun per day (
+\begin_inset Formula $365\unit{\frac{days}{year}}$
+\end_inset
+
+), we can provide the numbers in the table above.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../../bibs/nucl_563"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
