@@ -1,0 +1,564 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+
+\renewcommand\theparagraph{[ Q\arabic{paragraph} ]}
+\renewcommand\thesubparagraph{[ \alph{subparagraph} ]}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth 5
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+PHYS 556 HMWK 4
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+10/16/15
+\end_layout
+
+\begin_layout Paragraph
+Use the extreme independent particle model to predict the ground state,
+ spin and parity, 
+\begin_inset Formula $J_{p}$
+\end_inset
+
+ for each of the following nuclei; 
+\begin_inset Formula 
+\[
+\ce{^{17}F}\quad\ce{^{18}F}\quad\ce{^{19}F}\quad\ce{^{33}S}\quad\ce{^{55}Mn}\quad\ce{^{91}Zr}
+\]
+
+\end_inset
+
+Compare your prediction to the know[n] value.
+ If they don’t agree, look at the level structure in the NNDC.
+ Is there a low lying excited state with the “expected” value? It is found
+ that the level spacing is sensitive to the size of the nucleus.
+ Supplement your original estimate for the ground state 
+\begin_inset Formula $J_{p}$
+\end_inset
+
+ with the shift in the energy levels as a function of 
+\begin_inset Formula $A$
+\end_inset
+
+ using the enclosed figure.
+ Thus your answer should appear as a table with 3 colomns: extreme independent
+ model, measured value, corrected extreme independent model.
+\end_layout
+
+\begin_layout Paragraph
+Using simply the extreme independent particle model and the neutron and
+ proton magnetic moments, attempt to predict the following nuclear magnetic
+ moments and compare to the measured values.
+ 
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sample Values of Nuclear Magentic Dipole Moments
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nuclide
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu\left(\mu_{N}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1.9130418$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+2.7928456$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{^{2}H}$
+\end_inset
+
+ (
+\begin_inset Formula $\ce{D}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+0.8574376$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{^{17}O}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1.89379$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{^{57}Fe}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+0.09062293$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{^{57}Co}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+4.733$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{^{93}Nb}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+6.1705$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+All values refer to the nuclear ground states; uncertainties are typically
+ a few parts in the last digit.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The magnetic moments are given by 
+\begin_inset Formula 
+\[
+\mu=g_{s}s\mu_{N}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $g_{s}$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+g_{s}=\begin{cases}
+5.5856912 & \text{proton}\\
+-3.8260837 & \text{neutron}
+\end{cases}
+\]
+
+\end_inset
+
+, 
+\begin_inset Formula $s$
+\end_inset
+
+ is the spin, and 
+\begin_inset Formula $\mu_{N}$
+\end_inset
+
+ is the nuclear magneton.
+ To simply calculate this, we can use the values for the neutron and proton
+ to 
+\end_layout
+
+\begin_layout Paragraph
+When 
+\begin_inset Formula $j_{z}=j\hbar$
+\end_inset
+
+ the magnetic moment operator in the state with maximum 
+\begin_inset Formula $z$
+\end_inset
+
+ projection of angular momentum is 
+\begin_inset Formula 
+\[
+\mu=\frac{\mu_{N}}{\hbar}\left(g_{l}l_{z}+g_{s}s_{z}\right)
+\]
+
+\end_inset
+
+Compute the expectations of the magnetic momentum for a nucleus by computing
+ the expectation value of 
+\begin_inset Formula $\left\langle s_{z}\right\rangle $
+\end_inset
+
+, to find
+\begin_inset Formula 
+\begin{align*}
+j=l+\frac{1}{2} & \quad\left\langle \mu\right\rangle =\left[g_{l}\left(j-\frac{1}{2}\right)-\frac{g_{s}}{2}\right]\mu_{N}\\
+j=l-\frac{1}{2} & \quad\left\langle \mu\right\rangle =\left[g_{l}\frac{j\left(j+\frac{2}{3}\right)}{\left(j-1\right)}-\frac{g_{s}}{2}\frac{1}{j+1}\right]\mu_{N}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Using the 
+\begin_inset Quotes eld
+\end_inset
+
+Unified Nuclear Model
+\begin_inset Quotes erd
+\end_inset
+
+ for hafnium 
+\begin_inset Formula $\ce{_{72}^{177}Hf_{105}}$
+\end_inset
+
+ answer the following:
+\end_layout
+
+\begin_layout Subparagraph
+Assuming that hafnium-177 is a polate nucleus with 
+\begin_inset Formula $\beta$
+\end_inset
+
+ equal to between 
+\begin_inset Formula $+0.2$
+\end_inset
+
+ and 
+\begin_inset Formula $+0.3$
+\end_inset
+
+ what is the expected ground state and explain why?
+\end_layout
+
+\begin_layout Subparagraph
+Explain why there is an excited state of Hf-177 at 
+\begin_inset Formula $J^{\pi}=\frac{9}{2}^{+}$
+\end_inset
+
+ state?
+\end_layout
+
+\begin_layout Subparagraph
+Why is the second excited state of Hf-177 a 
+\begin_inset Formula $J^{\pi}=\frac{11}{2}^{+}$
+\end_inset
+
+ state? Is there a sequence of states related to this excited state and
+ why?
+\end_layout
+
+\begin_layout Subparagraph
+What is the 2nd excited state 
+\begin_inset Formula $J^{\pi}$
+\end_inset
+
+ predicted by shell model?
+\end_layout
+
+\begin_layout Paragraph
+Use the enclosed Clebsch-Grodan Coefficients Table to argue that when adding
+ 
+\begin_inset Formula $2\oplus2\oplus2$
+\end_inset
+
+ for the combination of 3 spin 2 nuclear phonons, that the allowed states
+ are:
+\begin_inset Formula 
+\[
+0^{+}\quad2^{+}\quad3^{+}\quad4^{+}\quad6^{+}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Make a complete list of the distinct type of nuclear excitations.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/Users/ahagen/bibs/phys_556"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

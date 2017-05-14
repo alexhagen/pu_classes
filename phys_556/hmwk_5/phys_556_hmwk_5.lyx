@@ -1,0 +1,673 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+
+\renewcommand\theparagraph{[ Q\arabic{paragraph} ]}
+\renewcommand\thesubparagraph{[ \alph{subparagraph} ]}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth 5
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+PHYS 556 HMWK 5
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+11/16/15
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+From the paper 
+\begin_inset Quotes eld
+\end_inset
+
+Search for Proton Decay via 
+\begin_inset Formula $p\rightarrow e^{+}\pi^{0}$
+\end_inset
+
+ in a Large Water Cherenkov Detector
+\begin_inset Quotes erd
+\end_inset
+
+ (PRL Vol.
+ 81, Num.
+ 16), use the information in the paper calculate the lower limit on the
+ partial lifetime of the proton
+\begin_inset Formula 
+\[
+\frac{\tau}{B_{p\rightarrow e^{+}\pi^{0}}}=1.6\times10^{33}\,\mathrm{years}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Given this proton lifetime and assume the human body is made completely
+ of water, how many protons would decay in your body over the course of
+ your lifetime?
+\end_layout
+
+\begin_layout Subparagraph
+The human body contains on average about 
+\begin_inset Formula $18\%$
+\end_inset
+
+ carbon and 
+\begin_inset Formula $0.2\%$
+\end_inset
+
+ potassium.
+ Compute the intrinsic activity of the average person for 
+\begin_inset Formula $\ce{^{14}C}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ce{^{40}K}$
+\end_inset
+
+.
+ Estimate the Dose Equivalent (DE) received by the human body from these
+ decays assuming all the energy from the beta decays are absorbed in the
+ body and 
+\begin_inset Formula $\sim\nicefrac{1}{2}$
+\end_inset
+
+ the gamma energy is absorbed by the body.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+A sample of a single element with two natural occurring isotopes becomes
+ activated by neutron capture.
+ After 
+\begin_inset Formula $1\,\mathrm{hour}$
+\end_inset
+
+ in a reactor, it is placed in a counting chamber.
+ The sample is counted for 
+\begin_inset Formula $1\,\mathrm{hour}$
+\end_inset
+
+ at the same time each day.
+ The summary is recorded below.
+ For these data, determine the half-lives and initial activites of the two
+ components.
+ You should be able to identify the element?
+\end_layout
+
+\begin_layout Standard
+Assuming this is not a decay chain (that there are two separate isotopes
+ with natural abundances that do not decay into each other).
+ Then, the curve plotted as 
+\begin_inset Formula $\alpha_{tot}$
+\end_inset
+
+ is equal to the sum of both of these decay equations
+\begin_inset Formula 
+\[
+\alpha_{tot}=\alpha_{1}+\alpha_{2}
+\]
+
+\end_inset
+
+and all the activites are functions of time.
+ Then, substituting in the decay equations, we have
+\begin_inset Formula 
+\[
+\alpha_{tot}\left(t\right)=\alpha_{10}\exp\left(-\lambda_{1}t\right)+\alpha_{20}\exp\left(-\lambda_{2}t\right)
+\]
+
+\end_inset
+
+and we can determine a boundary condition with the intital activities (assuming
+ the count was taken immediately)
+\begin_inset Formula 
+\[
+\alpha_{tot0}=\alpha_{10}+\alpha_{20}=\frac{102515\,\mathrm{decays}}{1\,\mathrm{hour}}=28.48\,\mathrm{bq}
+\]
+
+\end_inset
+
+and so
+\begin_inset Formula 
+\[
+\alpha_{tot}\left(t\right)=\left(\alpha_{10}\right)\left[\exp\left(-\lambda_{1}t\right)-\exp\left(-\lambda_{2}t\right)\right]+\alpha_{tot0}\exp\left(-\lambda_{2}t\right)
+\]
+
+\end_inset
+
+assuming the decay is two lines, we can find the half lives to be 
+\begin_inset Formula $\lambda_{1}=-0.185$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{2}=-0.013$
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{q2.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Decay of Isotopes with Time
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+In the alpha-decay of 
+\begin_inset Formula $\ce{^{238}U}$
+\end_inset
+
+ to 
+\begin_inset Formula $\ce{^{234}Th}$
+\end_inset
+
+, particles of 
+\begin_inset Formula $4.195$
+\end_inset
+
+, 
+\begin_inset Formula $4.147$
+\end_inset
+
+ and 
+\begin_inset Formula $4.083\,\mathrm{MeV}$
+\end_inset
+
+ are observed.
+\end_layout
+
+\begin_layout Subparagraph
+Estimate the relative strengths of these three lines, assuming that it depends
+ only on the barrier penetration factor.
+\end_layout
+
+\begin_layout Subparagraph
+What are the most probable spin-parity assignments for the states of 
+\begin_inset Formula $\ce{^{234}Th}$
+\end_inset
+
+ produced in this process?
+\end_layout
+
+\begin_layout Subparagraph
+State briefly why consideration of the signs of the states of 
+\begin_inset Formula $\ce{^{234}Th}$
+\end_inset
+
+ would change your estimates of the relative line strengths.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+An energetically possible decay which has not been observed is
+\begin_inset Formula 
+\[
+\ce{_{94}^{238}Au}\rightarrow\ce{_{77}^{190}Ir}+\ce{_{2}^{4}He}+1.8\,\mathrm{MeV}
+\]
+
+\end_inset
+
+Estimate the mean life for this mode of decay.
+\end_layout
+
+\begin_layout Standard
+Assuming Irridium is the product, we have
+\begin_inset Formula 
+\[
+\ce{_{79}^{194}X}\rightarrow\ce{_{77}^{190}Ir}+\alpha+\underbrace{1.8\,\mathrm{MeV}}_{Q}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So we want to follow the equation 
+\begin_inset Formula 
+\[
+t_{\nicefrac{1}{2}}=\ln\left(2\right)\frac{a}{c}\sqrt{\frac{mc^{2}}{2\left(V_{0}+Q\right)}}\exp\left\{ 2\sqrt{\frac{2mc^{2}}{\left(\hbar c\right)^{2}Q}}\frac{zZ'e^{2}}{4\pi\epsilon_{0}}\left(\frac{\pi}{2}-2\sqrt{\frac{Q}{B}}\right)\right\} 
+\]
+
+\end_inset
+
+with quantities
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{e^{2}}{4\pi\epsilon_{0}}=1.4\,\mathrm{MeV\cdot fm}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hbar c=197\,\mathrm{MeV\cdot fm}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z=4
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Z'=190
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+mc^{2}=\left(4\right)\left(1000\,\mathrm{MeV}\right)=4000\,\mathrm{MeV}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+a=\left(1.23\,\mathrm{fm}\right)A^{\nicefrac{1}{3}}=\left(1.23\,\mathrm{fm}\right)194^{\nicefrac{1}{3}}=7.12\,\mathrm{fm}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+V_{0}=35\,\mathrm{MeV}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Q=1.8\,\mathrm{MeV}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+B=\frac{1}{4\pi\epsilon_{0}}\frac{zZ'e^{2}}{a}=\left(1.4\,\mathrm{MeV\cdot fm}\right)\frac{\left(4\right)\left(190\right)}{7.12\,\mathrm{fm}}=149.44\,\mathrm{MeV}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+t_{\nicefrac{1}{2}}=\ln\left(2\right)\frac{7.12\,\mathrm{fm}}{2.9\times10^{23}\,\mathrm{\nicefrac{fm}{s}}}\sqrt{\frac{4000\,\mathrm{MeV}}{2\left(35\,\mathrm{MeV}+1.8\,\mathrm{MeV}\right)}}\\
+\cdot\exp\left\{ 2\sqrt{\frac{2\left(4000\,\mathrm{MeV}\right)}{\left(197\,\mathrm{MeV}\cdot fm\right)^{2}\left(1.8\,\mathrm{MeV}\right)}}\left(4\right)\left(190\right)\left(1.4\,\mathrm{MeV\cdot fm}\right)\left(\frac{\pi}{2}-2\sqrt{\frac{1.8\,\mathrm{MeV}}{149.44\,\mathrm{MeV}}}\right)\right\} 
+\end{multline*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+t_{\nicefrac{1}{2}} & =\ln\left(2\right)\left(2.46\times10^{-23}\,\mathrm{s}\right)\sqrt{54.35}\exp\left\{ 2\sqrt{0.11\,\mathrm{\nicefrac{1}{MeV^{2}\cdot fm^{2}}}}\left(1064.0\,\mathrm{MeV\cdot fm}\right)\left(\frac{\pi}{2}-2\sqrt{0.012}\right)\right\} \\
+ & =\ln\left(2\right)\left(2.46\times10^{-23}\,\mathrm{s}\right)\left(7.37\right)\exp\left\{ \left(0.66\,\mathrm{\nicefrac{1}{MeV\cdot fm}}\right)\left(1064.0\,\mathrm{MeV\cdot fm}\right)\left(1.35\right)\right\} \\
+ & =\ln\left(2\right)\left(2.46\times10^{-23}\,\mathrm{s}\right)\left(7.37\right)\exp\left\{ 948.02\right\} \\
+ & =\left(1.26\times10^{-22}\,\mathrm{s}\right)\left(5.25\times10^{411}\right)\\
+ & =6.615\times10^{389}\,\mathrm{s}=1.83\times10^{386}\,\mathrm{yr}=1.53\times10^{372}\,\text{times the age of the universe}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tau=\frac{1}{\lambda}=\frac{t_{\nicefrac{1}{2}}}{\ln\left(2\right)}=2.64\times10^{386}\,\mathrm{yr}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+A relativistic electron whose rest mass can be neglected has energy 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ It scatters elastically from a particle of mass 
+\begin_inset Formula $M$
+\end_inset
+
+ at rest.
+ After collision the electron has turned through an angle 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and has energy 
+\begin_inset Formula $E'$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subparagraph*
+Using relativistic 4-vector 'momentum', i.e.
+\begin_inset Formula 
+\[
+\vec{P}=\left[\begin{array}{c}
+E\\
+p_{\parallel}\\
+p_{\perp}
+\end{array}\right]
+\]
+
+\end_inset
+
+Use conservation of 4-vector momentum to write out the conservation of momentum
+ for this reaction.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\vec{P}_{1i}+\vec{P}_{2i}=\vec{P}_{1f}+\vec{P}_{2f}
+\]
+
+\end_inset
+
+and we can put in the original values, knowing that particle 2 will have
+ zero momentum and only rest mass for its energy, and that particle one
+ never considers the rest mass energy
+\begin_inset Formula 
+\[
+\left(\vec{P}_{1i}+\vec{P}_{2i}\right)=\left[\begin{array}{c}
+E+Mc^{2}\\
+p_{\parallel}+0\\
+p_{\perp}+0
+\end{array}\right]
+\]
+
+\end_inset
+
+and transforming to the zero momentum frame, we have
+\begin_inset Formula 
+\[
+\left(\vec{P}_{1i}+\vec{P}_{2i}\right)^{*}=\left[\begin{array}{ccc}
+\gamma & -\eta & 0\\
+-\eta & \gamma & 0\\
+0 & 0 & 1
+\end{array}\right]\left[\begin{array}{c}
+E+Mc^{2}\\
+p_{\parallel}+0\\
+p_{\perp}+0
+\end{array}\right]=\left[\begin{array}{ccc}
+\frac{E}{M} & -Ep & 0\\
+-Ep & \frac{E}{M} & 0\\
+0 & 0 & 1
+\end{array}\right]\left[\begin{array}{c}
+E+Mc^{2}\\
+p_{\parallel}+0\\
+p_{\perp}+0
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph*
+Reading off the energy part of the equation find the 
+\bar under
+total
+\bar default
+ energy of the struck particle after the collision.
+ 
+\end_layout
+
+\begin_layout Standard
+something
+\end_layout
+
+\begin_layout Subparagraph*
+Find the magnitude of the 3-momentum of the struck particle
+\begin_inset Formula 
+\[
+p_{M}c=\left[E^{2}+E'^{2}-2EE'\cos\left(\theta\right)\right]^{\nicefrac{1}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+something
+\end_layout
+
+\begin_layout Subparagraph*
+Show that the fraction of energy lost by the electron is given by 
+\begin_inset Formula 
+\[
+\frac{E-E'}{E}=\left[1+Mc^{2}\left(E\left(1-\cos\left(\theta\right)\right)\right)\right]^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+something
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/Users/ahagen/bibs/phys_556"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,916 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+
+\renewcommand\theparagraph{[ Q\arabic{paragraph} ]}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth 4
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+PHYS 556 HMWK 1
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+9/2/15
+\end_layout
+
+\begin_layout Paragraph
+Calculate the remaining amount fraction of material using the given information.
+ Remember the difference between half-life and the decay constant of the
+ material.
+ Check the author's statement about the rareness of the material.
+\end_layout
+
+\begin_layout Standard
+Assuming the information about the half-life of each element is correct,
+ the amount remaining after 
+\begin_inset Formula $4\times10^{9}\,\mathrm{yr}$
+\end_inset
+
+ can be calculated using the decay equation:
+\begin_inset Formula 
+\[
+t_{\nicefrac{1}{2}}=7.\times10^{3}\,\mathrm{yr}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+N=N_{0}\exp\left(-\lambda t\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda=\frac{\ln\left(2.\right)}{t_{\nicefrac{1}{2}}}=\frac{\ln\left(2.\right)}{\left(7.\times10^{3}\,\mathrm{yr}\right)}=9.902\times10^{-5}\,\mathrm{\frac{1}{yr}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{N}{N_{0}}=\exp\left(-\left(9.902\times10^{-5}\,\mathrm{\frac{1}{yr}}\right)\cdot\left(4.\times10^{9}\,\mathrm{yr}\right)\right)\approx\nicefrac{1}{7\times10^{172018}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Write out the reactions discussed formally, in a way similar to that shown
+ in equation (1) and (2).
+\end_layout
+
+\begin_layout Standard
+The equations discussed are the neutron capture of 
+\begin_inset Formula $\ce{^{238}U}$
+\end_inset
+
+ and a chain of 
+\begin_inset Formula $\beta$
+\end_inset
+
+ decays.
+ The individual equations are
+\begin_inset Formula 
+\[
+\ce{_{92}^{238}U}+\ce{_{0}^{1}\mathit{n}}\rightarrow\ce{\ce{_{92}^{239}U}}+\gamma
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ce{_{92}^{239}U}\rightarrow\ce{_{93}^{239}Np}+\beta^{-}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\ce{_{93}^{239}Np}\rightarrow\ce{_{94}^{239}Pu}+\beta^{-}+\overline{\nu_{e}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Why are the authors discussing geological possibilities for the discovery
+ of Berkelium and Californium? (Is this discussion included for political
+ reasons?)
+\end_layout
+
+\begin_layout Standard
+The authors are likely covering for two reasons.
+ One is to prove why their lab exists (to create things unobtainable in
+ nature), and the second is to assuage fears of geological abundance of
+ high 
+\begin_inset Formula $Z$
+\end_inset
+
+ nucelei such as 
+\begin_inset Formula $\ce{Bk}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Calculate how close the 
+\begin_inset Formula $\ce{^{4}He}$
+\end_inset
+
+ particle comes to the 
+\begin_inset Formula $\ce{^{241}Am}$
+\end_inset
+
+ nucleus using the Berkeley Cyclotron.
+ Compare this to the nuclear radii of the neuclei.
+ Is there an overlap?
+\end_layout
+
+\begin_layout Standard
+The nuclear radius of 
+\begin_inset Formula $\ce{^{241}Am}$
+\end_inset
+
+ can be calculated using a simple correlation.
+\begin_inset Formula 
+\[
+R_{A}=\left(1.2\,\mathrm{fm}\right)A^{\nicefrac{1}{3}}=\left(1.2\,\mathrm{fm}\right)\left(241.\right)^{\nicefrac{1}{3}}=7.5\,\mathrm{fm}
+\]
+
+\end_inset
+
+Then, to compare this to the approach of the 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ particle to the nucelus, we have to determine when the repulsion of the
+ nucleus is larger than the kinetic energy imparted by the cyclotron.
+ The kinetic energy imparted can be calculated knowing that the cyclotron
+ gives the 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ particle 
+\begin_inset Formula $35\,\mathrm{MeV}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cunningham1959"
+
+\end_inset
+
+.
+ This can be equated to the electrical charge energy:
+\begin_inset Formula 
+\[
+U=\frac{1}{4\pi\epsilon_{0}}\frac{q_{1}q_{2}}{r}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $q_{1}$
+\end_inset
+
+ is the charge of the 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ particle (
+\begin_inset Formula $2+$
+\end_inset
+
+), 
+\begin_inset Formula $q_{2}$
+\end_inset
+
+ is the charge of the 
+\begin_inset Formula $\ce{Am}$
+\end_inset
+
+ nucleus (
+\begin_inset Formula $95+$
+\end_inset
+
+), 
+\begin_inset Formula $\epsilon_{0}$
+\end_inset
+
+ is the permitivity of free space, and 
+\begin_inset Formula $r$
+\end_inset
+
+ is the radius of interest.
+ Therefore
+\begin_inset Formula 
+\[
+r=\frac{q_{1}q_{2}}{4\pi\epsilon_{0}U}=\frac{\left(2\cdot1.6\times10^{-19}\,\mathrm{C}\right)\left(95\cdot1.6\times10^{-19}\,\mathrm{C}\right)}{4\pi\left(8.85\times10^{-12}\,\mathrm{\frac{C^{2}s^{2}}{m^{3}kg}}\right)\left(35\,\mathrm{MeV}\right)}=7.8\times10^{-15}\,\mathrm{m}=7.8\,\mathrm{fm}
+\]
+
+\end_inset
+
+which is close to the size of the nuclear radius, so the interaction can
+ occur.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Given the probability of occurrence of 
+\begin_inset Formula $10^{-26}$
+\end_inset
+
+, what cross sections were they using in their estimate? Remember the equation
+ I showed you in class.
+\end_layout
+
+\begin_layout Standard
+See calculation in question 6.
+\end_layout
+
+\begin_layout Paragraph
+The equation given is kind of a hand calculation, a little odd to be in
+ a paper.
+ However, the authors are trying to give an order of magnitude estimate
+ to the convince the reader that what they are doing is plausible.
+ Go through the calculation term by term and write a symbolic equations
+ for the production rate and the total nuclei produced.
+ Be sure to the relate it to the cross section, which they hide in the probabili
+ty.
+ (Why would they hide the cross section estimate this way?)
+\end_layout
+
+\begin_layout Standard
+The equation in the paper is reproduced below:
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Formula $R=10^{-26}\times\left(0.010/241\right)\times6\times10^{23}\left(\text{atoms of Am in target}\right)\times6\times10^{12}\left(\text{He}^{++}\text{ ions per second}\right)\cong1.5\times10^{6}\left(\text{atoms Bk}^{243}\text{formed per second}\right)$
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cunningham1959"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to write this symbolically, we should try to identify groups that
+ correspond to calculateable quantities and match units.
+ 
+\begin_inset Formula 
+\[
+R=\underbrace{10^{-26}}_{?}\times\underbrace{0.010}_{m_{Am}}\times\underbrace{\frac{1}{241}}_{\frac{1}{A}}\times\underbrace{6\times10^{23}}_{N_{A}}\times\underbrace{6\times10^{12}}_{?}
+\]
+
+\end_inset
+
+From the given mass, and general knowledge of the atomic number and Avogadro's
+ number, the three above groups can be determined, leaving two groups unidentifi
+ed.
+ The second group (
+\begin_inset Formula $6\times10^{12}$
+\end_inset
+
+) has units similar to current, so a quick calculation of the number of
+ 
+\begin_inset Formula $\ce{He^{++}}$
+\end_inset
+
+ ions in a 
+\begin_inset Formula $2\,\mathrm{\mu A}$
+\end_inset
+
+ beam shows
+\begin_inset Formula 
+\[
+I_{\alpha}=\frac{I}{2\cdot e^{-}}=\frac{2\times10^{-6}\,\mathrm{A}}{2\cdot1.6\times10^{-19}\,\mathrm{C}}=6.25\times10^{12}\,\mathrm{\frac{He^{++}}{s}}
+\]
+
+\end_inset
+
+showing that the second group is in fact, 
+\begin_inset Formula $I_{\alpha}$
+\end_inset
+
+.
+ The final group, then, must be the probability 
+\begin_inset Formula $P$
+\end_inset
+
+ of interaction.
+ Thus the final equation is
+\begin_inset Formula 
+\[
+R=P\frac{m_{Am}}{A}N_{A}I_{\alpha}
+\]
+
+\end_inset
+
+In order to determine the cross section, we must relate this to a common
+ definition of the reaction rate, namely
+\begin_inset Formula 
+\[
+R=\sigma N_{Am}I_{\alpha}=\sigma\frac{N_{A}\Delta x}{A}I_{\alpha}
+\]
+
+\end_inset
+
+and equating this with above gives
+\begin_inset Formula 
+\[
+R=\sigma\frac{N_{A}\Delta x}{A}I_{\alpha}=P\frac{m_{Am}}{A}N_{A}I_{\alpha}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sigma=P\frac{m_{Am}}{\Delta x}
+\]
+
+\end_inset
+
+and assuming the thickness to be a couple microns, we get
+\begin_inset Formula 
+\[
+\sigma=10^{-26}\frac{0.010}{10.0\times10^{-4}}=1.0\times10^{-25}\,\mathrm{cm}=0.1\,\mathrm{b}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+They must hide the cross section in this way to stop other countries from
+ knowing whether berkelium can be used to create a bomb or not.
+\end_layout
+
+\begin_layout Paragraph
+What is the technique of ion exchange separation? What is the modern term
+ for this technique? Pull down a picture of a modern system and explain
+ in a few words the basic principle of operation.
+\end_layout
+
+\begin_layout Standard
+Ion exchange separation is now commonly referred to as Ion Exchange Chromotograp
+hy or Ion Chromotography Separation.
+ It involves an analyte (the material of interest), which is moved by the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+mobile phase
+\begin_inset Quotes erd
+\end_inset
+
+ (usually a buffer solution) into a column containing the 
+\begin_inset Quotes eld
+\end_inset
+
+stationary phse
+\begin_inset Quotes erd
+\end_inset
+
+ (usually a gel matrix), which has open charges that will allow for the
+ analyte to attach to the stationary solution.
+ After this process, elution can be performed to obtain the analyte, and
+ chromotography or conductivity testing to determine the presence and identity
+ of the analyte 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bahadir2013"
+
+\end_inset
+
+.
+ The following figure is a schematic diagram of that process.
+ 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/ion-exchance-chromotography.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ion-exchange chromotography system 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bahadir2013"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+The discovery graph is Figure 2.
+ Explain this graph as if to a friend.
+ Also, why is the top graph of Figure 1 important in your discussion?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+The graph in Figure 2 shows the activity in a detector versus the amount
+ of elutriant (a chemical that washes the analyte - or chemical of interest
+ - out of a gel matrix).
+ Peaks appear in graphs like this because the amount of elutriant required
+ to remove isotopes form the matrix is ordered in such a way that less elutriant
+ will wash out isotopes with higher atomic numbers (for an example of this,
+ see the lanthanide chain in Figure 1).
+ Because of this, the peak in Figure 2 that occurs 
+\series bold
+before
+\series default
+ the peak for 
+\begin_inset Formula $\ce{Cm}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ce{Am}$
+\end_inset
+
+ shows that the atomic number of that element is 
+\series bold
+higher
+\series default
+ than that of 
+\begin_inset Formula $\ce{Cm}$
+\end_inset
+
+, namely it is the discovered isotope 
+\begin_inset Formula $Z=97$
+\end_inset
+
+.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Write an equation like (1) and (2) for the electron capture process.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+_{1}^{1}\mathit{p}+e^{-}\rightarrow{}_{0}^{1}\mathit{n}+\nu_{e}
+\]
+
+\end_inset
+
+ or
+\begin_inset Formula 
+\[
+\ce{_{Z}^{A}X}\rightarrow\ce{_{Z-1}^{A}X}+\nu_{e}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+What is the problem in preparing microgram amounts of new materials using
+ accelerators? What is the best way to prepare more massive samples?
+\end_layout
+
+\begin_layout Standard
+Because of two reasons, accelerators could not be used to create massive
+ samples of high 
+\begin_inset Formula $Z$
+\end_inset
+
+ elements such as 
+\begin_inset Formula $\ce{Bk}$
+\end_inset
+
+.
+ One is the small beam current in the accelerators, which may have increased
+ since the publication of the Cunningham paper.
+ The other is the thermal stability because of the short half lives (creation
+ of heat from decay would cause the aggregates to be thermally unstable).
+ Instead, Cunningham points out that in high neutron flux regions, several
+ captures can lead to a high 
+\begin_inset Formula $Z$
+\end_inset
+
+ element, so some high flux isotope creation reactors are a better way to
+ create massive samples 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cunningham1959"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+How were more massive samples prepared and how long did it take? Is this
+ still the best approach?
+\end_layout
+
+\begin_layout Standard
+Using MTR, a 
+\begin_inset Formula $5\,\mathrm{yr}$
+\end_inset
+
+ neutron irradiation of 
+\begin_inset Formula $\ce{^{239}Pu}$
+\end_inset
+
+ was performed, which generated 
+\begin_inset Formula $0.6\,\mathrm{\mu g}$
+\end_inset
+
+ of 
+\begin_inset Formula $\ce{Bk}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cunningham1959"
+
+\end_inset
+
+.
+ This seems like a miniscule amount to be created in 
+\begin_inset Formula $5\,\mathrm{yrs}$
+\end_inset
+
+, but MTR does not have as high of a neutron flux as some modern reactors.
+ For instance, creation of 
+\begin_inset Formula $\ce{Bk}$
+\end_inset
+
+ targets using irradiation in HFIR takes only just over a year 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oganessian2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+What are the three methods to produce Super Heavy Elements in the discovery
+ phase?
+\end_layout
+
+\begin_layout Standard
+The methods to create elements past 
+\begin_inset Formula $Z=114$
+\end_inset
+
+ are given anecdotally in the paper as:
+\end_layout
+
+\begin_layout Description
+Heavy-ion
+\begin_inset space \space{}
+\end_inset
+
+Fusion Using a doubly magic 
+\begin_inset Formula $\ce{^{48}Ca}$
+\end_inset
+
+ projectile onto actinide targets and following their 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ decay chain afterward 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oganessian2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Neutron
+\begin_inset space \space{}
+\end_inset
+
+Bombardment With high flux sources such as HFIR, neutron bombardment can
+ create elements up to 
+\begin_inset Formula $Z=97$
+\end_inset
+
+ and perhaps futher.
+ Chemical separation is required after this process 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oganessian2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+\begin_inset Quotes eld
+\end_inset
+
+Hot
+\begin_inset space \space{}
+\end_inset
+
+Fusion
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Reactions For the nucelei of elements with 
+\begin_inset Formula $Z=106,\;108,\;110$
+\end_inset
+
+, a so-called 
+\begin_inset Quotes eld
+\end_inset
+
+hot-fusion
+\begin_inset Quotes erd
+\end_inset
+
+ technique was used, although not elucidated upon by Oganessian 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oganessian1999"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+What is the goal of searching in these Super Heavy Elements?
+\end_layout
+
+\begin_layout Standard
+The overarching goal is to determine the accuracy of the shell model, especially
+ as it concerns 
+\begin_inset Quotes eld
+\end_inset
+
+islands of stability
+\begin_inset Quotes erd
+\end_inset
+
+.
+ As Dr.
+ Oganessian states, every advanced model of the nucleus predicts another
+ island of stability after 
+\begin_inset Formula $\ce{^{208}Pb}$
+\end_inset
+
+ near a spherically doubly magic nucleus 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oganessian2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Write out at least three questions concerning the introduction material
+ in the discovery paper of Livermorium.
+\end_layout
+
+\begin_layout Enumerate
+What are the differences between 
+\begin_inset Quotes eld
+\end_inset
+
+hot-
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+cold-
+\begin_inset Quotes erd
+\end_inset
+
+ fusion? The paper states that there is 
+\begin_inset Formula $30\,\mathrm{MeV}$
+\end_inset
+
+ excitation in a 
+\begin_inset Quotes eld
+\end_inset
+
+cold-fusion
+\begin_inset Quotes erd
+\end_inset
+
+ reaction, and 
+\begin_inset Formula $E^{*}=45\,\mathrm{MeV}$
+\end_inset
+
+ for a 
+\begin_inset Quotes eld
+\end_inset
+
+hot-fusion
+\begin_inset Quotes erd
+\end_inset
+
+ reaction 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oganessian1999"
+
+\end_inset
+
+, but those don't seem that different.
+\end_layout
+
+\begin_layout Enumerate
+In the synthesis of the 
+\begin_inset Formula $\ce{^{249}Bk}$
+\end_inset
+
+ target from Oak Ridge, neutron bombardment in HFIR was used 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oganessian2010"
+
+\end_inset
+
+.
+ How much does the quoted 
+\begin_inset Formula $250\,\mathrm{d}$
+\end_inset
+
+ irradiation in HFIR cost?
+\end_layout
+
+\begin_layout Enumerate
+What type of thermal properties are required for creation of these super
+ heavy elements? Is everything cryogenic? Are any of the decays gaseous?
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/Users/ahagen/bibs/phys_556"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

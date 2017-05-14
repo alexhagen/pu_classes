@@ -1,0 +1,377 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing double
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth -1
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 2
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Bremsstrahlung
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+12/15/15
+\end_layout
+
+\begin_layout Standard
+Every desription of bremsstrahlung first describes it by its literal translation
+ from german: 
+\emph on
+braking radiation
+\emph default
+.
+ This gives a general picture of the physics of the phenomena.
+ When ionizing radiation is incident upon a material, coulomb interactions
+ cause the incident radiation to decelerate.
+ During this deceleration, energy is conserved by the emission of electromagneti
+c radiation.
+ This is enacted physically by a spectrum of gamma and x-ray photos being
+ emitted from the target material.
+ Bremsstrahlung can be detrimental or useful in real world applications.
+ For instance, they often occlude data if a beta emitter is enclosed in
+ high Z material, but they are used to generate x-rays for medical diagnostics
+ and in other accelerator based sources.
+\end_layout
+
+\begin_layout Standard
+The maximum energy of the emitted radiation can be calculated simply by
+ assuming the incoming particle gives up all of its energy in one 
+\begin_inset Quotes eld
+\end_inset
+
+collision
+\begin_inset Quotes erd
+\end_inset
+
+.
+ This yields
+\begin_inset Formula 
+\[
+E_{e}=eV=h\nu=\max\left(E_{\gamma}\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $E_{e}$
+\end_inset
+
+ is the energy of an incident of an electron, 
+\begin_inset Formula $e$
+\end_inset
+
+ is the charge of the electron, 
+\begin_inset Formula $V$
+\end_inset
+
+ is the voltage bias applied to generating the electron, 
+\begin_inset Formula $h$
+\end_inset
+
+ is Planck's constant, and 
+\begin_inset Formula $\nu$
+\end_inset
+
+ is the frequency of the photon with energy 
+\begin_inset Formula $E_{\gamma}$
+\end_inset
+
+.
+ This is given (in quantities more commonly used in xray spectroscopy) as
+\begin_inset Formula 
+\begin{equation}
+\lambda_{min}=\frac{hc}{eV}
+\end{equation}
+
+\end_inset
+
+and is known as the Duane-Hunt law 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Duane1915"
+
+\end_inset
+
+.
+ The maximum energy describes a very small percentage of emitted radiation,
+ only at very forward angles.
+ The rest of the emitted radiation will vary in energy (with many emitted
+ at low energy) and direction (with forward bias to high energies).
+ Koch and Motz published a review of the spectra from bremsstrahlung with
+ varying energy, targets, and directions 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Koch1959"
+
+\end_inset
+
+.
+ One of their notable predictions is that of a spectra on 
+\begin_inset Formula $Z=78$
+\end_inset
+
+, shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Dependence-of-bremsstrahlung"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Screen Shot 2015-12-14 at 1.48.37 PM.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dependence of bremsstrahlung spectrum shape on the incident electron energy
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bethe1934"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Dependence-of-bremsstrahlung"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{multline}
+d\sigma_{k}=\frac{2Z^{2}r_{0}^{2}}{137}\frac{dk}{k}\cdot\\
+\cdot\left\{ \left(1+\left(\frac{E}{E_{0}}\right)^{2}-\frac{2}{3}\frac{E}{E_{0}}\right)\left(\ln M\left(0\right)+1-\frac{2}{b}\tan^{-1}b\right)\right.\\
+\left.+\frac{E}{E_{0}}\left[\frac{2}{b^{2}}\ln\left(1+b^{2}\right)+\frac{4\left(2-b^{2}\right)}{3b^{2}}\tan^{-1}b-\frac{8}{3b^{2}}+\frac{2}{9}\right]\right\} 
+\end{multline}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+b=\left(\frac{2E_{0}EZ^{\frac{1}{2}}}{111k}\right);\quad\frac{1}{M\left(0\right)}=\left(\frac{k}{2E_{0}E}\right)^{2}+\left(\frac{Z^{\frac{1}{2}}}{111}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ulrey did some of the first experimental work to verify the Duane-Hunt law
+ and also to check on the difference of Z on the energy distribution of
+ bremsstrahlung.
+ He used an X-ray tube with separate plates of different composition on
+ each of different hexagonal faces.
+ The voltage was generated by a step up transformer and varied up to 
+\begin_inset Formula $50\,\mathrm{kV}$
+\end_inset
+
+, and an ionization chamber filled with 
+\begin_inset Formula $\ce{C_{2}H_{5}Br}$
+\end_inset
+
+ vapor was used to measure the energies of the emitted X-rays.
+ One of the result of the paper, showing the characteristic shape of the
+ bremsstrahlung spectrum and its variation with energy is shown in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bremsstrahlung-spectra-for"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ulrey.1918"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Screen Shot 2015-12-14 at 1.10.09 PM.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bremsstrahlung spectra for different incident electron beam energies 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ulrey.1918"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bremsstrahlung-spectra-for"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Unfortunately, even with almost 100 years between the original work on these
+ spectra and now, most of the current work done is still experimental.
+ This is largely due to the effect that screening has upon the energy transfer
+ to the electromagnetic particle.
+ Bethe's work clearly stated that, while it is possible to theoretically
+ solve the energy transfer for a free particle in a single field, in reality
+ there is some amount of screening done by other electrons in the material.
+ It is still unknown as to what amount that modifies the apparent field
+ working upon the incident particle.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/Users/ahagen/bibs/phys_556"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
