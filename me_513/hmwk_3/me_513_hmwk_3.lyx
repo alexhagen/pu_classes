@@ -1,0 +1,1013 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+
+\def\ifdef#1{\ifx#1\undefined}
+
+\renewcommand\theparagraph{%
+     \probnum
+}
+\renewcommand\thesubparagraph{(\alph{subparagraph})}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth 5
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+ME 513 HMWK 3
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+10/19/15
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+A 
+\begin_inset Formula $0.01\,\mathrm{m^{2}}$
+\end_inset
+
+ piston oscillates at one end of a 
+\begin_inset Formula $1\,\mathrm{m}$
+\end_inset
+
+ long tube that is terminated at the other end by a partially absorbing
+ surface.
+ At a single frequency, 
+\begin_inset Formula $\omega$
+\end_inset
+
+, the spatial dependence of the plane wave within the tube has the form
+\begin_inset Formula 
+\[
+p\left(x\right)=\exp\left(-jkx\right)+0.8\exp\left(jkx\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $x=0$
+\end_inset
+
+ is at the surface of the absorbing materials, and the positive 
+\begin_inset Formula $x$
+\end_inset
+
+-direction is 
+\emph on
+into
+\emph default
+ the absorbing surface.
+\end_layout
+
+\begin_layout Standard
+The drawing of the coordinate system and other described properties of this
+ problem as drawing below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{prob_1.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Figure of setup for problem 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Derive by using the linearized Euler equation an expression for the spatial
+ dependence of the particle velocity field within the tube, and calculate
+ the velocity of the piston.
+\end_layout
+
+\begin_layout Standard
+The linear Euler's equation is given as
+\begin_inset Formula 
+\[
+\rho_{0}\frac{\partial\vec{u}}{\partial t}=-\nabla p
+\]
+
+\end_inset
+
+and since we are working in one dimension, we have
+\begin_inset Formula 
+\[
+\rho_{0}\frac{du}{dt}=-\frac{dp}{dx}
+\]
+
+\end_inset
+
+.
+ And, by assumption, the time dependence of 
+\begin_inset Formula $u$
+\end_inset
+
+ is 
+\begin_inset Formula $\propto\exp\left(-\omega jt\right)$
+\end_inset
+
+.
+ Integrating the above expression, then we get.
+\begin_inset Formula 
+\[
+u=\frac{1}{\rho_{0}\omega j}\frac{dp}{dx}
+\]
+
+\end_inset
+
+By applying the given expression for pressure, first we can the spatial
+ derivative of this function
+\begin_inset Formula 
+\[
+\frac{dp}{dx}=-jk\exp\left(-jkx\right)+0.8jk\exp\left(jkx\right)
+\]
+
+\end_inset
+
+which is therefore equal to the negated density multiplied by the acceleration,
+ thus
+\begin_inset Formula 
+\begin{align*}
+\frac{du}{dt} & =\frac{jk\exp\left(-jkx\right)-0.8jk\exp\left(jkx\right)}{\rho_{0}\omega j}\\
+\frac{du}{dt} & =\frac{jk}{\rho_{0}\omega j}\left[\exp\left(-jkx\right)-0.8\exp\left(jkx\right)\right]
+\end{align*}
+
+\end_inset
+
+and therefore, integrating
+\begin_inset Formula 
+\[
+u=\frac{k}{\rho_{0}}\left[\exp\left(-jkx\right)-0.8\exp\left(jkx\right)\right]+u_{0}
+\]
+
+\end_inset
+
+and applying the condition at the piston face (
+\begin_inset Formula $x=-1$
+\end_inset
+
+) and assuming incompressible (air velocity at piston face will equal exactly
+ the piston face velocity, we have
+\begin_inset Formula 
+\[
+u\left(0\right)=\frac{k}{\rho_{0}}\left[\exp\left(jk\right)-0.8\exp\left(-jk\right)\right]+u_{0}
+\]
+
+\end_inset
+
+.
+ Finally, assuming that the air was stationary at time zero, we have 
+\begin_inset Formula $u_{0}=0$
+\end_inset
+
+ and thus
+\begin_inset Formula 
+\[
+u\left(0\right)=\frac{k}{\rho_{0}}\left[\exp\left(jk\right)-0.8\exp\left(-jk\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+The time-averaged acoustic intensity at any point within the tube can be
+ calculated using the expression 
+\begin_inset Formula $I\left(x\right)=\frac{1}{2}\mathrm{Re}\left\{ p\left(x\right)u\left(x\right)\right\} $
+\end_inset
+
+ where 
+\begin_inset Formula $\mathrm{Re}$
+\end_inset
+
+ denotes the real part, and 
+\begin_inset Formula $u\left(x\right)$
+\end_inset
+
+ is the acoustic particle velocity.
+ Use this expression to show that the acoustic intensity does not depend
+ on position within the tube, and then to determine the sound power delivered
+ to the tube by the piston.
+\end_layout
+
+\begin_layout Standard
+Applying the expression to find the acoustic intensity, we have
+\begin_inset Formula 
+\begin{align*}
+I\left(x\right) & =\frac{1}{2}\mathrm{Re}\left\{ p\left(x\right)u\left(x\right)\right\} \\
+ & =\frac{1}{2}\mathrm{Re}\left\{ \left[\exp\left(-jkx\right)+0.8\exp\left(jkx\right)\right]\left[\frac{k}{\rho_{0}}\left[\exp\left(-jkx\right)-0.8\exp\left(jkx\right)\right]\right]\right\} \\
+ & =\frac{1}{2}\mathrm{Re}\left\{ \frac{k}{\rho_{0}}\left[\exp\left(-2jkx\right)+0.8-0.8-0.64\exp\left(2jkx\right)\right]\right\} \\
+ & =\frac{1}{2}\mathrm{Re}\left\{ \frac{k}{\rho_{0}}\left[\exp\left(-2jkx\right)-0.64\exp\left(2jkx\right)\right]\right\} \\
+ & =\frac{1}{2}\frac{k}{\rho_{0}}\left\{ \cos(2kx)-0.64\cos\left(-2kx\right)\right\} 
+\end{align*}
+
+\end_inset
+
+and operating on the argument of the real function, it is easy to see that
+ the real part will be a periodic function in 
+\begin_inset Formula $x$
+\end_inset
+
+, which is contrary to what the problem is asking.
+\end_layout
+
+\begin_layout Subparagraph
+What is the specific acoustic impedcance at the piston surface and at the
+ absorbing surface?
+\end_layout
+
+\begin_layout Standard
+The specific acoustic impedance is defined as
+\begin_inset Formula 
+\begin{align*}
+z & =\frac{p\left(x\right)}{u\left(x\right)}\\
+ & =\frac{\exp\left(-jkx\right)+0.8\exp\left(jkx\right)}{\frac{k}{\rho_{0}}\left[\exp\left(-jkx\right)-0.8\exp\left(jkx\right)\right]}\\
+ & =-\frac{\rho_{0}}{k}\frac{\exp\left(-jkx\right)+0.8\exp\left(jkx\right)}{\exp\left(-jkx\right)-0.8\exp\left(jkx\right)}
+\end{align*}
+
+\end_inset
+
+and at the pistion (
+\begin_inset Formula $x=-1$
+\end_inset
+
+), this is:
+\begin_inset Formula 
+\[
+z_{piston}=-\frac{\rho_{0}}{k}\frac{\exp\left(jk\right)+0.8\exp\left(-jk\right)}{\exp\left(jk\right)-0.8\exp\left(-jk\right)}
+\]
+
+\end_inset
+
+and at the absorbing surface this is
+\begin_inset Formula 
+\begin{align*}
+z_{surf} & =-\frac{\rho_{0}}{k}\frac{1+0.8}{1-0.8}\\
+ & =-\frac{\rho_{0}}{k}\frac{1.8}{0.2}\\
+ & =-\frac{9\rho_{0}}{k}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+A unit amplitude plane wave strikes a surface at 
+\begin_inset Formula $y=0$
+\end_inset
+
+ as shown.
+ A reflected plane wave, having complex amplitude 
+\begin_inset Formula $R$
+\end_inset
+
+ is generated at the surface and it propagates in the direction shown.
+\end_layout
+
+\begin_layout Subparagraph
+Write an expression for the sound pressure in region 
+\begin_inset Formula $y<0$
+\end_inset
+
+ (defining quantities as necessary).
+\end_layout
+
+\begin_layout Standard
+The sound pressure in the region below the surface is defined through continuity
+, with
+\begin_inset Formula 
+\[
+\cancelto{1}{P_{i}}\exp\left(-jk_{1}y\sin\theta\right)+\cancelto{R}{P_{r}}\exp\left(-jk_{1}y\sin\theta\right)=P_{t}\exp\left(-jk_{2}y\sin\theta_{t}\right)
+\]
+
+\end_inset
+
+And we can find the angle of transmission with
+\begin_inset Formula 
+\[
+\frac{\sin\theta}{c_{1}}=\frac{\sin\theta_{t}}{c_{2}}
+\]
+
+\end_inset
+
+or
+\begin_inset Formula 
+\[
+\theta_{t}=\arccos\left(\sqrt{1-\left(\nicefrac{c_{2}}{c_{1}}\right)^{2}\sin^{2}\theta}\right)
+\]
+
+\end_inset
+
+and therefore
+\begin_inset Formula 
+\begin{align*}
+p_{y<0} & =P_{t}\exp\left(-jk_{2}y\sin\left[\arccos\left(\sqrt{1-\left(\nicefrac{c_{2}}{c_{1}}\right)^{2}\sin^{2}\theta}\right)\right]\right)\\
+ & =P_{t}\exp\left(-jk_{2}y\sqrt{1-\sqrt{1-\left(\nicefrac{c_{2}}{c_{1}}\right)^{2}\sin^{2}\theta}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+By using the linearized Euler equation, derive an expression for the 
+\begin_inset Formula $y$
+\end_inset
+
+-component of the particle velocity.
+\end_layout
+
+\begin_layout Standard
+The particle velocity of this is
+\begin_inset Formula 
+\begin{align*}
+u & =-\frac{1}{j\omega\rho_{0}}\frac{dp}{dy}\\
+ & =\frac{1}{j\omega\rho_{0}}jk_{2}\sqrt{1-\sqrt{1-\left(\nicefrac{c_{2}}{c_{1}}\right)^{2}\sin^{2}\theta}}P_{t}\exp\left(-jk_{2}y\sqrt{1-\sqrt{1-\left(\nicefrac{c_{2}}{c_{1}}\right)^{2}\sin^{2}\theta}}\right)\\
+ & =\frac{k_{2}}{\omega\rho_{0}}\sin\theta_{t}p_{y<0}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Based solely on the field in the region 
+\begin_inset Formula $y<0$
+\end_inset
+
+, derive an experession for the time averaged sound power per unit area
+ flowing into the surface at 
+\begin_inset Formula $y=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The time averaged sound per unit area is the acoustic intensity, which is
+\begin_inset Formula 
+\begin{align*}
+I & =\frac{1}{2}\mathrm{Re}\left\{ pu\right\} \\
+ & =\frac{1}{2}\mathrm{Re}\left\{ \frac{k_{2}}{\omega\rho_{2}}\sin\theta_{t}p_{y<0}^{2}\right\} \\
+ & =\frac{k_{2}}{2\omega\rho_{2}}\sqrt{1-\sqrt{1-\left(\nicefrac{c_{2}}{c_{1}}\right)^{2}\sin^{2}\theta}}\mathrm{Re}\left\{ P_{t}^{2}\exp\left(-2jk_{2}y\sqrt{1-\sqrt{1-\left(\nicefrac{c_{2}}{c_{1}}\right)^{2}\sin^{2}\theta}}\right)\right\} \\
+ & =\frac{k_{2}}{2\omega\rho_{2}}P_{t}^{2}\sqrt{1-\sqrt{1-\left(\nicefrac{c_{2}}{c_{1}}\right)^{2}\sin^{2}\theta}}\cos\left(2k_{2}y\sqrt{1-\sqrt{1-\left(\nicefrac{c_{2}}{c_{1}}\right)^{2}\sin^{2}\theta}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+A sound field has the form
+\begin_inset Formula 
+\[
+p\left(x,t\right)=A\exp\left(-\alpha x\right)\exp\left(-j\beta x\right)\exp\left(j\omega t\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $A$
+\end_inset
+
+ is complex and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ are real.
+\end_layout
+
+\begin_layout Subparagraph
+Sketch the spatial variation of the sound field.
+ What is the significance of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+? What is the wavelength of the sound field in terms of the parameters of
+ the sound field?
+\end_layout
+
+\begin_layout Standard
+The above equation can be simplified into the form 
+\begin_inset Formula 
+\[
+p\left(x,t\right)=A\exp\left(-jkx\right)\exp\left(j\omega t\right)
+\]
+
+\end_inset
+
+when 
+\begin_inset Formula 
+\[
+k=\beta-\alpha j
+\]
+
+\end_inset
+
+and knowing the relationship between wavenumber, frequency, and wavelength,
+ we can find that
+\begin_inset Formula 
+\[
+k=\frac{\omega}{c}=f\frac{2\pi}{c}
+\]
+
+\end_inset
+
+and putting this in terms of frequency, 
+\begin_inset Formula $f$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f=\frac{kc}{2\pi}
+\]
+
+\end_inset
+
+Then, with the definition of wavelength
+\begin_inset Formula 
+\[
+\lambda=\frac{c}{f}
+\]
+
+\end_inset
+
+we can subsitute in the wavenumber and see that
+\begin_inset Formula 
+\[
+\lambda=\frac{2\pi c}{kc}=\frac{2\pi}{\beta-\alpha j}
+\]
+
+\end_inset
+
+in this case.
+\end_layout
+
+\begin_layout Subparagraph
+Derive an expression for the acoustic particle velocity.
+\end_layout
+
+\begin_layout Standard
+The particle velocity is given by the linearized wave equation, i.e.
+\begin_inset Formula 
+\[
+u=\frac{1}{-j\omega\rho_{0}}\frac{dp}{dx}
+\]
+
+\end_inset
+
+and so we need to know the value of 
+\begin_inset Formula $\frac{dp}{dx}$
+\end_inset
+
+, which is
+\begin_inset Formula 
+\begin{align*}
+\frac{dp}{dx} & =\frac{d}{dx}\left[A\exp\left(-\alpha x\right)\exp\left(-j\beta x\right)\exp\left(j\omega t\right)\right]\\
+ & =A\alpha j\beta\exp\left(-\alpha x\right)\exp\left(-j\beta x\right)\exp\left(j\omega t\right)
+\end{align*}
+
+\end_inset
+
+and then
+\begin_inset Formula 
+\begin{align*}
+u & =-\frac{A\alpha j\beta}{j\omega\rho_{0}}\exp\left(-\alpha x\right)\exp\left(-j\beta x\right)\exp\left(j\omega t\right)\\
+ & =-\frac{\alpha\beta}{\omega\rho_{0}}p\left(x,t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Evaluate the acoustic intensity, and show that it is a function of position
+ in this case.
+\end_layout
+
+\begin_layout Standard
+Finally, the acoustic intensity is given by
+\begin_inset Formula 
+\begin{align*}
+I_{y} & =\frac{1}{2}\mathrm{Re}\left\{ pu^{*}\right\} \\
+ & =\frac{1}{2}\mathrm{Re}\left\{ p\left(x,t\right)\left[-\frac{\alpha\beta}{\omega\rho_{0}}p\left(x,t\right)\right]\right\} \\
+ & =-\frac{\alpha\beta}{\omega\rho_{0}}\mathrm{Re}\left\{ p^{2}\right\} \\
+ & =-\frac{\alpha\beta}{2\omega\rho_{0}}\mathrm{Re}\left\{ \exp\left(-2\alpha x\right)\exp\left(-2j\beta x\right)\exp\left(j\omega t\right)\right\} \\
+ & =-\frac{\alpha\beta}{2\omega\rho_{0}}\exp\left(-2\alpha x\right)\cos\left(2\beta x\right)\cos\left(-\omega t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+A two-dimensional sound field in the farfield of a cylindrical source can
+ be expressed in cylindrical coordinates as:
+\begin_inset Formula 
+\[
+p\left(r,\theta\right)=\frac{A}{r^{\nicefrac{1}{2}}}\sin\left(\theta\right)\exp\left(-jkr\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+By using the linearized Euler equation in cylindrical coordinates, find
+ the vector particle velocity field associated with this pressure field.
+ Note that the vector particle velocity field has two components, in this
+ case.
+\end_layout
+
+\begin_layout Standard
+The linearized wave equation is
+\begin_inset Formula 
+\[
+\rho_{0}\frac{\partial u}{\partial t}=-\nabla p
+\]
+
+\end_inset
+
+and applying cylindrical coordinates gives
+\begin_inset Formula 
+\[
+\rho_{0}\frac{\partial u}{\partial t}=-\left[\vec{r}\frac{\partial p}{\partial r}+\vec{\theta}\frac{1}{r}\frac{\partial f}{\partial\theta}+\cancel{\frac{\partial f}{\partial z}}\right]
+\]
+
+\end_inset
+
+and now we have to find the partial with respect to radius and to angle,
+ giving us
+\begin_inset Formula 
+\[
+\frac{\partial p}{\partial r}=-\frac{Aj\left(2kr-j\right)}{2r^{\nicefrac{3}{2}}}\sin\left(\theta\right)\exp\left(-jkr\right)=\frac{j\left(2kr-j\right)}{2r}p
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial p}{\partial\theta}=\frac{A}{\sqrt{r}}\cos\left(\theta\right)\exp\left(-jkr\right)
+\]
+
+\end_inset
+
+and so, we have
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial u}{\partial t} & =-\frac{1}{\rho_{0}}\left[\vec{r}\frac{j\left(2kr-j\right)}{2r}p+\vec{\theta}\frac{1}{r}\frac{A}{\sqrt{r}}\cos\left(\theta\right)\exp\left(-jkr\right)\right]
+\end{align*}
+
+\end_inset
+
+and integrating, we then get
+\begin_inset Formula 
+\[
+u=-\frac{t}{\rho_{0}}\left[\vec{r}\frac{j\left(2kr-j\right)}{2r}p+\vec{\theta}\frac{1}{r}\frac{A}{\sqrt{r}}\cos\left(\theta\right)\exp\left(-jkr\right)\right]+u_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Find the radial component of the acoustic intensity.
+\end_layout
+
+\begin_layout Standard
+The acoustic intensity is given as
+\begin_inset Formula 
+\begin{align*}
+I_{r} & =\frac{1}{2}\mathrm{Re}\left\{ pu^{*}\right\} \\
+ & =\frac{1}{2}\mathrm{Re}\left\{ -p\frac{t}{\rho_{0}}\frac{j\left(2kr-j\right)}{2r}p\right\} \\
+ & =\frac{t}{2\rho_{0}}\mathrm{Re}\left\{ -p^{2}\left(jk+\frac{1}{2r}\right)\right\} \\
+ & =\frac{t}{2\rho_{0}}\mathrm{Re}\left\{ -jk\frac{A^{2}}{r}\sin^{2}\left(\theta\right)\exp\left(-2jkr\right)-\frac{A^{2}}{2r^{2}}\sin^{2}\left(\theta\right)\exp\left(-2jkr\right)\right\} \\
+ & =\frac{t}{2\rho_{0}}\left[\frac{A^{2}k}{r}\sin^{2}\left(\theta\right)\sin^{2}\left(2kr\right)-\frac{A^{2}}{2r^{2}}\sin^{2}\left(\theta\right)\cos\left(2kr\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Find the farfield specific acoustic impedance based on the radial particle
+ velocity - does it limit to the plane wave impedance in the farfield?
+\end_layout
+
+\begin_layout Standard
+The specific acoustic impedance is the pressure divided by the velocity,
+ which we can see is
+\begin_inset Formula 
+\begin{align*}
+z & =\frac{p}{u}\\
+ & =\frac{\cancel{p}}{-\frac{t}{\rho_{0}}\left[\vec{r}\frac{j\left(2kr-j\right)}{2r}\cancel{p}+\vec{\theta}\frac{1}{r}\cancel{p}\tan\left(\theta\right)\right]}\\
+ & =-\frac{\rho_{0}}{t\left[\vec{r}\frac{j\left(2kr-j\right)}{2r}+\vec{\theta}\frac{1}{r}\tan\left(\theta\right)\right]}
+\end{align*}
+
+\end_inset
+
+Now, finding the limit of this as 
+\begin_inset Formula $r\rightarrow\infty$
+\end_inset
+
+, we can see that
+\begin_inset Formula 
+\begin{align*}
+\lim_{r\rightarrow\infty}z & =\lim_{r\rightarrow\infty}-\frac{\rho_{0}}{t\left[\vec{r}\frac{j\left(2kr-j\right)}{2r}+\cancel{\vec{\theta}\frac{1}{r}\tan\left(\theta\right)}\right]}\\
+ & =\lim_{r\rightarrow\infty}-\frac{\rho_{0}}{t\left[\vec{r}\left(jk+\cancel{\frac{1}{2r}}\right)\right]}\\
+ & =-\frac{\rho_{0}}{t\left[\vec{r}\left(jk+\cancel{\frac{1}{2r}}\right)\right]}\\
+ & =-\frac{\rho_{0}}{jkt}
+\end{align*}
+
+\end_inset
+
+ which is similar to the plane wave impedance of 
+\begin_inset Formula 
+\[
+z=\frac{\rho c}{A}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+probnum{5.12.3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+A plane sound wave in air of 
+\begin_inset Formula $100\,\mathrm{Hz}$
+\end_inset
+
+ has a peak acoustic pressure amplitude of 
+\begin_inset Formula $2\,\mathrm{Pa}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subparagraph
+What is its intensity and its intensity level?
+\end_layout
+
+\begin_layout Standard
+I will assume a harmonic sound wave, with the equation 
+\begin_inset Formula 
+\[
+p\left(t\right)=\left(2\,\mathrm{Pa}\right)\exp\left(-jkx\right)\exp\left(-j\omega t\right)
+\]
+
+\end_inset
+
+and thus the intensity is
+\begin_inset Formula 
+\[
+I=\pm\frac{P^{2}}{2\rho_{0}c}=\frac{4\,\mathrm{Pa}^{2}}{2\left(415\,\mathrm{Rayls}\right)}=0.04819\,\mathrm{\frac{W}{m^{2}}}
+\]
+
+\end_inset
+
+and the intensity level is 
+\begin_inset Formula 
+\begin{align*}
+IL & =10\log\left(\nicefrac{I}{I_{ref}}\right)\\
+ & =10\log\left(\nicefrac{0.004819\,\mathrm{\frac{W}{m^{2}}}}{10^{-12}\,\mathrm{\frac{W}{m^{2}}}}\right)\\
+ & =96.83\,\mathrm{dB}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+What is its peak particle displacement amplitude?
+\end_layout
+
+\begin_layout Standard
+The displacement amplitude is
+\begin_inset Formula 
+\[
+\xi=\frac{u}{\omega}
+\]
+
+\end_inset
+
+and we know that the particle velocity is
+\begin_inset Formula 
+\[
+u=\frac{p}{\rho_{0}c}=\frac{2\,\mathrm{Pa}}{415\,\mathrm{Rayls}}=0.004819\,\mathrm{\nicefrac{m}{s}}
+\]
+
+\end_inset
+
+so the displacement is
+\begin_inset Formula 
+\[
+\xi=\frac{0.004819\,\mathrm{\nicefrac{m}{s}}}{628\,\mathrm{s}}=7.674\,\mathrm{\mu m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+What is its peak particle speed amplitude?
+\end_layout
+
+\begin_layout Standard
+See the calculation from part (b)., 
+\begin_inset Formula $0.004819\,\mathrm{\nicefrac{m}{s}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+What is its effective or rms pressure?
+\end_layout
+
+\begin_layout Standard
+The rms pressure is 
+\begin_inset Formula 
+\[
+P_{e}=\frac{P}{\sqrt{2}}
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula 
+\[
+P=\sqrt{2\rho_{0}cI}
+\]
+
+\end_inset
+
+which is defined in the problem as 
+\begin_inset Formula $2\,\mathrm{Pa}$
+\end_inset
+
+, so the rms pressure is
+\begin_inset Formula 
+\[
+P_{e}=\frac{2\,\mathrm{Pa}}{\sqrt{2}}=1.414\,\mathrm{Pa}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+What is its sound pressure level 
+\begin_inset Formula $re\,20\,\mathrm{\mu Pa}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+The sound pressure level with reference to 
+\begin_inset Formula $20\,\mathrm{\mu Pa}$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\begin{align*}
+SPL & =20\log\left(\nicefrac{P_{e}}{P_{ref}}\right)\\
+ & =20\log\left(\nicefrac{1.414\,\mathrm{Pa}}{2.0\times10^{-5}\,\mathrm{Pa}}\right)\\
+ & =96.9884\,\mathrm{dB}\, re\,20\,\mathrm{\mu Pa}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

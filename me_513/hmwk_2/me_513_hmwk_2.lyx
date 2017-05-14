@@ -1,0 +1,958 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+
+\def\ifdef#1{\ifx#1\undefined}
+
+\renewcommand\theparagraph{%
+     \probnum
+}
+\renewcommand\thesubparagraph{(\alph{subparagraph})}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth 5
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+ME 513 HMWK 2
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+10/5/15
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{2.4.1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+By direct substitution show that each of the following is a solution of
+ the wave equation:
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset Formula $f_{1}\left(x-ct\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial^{2}f_{1}\left(x-ct\right)}{\partial t^{2}}=c^{2}\frac{\partial^{2}f_{1}\left(x-ct\right)}{\partial t^{2}}
+\]
+
+\end_inset
+
+Therefore
+\begin_inset Formula 
+\[
+\frac{\partial^{2}f_{1}\left(x-ct\right)}{\partial x^{2}}-\frac{1}{c^{2}}\left(c^{2}\frac{\partial^{2}f_{1}\left(x-ct\right)}{\partial t^{2}}\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset Formula $\ln\left[a\left(ct-x\right)\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\ln\left[a\left(ct-x\right)\right]}{\partial x}=-\frac{1}{ct-x}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial^{2}\ln\left[a\left(ct-x\right)\right]}{\partial x^{2}}=-\frac{1}{\left(ct-x\right)^{2}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial\ln\left[a\left(ct-x\right)\right]}{\partial t}=\frac{c}{ct-x}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial^{2}\ln\left[a\left(ct-x\right)\right]}{\partial t^{2}}=-\frac{c^{2}}{\left(ct-x\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore
+\begin_inset Formula 
+\begin{align*}
+-\frac{1}{\left(ct-x\right)^{2}}-\frac{1}{c^{2}}\left(-\frac{c^{2}}{\left(ct-x\right)^{2}}\right) & =0\\
+-\frac{1}{\left(ct-x\right)^{2}}+\frac{1}{\left(ct-x\right)^{2}} & =0\\
+0 & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset Formula $a\left(ct-x\right)^{2}$
+\end_inset
+
+, and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial a\left(ct-x\right)^{2}}{\partial x}=2a\left(x-ct\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial^{2}a\left(ct-x\right)^{2}}{\partial x^{2}}=2a
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial a\left(ct-x\right)^{2}}{\partial t}=2ac\left(ct-x\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial^{2}a\left(ct-x\right)^{2}}{\partial t^{2}}=2ac^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore
+\begin_inset Formula 
+\begin{align*}
+2a-\frac{1}{c^{2}}\left(2ac^{2}\right) & =0\\
+2a-2a & =0\\
+0 & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset Formula $\cos\left[a\left(ct-x\right)\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\cos\left[a\left(ct-x\right)\right]}{\partial x}=a\sin\left[a\left(ct-x\right)\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial^{2}\cos\left[a\left(ct-x\right)\right]}{\partial x^{2}}=-a^{2}\cos\left[a\left(ct-x\right)\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial\cos\left[a\left(ct-x\right)\right]}{\partial t}=-ac\sin\left[a\left(ct-x\right)\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial^{2}\cos\left[a\left(ct-x\right)\right]}{\partial t^{2}}=-a^{2}c^{2}\cos\left[a\left(ct-x\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore
+\begin_inset Formula 
+\begin{align*}
+-a^{2}\cos\left[a\left(ct-x\right)\right]-\frac{1}{c^{2}}\left(-a^{2}c^{2}\cos\left[a\left(ct-x\right)\right]\right) & =0\\
+-a^{2}\cos\left[a\left(ct-x\right)\right]+a^{2}\cos\left[a\left(ct-x\right)\right] & =0\\
+0 & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Similarly, show that each of the following is not a solution of the wave
+ equation:
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset Formula $a\left(ct-x^{2}\right)$
+\end_inset
+
+ and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial a\left(ct-x^{2}\right)}{\partial x}=-2ax
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial^{2}a\left(ct-x^{2}\right)}{\partial x^{2}}=-2a
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial a\left(ct-x^{2}\right)}{\partial t}=ac
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial^{2}a\left(ct-x^{2}\right)}{\partial t^{2}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore
+\begin_inset Formula 
+\begin{align*}
+-2a-\frac{1}{c^{2}}\left(0\right) & =0\\
+-2a & \neq0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset Formula $at\left(ct-x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial at\left(ct-x\right)}{\partial x}=-at
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial^{2}at\left(ct-x\right)}{\partial x^{2}}=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial at\left(ct-x\right)}{\partial t}=a\left(2ct-x\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial^{2}at\left(ct-x\right)}{\partial t^{2}}=2ac
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore
+\begin_inset Formula 
+\begin{align*}
+0-\frac{1}{c^{2}}\left(2ac\right) & =0\\
+-\frac{2a}{c} & \neq0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{2.8.2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+An infinite string (
+\begin_inset Formula $-\infty<x\leq0$
+\end_inset
+
+) of linear density 
+\begin_inset Formula $\rho_{L}$
+\end_inset
+
+ and under tension 
+\begin_inset Formula $T$
+\end_inset
+
+ is attached at 
+\begin_inset Formula $x=0$
+\end_inset
+
+ to a second infinite string (
+\begin_inset Formula $0<x<\infty$
+\end_inset
+
+) under the same tension but of linear density 
+\begin_inset Formula $2\rho_{L}$
+\end_inset
+
+.
+ If a wave of angular frequency 
+\begin_inset Formula $\omega$
+\end_inset
+
+ and amplitude 
+\begin_inset Formula $A$
+\end_inset
+
+ is traveling in the 
+\begin_inset Formula $+x$
+\end_inset
+
+ direction on the first string, find the amplitude of the wave traveling
+ on the second string.
+\end_layout
+
+\begin_layout Standard
+With the two strings, we can define the mechanical impedance as
+\begin_inset Formula 
+\[
+z_{mo,1}=\rho_{l}c
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+z_{mo,2}=2\rho_{l}c
+\]
+
+\end_inset
+
+and because the definition of mechanical impedance is 
+\begin_inset Formula 
+\[
+z_{mo}=\frac{\mathit{f}}{\mathit{u}\left(0,t\right)}
+\]
+
+\end_inset
+
+we then have
+\begin_inset Formula 
+\begin{align*}
+2z_{mo,1} & =z_{mo,2}\\
+2\frac{\mathit{f}}{\mathit{u}_{1}\left(0,t\right)} & =\frac{\mathit{f}}{\mathit{u}_{2}\left(0,t\right)}\\
+\mathit{u}_{2}\left(0,t\right) & =\frac{1}{2}\mathit{u}_{1}\left(0,t\right)\\
+A_{2} & =\frac{1}{2}A_{1}
+\end{align*}
+
+\end_inset
+
+Therefore, the amplitude of the disturbance in the second string is one
+ half of that in the first string.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{2.9.2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Evaluate the mechanical impedance seen by the applied force driving an infinite
+ string at a distance 
+\begin_inset Formula $L$
+\end_inset
+
+ from a fixed end.
+ Interpret the individual terms in the mechanical impedance.
+\end_layout
+
+\begin_layout Standard
+The input mechanical impedance can be described as
+\begin_inset Formula 
+\[
+z_{mo}=\frac{\text{complex applied driving force at \ensuremath{x=0}}}{\text{velocity at the drive point}}
+\]
+
+\end_inset
+
+at the drive point, so if the force is applied at point 
+\begin_inset Formula $x=L$
+\end_inset
+
+, then this goes to
+\begin_inset Formula 
+\[
+z_{mL}=\frac{\text{complex applied driving force at }x=L}{\text{velocity at the drive point, }x=L}=\frac{F\exp\left(j\omega t\right)\rho_{l}c}{F\exp\left(j\omega t\right)}=\rho_{l}c
+\]
+
+\end_inset
+
+ and refers to the dissipation of energy from the drive point to infinity,
+ which is the other end of the string.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{2.9.3a}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+A string is streched between rigid supports a distance 
+\begin_inset Formula $L$
+\end_inset
+
+ apart.
+ It is driven by a force 
+\begin_inset Formula $F\cos\omega t$
+\end_inset
+
+ located at its midpoint.
+\end_layout
+
+\begin_layout Subparagraph
+What is the mechanical impedance at the midpoint? (Assume that the driving
+ force is 
+\begin_inset Formula $F\exp j\omega t$
+\end_inset
+
+, and that it is applied at 
+\begin_inset Formula $x=\nicefrac{L}{4}$
+\end_inset
+
+ rather than at the midpoint of the string: i.e., calculate the input mechanical
+ impedance at 
+\begin_inset Formula $x=\nicefrac{L}{4}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+We must treat this problem as two separate strings with boundary conditions
+ to connect them, giving us
+\begin_inset Formula 
+\[
+\frac{d^{2}y_{1}}{dx^{2}}-\frac{1}{c^{2}}\frac{d^{2}y_{1}}{dt^{2}}=0
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+\frac{d^{2}y_{2}}{dx^{2}}-\frac{1}{c^{2}}\frac{d^{2}y_{2}}{dt^{2}}=0
+\]
+
+\end_inset
+
+so, using the harmonic solutions, we have
+\begin_inset Formula 
+\[
+y_{1}\left(x,t\right)=A\exp\left[j\left(\omega t-k_{1}x\right)\right]+B\exp\left[j\left(\omega t+k_{1}x\right)\right]
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+y_{2}\left(x,t\right)=C\exp\left[j\left(\omega t-k_{2}x\right)\right]+D\exp\left[j\left(\omega t+k_{2}x\right)\right]
+\]
+
+\end_inset
+
+with the boundary conditions relating to no displacements at the ends, matching
+ displacement at the drive point, and matching force at the drive point.
+\begin_inset Formula 
+\[
+y_{1}=0\;\text{at }x=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+y_{2}=0\;\text{at }x=L
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+y_{1}=y_{2}\;\text{at }x=\nicefrac{L}{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Applying the first boundary condition, we find that 
+\begin_inset Formula 
+\begin{align*}
+y_{1}\left(0,t\right)=0 & =A\exp\left[j\omega t\right]+B\exp\left[j\omega t\right]\\
+0 & =A+B\\
+B & =-A
+\end{align*}
+
+\end_inset
+
+and- 
+\begin_inset Formula 
+\begin{align*}
+y_{1}\left(x,t\right) & =A\exp\left[j\left(\omega t-k_{1}x\right)\right]-A\exp\left[j\left(\omega t+k_{1}x\right)\right]\\
+ & =-2jA\sin\left(k_{1}x\right)\exp\left(j\omega t\right)
+\end{align*}
+
+\end_inset
+
+Applying the second boundary condition, we have
+\begin_inset Formula 
+\begin{align*}
+y_{2}\left(L,t\right)=0 & =C\exp\left[j\left(\omega t-k_{2}L\right)\right]+D\exp\left[j\left(\omega t+k_{2}L\right)\right]\\
+0 & =\exp\left(j\omega t\right)\left[C\exp\left(-jk_{2}L\right)+D\exp\left(jk_{2}L\right)\right]\\
+-C\exp\left(-jk_{2}L\right) & =D\exp\left(jk_{2}L\right)\\
+-C & =D\exp\left(2jk_{2}L\right)\\
+C & =-D\exp\left(2jk_{2}L\right)
+\end{align*}
+
+\end_inset
+
+and finally, the third boundary contition gives
+\begin_inset Formula 
+\begin{align*}
+y_{1}\left(\nicefrac{L}{4},t\right) & =y_{2}\left(\nicefrac{L}{4},t\right)\\
+-2jA\sin\left(k_{1}\frac{L}{4}\right)\exp\left(j\omega t\right) & =\exp\left(j\omega t\right)\left[-D\exp\left(2jk_{2}L\right)\exp\left(-jk_{2}\frac{L}{4}\right)+D\exp\left(jk_{2}\frac{L}{4}\right)\right]\\
+-2jA\sin\left(k_{1}\frac{L}{4}\right) & =\left[-D\exp\left(2jk_{2}L-jk_{2}\frac{L}{4}\right)+D\exp\left(jk_{2}\frac{L}{4}\right)\right]\\
+-2jA\sin\left(k_{1}\frac{L}{4}\right) & =-D\exp\left(7jk_{2}\frac{L}{4}\right)+D\exp\left(jk_{2}\frac{L}{4}\right)\\
+-2jA\sin\left(k_{1}\frac{L}{4}\right) & =D\left[\exp\left(jk_{2}\frac{L}{4}\right)-\exp\left(7jk_{2}\frac{L}{4}\right)\right]\\
+A & =2jD\frac{\exp\left(jk_{2}\frac{L}{4}\right)-\exp\left(7jk_{2}\frac{L}{4}\right)}{\sin\left(k_{1}\frac{L}{4}\right)}
+\end{align*}
+
+\end_inset
+
+So finally, we can find the wavefunction
+\begin_inset Formula 
+\begin{align*}
+y_{1} & =2jD\frac{\exp\left(jk_{2}\frac{L}{4}\right)-\exp\left(7jk_{2}\frac{L}{4}\right)}{\sin\left(k_{1}\frac{L}{4}\right)}\exp\left[j\left(\omega t-k_{1}x\right)\right]-2jD\frac{\exp\left(jk_{2}\frac{L}{4}\right)-\exp\left(7jk_{2}\frac{L}{4}\right)}{\sin\left(k_{1}\frac{L}{4}\right)}\exp\left[j\left(\omega t+k_{1}x\right)\right]\\
+ & =-2j2jD\frac{\exp\left(jk_{2}\frac{L}{4}\right)-\exp\left(7jk_{2}\frac{L}{4}\right)}{\sin\left(k_{1}\frac{L}{4}\right)}\sin\left(k_{1}x\right)\exp\left(j\omega t\right)\\
+ & =4D\frac{\exp\left(jk_{2}\frac{L}{4}\right)-\exp\left(7jk_{2}\frac{L}{4}\right)}{\sin\left(k_{1}\frac{L}{4}\right)}\sin\left(k_{1}x\right)\exp\left(j\omega t\right)
+\end{align*}
+
+\end_inset
+
+So the velocity is
+\begin_inset Formula 
+\begin{align*}
+u_{1} & =\frac{\partial y_{1}}{\partial t}\\
+ & =4j\omega D\frac{\exp\left(jk_{2}\frac{L}{4}\right)-\exp\left(7jk_{2}\frac{L}{4}\right)}{\sin\left(k_{1}\frac{L}{4}\right)}\sin\left(k_{1}x\right)\exp\left(j\omega t\right)
+\end{align*}
+
+\end_inset
+
+and to find the input mechanical impedance, we would have
+\begin_inset Formula 
+\begin{align*}
+z_{m\nicefrac{L}{4}} & =\frac{\text{applied driving force}}{\text{velocity at the drive point}}\\
+ & =\frac{F\exp\left(j\omega t\right)}{\frac{\partial y}{\partial t}}\\
+ & =\frac{F\cancel{\exp\left(j\omega t\right)}}{4j\omega D\frac{\exp\left(jk_{2}\frac{L}{4}\right)-\exp\left(7jk_{2}\frac{L}{4}\right)}{\sin\left(k_{1}\frac{L}{4}\right)}\sin\left(k_{1}x\right)\cancel{\exp\left(j\omega t\right)}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{2.11.1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Find 
+\begin_inset Formula $kL$
+\end_inset
+
+ for the normal modes of a fixed, spring-loaded string when 
+\begin_inset Formula $T=sL$
+\end_inset
+
+.
+ Sketch the waveforms for the fundamental and the first overtone.
+\end_layout
+
+\begin_layout Standard
+We can assume the harmonic solution of
+\begin_inset Formula 
+\[
+y\left(x,t\right)=A\exp\left[j\left(\omega t-kx\right)\right]+B\exp\left[j\left(\omega t+kx\right)\right]
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+k=\nicefrac{\omega}{c}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+c=\sqrt{\nicefrac{T}{\rho_{l}}}=\sqrt{\nicefrac{sL}{\rho_{l}}}
+\]
+
+\end_inset
+
+Applying the fixed boundary condition at 
+\begin_inset Formula $x=0$
+\end_inset
+
+, we find that 
+\begin_inset Formula $B=-A$
+\end_inset
+
+, and therefore
+\begin_inset Formula 
+\[
+y\left(x,t\right)=-2jA\sin\left[kx\right]\exp\left[j\omega t\right]
+\]
+
+\end_inset
+
+and so we need one more boundary condition.
+ To find this, we can find that, at the end
+\begin_inset Formula 
+\[
+T\sin\left.\theta\right|_{x=L}-s\left.y\right|_{x=L}=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=-2jkTA\cos\left(kx\right)\exp\left(j\omega t\right)
+\]
+
+\end_inset
+
+and placing this into the expression for 
+\begin_inset Formula $y$
+\end_inset
+
+ from before, we have
+\begin_inset Formula 
+\[
+2jkTA\exp\left(j\omega t\right)\cos\left(kL\right)+2jsA\exp\left(j\omega t\right)\sin\left(kL\right)=0
+\]
+
+\end_inset
+
+and therefore
+\begin_inset Formula 
+\[
+k_{n}T\cos\left(k_{n}L\right)=-s\sin\left(k_{n}L\right)
+\]
+
+\end_inset
+
+, then putting in the definition of 
+\begin_inset Formula $T$
+\end_inset
+
+ here, we can have
+\begin_inset Formula 
+\begin{align*}
+k_{n}sL\cos\left(k_{n}L\right) & =-s\sin\left(k_{n}L\right)\\
+k_{n}L & =-\tan\left(k_{n}L\right)
+\end{align*}
+
+\end_inset
+
+which has no closed form solution.
+ But the node shape can be sketched as below for the successive 
+\begin_inset Formula $k_{n}$
+\end_inset
+
+'s when a value for 
+\begin_inset Formula $L$
+\end_inset
+
+ is chosen and fixed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{waveforms.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wave Mode Shapes of Fundamental and First Overtone
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

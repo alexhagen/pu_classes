@@ -1,0 +1,974 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+
+\def\ifdef#1{\ifx#1\undefined}
+
+\renewcommand\theparagraph{%
+     \probnum
+}
+\renewcommand\thesubparagraph{(\alph{subparagraph})}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth 5
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+ME 513 HMWK 5
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+12/4/15
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{7.1.4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+A simple source of sound in air radiates an acoustic power of 
+\begin_inset Formula $10\,\mathrm{mW}$
+\end_inset
+
+ at 
+\begin_inset Formula $400\,\mathrm{Hz}$
+\end_inset
+
+.
+ At 
+\begin_inset Formula $0.5\,\mathrm{m}$
+\end_inset
+
+ from the source, compute 
+\end_layout
+
+\begin_layout Subparagraph
+the intensity,
+\end_layout
+
+\begin_layout Standard
+The intensity is given by equation (7.2.15)
+\begin_inset Formula 
+\[
+I=\frac{1}{8}\rho_{0}c\left(\nicefrac{Q}{\lambda r}\right)^{2}
+\]
+
+\end_inset
+
+We can find 
+\begin_inset Formula $Q$
+\end_inset
+
+ from the equation for acoustic power (7.2.16)
+\begin_inset Formula 
+\begin{align*}
+\Pi & =\frac{1}{2}\pi\rho_{0}c\left(\nicefrac{Q}{\lambda}\right)^{2}\\
+ & =\frac{1}{2}\pi\rho_{0}c\frac{Q^{2}}{\nicefrac{c^{2}}{f^{2}}}\\
+Q & =\sqrt{\frac{2\Pi c}{\pi\rho_{0}f^{2}}}
+\end{align*}
+
+\end_inset
+
+which gives 
+\begin_inset Formula 
+\[
+Q=\sqrt{\frac{2\left(1.\times10^{-2}\,\mathrm{W}\right)\left(343\,\mathrm{\nicefrac{m}{s}}\right)}{\pi\left(1.275\,\mathrm{\nicefrac{kg}{m^{3}}}\right)\left(400\,\mathrm{Hz}\right)^{2}}}=3.27\times10^{-3}\,\mathrm{\nicefrac{m^{3}}{s}}
+\]
+
+\end_inset
+
+and so, the intensity is
+\begin_inset Formula 
+\[
+I=\frac{1}{8}\left(1.275\,\mathrm{\nicefrac{kg}{m^{3}}}\right)\left(343\,\mathrm{\nicefrac{m}{s}}\right)\left[\frac{\left(3.27\times10^{-3}\,\mathrm{\nicefrac{m^{3}}{s}}\right)\left(400\,\mathrm{Hz}\right)}{\left(343\,\mathrm{\nicefrac{m}{s}}\right)\left(0.5\,\mathrm{m}\right)}\right]^{2}=3.16\,\mathrm{\nicefrac{mW}{m^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+the pressure amplitude,
+\end_layout
+
+\begin_layout Standard
+The pressure amplitude is given by equation 7.2.14
+\begin_inset Formula 
+\[
+P=\frac{1}{2}\rho_{0}c\left(\nicefrac{Q}{\lambda r}\right)=\frac{1}{2}\left(1.275\,\mathrm{\nicefrac{kg}{m^{3}}}\right)\left(343\,\mathrm{\nicefrac{m}{s}}\right)\frac{\left(3.27\times10^{-3}\,\mathrm{\nicefrac{m^{3}}{s}}\right)\left(400\,\mathrm{Hz}\right)}{\left(343\,\mathrm{\nicefrac{m}{s}}\right)\left(0.5\,\mathrm{m}\right)}=1.663\,\mathrm{Pa}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+the particle speed amplitude,
+\end_layout
+
+\begin_layout Standard
+Using linear acoustics, we have that 
+\begin_inset Formula 
+\[
+I=\frac{1}{2}PU
+\]
+
+\end_inset
+
+and therefore 
+\begin_inset Formula 
+\[
+U=\frac{2I}{P}=\frac{2\cdot3.16\,\mathrm{\nicefrac{mW}{m^{2}}}}{1.663\,\mathrm{Pa}}=3.8\,\mathrm{\nicefrac{mm}{s}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+the particle displacement amplitude, and
+\end_layout
+
+\begin_layout Standard
+Finally, the displacement amplitude is another time integral from the particle
+ speed, so
+\begin_inset Formula 
+\[
+\Xi=\frac{U}{f}=\frac{3.8\,\mathrm{\nicefrac{mm}{s}}}{400\,\mathrm{Hz}}=9.5\,\mathrm{\mu m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+the condensation amplitude.
+\end_layout
+
+\begin_layout Standard
+The condensation is define as the pressure divided by the density times
+ the speed of sound squared
+\begin_inset Formula 
+\[
+S=\frac{P}{\rho_{0}c^{2}}=\frac{1.663\,\mathrm{Pa}}{\left(1.275\,\mathrm{\nicefrac{kg}{m^{3}}}\right)\left(343\,\mathrm{\nicefrac{m}{s}}\right)^{2}}=1.1\times10^{-5}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{7.4.1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+For a baffled piston of radius 
+\begin_inset Formula $a$
+\end_inset
+
+ driven at angular frequency 
+\begin_inset Formula $\omega$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Subparagraph
+find the smallest angle 
+\begin_inset Formula $\theta_{1}$
+\end_inset
+
+ for which the pressure is zero in the far field,
+\end_layout
+
+\begin_layout Standard
+To find the angle 
+\begin_inset Formula $\theta_{1}$
+\end_inset
+
+ desired, we use the smallest node given by
+\begin_inset Formula 
+\[
+ka\sin\theta_{m}=j_{1m}\quad\quad m=1,2,3,\dots
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so
+\begin_inset Formula 
+\begin{align*}
+ka\sin\theta_{1} & =j_{11}\\
+\sin\theta_{1} & =\frac{j_{11}}{ka}\\
+\theta_{1} & =\arcsin\left(\frac{j_{11}}{ka}\right)=\arcsin\left(\frac{j_{11}c}{\omega a}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+find the greatest finite distance for which the pressure is zero on the
+ acoustic axis, and
+\end_layout
+
+\begin_layout Standard
+From the equation (7.4.4), we have
+\begin_inset Formula 
+\[
+\tilde{p}\left(r,0,t\right)=\rho_{0}cu_{0}\left\{ 1-\exp\left[-jk\left(\sqrt{r^{2}+a^{2}}-r\right)\right]\right\} \exp\left[j\left(\omega t-kr\right)\right]
+\]
+
+\end_inset
+
+which has the magnitude
+\begin_inset Formula 
+\[
+p\left(r,0\right)=2\rho_{0}cu_{0}\left|\sin\left\{ \frac{1}{2}kr\left[\sqrt{1+\left(\nicefrac{a}{r}\right)^{2}}-1\right]\right\} \right|
+\]
+
+\end_inset
+
+and the extrema of this is at
+\begin_inset Formula 
+\[
+\frac{1}{2}kr\left[\sqrt{1+\left(\nicefrac{a}{r}\right)^{2}}-1\right]=\frac{m\pi}{2}\quad\quad m=0,1,2,\dots
+\]
+
+\end_inset
+
+therefore, moving down from large 
+\begin_inset Formula $r$
+\end_inset
+
+, we can find the first minima, 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ at
+\begin_inset Formula 
+\begin{align*}
+\frac{r_{2}}{a} & =\frac{a}{2\lambda}-\frac{\lambda}{2a}\\
+r_{2} & =\frac{a^{2}}{2\lambda}-\frac{\lambda}{2}
+\end{align*}
+
+\end_inset
+
+and with
+\begin_inset Formula 
+\[
+k=\frac{\omega}{c}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda=\frac{2\pi}{k}=\frac{2\pi c}{\omega}
+\]
+
+\end_inset
+
+so
+\begin_inset Formula 
+\[
+r_{2}=\frac{a^{2}\omega}{4\pi c}-\frac{\pi c}{\omega}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+discuss the possibility of obtaining 
+\begin_inset Formula $\theta_{1}\ll1$
+\end_inset
+
+ and 
+\begin_inset Formula $\nicefrac{r_{1}}{a}\ll1$
+\end_inset
+
+ simultaneously.
+\end_layout
+
+\begin_layout Standard
+At very large 
+\begin_inset Formula $\nicefrac{r_{1}}{a}$
+\end_inset
+
+, we approach a monopole, and as such, 
+\begin_inset Formula $\theta_{1}\rightarrow\frac{\pi}{2}$
+\end_inset
+
+.
+ This means that 
+\begin_inset Formula $\theta_{1}\ll1$
+\end_inset
+
+ only when 
+\begin_inset Formula $\nicefrac{r_{1}}{a}\gg1$
+\end_inset
+
+ (or when we're in the very dipole like region).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{7.4.6C}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+For a ciruclar piston, plot the on-axis pressure amplitude as a function
+ of scaled distance 
+\begin_inset Formula $\nicefrac{r}{a}$
+\end_inset
+
+ for several values of 
+\begin_inset Formula $ka$
+\end_inset
+
+ between 
+\begin_inset Formula $3$
+\end_inset
+
+ and 
+\begin_inset Formula $12$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Using equation (7.4.5), we have 
+\begin_inset Formula 
+\[
+p\left(r,0\right)=2\rho_{0}cu_{0}\left|\sin\left\{ \frac{1}{2}kr\left[\sqrt{1+\left(\nicefrac{a}{r}\right)^{2}}-1\right]\right\} \right|
+\]
+
+\end_inset
+
+and we can convert this into the quantity 
+\begin_inset Formula $ka$
+\end_inset
+
+ as
+\begin_inset Formula 
+\begin{align*}
+p\left(r,0\right) & =2\rho_{0}cu_{0}\left|\sin\left\{ \frac{1}{2}\frac{ka}{a}r\left[\sqrt{1+\left(\nicefrac{a}{r}\right)^{2}}-1\right]\right\} \right|\\
+p\left(\nicefrac{r}{a},0\right) & =2\rho_{0}cu_{0}\left|\sin\left\{ \frac{1}{2}ka\left(\nicefrac{r}{a}\right)\left[\sqrt{1+\left(\nicefrac{r}{a}\right)^{-2}}-1\right]\right\} \right|
+\end{align*}
+
+\end_inset
+
+The solutions to this with 
+\begin_inset Formula $ka=3,4,5,\dots,12$
+\end_inset
+
+ are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Plot-of-pressure"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{prob2a.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Plot of pressure amplitude with scaled distance for different values of
+ 
+\begin_inset Formula $ka$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Plot-of-pressure"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Plot the range beyond which the pressure amplitude is within 
+\begin_inset Formula $10\%$
+\end_inset
+
+ of the asymptotic form (7.4.7).
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Plot-the-range"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With the asymptotic form of 
+\begin_inset Formula 
+\[
+p\left(r\right)=\frac{1}{2}\rho_{0}cu_{0}\left(\nicefrac{r}{a}\right)^{-1}ka
+\]
+
+\end_inset
+
+we can find where that reaches 
+\begin_inset Formula $90\%$
+\end_inset
+
+ of the true form by solving the equation
+\begin_inset Formula 
+\begin{align*}
+2\cancel{\rho_{0}cu_{0}}\left|\sin\left\{ \frac{1}{2}ka\left(\nicefrac{r}{a}\right)\left[\sqrt{1+\left(\nicefrac{r}{a}\right)^{-2}}-1\right]\right\} \right| & =0.9\cdot\frac{1}{2}\cancel{\rho_{0}cu_{0}}\left(\nicefrac{r}{a}\right)^{-1}ka\\
+4.44 & =\frac{\left(\nicefrac{r}{a}\right)^{-1}ka}{\left|\sin\left\{ \frac{1}{2}ka\left(\nicefrac{r}{a}\right)\left[\sqrt{1+\left(\nicefrac{r}{a}\right)^{-2}}-1\right]\right\} \right|}
+\end{align*}
+
+\end_inset
+
+which, solved numerically, occurs at 
+\begin_inset Formula $\nicefrac{r}{a}=4.26$
+\end_inset
+
+ for a 
+\begin_inset Formula $ka=12$
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Asymptotic-region-highlight"
+
+\end_inset
+
+ shows this region on a plot of scaled distance.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{prob2b.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Asymptotic region highlight on plot of pressure amplitude with scaled distance
+ for a single value of 
+\begin_inset Formula $ka$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Asymptotic-region-highlight"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+For a piston of 
+\begin_inset Formula $20\,\mathrm{cm}$
+\end_inset
+
+ radius operating at 
+\begin_inset Formula $4\,\mathrm{kHz}$
+\end_inset
+
+ in water, find the distance corresponding to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "par:Plot-the-range"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+First, we must determine the 
+\begin_inset Formula $\nicefrac{r}{a}$
+\end_inset
+
+ for asymptotic behvior with the given 
+\begin_inset Formula $ka$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\[
+k=\frac{2\pi}{\lambda}=\frac{2\pi f}{c}=\frac{2\pi\cdot4\times10^{3}\,\mathrm{Hz}}{343.2\,\mathrm{\frac{m}{s}}}
+\]
+
+\end_inset
+
+so, 
+\begin_inset Formula 
+\[
+ka=366.153
+\]
+
+\end_inset
+
+and solving numerically, the asymptotic region starts at 
+\begin_inset Formula 
+\[
+\nicefrac{r}{a}=122.23
+\]
+
+\end_inset
+
+which is 
+\begin_inset Formula 
+\[
+r=24.4\,\mathrm{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{7.5.1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Find the resonance frequency of a piston transducer with the mechanical
+ properties 
+\begin_inset Formula $m$
+\end_inset
+
+, 
+\begin_inset Formula $s$
+\end_inset
+
+, and 
+\begin_inset Formula $R_{m}$
+\end_inset
+
+ radiating into a fluid with specific acoustic impedance 
+\begin_inset Formula $\rho_{0}c$
+\end_inset
+
+.
+ Assume 
+\begin_inset Formula $ka\gg2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Using equation (7.5.11), the impedance is
+\begin_inset Formula 
+\[
+z_{r}=\rho_{0}cS\left[R_{1}\left(2ka\right)+jX_{1}\left(2ka\right)\right]
+\]
+
+\end_inset
+
+and well above 
+\begin_inset Formula $ka=2$
+\end_inset
+
+, we have the approximations
+\begin_inset Formula 
+\begin{align*}
+kX_{1}\left(2ka\right) & \rightarrow\frac{\nicefrac{2}{\pi}}{ka}=\frac{2}{\pi ka}\\
+R_{1}\left(2ka\right) & \rightarrow1\\
+z_{r} & \rightarrow R_{r}\approx S\rho_{0}c
+\end{align*}
+
+\end_inset
+
+therefore
+\begin_inset Formula 
+\[
+z_{r}=\rho_{0}cS\left[1+j\frac{2}{\pi ka}\right]
+\]
+
+\end_inset
+
+and comparing that to the form of the mechanical impedance
+\begin_inset Formula 
+\[
+z_{m}=R_{m}+j\left(\omega m-\frac{s}{\omega}\right)
+\]
+
+\end_inset
+
+we can split the radiation impedance into parts
+\begin_inset Formula 
+\begin{align*}
+z_{m}+z_{r} & =\left(R_{m}+\rho_{0}cS\right)+j\left(\frac{2\omega m}{\pi ka}-\frac{2s}{\pi\omega ka}\right)\\
+ & =\left(R_{m}+\rho_{0}cS\right)+j\left(\frac{2cm}{\pi a}-\frac{2cs}{\pi\omega^{2}a}\right)
+\end{align*}
+
+\end_inset
+
+and the resonance frequency is where 
+\begin_inset Formula 
+\[
+\mathrm{Im}\left\{ z_{m}+z_{r}\right\} =0
+\]
+
+\end_inset
+
+which is 
+\begin_inset Formula 
+\begin{align*}
+\frac{2\omega m}{\pi ka}-\frac{2s}{\pi\omega ka} & =0\\
+\frac{2\omega m}{\pi ka} & =\frac{2s}{\pi\omega ka}\\
+\omega^{2} & =\frac{s}{m}\\
+\omega & =\sqrt{\frac{s}{m}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Sketch the frequency dependence of the radiatated power if the transducer
+ is driven with a force of constant amplitude.
+ Assume that the resonance frequency occurs well above the lower limit of
+ the approximations implicit in 
+\begin_inset Formula $ka\gg2$
+\end_inset
+
+.
+ Indicate where the transducer is mass controlled and where it is stiffness
+ controlled.
+\end_layout
+
+\begin_layout Standard
+The radiated power is given by
+\begin_inset Formula 
+\[
+\pi=\frac{1}{2}u_{0}^{2}R_{r}
+\]
+
+\end_inset
+
+and assuming along the axis, we have
+\begin_inset Formula 
+\begin{align*}
+\Pi & =\frac{1}{2}u_{0}^{2}R_{r}\\
+ & =\frac{1}{2}u_{0}^{2}\rho_{0}cS\cdot\mathrm{Re}\left\{ \left[1-\frac{2\mathrm{J}_{1}\left(2ka\right)}{2ka}\right]+j\left[\frac{2\mathrm{H}_{1}\left(2ka\right)}{2ka}\right]\right\} 
+\end{align*}
+
+\end_inset
+
+and this is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Power-radiated-as"
+
+\end_inset
+
+.
+ The mass controlled region occurs when 
+\begin_inset Formula 
+\[
+z_{m}+z_{r}\approx j\frac{2cm}{\pi a}
+\]
+
+\end_inset
+
+or when the frequency is high (on the plateau of the chart).
+ The stiffness controlled region occurs when
+\begin_inset Formula 
+\[
+z_{m}+z_{r}\approx-j\frac{2cs}{\pi\omega^{2}a}
+\]
+
+\end_inset
+
+or in the increase part of the chart.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{prob4.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Power radiated as a function of frequency with mass and stiffness controlled
+ regions labeled
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Power-radiated-as"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

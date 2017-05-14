@@ -1,0 +1,1174 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+
+\def\ifdef#1{\ifx#1\undefined}
+
+\renewcommand\theparagraph{%
+     \probnum
+}
+\renewcommand\thesubparagraph{(\alph{subparagraph})}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth 5
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+ME 513 HMWK 4
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+11/16/15
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{6.2.2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+If a plane wave is reflected from the ocean floor at normal incidence with
+ a level 
+\begin_inset Formula $20\,\mathrm{dB}$
+\end_inset
+
+ below that of the incident wave, what are the possible values of the specific
+ acoustic impedance of the fluid bottom material?
+\end_layout
+
+\begin_layout Standard
+The level of 
+\begin_inset Formula $20\,\mathrm{dB}$
+\end_inset
+
+ below gives us
+\begin_inset Formula 
+\[
+20\log_{10}\frac{\left|p_{r}\right|}{\left|p_{i}\right|}=-20
+\]
+
+\end_inset
+
+Therefore
+\begin_inset Formula 
+\[
+\frac{\left|p_{r}\right|}{\left|p_{i}\right|}=\left|R\right|=0.1\quad\therefore\quad R=\pm0.1
+\]
+
+\end_inset
+
+and determining the reflection coefficient, we have
+\begin_inset Formula 
+\[
+R=\frac{\nicefrac{r_{2}}{r_{1}}-1}{\nicefrac{r_{2}}{r_{1}}+1}\quad\therefore\quad\left|R\right|=\left|\frac{\nicefrac{r_{2}}{r_{1}}-1}{\nicefrac{r_{2}}{r_{1}}+1}\right|
+\]
+
+\end_inset
+
+and solving this for 
+\begin_inset Formula $\nicefrac{r_{2}}{r_{1}}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{r_{2}}{r_{1}}=\frac{1-\left|R\right|}{1+\left|R\right|}=0.818,\,1.222
+\]
+
+\end_inset
+
+To determine specific acoustic impedance, we then must find
+\begin_inset Formula 
+\[
+z=\frac{p}{u}=\rho_{2}c_{2}
+\]
+
+\end_inset
+
+and using the ratio 
+\begin_inset Formula $\nicefrac{r_{2}}{r_{1}}$
+\end_inset
+
+, we can find this
+\begin_inset Formula 
+\[
+\frac{r_{2}}{r_{1}}=\frac{\rho_{2}c_{2}}{\rho_{1}c_{1}}=0.818,\,1.222
+\]
+
+\end_inset
+
+and therefore
+\begin_inset Formula 
+\[
+z_{n}=\rho_{2}c_{2}=\rho_{1}c_{1}\frac{r_{2}}{r_{1}}
+\]
+
+\end_inset
+
+and for water
+\begin_inset Formula 
+\[
+z_{n}=\left(1.5\times10^{6}\,\mathrm{rayls}\right)\frac{r_{2}}{r_{2}}=1.227\times10^{6},\;1.833\times10^{6}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{6.2.3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+A plane wave in seawater is normally incident on the water-air interface.
+ Find the pressure and intensity transmission coefficients.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:A-plane-wave"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the definitions 
+\begin_inset Formula 
+\[
+R=\frac{\nicefrac{r_{2}}{r_{1}}-1}{\nicefrac{r_{2}}{r_{1}}+1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T=\frac{2\nicefrac{r_{2}}{r_{1}}}{\nicefrac{r_{2}}{r_{1}}+1}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+R_{I}=R^{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T_{I}=\frac{4\nicefrac{r_{2}}{r_{1}}}{\left(\nicefrac{r_{2}}{r_{1}}+1\right)^{2}}
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\frac{r_{2}}{r_{1}}=\frac{\rho_{2}c_{2}}{\rho_{1}c_{1}}=\frac{415}{1.5\times10^{6}}=2.77\times10^{-4}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ refers to the air, and 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+ refers to the seawater.
+ This gives
+\begin_inset Formula 
+\[
+R=-0.999
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T=5.54\times10^{-4}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+R_{I}=0.998
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T_{I}=1.1\times10^{-3}
+\]
+
+\end_inset
+
+which shows that a wave in water is practically perfectly reflected at its
+ surface with air.
+\end_layout
+
+\begin_layout Subparagraph
+Repeat 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "par:A-plane-wave"
+
+\end_inset
+
+ for a wave in air normally incident on the air-water interface.
+\end_layout
+
+\begin_layout Standard
+Using the reciprocal of the previous analysis, we have
+\begin_inset Formula 
+\[
+\frac{r_{2}}{r_{1}}=\frac{\rho_{2}c_{2}}{\rho_{1}c_{1}}=\frac{1.5\times10^{6}}{415}=3610.1
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ refers to the seawater, and 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+ refers to the air.
+ This gives
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R=0.999
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T=1.999
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+R_{I}=0.998
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T_{I}=1.1\times10^{-3}
+\]
+
+\end_inset
+
+This shows that the power transmission and reflection is the same as in
+ the converse case, but the pressure field is different, with the reflection
+ being in phase and the transmission being double.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{6.2.6C}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Plot the pressure reflection and transmission coefficients and the internsity
+ reflection and transmission coefficients for normal incidents of a plane
+ wave on a fluid-fluid boundary for 
+\begin_inset Formula $0<\nicefrac{r_{1}}{r_{2}}<10$
+\end_inset
+
+.
+ Comment on the results for 
+\begin_inset Formula $\nicefrac{r_{1}}{r_{2}}=0$
+\end_inset
+
+, 
+\begin_inset Formula $\nicefrac{r_{1}}{r_{2}}=1$
+\end_inset
+
+, and 
+\begin_inset Formula $\nicefrac{r_{1}}{r_{2}}\rightarrow\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Using the definitions for the transmission and reflection ratios, we have
+\begin_inset Formula 
+\[
+R=\frac{\nicefrac{r_{2}}{r_{1}}-1}{\nicefrac{r_{2}}{r_{1}}+1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T=\frac{2\nicefrac{r_{2}}{r_{1}}}{\nicefrac{r_{2}}{r_{1}}+1}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+R_{I}=R^{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T_{I}=\frac{4\nicefrac{r_{2}}{r_{1}}}{\left(\nicefrac{r_{2}}{r_{1}}+1\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+these are plotted through a range of values in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Reflection-and-Transmission"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{coefficients.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reflection and Transmission Coefficients and Power Coefficients Plotted
+ through a Range of Values
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Reflection-and-Transmission"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The cases requested are:
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\nicefrac{r_{1}}{r_{2}}=0$
+\end_inset
+
+ With 
+\begin_inset Formula $\nicefrac{r_{1}}{r_{2}}=0$
+\end_inset
+
+, 
+\begin_inset Formula $\nicefrac{r_{2}}{r_{1}}=\infty$
+\end_inset
+
+, which gives 
+\begin_inset Formula $R=1$
+\end_inset
+
+, 
+\begin_inset Formula $T=2$
+\end_inset
+
+, 
+\begin_inset Formula $R_{I}=1$
+\end_inset
+
+, and 
+\begin_inset Formula $T_{I}=0$
+\end_inset
+
+, which gives a nonphysical case, in which the power is fully reflected,
+ but the pressure on the final side of the boundary is twice that of the
+ initial side.
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\nicefrac{r_{1}}{r_{2}}=1$
+\end_inset
+
+ This case creates the solution that 
+\begin_inset Formula $R=R_{I}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $T=T_{I}=1$
+\end_inset
+
+, which shows that there is no energy loss in the (full) transmission.
+ The case that this illustrates is when the medium (
+\begin_inset Formula $\rho_{n}c_{n}$
+\end_inset
+
+) is the same for both the incident medium and the final medium, which emulates
+ no boundary case.
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\nicefrac{r_{1}}{r_{2}}\rightarrow\infty$
+\end_inset
+
+ At 
+\begin_inset Formula $\nicefrac{r_{1}}{r_{2}}=\infty,$
+\end_inset
+
+ 
+\begin_inset Formula $\nicefrac{r_{2}}{r_{1}}=0$
+\end_inset
+
+.
+ This case pushes 
+\begin_inset Formula $R=-1$
+\end_inset
+
+, 
+\begin_inset Formula $R_{I}=1$
+\end_inset
+
+, 
+\begin_inset Formula $T=0,$
+\end_inset
+
+ and 
+\begin_inset Formula $T_{I}=0$
+\end_inset
+
+, which reflects all of the sound energy back into the initial medium, though
+ at a 
+\begin_inset Formula $180^{o}$
+\end_inset
+
+ phase shift.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{6.3.3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+For a 
+\begin_inset Formula $2\,\mathrm{kHz}$
+\end_inset
+
+ plane wave in water impinging normally on a steel plate of 
+\begin_inset Formula $1.5\,\mathrm{cm}$
+\end_inset
+
+ thickness
+\end_layout
+
+\begin_layout Subparagraph
+what is the transmission loss, expressed in 
+\begin_inset Formula $\mathrm{dB}$
+\end_inset
+
+, through the steel plate into water on the opposite side?
+\end_layout
+
+\begin_layout Standard
+The transmission loss will be defined as
+\begin_inset Formula 
+\[
+L_{T}=20\log_{10}\frac{\left|p_{t}\right|}{\left|p_{i}\right|}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\[
+\frac{\left|p_{t}\right|}{\left|p_{i}\right|}=\left|T\right|
+\]
+
+\end_inset
+
+, so, using the mass law, we have
+\begin_inset Formula 
+\[
+T=\frac{1}{1+\left[\left(\frac{\omega\rho_{s}}{2r_{1}}\right)\cos\theta\right]^{2}}
+\]
+
+\end_inset
+
+and with 
+\begin_inset Formula $\rho_{s}=7859\,\mathrm{\nicefrac{kg}{m^{3}}}$
+\end_inset
+
+, 
+\begin_inset Formula $\omega=2\,\mathrm{kHz}$
+\end_inset
+
+, 
+\begin_inset Formula $r_{1}=1.5\times10^{6}\,\mathrm{rayls}$
+\end_inset
+
+ for water, and 
+\begin_inset Formula $\theta=0$
+\end_inset
+
+ for normal, we have
+\begin_inset Formula 
+\[
+T=\frac{1}{1+\left[\left(\frac{\left(\left(2000\right)\left(7859\right)\right)}{2\left(1.5\times10^{6}\right)}\right)\right]^{2}}=0.035
+\]
+
+\end_inset
+
+and thus, the transmission loss will be
+\begin_inset Formula 
+\[
+L_{T}=29.11\,\mathrm{dB}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+What is the power reflection coefficient of this plate?
+\end_layout
+
+\begin_layout Standard
+The power reflection coefficient is
+\begin_inset Formula 
+\[
+R_{I}=R^{2}
+\]
+
+\end_inset
+
+with
+\begin_inset Formula 
+\[
+R=1-T=1-0.035=0.965
+\]
+
+\end_inset
+
+therefore
+\begin_inset Formula 
+\[
+R_{I}=0.931
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Repeat (a) and (b) for a 
+\begin_inset Formula $1.5\,\mathrm{cm}$
+\end_inset
+
+ slab of sponge rubber having a density of 
+\begin_inset Formula $500\,\mathrm{\nicefrac{kg}{m^{3}}}$
+\end_inset
+
+ and a longitudinal wave speed of 
+\begin_inset Formula $1000\,\mathrm{\nicefrac{m}{s}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\frac{1}{1+\left[\left(\frac{\left(\left(2000\right)\left(500\right)\right)}{2\left(1.5\times10^{6}\right)}\right)\right]^{2}}=0.9
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L_{T}=2.11\,\mathrm{dB}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R=1-T=1-0.9=0.1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{I}=0.01
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{6.6.1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+An acoustic tile panel is characterized by a normal specific acoustic impedance
+ of 
+\begin_inset Formula $900-j1200\,\mathrm{\nicefrac{Pa\cdot s}{m}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subparagraph
+For what angle of incidence in air will the poewr reflection coefficient
+ be a minimum?
+\end_layout
+
+\begin_layout Standard
+The intensity reflection coefficient for non-normal incidence is
+\begin_inset Formula 
+\[
+R_{I}=\frac{\left(r_{n}-\nicefrac{r_{1}}{\cos\theta_{i}}\right)^{2}+\chi_{n}^{2}}{\left(r_{n}+\nicefrac{r_{1}}{\cos\theta_{i}}\right)^{2}+\chi_{n}^{2}}
+\]
+
+\end_inset
+
+and the normal specific acoustic impedance is
+\begin_inset Formula 
+\[
+z_{n}=r_{n}+j\chi_{n}=900-j1200\quad\therefore\quad r_{n}=900,\;\chi_{n}=-1200
+\]
+
+\end_inset
+
+so
+\begin_inset Formula 
+\[
+R=\frac{\left(900-\nicefrac{415}{\cos\theta_{i}}\right)^{2}+\left(-1200\right)^{2}}{\left(900+\nicefrac{415}{\cos\theta_{i}}\right)^{2}+\left(-1200\right)^{2}}
+\]
+
+\end_inset
+
+and, solving with wolfram alpha 
+\begin_inset Formula 
+\[
+\frac{dR}{d\theta_{i}}=0
+\]
+
+\end_inset
+
+at
+\begin_inset Formula 
+\[
+\theta_{i}=73.9^{o}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+What is the power reflection coefficient for an angle of incidence of 
+\begin_inset Formula $80^{o}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R=\frac{\left(900-\nicefrac{415}{\cos80^{o}}\right)^{2}+\left(-1200\right)^{2}}{\left(900+\nicefrac{415}{\cos80^{o}}\right)^{2}+\left(-1200\right)^{2}}=0.2984
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+What is the power reflection coefficient for an angle of normal incidence?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R=\frac{\left(900-\nicefrac{415}{\cos0^{o}}\right)^{2}+\left(-1200\right)^{2}}{\left(900+\nicefrac{415}{\cos0^{o}}\right)^{2}+\left(-1200\right)^{2}}=0.5286
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+probnum{Additional Problem:}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Derive an expression for the surface normal impedance (at normal incidence)
+ of a fluid layer of depth 
+\begin_inset Formula $L$
+\end_inset
+
+ (having density 
+\begin_inset Formula $\rho_{1}$
+\end_inset
+
+ and speed of sound 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+) above a perfectly hard backing.
+\end_layout
+
+\begin_layout Standard
+The pressure field and velocity are given by
+\begin_inset Formula 
+\[
+p_{1}=\exp\left(j\omega t\right)\left[A\exp\left(-jk_{1}x\right)+B\exp\left(jk_{1}x\right)\right]
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+u_{1}=\exp\left(j\omega t\right)\left[\frac{A}{\rho_{1}c_{1}}\exp\left(-jk_{1}x\right)-\frac{B}{\rho_{1}c_{1}}\exp\left(jk_{1}x\right)\right]
+\]
+
+\end_inset
+
+At a depth of 
+\begin_inset Formula $L$
+\end_inset
+
+, we have the boundary conditions of no velocity, so
+\begin_inset Formula 
+\[
+\left.u_{1}\right|_{x=L}=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\exp\left(j\omega t\right)\left[\frac{A}{\rho_{1}c_{1}}\exp\left(-jk_{1}L\right)-\frac{B}{\rho_{1}c_{1}}\exp\left(jk_{1}L\right)\right]=0
+\]
+
+\end_inset
+
+so
+\begin_inset Formula 
+\[
+B=A\exp\left(-2jk_{1}L\right)
+\]
+
+\end_inset
+
+So solving the surface normal impedance, we have
+\begin_inset Formula 
+\begin{align*}
+z=\left.\frac{p_{1}}{u_{1}}\right|_{x=0} & =\frac{\cancel{\exp\left(j\omega t\right)}\left[A\exp\left(-jk_{1}x\right)+B\exp\left(jk_{1}x\right)\right]}{\cancel{\exp\left(j\omega t\right)}\left[\frac{A}{\rho_{1}c_{1}}\exp\left(-jk_{1}x\right)-\frac{B}{\rho_{1}c_{1}}\exp\left(jk_{1}x\right)\right]}\\
+ & =\frac{\left[\cancel{A}\exp\left(-jk_{1}x\right)+\cancel{A}\exp\left(-2jk_{1}L\right)\exp\left(jk_{1}x\right)\right]}{\left[\frac{\cancel{A}}{\rho_{1}c_{1}}\exp\left(-jk_{1}x\right)-\frac{\cancel{A}\exp\left(-2jk_{1}L\right)}{\rho_{1}c_{1}}\exp\left(jk_{1}x\right)\right]}\\
+ & =\rho_{1}c_{1}\frac{\cancelto{1}{\exp\left(-jk_{1}x\right)}+\exp\left(-2jk_{1}L\right)\cancelto{1}{\exp\left(jk_{1}x\right)}}{\cancelto{1}{\exp\left(-jk_{1}x\right)}-\exp\left(-2jk_{1}L\right)\cancelto{1}{\exp\left(jk_{1}x\right)}}\\
+ & =\rho_{1}c_{1}\frac{1+\exp\left(-2jk_{1}L\right)}{1-\exp\left(-2jk_{1}L\right)}\\
+ & =-j\rho_{1}c_{1}\cot\left(k_{1}L\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Sketch the impedance.
+\end_layout
+
+\begin_layout Standard
+Using the typical wavenumber definition of 
+\begin_inset Formula $k_{1}=\frac{\omega_{1}}{c_{1}}$
+\end_inset
+
+, we can plot
+\begin_inset Formula 
+\[
+z=-j\rho_{1}c_{1}\cot\left(\frac{\omega_{1}L}{c_{1}}\right)
+\]
+
+\end_inset
+
+in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Surface-normal-impedance"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{impedance.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Surface normal impedance as a function of frequency
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Surface-normal-impedance"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Calculate the plane wave pressure reflection coefficient for this layer
+ (the ambient density outside the layer is 
+\begin_inset Formula $\rho_{0}$
+\end_inset
+
+ and the ambient sound speed is 
+\begin_inset Formula $c$
+\end_inset
+
+) and show that the magnitude of the reflection coefficient is always equal
+ to unity in this case.
+\end_layout
+
+\begin_layout Standard
+The plane wave pressure reflection coefficient is 
+\begin_inset Formula 
+\[
+R=\frac{z_{n}-\rho_{0}c}{z_{n}+\rho_{0}c}
+\]
+
+\end_inset
+
+which is easily cast as
+\begin_inset Formula 
+\[
+R=\frac{\cot\left(k_{1}L\right)-\frac{\rho_{0}c}{\rho_{1}c_{1}}}{\cot\left(k_{1}L\right)+\frac{\rho_{0}c}{\rho_{1}c_{1}}}
+\]
+
+\end_inset
+
+but using the periodic nature of 
+\begin_inset Formula $\cot$
+\end_inset
+
+, we can see that around 
+\begin_inset Formula $n\pi=k_{1}L$
+\end_inset
+
+, 
+\begin_inset Formula $\cot\left(k_{1}L\right)\gg\frac{\rho_{0}c}{\rho_{1}c_{1}}$
+\end_inset
+
+ and therefore, 
+\begin_inset Formula 
+\[
+R=\frac{\cot\left(k_{1}L\right)\cancelto{0}{-\frac{\rho_{0}c}{\rho_{1}c_{1}}}}{\cot\left(k_{1}L\right)\cancelto{0}{+\frac{\rho_{0}c}{\rho_{1}c_{1}}}}=1
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $n\pi=k_{1}L$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
