@@ -1,0 +1,413 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{listings}
+\lstset{language=[90]Fortran,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{red},
+  commentstyle=\color{gray},
+  morecomment=[l]{!\ }% Comment only with space after !
+}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,calc,positioning}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth -1
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 697 Homework 4: Ion Implantation and Diffusion
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+March 24th, 2016
+\end_layout
+
+\begin_layout Paragraph
+Solve diffusion equation on non-uniform mesh with steady-state particles
+ implantation.
+ Use steady-state particles implantation from Gaussian distribution (
+\begin_inset Formula $z_{0}=2.5\times10^{-6}\,\mathrm{cm}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma=1\times10^{-6}\,\mathrm{cm}$
+\end_inset
+
+) with maximum implantation of 
+\begin_inset Formula $5\times10^{-21}\,\mathrm{\nicefrac{N}{cm^{3}s}}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Domain Size: 
+\begin_inset Formula $1\,\mathrm{\mu m}$
+\end_inset
+
+; mesh, e.g., 
+\begin_inset Formula $a_{n}=a_{1}r^{n-1}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Diffusion coefficient: 
+\begin_inset Formula $5\times10^{-8}\,\mathrm{\nicefrac{cm^{2}}{s}}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Boundary Conditions:
+\begin_inset Newline newline
+\end_inset
+
+1) at the surface of implantation: 
+\begin_inset Formula $J\left(z\right)=k_{r}C^{2}\left(z\right)$
+\end_inset
+
+ 
+\begin_inset Formula $k_{r}=7\times10^{-22}\,\mathrm{\nicefrac{cm^{4}}{s}}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+2) free flow to the bulk
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Values correspond to parameters for 
+\begin_inset Formula $D$
+\end_inset
+
+ in 
+\begin_inset Formula $\ce{W}$
+\end_inset
+
+ at 
+\begin_inset Formula $T=400\,\mathrm{K}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Plot particles distribution at times: 
+\begin_inset Formula $1\,\mathrm{\mu s}$
+\end_inset
+
+, 
+\begin_inset Formula $1\,\mathrm{ms}$
+\end_inset
+
+, 
+\begin_inset Formula $100\,\mathrm{ms}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Motivation
+\end_layout
+
+\begin_layout Standard
+The diffusion equation is important to solve in plasma contexts, especially
+ with implantation from ion beams.
+ The methods to solve it can be explicit or implicit, although implicit
+ methods have greater difficulties associated with stability.
+ Also, for domains where certain regions have much finer structure, uniform
+ meshes are inappropriate.
+ Thus, nonuniform meshes are extremely important and often used.
+\end_layout
+
+\begin_layout Section*
+Method
+\end_layout
+
+\begin_layout Standard
+A simple explicit scheme was used to develop first a nonuniform mesh, and
+ then to solve the diffusion equation with the specified boundary conditions.
+ The mesh was created according to
+\begin_inset Formula 
+\[
+\alpha=\frac{\log\Delta z_{min}}{\log\Delta z_{uniform}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\kappa=s^{1-\alpha}
+\]
+
+\end_inset
+
+ and the diffusion equation was solved by performing an euler step at every
+ time step with
+\begin_inset Formula 
+\[
+C_{i,\,j+1}=C_{i,\,j}+J\Delta t
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+J=\begin{cases}
+D\frac{C_{i+1,\,j}-2C_{i,\,j}+C_{i-1,\,j}}{\Delta z^{2}} & \text{in domain}\\
+-k_{r}C_{i,\,j}^{2} & \text{on boundary}
+\end{cases}
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $i$
+\end_inset
+
+ denoting our spatial mesh index, and 
+\begin_inset Formula $j$
+\end_inset
+
+ denoting our temporal mesh index.
+\end_layout
+
+\begin_layout Section*
+Results
+\end_layout
+
+\begin_layout Standard
+Results are shown in Figures 1 and 2, with a uniform and non-uniform mesh,
+ respectively.
+ It can be seen that the left boundary current dominates the problem, diffusing
+ away particles that are implanted very quickly.
+ The non-uniform mesh provides large improvement to the uniform mesh.
+ Also, a corrector step could be added to give better results, quicker.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{full_result_uniform.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Results created with a uniform mesh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{full_result_nonuniform.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Results created with a non-uniform mesh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Code
+\end_layout
+
+\begin_layout Subsection*
+diffusion.f90:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting{diffusion.f90}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

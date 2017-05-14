@@ -1,0 +1,403 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{listings}
+\lstset{language=[90]Fortran,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{red},
+  commentstyle=\color{gray},
+  morecomment=[l]{!\ }% Comment only with space after !
+}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth -1
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 697 Homework 1: Two-dimensional interpolation
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+February 25th, 2016
+\end_layout
+
+\begin_layout Paragraph
+Use composite rules to find probability of particles to have energy for
+ given temeprature (
+\begin_inset Formula $1000\,\mathrm{K}$
+\end_inset
+
+) in the range from 
+\begin_inset Formula $0.1E_{avg}$
+\end_inset
+
+ to 
+\begin_inset Formula $2E_{avg}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{N\left(E\right)}{N}=\frac{2\pi}{\left(\pi kT\right)^{\nicefrac{3}{2}}}E^{\nicefrac{1}{2}}\exp\left(-\frac{E}{kT}\right)
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $E_{avg}=\frac{3}{2}kT$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Compare and plot results for different number of subintervals using midpoint,
+ trapezoidal and Simpson's methods - as a function of intervals number.
+\end_layout
+
+\begin_layout Section*
+Motivation
+\end_layout
+
+\begin_layout Standard
+Often, analytical interpolation is not a viable method for solution of a
+ problem.
+ For the problem proposed, using the Maxwell-Boltzmann distribution, analytical
+ integration is tedious and difficult.
+ For this reason, numerical integration has been devised.
+ Not only does numerical integration allow us to integrate functions that
+ we need the explicit interval of, but because it is function agnostic,
+ we can also use similar methods to solve ordinary differential equations.
+\end_layout
+
+\begin_layout Section*
+Method
+\end_layout
+
+\begin_layout Standard
+Numerical integration is closely related to Riemann Sums, and the three
+ methods described in this assignment illustrate this.
+ The three methods described are the midpoint, trapezoidal, and Simpson's
+ method, corresponding to subinterval shapes whose top boundaries have polynomia
+l degree of 
+\begin_inset Formula $0$
+\end_inset
+
+, 
+\begin_inset Formula $1$
+\end_inset
+
+, and 
+\begin_inset Formula $2$
+\end_inset
+
+, respectively.
+ This is illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Visual-depiction-of"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{method.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Visual depiction of method for integrating subintervals with the Midpoint,
+ Trapezoidal, and Simpson's method
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Visual-depiction-of"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The actual code is rather simple.
+ The code first determines the amount of subintervals that will be created
+ from 
+\family typewriter
+\color cyan
+stdin
+\family default
+\color inherit
+.
+ Then, it creates a one dimensional mesh with constant element size and
+ the requested number of subintervals.
+ Then, it moves forward and performs midpoint rule integration by finding
+ the function value at the midpoint of each subdomain, and then multiplying
+ that by the horizontal width and summing.
+ After that, it performs trapezoidal rule by averaging the end points of
+ each subdomain, and then multiplying by the horizontal width and summing.
+ Finally, it performs Simpson's rule by the equation
+\begin_inset Formula 
+\[
+\int_{a}^{b}f\left(x\right)dx\approx I_{s}=\sum_{i=2}^{n}\frac{f\left(x_{i-1}\right)+4f\left(\frac{x_{i}+x_{i-1}}{2}\right)+f\left(x_{i}\right)}{6}\left(x_{i}-x_{i-1}\right)
+\]
+
+\end_inset
+
+Finally, the results of all three methods are printed to 
+\family typewriter
+\color cyan
+stdout
+\family default
+\color inherit
+.
+\end_layout
+
+\begin_layout Section*
+Results
+\end_layout
+
+\begin_layout Standard
+The convergence of the different methods is shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-convergence-of"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{convergence.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The convergence of the three methods with different
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-convergence-of"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Not surprisingly, all of the methods take tens of subintervals to converge,
+ but surprisingly, the Midpoint method is the fastest to converge.
+ It would be assumed that Simpson's method would be closer, because of the
+ higher order shape of it, but in this case that is not true.
+ The trapezoidal method performs least well, likely because of the highly
+ nonlinear behavior of the function hurting the performance of the arithmatic
+ averaging of the end points.
+ In general, with little computational effort (
+\begin_inset Formula $\sim50$
+\end_inset
+
+ subintervals), even this complex nonlinear function can be integrated numerical
+ly using any of these three methods.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Code
+\end_layout
+
+\begin_layout Subsection*
+maxwellian.f90:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting{maxwellian.f90}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+functions.f90:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting{functions.f90}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

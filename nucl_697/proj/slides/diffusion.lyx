@@ -1,0 +1,2493 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass puslides
+\begin_preamble
+\renewcommand{\bibsection}{\section{References}}
+
+\usepackage{pgf}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,calc,positioning}
+\usepackage{adjustbox}
+\end_preamble
+\options 20pt
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize custom
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 2
+\use_package mathdots 2
+\use_package mathtools 0
+\use_package mhchem 2
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation landscape
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 7in
+\paperheight 9in
+\leftmargin 0cm
+\topmargin 0cm
+\rightmargin 0cm
+\bottommargin 0cm
+\headheight 0cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 0 34 -1
+\bullet 1 0 30 -1
+\bullet 2 0 30 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Diffusion of deuterium through plasma facing components: explicit and implicit
+ models
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Subtitle
+Purdue University
+\end_layout
+
+\begin_layout Venue
+POTR 376
+\end_layout
+
+\begin_layout City
+West Lafayette, IN
+\end_layout
+
+\begin_layout Authors for Footer
+A.
+ Hagen
+\end_layout
+
+\begin_layout Part
+Introduction
+\end_layout
+
+\begin_layout Chapter*
+Motivation
+\end_layout
+
+\begin_layout One Column
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/iterblankett.jpg
+	lyxscale 10
+	height 5.25in
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Methodology
+\end_layout
+
+\begin_layout Chapter*
+Assumptions and Simplification
+\end_layout
+
+\begin_layout Two Column Shift Left
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Heading
+Assumptions
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{img/iter.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagram of current simulation setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Two Column Shift Left
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Heading
+Assumptions
+\end_layout
+
+\begin_layout Itemize
+Curvature is larger than scale of diffusion/implantation (semi-infinite
+ slab)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{img/iter2.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagram of current simulation setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Two Column Shift Left
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Heading
+Assumptions
+\end_layout
+
+\begin_layout Itemize
+Curvature is larger than scale of diffusion/implantation (semi-infinite
+ slab)
+\end_layout
+
+\begin_layout Itemize
+Incident flux is constant in space and time (one dimensional, constant source)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{img/iter3.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagram of current simulation setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Two Column Shift Left
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Heading
+Assumptions
+\end_layout
+
+\begin_layout Itemize
+Curvature is larger than scale of diffusion/implantation (semi-infinite
+ slab)
+\end_layout
+
+\begin_layout Itemize
+Incident flux is constant in space and time (one dimensional, constant source)
+\end_layout
+
+\begin_layout Itemize
+Recombintation occurs on left boundary (
+\begin_inset Formula $\frac{\partial C}{\partial x}=-kC^{2}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{img/iter4.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagram of current simulation setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Two Column Shift Left
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Heading
+Assumptions
+\end_layout
+
+\begin_layout Itemize
+Curvature is larger than scale of diffusion/implantation (semi-infinite
+ slab)
+\end_layout
+
+\begin_layout Itemize
+Incident flux is constant in space and time (one dimensional, constant source)
+\end_layout
+
+\begin_layout Itemize
+Recombintation occurs on left boundary (
+\begin_inset Formula $\frac{\partial C_{-1}}{\partial x}=-kC_{0}^{2}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+The left boundary is a sink (
+\begin_inset Formula $C_{n+1}=0$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{img/iter5.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagram of current simulation setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Solution of Simplified Model
+\end_layout
+
+\begin_layout One Column
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Finite Difference Method
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Define block styles 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{decision} = [diamond, draw,      
+\end_layout
+
+\begin_layout Plain Layout
+
+     text width=7.5em, minimum width=8em,text badly centered, minimum height=3em,
+node distance=0.1cm, inner sep=0pt] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{block} = [rectangle, draw,  node distance=0.5em,%   
+\end_layout
+
+\begin_layout Plain Layout
+
+    minimum width=6em, text width=5.5em, text badly centered,%
+\end_layout
+
+\begin_layout Plain Layout
+
+	rounded corners, minimum height=3em]%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{circlenode} = [circle, draw,%
+\end_layout
+
+\begin_layout Plain Layout
+
+	node distance=0.5em, text centered, minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{line} = [draw, -latex'] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{cloud} = [draw, ellipse, node distance=3cm,     
+\end_layout
+
+\begin_layout Plain Layout
+
+    minimum height=2em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzset{
+\end_layout
+
+\begin_layout Plain Layout
+
+    print/.style={ % requires library shapes.symbols         
+\end_layout
+
+\begin_layout Plain Layout
+
+        draw,
+\end_layout
+
+\begin_layout Plain Layout
+
+        tape,
+\end_layout
+
+\begin_layout Plain Layout
+
+        tape bend top=none,
+\end_layout
+
+\begin_layout Plain Layout
+
+        minimum height=15em,
+\end_layout
+
+\begin_layout Plain Layout
+
+        minimum width=15em,
+\end_layout
+
+\begin_layout Plain Layout
+
+        text width=10em
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{adjustbox}{max width=7.5in, max height=5.25in}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance = 1em, auto]     
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Place nodes
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node [block] (init) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		create mesh
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below=1em of init] (concentration) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		initialize concentration vector to $
+\backslash
+vec{C}=
+\backslash
+vec{0}+
+\backslash
+vec{S}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below=1em of concentration] (init_x) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		start at left most element
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=1em of init_x] (flux) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		calculate flux of deuterons $
+\backslash
+phi = D
+\backslash
+frac{
+\backslash
+partial C}{
+\backslash
+partial x}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=1em of flux] (sum_flux) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		find the concentration with $C = C_{k-1} + 
+\backslash
+sum 
+\backslash
+phi 
+\backslash
+Delta x$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [decision, right=1em of sum_flux] (space) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Is this the last mesh point $j > J$?
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below=1em of sum_flux] (increment_space) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Increment space step $j = j + 1$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [decision, right=1em of space] (time) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Is the time over $k > K$?
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below=6em of flux] (increment) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Increment time step $k = k + 1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+
+\backslash
+ $C_{k-1}=C$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below=10em of time] (terminate) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Output solution $
+\backslash
+vec{C}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (init) -- (concentration);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (concentration) -- (init_x);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (init_x) -- (flux);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (flux) -- (sum_flux);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (sum_flux) -- (space);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (space.south) |- node[anchor=west] {no} (increment_space);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (increment_space) -| (flux.south);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (space.east) -- node[anchor=south] {yes} (time);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (time.south) |- node[anchor=west] {no} (increment);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (increment.west) -| (init_x);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (time.east) -| node [anchor=south] {yes} ($(terminate.east) +
+ (3em,0)$) -- (terminate.east);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{adjustbox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout One Column
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Finite Element Method
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Large
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+We strive to solve the equation 
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial C\left(x,t\right)}{\partial t}=D\frac{\partial^{2}C\left(x,t\right)}{\partial x^{2}} & \quad\text{in domain}\\
+D\frac{\partial C}{\partial x}=-kC^{2} & \quad\text{on left boundary}\\
+C=0 & \quad\text{on right boundary}\\
+C\left(t+\Delta t\right)=C\left(t\right)+\Delta t\,S & \quad\text{in domain}
+\end{align*}
+
+\end_inset
+
+We can generate a weighted residual for this
+\begin_inset Formula 
+\[
+R\left(\tilde{C}\right)=-\underbrace{\int_{0}^{x_{r}}\frac{\partial\tilde{C}}{\partial t}dx}_{\substack{\text{history terms}\\
+\text{"dissipation matrix"}
+}
+}+\underbrace{\left[wD\frac{\partial\tilde{C}}{\partial x}\right]_{0}^{x_{r}}}_{\substack{\text{boundary terms}\\
+\text{"forcing vector"}
+}
+}-\underbrace{\int_{0}^{x_{r}}\frac{\partial w}{\partial x}D\frac{\partial\tilde{C}}{\partial x}dx}_{\substack{\text{domain terms}\\
+\text{"stiffness matrix"}
+}
+}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+And we try to minimize this
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout One Column
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Finite Element Method - Continued
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+R\left(\vec{C}\right)=\underbrace{\left[\begin{array}{ccccc}
+\frac{4\Delta x}{6D\Delta t} & \frac{\Delta x}{6D\Delta t}\\
+\frac{\Delta x}{6D\Delta t} & \frac{4\Delta x}{6D\Delta t} & \frac{\Delta x}{6D\Delta t}\\
+ & \frac{\Delta x}{6D\Delta t} & \frac{4\Delta x}{6D\Delta t} & \frac{\Delta x}{6D\Delta t}\\
+ &  & \frac{\Delta x}{6D\Delta t} & \frac{4\Delta x}{6D\Delta t} & \frac{\Delta x}{6D\Delta t}\\
+ &  &  & \frac{\Delta x}{6D\Delta t} & \frac{4\Delta x}{6D\Delta t}
+\end{array}\right]}_{\mathbb{M}}\left[\begin{array}{c}
+C_{1}\\
+C_{2}\\
+C_{3}\\
+C_{4}\\
+C_{5}
+\end{array}\right]-\underbrace{\left[\begin{array}{ccccc}
+\frac{\Delta x}{D\Delta t}\\
+ & \frac{\Delta x}{D\Delta t}\\
+ &  & \frac{\Delta x}{D\Delta t}\\
+ &  &  & \frac{\Delta x}{D\Delta t}\\
+ &  &  &  & \frac{\Delta x}{D\Delta t}
+\end{array}\right]}_{\mathbb{M}_{k-1}}\left[\begin{array}{c}
+C_{1}\\
+C_{2}\\
+C_{3}\\
+C_{4}\\
+C_{5}
+\end{array}\right]_{k-1}+\underbrace{\left[\begin{array}{c}
+-\frac{kC_{1}^{2}}{D}\\
+0\\
+0\\
+0\\
+0
+\end{array}\right]}_{\vec{l}}+\\
+\underbrace{D\left[\begin{array}{ccccc}
+\left(\frac{1}{\Delta x_{0}^{2}}+\frac{1}{\Delta x_{1}^{2}}\right) & -\frac{1}{\Delta x_{1}^{2}}\\
+-\frac{1}{\Delta x_{1}^{2}} & \left(\frac{1}{\Delta x_{1}^{2}}+\frac{1}{\Delta x_{2}^{2}}\right) & -\frac{1}{\Delta x_{2}^{2}}\\
+ & -\frac{1}{\Delta x_{2}^{2}} & \left(\frac{1}{\Delta x_{2}^{2}}+\frac{1}{\Delta x_{3}^{2}}\right) & -\frac{1}{\Delta x_{3}^{2}}\\
+ &  & -\frac{1}{\Delta x_{3}^{2}} & \left(\frac{1}{\Delta x_{3}^{2}}+\frac{1}{\Delta x_{4}^{2}}\right) & -\frac{1}{\Delta x_{4}^{2}}\\
+ &  &  & -\frac{1}{\Delta x_{4}^{2}} & \left(\frac{1}{\Delta x_{4}^{2}}+\frac{1}{\Delta x_{5}^{2}}\right)
+\end{array}\right]}_{\mathbb{K}}\left[\begin{array}{c}
+C_{1}\\
+C_{2}\\
+C_{3}\\
+C_{4}\\
+C_{5}
+\end{array}\right]
+\end{multline*}
+
+\end_inset
+
+So we have the matrix equation
+\begin_inset Formula 
+\begin{align*}
+0 & =-\mathbb{M}\vec{C}+\mathbb{M}_{k-1}\vec{C}_{k-1}+\vec{l}-\mathbb{K}\vec{C}\\
+ & =-\underbrace{\left(\mathbb{M}+\mathbb{K}\right)}_{\mathbb{A}}\underbrace{\vec{C}}_{\vec{x}}+\underbrace{\left(\mathbb{M}_{k-1}\vec{C}_{k-1}+\vec{l}\right)}_{\vec{b}}
+\end{align*}
+
+\end_inset
+
+so we can simplify this to
+\begin_inset Formula 
+\[
+\mathbb{A}\vec{x}=\vec{b}
+\]
+
+\end_inset
+
+which can be solved with 
+\begin_inset Formula 
+\[
+\vec{x}=\mathbb{A}^{-1}\vec{b}
+\]
+
+\end_inset
+
+at each time step.
+ Then, our approximated concentration is
+\begin_inset Formula 
+\[
+\vec{C}=\vec{x}+\Delta t\,\vec{S}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout One Column
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Procedure Flow
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Define block styles 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{decision} = [diamond, draw,      
+\end_layout
+
+\begin_layout Plain Layout
+
+     text width=7.5em, minimum width=8em,text badly centered, minimum height=3em,
+node distance=0.1cm, inner sep=0pt] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{block} = [rectangle, draw,  node distance=0.5em,%   
+\end_layout
+
+\begin_layout Plain Layout
+
+    minimum width=6em, text width=5.5em, text badly centered,%
+\end_layout
+
+\begin_layout Plain Layout
+
+	rounded corners, minimum height=3em]%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{circlenode} = [circle, draw,%
+\end_layout
+
+\begin_layout Plain Layout
+
+	node distance=0.5em, text centered, minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{line} = [draw, -latex'] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{cloud} = [draw, ellipse, node distance=3cm,     
+\end_layout
+
+\begin_layout Plain Layout
+
+    minimum height=2em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzset{
+\end_layout
+
+\begin_layout Plain Layout
+
+    print/.style={ % requires library shapes.symbols         
+\end_layout
+
+\begin_layout Plain Layout
+
+        draw,
+\end_layout
+
+\begin_layout Plain Layout
+
+        tape,
+\end_layout
+
+\begin_layout Plain Layout
+
+        tape bend top=none,
+\end_layout
+
+\begin_layout Plain Layout
+
+        minimum height=15em,
+\end_layout
+
+\begin_layout Plain Layout
+
+        minimum width=15em,
+\end_layout
+
+\begin_layout Plain Layout
+
+        text width=10em
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{adjustbox}{max width=7.5in, max height=5.25in}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance = 1em, auto]     
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Place nodes
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node [block] (init) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		create mesh
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below=1em of init] (concentration) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		initialize concentration vector to $
+\backslash
+vec{C}=
+\backslash
+vec{0}+
+\backslash
+vec{S}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below=1em of concentration] (dissipation) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		construct dissipation matrix $
+\backslash
+mathbb{M}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=1em of dissipation] (stiffness) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		construct stiffness matrix $
+\backslash
+mathbb{K}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=1em of stiffness] (forcing) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		construct forcing vector $
+\backslash
+vec{l}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=1em of forcing] (history) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		construct history vector $
+\backslash
+mathbb{M}_{k-1}
+\backslash
+vec{C}_{k-1}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=1em of history, minimum width=10em, text width=9.5em]
+ (combine) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		combine vectors and matrices
+\end_layout
+
+\begin_layout Plain Layout
+
+		$
+\backslash
+mathbb{A}=
+\backslash
+mathbb{M}+
+\backslash
+mathbb{K}$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+
+\backslash
+ $
+\backslash
+vec{b}=
+\backslash
+mathbb{M}_{k-1}
+\backslash
+vec{C}_{k-1} + 
+\backslash
+vec{l}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=1em of combine, minimum width=8em, text width=7.5em] (solve)
+ {
+\end_layout
+
+\begin_layout Plain Layout
+
+		invert $
+\backslash
+mathbb{A}$ and solve $
+\backslash
+vec{x}=
+\backslash
+mathbb{A}^{-1}
+\backslash
+vec{b}$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+
+\backslash
+ $
+\backslash
+vec{C} = 
+\backslash
+vec{x} + 
+\backslash
+Delta t 
+\backslash
+, 
+\backslash
+vec{S}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [decision, below=1em of combine] (time) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Is the time over $k > K$?
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, left=6em of time] (increment) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Increment time step $k = k + 1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+
+\backslash
+ $
+\backslash
+mathbb{M}_{k-1}
+\backslash
+vec{C}_{k-1}=
+\backslash
+mathbb{M}
+\backslash
+vec{C}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below=2em of time] (terminate) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Output solution $
+\backslash
+vec{C}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (init) -- (concentration);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (concentration) -- (dissipation);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (dissipation) -- (stiffness);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (stiffness) -- (forcing);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (forcing) -- (history);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (history) -- (combine);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (combine) -- (solve);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (solve.south) |- (time.east);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (time.west) -- node[anchor=south] {no} (increment);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (increment) -| (dissipation.south);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (time.south) -- node[anchor=east] {yes} (terminate.north);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{adjustbox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Parameters
+\end_layout
+
+\begin_layout Chapter*
+Solution Parameters
+\end_layout
+
+\begin_layout Two Column Shift Left
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Itemize
+\begin_inset Formula $D=5\times10^{-8}\,\mathrm{\frac{cm^{2}}{s}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k_{r}=7\times10^{-22}\,\mathrm{\frac{cm^{4}}{s}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Phi=1\times10^{17}\,\mathrm{\frac{^{2}H}{s}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Initial source from SRIM simulation of deuterium on tungsten
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{img/iter6.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagram of current simulation setup with mesh parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Results
+\end_layout
+
+\begin_layout Chapter*
+Results and Method Analysis
+\end_layout
+
+\begin_layout Two Row Left Sidebar
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Comparison to Finite Difference Method
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{animateinline}[autoplay,loop]{10}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multiframe{24}{i=1+1}{
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+input{../img/full_result_
+\backslash
+zeropad{12}{
+\backslash
+i}.pgf}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{animateinline}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solution of diffusion in Tungsten using finite element and finite difference
+ methods, over 1000 
+\begin_inset Formula $\mu s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{animateinline}[autoplay,loop]{10}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multiframe{24}{i=1+1}{
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+input{../img/full_result_short_
+\backslash
+zeropad{12}{
+\backslash
+i}.pgf}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{animateinline}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solution of diffusion in Tungsten using finite element and finite difference
+ methods, over 1 
+\begin_inset Formula $\mu s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Content
+status open
+
+\begin_layout Itemize
+Longer final time analysis should still be performed
+\end_layout
+
+\begin_layout Itemize
+Grid is slightly coarser than desired
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Itemize
+Solution behaves as expected
+\end_layout
+
+\begin_layout Itemize
+Small difference between FDM and FEM still under analysis
+\end_layout
+
+\begin_layout Itemize
+No current way to determine number of desorbed deuterons
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Two Row Right Sidebar
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Time Stability Analysis
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{../img/unstable_result_fdm.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solution of diffusion equation using finite difference method with
+\begin_inset Formula $1\,\mathrm{\mu s}$
+\end_inset
+
+ steps
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{../img/unstable_result_fem.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Solution of diffusion equation using finite element method with 
+\begin_inset Formula $1\,\mathrm{\mu s}$
+\end_inset
+
+ steps
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Itemize
+Finite difference method completely diverges when large time steps are attempted
+\end_layout
+
+\begin_layout Itemize
+Finite element method simply provides an inaccurate answer when too large
+ time steps are attempted
+\end_layout
+
+\begin_layout Itemize
+Source term was added 
+\begin_inset Quotes eld
+\end_inset
+
+lumped
+\begin_inset Quotes erd
+\end_inset
+
+ at each time step, and that may have been too large to diffuse away
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Two Column
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+Computational Effort
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Heading
+Finite Element Method
+\end_layout
+
+\begin_layout Itemize
+Under 
+\begin_inset Quotes eld
+\end_inset
+
+best
+\begin_inset Quotes erd
+\end_inset
+
+ conditions, required 
+\begin_inset Formula $24.37\,\mathrm{s}$
+\end_inset
+
+ to solve a mesh with 1000 elements and 10000 time steps
+\end_layout
+
+\begin_layout Itemize
+Gauss-Seidel matrix solver is iterative and could be faster
+\end_layout
+
+\begin_layout Itemize
+Scales favorably with more elements: 
+\begin_inset Formula $\mathcal{O}\left(>3n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Scales linearly with more time steps: 
+\begin_inset Formula $\mathcal{O}\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Heading
+Finite Difference Method
+\end_layout
+
+\begin_layout Itemize
+Under 
+\begin_inset Quotes eld
+\end_inset
+
+best
+\begin_inset Quotes erd
+\end_inset
+
+ conditions, required 
+\begin_inset Formula $0.14\,\mathrm{s}$
+\end_inset
+
+ to solve a mesh with 100 elements and 1000 time steps
+\end_layout
+
+\begin_layout Itemize
+Scales very poorly with more elements: 
+\begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Scales linearly with more time steps: 
+\begin_inset Formula $\mathcal{O}\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Future Work
+\end_layout
+
+\begin_layout Chapter*
+Proposed Enhancements to Finite Element Diffusion Code
+\end_layout
+
+\begin_layout One Column
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Content
+status open
+
+\begin_layout Itemize
+Compare results to commercial FEM package, i.e.
+ COMSOL
+\end_layout
+
+\begin_layout Itemize
+Use PARADISO to solve matrix equation
+\end_layout
+
+\begin_layout Itemize
+Determine 
+\begin_inset Quotes eld
+\end_inset
+
+stability
+\begin_inset Quotes erd
+\end_inset
+
+ for FEM time step
+\end_layout
+
+\begin_layout Itemize
+Provide the ability to perform on a non-uniform mesh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

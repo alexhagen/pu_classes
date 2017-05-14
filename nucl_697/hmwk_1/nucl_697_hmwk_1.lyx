@@ -1,0 +1,364 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{listings}
+\lstset{language=[90]Fortran,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{red},
+  commentstyle=\color{gray},
+  morecomment=[l]{!\ }% Comment only with space after !
+}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth -1
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 697 Homework 1: Two-dimensional interpolation
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+February 11th, 2016
+\end_layout
+
+\begin_layout Paragraph
+Extend 1st degree Lagrange interpolation from one dimension to two dimensions.
+ Develop the code with comments.
+\begin_inset Newline newline
+\end_inset
+
+Use the code to find plasma thermal conductivity at mass density 
+\begin_inset Formula $\rho=1.0\times10^{-5}\,\mathrm{\nicefrac{g}{cm^{2}}}$
+\end_inset
+
+, electron temperature 
+\begin_inset Formula $T=25000\,\mathrm{K}$
+\end_inset
+
+ from the provided data file.
+\end_layout
+
+\begin_layout Section*
+Motivation
+\end_layout
+
+\begin_layout Standard
+The Lagrange interpolation is a powerful tool for determination of function
+ values where experimental data does not exist.
+ The two dimensional interpolation has the form
+\begin_inset Formula 
+\[
+L_{n,j}\left(x,y\right)=\prod_{i=0,i\neq j}\frac{x-x_{i}}{x_{j}-x_{i}}\prod_{k=0,k\neq l}\frac{y-y_{k}}{y_{l}-y_{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This gives a smooth function of two variables.
+ Depending how many points are taken into account, the function has higher
+ and higher order, which can help smooth the functions.
+ For the requested problem on plasma thermal conductivity, the values of
+ the two interpolating vectors are given in logarithmic form, which will
+ help to go through a range of orders of magnitude.
+ Then, an output is requested for the thermal condutivity between given
+ experimental points.
+\end_layout
+
+\begin_layout Section*
+Method
+\end_layout
+
+\begin_layout Standard
+The method is straight forward:
+\end_layout
+
+\begin_layout Itemize
+read in all values and place into arrays
+\end_layout
+
+\begin_layout Itemize
+find which interval the requested point occurs in the experimental data
+\end_layout
+
+\begin_layout Itemize
+depending on the order, use a number of surrounding points to generate a
+ Lagrange polynomial of the form 
+\begin_inset Formula 
+\[
+L_{i,j}=\frac{x-x_{i-1}}{x_{i}-x_{i-1}}\frac{y-y_{j-1}}{y_{j}-y_{j-1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then, output the values of the polynomial at that point
+\begin_inset Formula 
+\[
+P=\sum_{k=i-1,l=j-1}^{i,j}L_{k,l}x_{k}y_{l}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I have also include the ability to output a grid of points, which is processed
+ serially (and could be done faster if optimized).
+\end_layout
+
+\begin_layout Section*
+Results
+\end_layout
+
+\begin_layout Standard
+The results for the problem requested are straightforward and close to the
+ correct answer, with:
+\begin_inset Formula 
+\[
+k\left(25000\,\mathrm{K},\,1.0\times10^{-5}\,\mathrm{\frac{g}{cm^{3}}}\right)=66506.64\,\mathrm{\frac{W}{cm\cdot K}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Unfortunately, by plotting several different meshes (one 11 x 11 and the
+ other 15 x 15), we can see that the solution is unstable.
+ This is characterized by a decrease in the thermal condutivity at higher
+ temperatures and is typified in Figures 1 and 2.
+ Different orders could be tested to determine the problems occuring in
+ these cases.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{plot_11.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Interpolated values for thermal conductivity on an 11 x 11 grid
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{plot_15.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Interpolated values for thermal conductivity on a 15 x 15 grid
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Code
+\end_layout
+
+\begin_layout Subsection*
+lagrange2d.f90:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting{lagrange2d.f90}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+functions.f90:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting{functions.f90}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

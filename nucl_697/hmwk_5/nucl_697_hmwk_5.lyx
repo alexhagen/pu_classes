@@ -1,0 +1,796 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{listings}
+\lstset{language=[90]Fortran,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{red},
+  commentstyle=\color{gray},
+  morecomment=[l]{!\ }% Comment only with space after !
+}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,calc,positioning}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth -1
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 697 Homework 5: Monte Carlo Integration
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+April 12th, 2016
+\end_layout
+
+\begin_layout Paragraph
+Use Monte Carlo method to calculate Nd:YAG (
+\begin_inset Formula $1064\,\mathrm{nm}$
+\end_inset
+
+) laser energy deposition on the surface of material with following parameters
+ of laser beam: 
+\begin_inset Formula $1\times10^{10}\,\mathrm{\nicefrac{W}{cm^{2}}}$
+\end_inset
+
+ during 
+\begin_inset Formula $10\,\mathrm{ns}$
+\end_inset
+
+ (square-shaped temporal distribution) Gaussian spatial distribution with
+ radius=
+\begin_inset Formula $1\times10^{-2}\,\mathrm{cm}$
+\end_inset
+
+ (FWHM).
+ Reflection coefficient of laser photons = 
+\begin_inset Formula $0.7$
+\end_inset
+
+.
+ Use uniform mesh with 
+\begin_inset Formula $200\,\mathrm{cells}$
+\end_inset
+
+ for 
+\begin_inset Formula $0.1\,\mathrm{cm}$
+\end_inset
+
+ simulated domain.
+ Plot results of fluence (
+\begin_inset Formula $\mathrm{\nicefrac{J}{cm^{2}}}$
+\end_inset
+
+) as a function of surface distance for 
+\begin_inset Formula $10^{4}$
+\end_inset
+
+, 
+\begin_inset Formula $10^{6}$
+\end_inset
+
+, and 
+\begin_inset Formula $10^{8}$
+\end_inset
+
+ photon numbers.
+\end_layout
+
+\begin_layout Section*
+Motivation
+\end_layout
+
+\begin_layout Standard
+Often, accurate integration - especially of high-order functions - is difficult
+ or time consuming when done through explicit or even implicit means.
+ In these cases, an alternative is Monte Carlo integration.
+ Monte Carlo (MC) leverages the properties of random numbers and the law
+ of averages to provide results after simulating the case many times.
+\end_layout
+
+\begin_layout Standard
+In this case, the situtation of an Nd:YAG laser depositing onto a material
+ with a certain reflection coefficient is simulated.
+ MC is great for this situation because the gaussian that approximates the
+ spatial distribution is very high order, and because the reflection coefficient
+ complicates things in deterministic terms.
+\end_layout
+
+\begin_layout Section*
+Method
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Define block styles 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{decision} = [diamond, draw,      
+\end_layout
+
+\begin_layout Plain Layout
+
+     text width=7.5em, minimum width=8em,text badly centered, minimum height=3em,
+node distance=0.1cm, inner sep=0pt] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{block} = [rectangle, draw,  node distance=0.5em,%   
+\end_layout
+
+\begin_layout Plain Layout
+
+    minimum width=8em, text width=7.5em, text badly centered,%
+\end_layout
+
+\begin_layout Plain Layout
+
+	rounded corners, minimum height=3em]%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{circlenode} = [circle, draw,%
+\end_layout
+
+\begin_layout Plain Layout
+
+	node distance=0.5em, text centered, minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{line} = [draw, -latex'] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{cloud} = [draw, ellipse, node distance=3cm,     
+\end_layout
+
+\begin_layout Plain Layout
+
+    minimum height=2em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzset{
+\end_layout
+
+\begin_layout Plain Layout
+
+    print/.style={ % requires library shapes.symbols         
+\end_layout
+
+\begin_layout Plain Layout
+
+        draw,
+\end_layout
+
+\begin_layout Plain Layout
+
+        tape,
+\end_layout
+
+\begin_layout Plain Layout
+
+        tape bend top=none,
+\end_layout
+
+\begin_layout Plain Layout
+
+        minimum height=15em,
+\end_layout
+
+\begin_layout Plain Layout
+
+        minimum width=15em,
+\end_layout
+
+\begin_layout Plain Layout
+
+        text width=10em
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance = 2cm, auto]     
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Place nodes
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node [block, minimum width=1.5in, text width=1.25in] (init) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Choose a random point $
+\backslash
+left( 
+\backslash
+xi, 
+\backslash
+chi 
+\backslash
+right)$ in the area $
+\backslash
+left(
+\backslash
+;
+\backslash
+left[ 0,1 
+\backslash
+right) , 
+\backslash
+left[0,1 
+\backslash
+right)
+\backslash
+;
+\backslash
+right)$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+input{example_empty.pgf}
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, minimum width=1.5in, text width=1.25in, right=2em of init] (init_step
+) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Check if this point falls under or over Gaussian $
+\backslash
+Gamma
+\backslash
+left( x 
+\backslash
+right)$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+input{example_gaussian.pgf}
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [decision, below=1em of init_step] (dec_gauss) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		$
+\backslash
+chi > 
+\backslash
+Gamma 
+\backslash
+left( 
+\backslash
+xi 
+\backslash
+right)$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=2em of init_step, text width=8.5em] (reflect) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Find another random value, $
+\backslash
+eta$, and determine if the photon is reflected
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [decision, below=5.7em of reflect] (dec_ref) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		$
+\backslash
+eta < k_{reflection}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=2em of reflect] (increment) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		add a value to the integral $
+\backslash
+int 
+\backslash
+Gamma 
+\backslash
+left( x 
+\backslash
+right) dx 
+\backslash
+approx I$ $I = I + 1$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, text width=15em, below=20em of increment.west] (adjust) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Convert the interval $
+\backslash
+left(
+\backslash
+;
+\backslash
+left[ 0,1 
+\backslash
+right) , 
+\backslash
+left[0,1 
+\backslash
+right)
+\backslash
+;
+\backslash
+right)$ to $
+\backslash
+left(
+\backslash
+;
+\backslash
+left[ 0,0.1
+\backslash
+,
+\backslash
+mathrm{cm} 
+\backslash
+right) , 
+\backslash
+left[0, 1
+\backslash
+times 10^{10} 
+\backslash
+,
+\backslash
+mathrm{
+\backslash
+nicefrac{W}{cm^{2}}} 
+\backslash
+right)
+\backslash
+;
+\backslash
+right)$
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (init) -- (init_step);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (init_step) -- (dec_gauss);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (reflect) -- (dec_ref);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (increment.east) -- ($(increment.east) + (2em, 0)$) |- %
+\end_layout
+
+\begin_layout Plain Layout
+
+		($(increment.east) + (2em, -18em)$) -- node [near start] {$
+\backslash
+times 10^{n}$} %
+\end_layout
+
+\begin_layout Plain Layout
+
+		($(init.west) + (-2em, -18em)$) -| ($(init.west) + (-2em, 0)$) -- (init.west);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (dec_gauss.east) -| node [near start] {yes} ($(reflect.west) +
+ (-1em, 0em)$) %
+\end_layout
+
+\begin_layout Plain Layout
+
+		-- (reflect.west);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (dec_ref.east) -| node [near start] {yes} ($(increment.west) +
+ (-1em, 0em)$) %
+\end_layout
+
+\begin_layout Plain Layout
+
+		-- (increment.west);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (dec_gauss.west) -| node [near start] {no} ($(init_step.west)
+ + (-1em, -18em)$);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (dec_ref.west) -| node [near start] {no} ($(reflect.west) + (-0.5em,
+ -18em)$);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] ($(increment.east) + (2em, -18em)$) |- (adjust.east);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Results
+\end_layout
+
+\begin_layout Standard
+As is shown in Figure 1, with the specified photon numbers, the gaussian
+ spatial profile is recreated in every case.
+ However, as is shown more clearly in Figure 2, the cases with low specified
+ photon numbers (
+\begin_inset Formula $10^{4}$
+\end_inset
+
+ and 
+\begin_inset Formula $10^{6}$
+\end_inset
+
+) have some oscillation in their recreation of the gaussian spatial profile.
+ This is a very graphic representation of the need for simulation repetition
+ of many cases.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{full_result.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Gaussian distribution of energy deposition with differing photon numbers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\backslash
+input{full_result_closeup.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Closeup showing fluctuations in Gaussian distribution when using lower photon
+ numbers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Code
+\end_layout
+
+\begin_layout Subsection*
+mc.f90:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting{mc.f90}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

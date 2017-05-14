@@ -1,0 +1,873 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{pgf}
+\usepackage{lastpage}
+\usepackage{tikz}
+\usepackage{listings}
+\lstset{language=[90]Fortran,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{red},
+  commentstyle=\color{gray},
+  morecomment=[l]{!\ }% Comment only with space after !
+}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,calc,positioning}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 1cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth -1
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+NUCL 697 Homework 3: A Linearly Damped Pendulum
+\end_layout
+
+\begin_layout Author
+Alex Hagen
+\end_layout
+
+\begin_layout Date
+March 10th, 2016
+\end_layout
+
+\begin_layout Paragraph
+Dynamics of a linearly damped pendulum is governed by the second order ODE:
+\begin_inset Formula 
+\[
+y^{\left(2\right)}+\frac{1}{2}y^{\left(1\right)}+10\sin\left(y\right)=0
+\]
+
+\end_inset
+
+The initial conditions have been specified as 
+\begin_inset Formula 
+\[
+y\left(0\right)=\frac{1}{2}\;\;\;\;\;\;\;\;\;\;y^{\left(1\right)}\left(0\right)=0
+\]
+
+\end_inset
+
+Obtain the solution to 
+\begin_inset Formula $t=2.5$
+\end_inset
+
+ with five digit accuracy.
+\end_layout
+
+\begin_layout Section*
+Motivation
+\end_layout
+
+\begin_layout Standard
+The ODE proposed does not have a closed form solution, so numerical methods
+ must be used to integrate this.
+ Despite not having a closed form solution, the physical system is often
+ observed, so being able to accurately solve this ODE is important.
+\end_layout
+
+\begin_layout Section*
+Method
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Define block styles 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{decision} = [diamond, draw,      
+\end_layout
+
+\begin_layout Plain Layout
+
+     text width=7.5em, minimum width=8em,text badly centered, minimum height=3em,
+node distance=0.1cm, inner sep=0pt] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{block} = [rectangle, draw,  node distance=0.5em,%   
+\end_layout
+
+\begin_layout Plain Layout
+
+    minimum width=8em, text width=7.5em, text centered,%
+\end_layout
+
+\begin_layout Plain Layout
+
+	rounded corners, minimum height=3em]%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{circlenode} = [circle, draw,%
+\end_layout
+
+\begin_layout Plain Layout
+
+	node distance=0.5em, text centered, minimum size=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{line} = [draw, -latex'] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle{cloud} = [draw, ellipse, node distance=3cm,     
+\end_layout
+
+\begin_layout Plain Layout
+
+    minimum height=2em]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzset{
+\end_layout
+
+\begin_layout Plain Layout
+
+    print/.style={ % requires library shapes.symbols         
+\end_layout
+
+\begin_layout Plain Layout
+
+        draw,
+\end_layout
+
+\begin_layout Plain Layout
+
+        tape,
+\end_layout
+
+\begin_layout Plain Layout
+
+        tape bend top=none,
+\end_layout
+
+\begin_layout Plain Layout
+
+        minimum height=15em,
+\end_layout
+
+\begin_layout Plain Layout
+
+        minimum width=15em,
+\end_layout
+
+\begin_layout Plain Layout
+
+        text width=10em
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance = 2cm, auto]     
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Place nodes
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node [block] (init) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Set the initial conditions:
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+[ y 
+\backslash
+left( 0 
+\backslash
+right) = 0.5 
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+[ y^{
+\backslash
+left( 1 
+\backslash
+right)} 
+\backslash
+left( 0 
+\backslash
+right) = 0 
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=1em of init] (init_step) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Set the initial step size:
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+[ h = 0.5 
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=1em of init_step, text width=8.5em] (predictor) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Perform the predictor step:
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+[ y_{p,t+h} = y_{t} + h 
+\backslash
+cdot y^{
+\backslash
+left( 1 
+\backslash
+right)}_{t}
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+[ y^{
+\backslash
+left( 1 
+\backslash
+right)}_{p,t+h} = y^{
+\backslash
+left( 1 
+\backslash
+right)}_{t} + h 
+\backslash
+cdot y^{
+\backslash
+left( 2 
+\backslash
+right)}_{t}
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=1em of predictor, text width=10.5em] (corrector) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Perform the corrector step:
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+[ y_{t+h} = y_{t} + 
+\backslash
+frac{h}{2} 
+\backslash
+left( k_{1} + k_{2} 
+\backslash
+right)
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+[ y^{
+\backslash
+left( 1 
+\backslash
+right)}_{t+h} = y^{
+\backslash
+left( 1 
+\backslash
+right)}_{t} + 
+\backslash
+frac{h}{2} 
+\backslash
+left( k_{1} + k_{2} 
+\backslash
+right)
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, right=1em of corrector] (time) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Increment time:
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+[ t = t + h 
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [decision, below=11em of time] (time_criteria) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Is the time over:
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+[ t < 2.5 
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [decision, below=8em of predictor] (epsilon) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Is the convergence acceptable?
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+[ 
+\backslash
+varepsilon < 1 
+\backslash
+times 10^{-5} 
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, above=1em of epsilon] (criteria) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Half the time step:
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+[ h = 
+\backslash
+frac{h}{2} 
+\backslash
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, left=2em of epsilon] (term) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Terminate
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (init) -- (init_step);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (init_step) -- (predictor);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (predictor) -- (corrector);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (corrector) -- (time);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (time) -- (time_criteria);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (time_criteria) -- node [near start] {yes} (epsilon);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (time_criteria.east) -- node [near start] {no} ($(time_criteria.east)
+ + (2em,0)$) %
+\end_layout
+
+\begin_layout Plain Layout
+
+				 |- ($(predictor.north) + (0,2em)$) -- (predictor.north);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (epsilon) -- node [near start] {yes} (term);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (epsilon) -- node [near start] {no} (criteria);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path [line] (criteria) -- (predictor);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Results
+\end_layout
+
+\begin_layout Standard
+The results for decreasing step sizes are plotted in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:final-result"
+
+\end_inset
+
+ in blue
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{full_result.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Final results using differing time steps compared to a comerical solver
+ solution
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:final-result"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, compared to a solution found with a commerical ODE solver (scipy's odeint).
+ It can be seen that with too large time steps, not only is the result 
+\begin_inset Quotes eld
+\end_inset
+
+blocky
+\begin_inset Quotes erd
+\end_inset
+
+, but it also misses the trajectory of the true solution.
+\end_layout
+
+\begin_layout Standard
+To determine the convergence, the final solution at 
+\begin_inset Formula $t=2.5$
+\end_inset
+
+ for consecutive step sizes is plotted in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-convergence-of"
+
+\end_inset
+
+.
+ This shows a linear trend in log-log space, and the final step size needed
+ is extremely small (
+\begin_inset Formula $0.000244\,\mathrm{s}$
+\end_inset
+
+).
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{convergence.pgf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Covergence of solution compared to time step size
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-convergence-of"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Code
+\end_layout
+
+\begin_layout Subsection*
+pendulum.f90:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting{pendulum.f90}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+functions.f90:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting{functions.f90}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
