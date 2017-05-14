@@ -1,0 +1,1482 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass tufte-handout
+\begin_preamble
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+%\usepackage{units}
+\title{CS 530 HMWK 3}
+\author{Alex Hagen}
+\date{November 5th, 2013}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans helvet
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Diffusion Tensor Imaging is an exciting prospect for the understanding of
+ the anatomy and function of the brain.
+ Unfortunately, while the technology has been developed and provides good
+ results, the visualization of the data is a non trivial matter.
+ It requires the rendering at each spatial point of a matrix with 9 components
+ (6 of which encode unique values, as they are symmetric).
+ This requires the use of glyphs and hyperstreamlines, which have been used
+ to show the flow channels in the brain in several different tasks.
+ Fractional anisotropy is a way to encode these tensors into a scalar, and
+ a volume rendering of this has been shown along with the glyphs to provide
+ extra data about the brain structure.
+\end_layout
+
+\begin_layout Section*
+Task 1 - Glyphs
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex NewThought
+status collapsed
+
+\begin_layout Plain Layout
+For tensor datasets
+\end_layout
+
+\end_inset
+
+ glyph rendering can be very cluttered and non intuitive.
+ Regardless, the use of these to explore the dataset takes advantage of
+ their fast rendering, the ability to move planes easily, and the ability
+ to color eigenvalues to determine orientation.
+ The diffusion tensor imaging (DTI) dataset shows some important features
+ through the simple rendering of glyphs.
+ By shaping each glyph as a sphere, and using a vtkTensorGlyph filter to
+ shape it into an ellipsoid, and then coloring it based on the ratios of
+ the eigenvalues, the following images were created.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Three-Plane-Rendering-of-DTI-Data-Set"
+
+\end_inset
+
+ shows a rendering of three planes of interest, and their intersection.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float marginfigure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+svgwidth{5 cm} 
+\backslash
+input{Slicing_Geometry.pdf_tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Slicing Geometry Diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+These three planes show:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{description}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item[Grey Matter]
+\end_layout
+
+\end_inset
+
+ A typical section of grey matter is shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Grey Matter Rendering of DTI Data Set"
+
+\end_inset
+
+.
+ You can see there is a spot of high isotropic diffusion at the center,
+ which shows where the corpus collosum attaches to this slice of grey matter.
+ This is surrounded by highly anisotropic material radiating outward until
+ there is a small measure of isotropy at the surface of the brain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item[Optic Chiasm]
+\end_layout
+
+\end_inset
+
+ By slicing transversely through the data set in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Optic Chiasm Rendering of DTI Dataset"
+
+\end_inset
+
+, we can see a large isotropic cross shape.
+ This shows the optic chiasm, where the visual signals from each eye are
+ sent to the opposite side of the back of the brain to be processed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item[Brain Stem]
+\end_layout
+
+\end_inset
+
+ A saggital slice through the center of the brain, shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Brain Stem Rendering of DTI Dataset"
+
+\end_inset
+
+, shows how the brain stem drops below the rest of the brain mass.
+ There are several areas of high isotropy, notably where the optic chiasm
+ intersects this plane, and also where the spinal cord attaches into the
+ brain stem.
+ These are both areas of high 
+\begin_inset Quotes eld
+\end_inset
+
+data transmission
+\begin_inset Quotes erd
+\end_inset
+
+, and this observation can be used to provide context to the presence of
+ isotropy in the brain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item[Coronal Slice]
+\end_layout
+
+\end_inset
+
+ A coronal slice was not used to visualize this dataset in the three plane
+ rendering, as it would occlude other features of the slicing.
+ It is shown separately in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Forward Facing Rendering of DTI Dataset"
+
+\end_inset
+
+, showing again the brain stem with its relative isotropy.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{description}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dti.vtk_three_planes.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Three-Plane-Rendering-of-DTI-Data-Set"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Three Plane Rendering of DTI Dataset (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./dti.vtk_three_planes_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dti.vtk_plane1.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Grey Matter Rendering of DTI Data Set"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Grey Matter Rendering of DTI Dataset (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./dti.vtk_plane1_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dti.vtk_plane2.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Optic Chiasm Rendering of DTI Dataset"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Optic Chiasm Rendering of DTI Dataset(
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./dti.vtk_plane2_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dti.vtk_plane3.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Brain Stem Rendering of DTI Dataset"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Brain Stem Rendering of DTI Dataset (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./dti.vtk_plane3_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dti.vtk_plane4.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Forward Facing Rendering of DTI Dataset"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Forward Facing Rendering of DTI Dataset (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./dti.vtk_plane4_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Task 2 - Volume Rendering and Fibers
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex NewThought
+status collapsed
+
+\begin_layout Plain Layout
+Fractional Aniostropy
+\end_layout
+
+\end_inset
+
+ provides a scalar value to encode the tensor that was visualized using
+ glyphs in Task 1.
+ When volume rendering this along with tensor glyphs, it can give an idea
+ as to the actual structure of the brain and how that relates to the flow
+ channels.
+ This data has two roughly defined bounaries, one of the dense and isotropic
+ parts of the brain, shown by Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Inner Surface of Fractional Anisotropy Dataset "
+
+\end_inset
+
+, and one of the less dense more anisotropic parts of the brain, shown by
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Outer Surface of Fractional Anisotropy Dataset"
+
+\end_inset
+
+.
+ A opacity transfer function was created using these two surfaces, and an
+ exponential increase in opacity from the outer to the inner surface.
+ This unsatisfactorally shows the brain structure, and in fact showed many
+ artifacts when rendering.
+ This ineffective rendering is shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Tensor Glyphs with Volume Rendering of Fraction Inosotropy from DTI Dataset"
+
+\end_inset
+
+.
+ A rendering of just the volume rendering of the brain is shown in Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Volume Rendering of Fractional Anisotropy of DTI Dataset"
+
+\end_inset
+
+, which shows how the dataset does not satisfactorally show structure to
+ the brain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dti.vtk_dvr_three_planes.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Tensor Glyphs with Volume Rendering of Fraction Inosotropy from DTI Dataset"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Tensor Glyphs with Volume Rendering of Fraction Inosotropy from DTI Dataset
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./dti.vtk_dvr_three_planes_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fa_short.vtk_inner_iso.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Inner Surface of Fractional Anisotropy Dataset "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Inner Surface of Fractional Anisotropy Dataset (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./fa_short.vtk_inner_iso_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fa_short.vtk_outer_iso.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Outer Surface of Fractional Anisotropy Dataset"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Outer Surface of Fractional Anisotropy Dataset (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./fa_short.vtk_outer_iso_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename fa_short.vtk_dvr_no_planes.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Volume Rendering of Fractional Anisotropy of DTI Dataset"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Volume Rendering of Fractional Anisotropy of DTI Dataset (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./fa_short.vtk_dvr_no_planes_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+DEPRECATED - Task 2 - Hyperstreamlines
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex NewThought
+status collapsed
+
+\begin_layout Plain Layout
+Hyperstreamlines
+\end_layout
+
+\end_inset
+
+ provide a good way to show channels in a tensor dataset.
+ While the VTK implementation of these hyperstreamlines is not ideal (a
+ streamline implementation that didn't change size throughout its path would
+ be better), a decent quality rendering of the flow channels in a human
+ brain could be created using these.
+ The seeding was done starting in a box that surrounded the optical chiasm,
+ with sparse spacing.
+ This is shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "mar:Hyperstreamline-Seeding-Diagram-1"
+
+\end_inset
+
+.
+ By increasing the length of the streamline to see the entire path of each
+ streamline, the returns and folds in each streamline helps visualize practicall
+y the entire center of the brain.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float marginfigure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+svgwidth{5 cm} 
+\backslash
+input{Seeding_Geometry.pdf_tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Hyperstreamline Seeding Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "mar:Hyperstreamline-Seeding-Diagram-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The hyperstreamlines were colored using the 
+\begin_inset Quotes eld
+\end_inset
+
+effective stress
+\begin_inset Quotes erd
+\end_inset
+
+ of the tensor data given, using a vtkExtractTensorComponent filter.
+ The effective stress is defined by the difference of the total stress and
+ the pore water pressure.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma'=\sigma_{T}-u
+\]
+
+\end_inset
+
+In this case, the pore water pressure is zero, so the effective stress is
+ exactly equal to the total stress 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Terzaghi1925"
+
+\end_inset
+
+.
+ The total stress is defined as the total inward stress on the surface.
+ By visualizing this data, we can see that the tensors have higher inward
+ stress as they reach the outside of the brain, which is also shown by the
+ fanning of the hyperstreamline.
+ This shows how the channels are extremely anisotropic throughout the grey
+ matter of the brain, but become isotropic in two dimensions along the surface
+ of the brain.
+ This provides insight into how the signals are passed throughout the brain.
+\end_layout
+
+\begin_layout Standard
+The three Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Isometric View of Hyperstreamline Rendering of DTI Dataset-1"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Front Brain Close up View of Hyperstreamline Rendering of DTI Dataset-1"
+
+\end_inset
+
+ show several different views of the brain.
+ The isometric (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Isometric View of Hyperstreamline Rendering of DTI Dataset-1"
+
+\end_inset
+
+) and side (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Side View of Hyperstreamline Rendering of DTI Dataset-1"
+
+\end_inset
+
+) views given an overview of the brain through similar perspectives.
+ The close up (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Front Brain Close up View of Hyperstreamline Rendering of DTI Dataset-1"
+
+\end_inset
+
+) shows detail of the fanning of the hyperstreamlines near the surface of
+ the brain.
+ The rose petal type designs near the surface are an interesting artifact
+ of the hyperstreamline rendering and presumably do not correspond to any
+ physical 
+\begin_inset Quotes eld
+\end_inset
+
+twisting
+\begin_inset Quotes erd
+\end_inset
+
+ phenomena.
+ A plane rendering of the effective stress has been added in the form of
+ a transverse slice to help with visualization and placement for the viewer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dti.vtk_iso_view.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Isometric View of Hyperstreamline Rendering of DTI Dataset-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Isometric View of Hyperstreamline Rendering of DTI Dataset (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./dti.vtk_side_view_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dti.vtk_side_view.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Side View of Hyperstreamline Rendering of DTI Dataset-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Side View of Hyperstreamline Rendering of DTI Dataset(
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./dti.vtk_iso_view_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dti.vtk_close_view.png
+	lyxscale 25
+	width 11cm
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Front Brain Close up View of Hyperstreamline Rendering of DTI Dataset-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Front Brain Close up View of Hyperstreamline Rendering of DTI Dataset (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+href{./dti.vtk_close_view_big.png}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color blue
+Link to Hi-Resolution
+\series default
+\size default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Full Width
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "CS_530"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
